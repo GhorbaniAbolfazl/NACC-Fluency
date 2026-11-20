@@ -1,0 +1,250 @@
+\documentclass[11pt]{article}
+\PassOptionsToPackage{gray}{xcolor}
+\input{reports/template.tex}
+\input{reports/phase1/tables.tex}
+\graphicspath{{figures/phase1/}}
+\hypersetup{pdftitle={Semantic verbal fluency and left inferior parietal cortical thickness}}
+
+\hypersetup{allcolors=black,linkbordercolor={0 0 0},urlbordercolor={0 0 0}}
+
+\begin{document}
+\reportlabel{Statistics course project, Track C (NACC)}
+\vspace{9mm}
+
+\reporttitle{Semantic verbal fluency and\\left inferior parietal cortical thickness}
+\vspace{3mm}
+{\Large Phase 1 | Study design, data, and descriptive statistics\par}
+\vspace{9mm}
+
+{\large\bfseries Research question}\par
+Among participants with normal cognition, how many more or fewer animals
+are named correctly in 60 seconds per 0.1 mm greater left inferior
+parietal cortical thickness, after accounting for age, sex, and years of
+education?
+
+\vspace{5mm}
+\noindent\colorbox{ReportTint}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+    \vspace{2mm}
+    The teaching subset contains clinical and MRI records for \NMatched{}
+    matched participants. Of the \NNormal{} classified as cognitively normal,
+    \NPairedNormal{} have usable scores and thickness measurements, and
+    \NModelNormal{} have complete data for the adjusted model.
+    \vspace{2mm}
+  }%
+}
+
+\vspace{5mm}
+{\large\bfseries Phase 1 summary}\par
+We linked the clinical and MRI files by participant ID and documented how
+we handled special codes, out-of-range values, and fractional scores.
+This report describes the distribution of cognitive status, summarizes
+the main variables, and compares the recorded groups. Among participants
+with normal cognition, the median score was \NormalScoreMedian{} correct
+responses and the median left cortical thickness was
+\NormalThicknessMedian{} mm. Later phases will estimate the within-group
+association and account for the covariates.
+
+\vfill
+{\small Autumn 1405 (Solar Hijri)\par}
+\clearpage
+
+\section{Data source, structure, and variables}
+This secondary observational analysis uses a teaching subset from the
+National Alzheimer's Coordinating Center (NACC), supplied by the course
+team. The Uniform Data Set (UDS) contains clinical assessments and
+cognitive tests. The MRI file contains measurements derived from
+structural imaging. The file columns do not identify the date of
+receipt, release version, or collection period for this extract.
+
+\begin{center}\small
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+Supplied file & Rows & Columns & Unit of observation \\
+\midrule
+\SourceRows
+\bottomrule
+\end{tabular}
+\end{center}
+
+The matrix column count includes one column for row labels. The 62
+region names match the MRI columns. The MRI file contains one cortical
+thickness measure and one gray matter volume measure for each region.
+The matrix is documented in the data inventory. The primary model uses
+the left-side thickness measurement.
+
+\subsection*{Main variables}
+\begin{center}\small
+\begin{tabular}{@{}lp{0.36\linewidth}l@{}}
+\toprule
+Variable & Definition and scale & Role \\
+\midrule
+ANIMALS & Correct responses in 60 seconds, discrete & Outcome \\
+LH\_INFERIORPARIETAL\_AVGTH & Left cortical thickness, continuous, in mm & Explanatory variable \\
+NACCAGE & Age at the visit, quantitative, in years & Covariate \\
+SEX & Recorded sex, nominal & Covariate \\
+EDUC & Years of education, discrete & Covariate \\
+NACCUDSD & Recorded cognitive status, categorical & Defines the groups \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The UDS inventory groups columns by content, including demographics,
+medical history and medications, everyday functioning, cognitive tests,
+and diagnosis. The audit output lists every column and the notebook
+shows the number of columns in each category.
+\clearpage
+
+\section{Data audit and sample flow}
+Each participant ID (NACCID) appeared once in each file. We joined the
+records one-to-one on that identifier. There were \NOnlyUDS{} UDS-only
+and \NOnlyMRI{} MRI-only IDs. Cognitive status agreed across files for
+\NStatusEqual{} matched participants. Group labels come from UDS.
+
+\begin{center}\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Variable & Usable & Unusable & Unusable (\%) \\
+\midrule
+\QualityRows
+\bottomrule
+\end{tabular}
+\end{center}
+
+ANIMALS and VEG are whole-number counts. For ANIMALS, we kept the eleven
+noncompletion codes and the value of 21.6 in the raw data and excluded
+them from the usable scores. We left 21.6 as supplied because its origin
+is unknown. Education code 99 indicates an unknown value. All recorded
+left cortical thickness measurements were finite and positive. The
+subset provides no information on scan-level quality control.
+
+\begin{center}\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Analysis sample & Participants \\
+\midrule
+\FlowRows
+\bottomrule
+\end{tabular}
+\end{center}
+
+Among participants with normal cognition, \NNoScoreNormal{} lacked a
+usable animal-naming score and \NNoEducationNormal{} additional
+participant had unknown education. Every UDS participant in the
+supplied files has an MRI record, so there is no group without MRI for
+the descriptive comparison.
+\clearpage
+
+\section{Descriptive statistics}
+The table uses all usable values for each variable in the
+normal-cognition group. The count in each row is the denominator for
+that variable. We calculated quartiles by linear interpolation and
+sample standard deviations with denominator n-1.
+
+The mean and standard deviation describe center and spread in the
+original units, making comparisons across groups easier. The median
+and interquartile range (IQR) describe the center and middle half of
+the distribution with less sensitivity to extreme values. The mean
+and median of the animal-naming score are close. Thickness has a tail
+toward lower values, so the median and IQR are useful summaries of
+its central portion.
+
+\begin{center}\small
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+Variable & Usable & Mean & SD & Median & Q1--Q3 & IQR \\
+\midrule
+\DescriptiveRows
+\bottomrule
+\end{tabular}
+\end{center}
+
+In the normal-cognition group, scores ranged from \NormalScoreMin{} to
+\NormalScoreMax{} correct responses and thickness ranged from
+\NormalThicknessMin{} to \NormalThicknessMax{} mm. The IQR rule flagged
+\NormalScoreFlags{} scores and \NormalThicknessFlags{} thickness
+measurements for review. All remained in the summaries.
+
+\subsection*{Comparison across cognitive status groups}
+The table reports a separate denominator for each measure. Means are
+given in correct responses and millimeters, respectively.
+
+\begin{center}\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Cognitive status & Group total & Usable scores & Mean score &
+\shortstack[r]{Usable\\thickness} & \shortstack[r]{Mean\\thickness} \\
+\midrule
+\GroupRows
+\bottomrule
+\end{tabular}
+\end{center}
+
+The normal-cognition group averaged about 22 correct responses. Mean
+scores and thickness were lower in the MCI and dementia groups. The
+group classified as impaired without MCI contains seven people, so a
+few observations can noticeably affect its summaries. These
+comparisons are unadjusted. Mean age was \NormalAgeMean{} years in the
+normal-cognition group and \MCIAgeMean{} years in the MCI group.
+Interpretation is limited to the composition of these groups.
+
+Across the full sample, \NWomen{} of the \NSex{} participants with a
+usable sex code were recorded as female. Figure 3 shows the counts and
+percentages for all cognitive status groups. The notebook also gives
+observed and cumulative frequencies for scores and years of
+education, measures of spread, and the analysis sample denominators.
+\clearpage
+
+\section{Distributions in the normal-cognition group}
+\reportfigure{Figure 1. Animal-naming scores}{01_animal_naming.pdf}{%
+  Each bar counts participants with a given whole-number score. The
+  middle half of observed scores fell between 18 and 26 correct responses.}
+\reportfigure{Figure 2. Left inferior parietal cortical thickness}{02_left_parietal_thickness.pdf}{%
+  The bins are 0.05 mm wide. Measurements cluster near 2.3 mm,
+  with a tail toward lower values.}
+\clearpage
+
+\section{Cognitive status frequencies and group comparisons}
+\reportfigure{Figure 3. Cognitive status in the study sample}{03_cognitive_status.pdf}{%
+  Each percentage uses all matched participants as its denominator.
+  These percentages describe the composition of the teaching subset.}
+\reportfigure{Figure 4. Left cortical thickness by cognitive status}{04_thickness_by_status.pdf}{%
+  The line inside each box marks the median, and the box edges mark the
+  first and third quartiles. Circles mark values outside the 1.5-IQR
+  fences. These values are included in the descriptive summaries.}
+\clearpage
+
+\section{Conclusion and limitations}
+\subsection*{Scope of the final question}
+The primary question concerns the association between animal-naming
+performance and left inferior parietal cortical thickness among
+participants with normal cognition. Age, sex, and years of education
+are the model covariates. Both measures are available at the
+participant level and can be linked one-to-one, leaving \NModelNormal{}
+participants with complete data for the primary model. Comparisons
+across the full set of cognitive status groups describe the sample
+and provide context for the later analysis.
+
+\subsection*{Data limitations}
+\begin{itemize}
+\item Participants entered the teaching subset through random selection. The sampling frame and eligibility criteria are undocumented.
+Interpretation is limited to the supplied subset and the defined
+analysis sample.
+\item Each participant has one record per source in the teaching
+subset. The files do not specify the number of visits in the source
+database, the scan date, or the interval between the scan and the test.
+\item The preparation version, the origin of fractional scores, and
+scan-level quality control details are unknown. VEG and a bilateral
+thickness definition were specified in advance as sensitivity analysis
+options.
+\end{itemize}
+
+\subsection*{References}
+\begin{enumerate}
+\item Official statistics course project guide, Track C, pp. 4--8 and 18--19.
+\item \href{https://www.naccdata.org/the-nacc-researchers-guide/}{NACC Researcher's Guide}, data structure and linkage of imaging to clinical visits.
+\item \href{https://r2d2.kumc.edu/ADC/Protocols/UDS2_protocol/ResearchDataDict_2015Mar.pdf\#page=205}{UDS data dictionary}, score definitions and special codes.
+\item \href{https://files.alz.washington.edu/documentation/SCAN-MRI-Imaging-RDD.pdf\#page=17}{MRI data dictionary}, inferior parietal cortical thickness and its unit.
+\item \href{https://pmc.ncbi.nlm.nih.gov/articles/PMC4207059/}{Eastman et al. (2013)}, cortical thickness and semantic verbal fluency.
+\end{enumerate}
+\end{document}

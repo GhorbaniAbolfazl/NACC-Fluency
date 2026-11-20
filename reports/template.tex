@@ -1,0 +1,30 @@
+\usepackage[a4paper,margin=22mm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage[unicode,colorlinks=true,linkcolor=teal,urlcolor=teal]{hyperref}
+
+\setmainfont[BoldFont=lmroman10-bold.otf]{lmroman10-regular.otf}
+\definecolor{ReportInk}{HTML}{172B33}
+\definecolor{ReportAccent}{HTML}{286C68}
+\definecolor{ReportTint}{HTML}{EAF3F2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\linespread{1.08}
+\renewcommand{\arraystretch}{1.26}
+\setlength{\tabcolsep}{5pt}
+
+\newcommand{\reportlabel}[1]{{\large\color{ReportAccent}\bfseries #1}}
+\newcommand{\reporttitle}[1]{%
+  {\color{ReportInk}\Huge\bfseries #1\par}%
+  \vspace{5mm}{\color{ReportAccent}\hrule height 1.3pt}%
+}
+\newcommand{\reportfigure}[3]{%
+  \begin{center}
+    {\bfseries #1}\par\smallskip
+    \includegraphics[width=0.90\linewidth]{#2}\par\smallskip
+    \begin{minipage}{0.9\linewidth}\small #3\end{minipage}
+  \end{center}%
+}
