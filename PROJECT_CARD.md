@@ -111,7 +111,7 @@ The line inside each box is the median, and the box edges are the first and thir
 | 5. Visualize the data | Plot the score and thickness distributions, cognitive status frequencies, and thickness by group. | At least four figures have readable titles, units, and captions. |
 | 6. Assemble and review the outputs | Complete the notebook, summarize the research question and limitations, and build and review the LaTeX report. | Phase 1 can be reproduced from the supplied CSVs, and `reports/phase1.pdf` is ready. |
 
-The final outputs for this phase are the [English report](reports/phase1.pdf) and [executed English notebook](notebooks/phase1.ipynb). The tables and figures were generated from this project's analysis.
+The final outputs for this phase are the [report](reports/phase1.pdf) and [executed notebook](notebooks/phase1.ipynb). The tables and figures were generated from this project's analysis.
 
 Phase 2 examines distributions, conditional probabilities, and the unadjusted association. Phase 3 covers estimation, statistical tests, and participant-level bootstrap resampling. Phase 4 compares UDS-only, MRI-only, and combined models on a common sample. Phase 5 examines robustness and the limits of interpretation.
 

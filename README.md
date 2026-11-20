@@ -15,7 +15,7 @@ To reproduce the analysis, place the three CSVs supplied for the course at the p
 
 ## Phase 1 outputs
 
-- [English LaTeX report](reports/phase1.pdf)
+- [LaTeX report](reports/phase1.pdf)
 - [Executed notebook](notebooks/phase1.ipynb)
 - [Project card with sample definitions and figure notes](PROJECT_CARD.md)
 
@@ -59,8 +59,8 @@ python3 -m jupyter execute --inplace --timeout=90 notebooks/phase1.ipynb
 
 ## Phase 2 outputs
 
-- [English LaTeX report](reports/phase2.pdf) · [Persian LaTeX report](reports/phase2_FA.pdf)
-- [Executed English notebook](notebooks/phase2.ipynb) · [Executed Persian notebook](notebooks/phase2_FA.ipynb)
+- [LaTeX report](reports/phase2.pdf)
+- [Executed notebook](notebooks/phase2.ipynb)
 - [Aggregate results](reports/phase2/) · [Grayscale vector figures](figures/phase2/)
 
 ### Reproduce Phase 2
