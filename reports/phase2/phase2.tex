@@ -1,0 +1,213 @@
+\documentclass[11pt]{article}
+\PassOptionsToPackage{gray}{xcolor}
+\input{reports/template.tex}
+\input{reports/phase2/tables.tex}
+\graphicspath{{figures/phase2/}}
+\hypersetup{
+  pdftitle={Phase 2: Probability and distributions in the NACC teaching subset},
+  allcolors=black,linkbordercolor={0 0 0},urlbordercolor={0 0 0}
+}
+
+\begin{document}
+\reportlabel{Statistics course project, Track C (NACC)}
+\vspace{7mm}
+
+\reporttitle{Semantic verbal fluency and\\left inferior parietal cortical thickness}
+\vspace{3mm}
+{\Large Phase 2 | Probability and probability distributions\par}
+\vspace{5mm}
+
+{\large\bfseries Research question}\par
+Among participants with normal cognition, how does the mean number of
+correct responses in 60 seconds of animal naming differ per 0.1 mm greater
+left inferior parietal cortical thickness, after accounting for age, sex,
+and years of education? In this phase, we use probabilities to describe
+the cognitive groups and examine the unadjusted relationship between
+score and thickness among participants with normal cognition.
+
+\section{Unit of observation and analysis samples}
+We linked each person's UDS and MRI records using NACCID. Each file
+contains one supplied record per participant. The Phase 1 build checks
+for missing or repeated IDs before joining the files. The data do not
+give visit dates or numbers, scan dates, or the time between measurements.
+The sampling frame for the teaching subset is also undocumented.
+
+\begin{center}\small
+\begin{tabular}{@{}p{0.67\linewidth}r@{}}
+\toprule
+Analysis sample & Participants \\
+\midrule
+Usable UDS cognitive status and left cortical thickness, across all groups & \EventN{} \\
+Normal cognition with a usable score and left cortical thickness & \PairedN{} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Among the \NormalN{} participants with normal cognition, \MissingScoreN{}
+had no usable animal-naming score. This leaves \PairedN{} people with
+both measurements, whom we use for the two distributions and the covariance.
+
+\section{Cross-modal events}
+We define $A$ as normal cognition recorded in UDS (NACCUDSD = 1).
+For the MRI event $B$, we group participants whose left inferior parietal
+cortical thickness is at or above the median of all \EventN{} eligible
+participants. This descriptive cutoff is \ThicknessCut{} mm. The
+\TiedN{} measurements equal to the median are included in $B$.
+
+\begin{center}\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+UDS status & At or above median & Below median & Total \\
+\midrule
+Normal cognition & \CellAB{} & \CellAnB{} & \NormalN{} \\
+Other cognitive statuses & \CellnAB{} & \CellnAnB{} & \OtherN{} \\
+\midrule
+Total & \UpperN{} & \LowerN{} & \EventN{} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\clearpage
+\section{Empirical probabilities, independence, and Bayes' rule}
+The table shows how often each event occurs, how often the events occur
+together, and the share of participants with normal cognition in each
+MRI group. Each empirical probability uses the count and denominator
+shown alongside it.
+
+\begin{center}\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Event & Count / reference group & Probability \\
+\midrule
+$A$ & \NormalN{} / \EventN{} & \MargA{}\% \\
+$A^c$ & \OtherN{} / \EventN{} & \MargnA{}\% \\
+$B$ & \UpperN{} / \EventN{} & \MargB{}\% \\
+$B^c$ & \LowerN{} / \EventN{} & \MargnB{}\% \\
+\midrule
+$A\cap B$ & \CellAB{} / \EventN{} & \JointAB{}\% \\
+$A\cap B^c$ & \CellAnB{} / \EventN{} & \JointAnB{}\% \\
+$A^c\cap B$ & \CellnAB{} / \EventN{} & \JointnAB{}\% \\
+$A^c\cap B^c$ & \CellnAnB{} / \EventN{} & \JointnAnB{}\% \\
+\midrule
+$A\mid B$ & \CellAB{} / \UpperN{} & \ConditionAB{}\% \\
+$A\mid B^c$ & \CellAnB{} / \LowerN{} & \ConditionAnB{}\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The share with normal cognition was higher by \ConditionalGap{}
+percentage points in the group at or above the thickness median.
+We calculated the difference before rounding.
+
+\subsection*{Empirical check of independence}
+If the events were independent with these same marginal probabilities,
+$\Pr(A)\Pr(B)$ would give a joint probability of \ExpectedJoint{}\%,
+or \ExpectedCount{} people in the shared cell. We observed
+\JointAB{}\% (\CellAB{} people). The observed share exceeds the
+independence benchmark by \JointGap{} percentage points.
+
+\subsection*{Updating the empirical probability}
+Among people with normal cognition, \BayesLikelihood{}\% belong to $B$.
+Using this information in Bayes' rule, knowing that a person belongs to
+$B$ updates the probability of normal cognition from \MargA{}\% to
+\BayesPosterior{}\%.
+\[
+\Pr(A\mid B)=\frac{\Pr(B\mid A)\Pr(A)}{\Pr(B)}
+ =\frac{(\CellAB/\NormalN)(\NormalN/\EventN)}{\UpperN/\EventN}
+ =\frac{\CellAB}{\UpperN}.
+\]
+This result matches the proportion obtained by counting directly in the table.
+
+{\small References: Statistics Course Project Guide, Track C, pp. 8--10,
+18--19. NACC teaching extract and variable definitions documented in the
+Phase 1 project card.\par}
+
+\clearpage
+\section{A count model: binomial sampling}
+Suppose we make \DrawN{} hypothetical draws from the \EventN{} eligible
+records, giving each person an equal chance of selection. Let $Z$ be the
+number of draws that select someone with normal cognition. With
+replacement, the draws are independent and each has success probability
+$p=\NormalN/\EventN$. The count then follows a binomial distribution,
+with mean $\DrawN p$ and variance $\DrawN p(1-p)$. Without replacement,
+each draw depends on who remains, and the count follows a hypergeometric
+distribution.
+
+\begin{center}\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Quantity & With replacement & Without replacement \\
+\midrule
+Expected count & \CountMean{} & \CountMean{} \\
+Variance of the count & \BinomialVar{} & \HypergeomVar{} \\
+$\Pr(Z\geq \TailMin)$ & \BinomialTail{}\% & \HypergeomTail{}\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+We chose \TailMin{} as the example threshold, or three quarters of the
+draws. Selecting \DrawN{} distinct participants covers \DrawFraction{}\%
+of the reference set. The probability of reaching this threshold differs
+by \TailGap{} percentage points between the two models. Both calculations
+describe hypothetical sampling from this fixed set.
+
+\section{Score and thickness distributions}
+We summarize both measurements for the same \PairedN{} people.
+The mean describes the center of the observed values. The empirical
+variance is their average squared distance from that mean, using $n$
+as the denominator. The sample variance uses $n-1$.
+
+\begin{center}\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Statistic & Animal-naming score & Left thickness (mm) \\
+\midrule
+Range & \ScoreMin{}--\ScoreMax{} & \ThicknessMin{}--\ThicknessMax{} \\
+Mean & \ScoreMean{} & \ThicknessMean{} \\
+Median & \ScoreMedian{} & \ThicknessMedian{} \\
+First and third quartiles & \ScoreFirstQuartile{}, \ScoreThirdQuartile{} &
+\ThicknessFirstQuartile{}, \ThicknessThirdQuartile{} \\
+Empirical variance ($n$) & \ScoreEmpVar{} & \ThicknessEmpVar{} \\
+Sample variance ($n-1$) & \ScoreSampleVar{} & \ThicknessSampleVar{} \\
+Empirical skewness & \ScoreSkew{} & \ThicknessSkew{} \\
+Flagged below / above the fences & \ScoreLowFlags{} / \ScoreHighFlags{} &
+\ThicknessLowFlags{} / \ThicknessHighFlags{} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The variance units are squared responses for scores and mm squared for
+thickness. We calculated quartiles by linear interpolation and flagged
+values strictly outside the 1.5-IQR fences for review. These values are
+included in all summaries.
+
+\clearpage
+\section{Empirical distributions}
+\reportfigure{Figure 1. Empirical probabilities of animal-naming scores}{01_animal_score_pmf.pdf}{%
+  Each bar shows the share of the \PairedN{} participants with that score.
+  The most common score was \ScoreMode{}, recorded for \ScoreModeCount{}
+  people (\ScoreModePercent{}\%). The distribution has a modest right tail.}
+
+\reportfigure{Figure 2. Histogram of left inferior parietal cortical thickness}{02_thickness_histogram.pdf}{%
+  Each bin spans 0.05 mm. Most measurements lie near the center, with a
+  longer tail toward lower thickness values.}
+
+\clearpage
+\section{Normal reference and paired association}
+\reportfigure{Figure 3. Normal Q-Q diagnostic for thickness}{03_thickness_normal_qq.pdf}{%
+  We compare the ordered measurements with a normal reference fitted to
+  the empirical mean and standard deviation, at positions $(i-0.5)/n$.
+  The center follows the line more closely than the lower tail. The first
+  percentiles are \FirstPercentileObserved{} mm in the data and
+  \FirstPercentileNormal{} mm in the reference.}
+
+\reportfigure{Figure 4. Thickness and animal-naming scores}{04_thickness_and_animal_scores.pdf}{%
+  Each point represents one person. Some measurements overlap, so the
+  \PairedN{} pairs occupy \DistinctPoints{} distinct coordinates. Scores
+  vary widely even among people with similar thicknesses.}
+
+The covariance is positive, at \CovSample{} mm times correct responses
+with denominator $n-1$ and \CovEmpirical{} with denominator $n$.
+It describes the unadjusted association in this observational subset.
+
+\end{document}
