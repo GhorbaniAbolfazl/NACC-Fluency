@@ -1,0 +1,343 @@
+{
+  "participants_csv_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+  "sample": "paired_normal",
+  "sample_size": 843,
+  "units": {
+    "ANIMALS": "correct responses in 60 seconds",
+    "LH_INFERIORPARIETAL_AVGTH": "mm"
+  },
+  "methods": {
+    "empirical_variance": "Second central moment with denominator n",
+    "sample_variance": "Sum of squared deviations from the sample mean divided by n - 1",
+    "empirical_skewness": "Third central moment divided by the empirical standard deviation cubed",
+    "empirical_quantiles": "Linear interpolation at zero-based rank (n - 1) * p",
+    "outliers": "Review values strictly outside the 1.5 IQR fences when n >= 4 and IQR > 0. Keep these values in the analysis.",
+    "normal_reference": "Normal reference matched to the empirical mean and empirical standard deviation",
+    "qq_plotting_positions": "(i - 0.5) / n for sorted observations ranked i = 1 through n"
+  },
+  "summaries": {
+    "ANIMALS": {
+      "total": 843,
+      "usable": 843,
+      "unavailable": 0,
+      "unavailable_percent": 0.0,
+      "mean": 22.321470937129302,
+      "sample_sd": 5.43498404003954,
+      "minimum": 7,
+      "q1": 18.0,
+      "median": 22.0,
+      "q3": 26.0,
+      "maximum": 43,
+      "iqr": 8.0,
+      "iqr_review": {
+        "lower_fence": 6.0,
+        "upper_fence": 38.0,
+        "below": 0,
+        "above": 4
+      },
+      "empirical_variance": 29.50401112222771,
+      "sample_variance": 29.539051515484513,
+      "empirical_skewness": 0.3624791241684117
+    },
+    "LH_INFERIORPARIETAL_AVGTH": {
+      "total": 843,
+      "usable": 843,
+      "unavailable": 0,
+      "unavailable_percent": 0.0,
+      "mean": 2.3364460260972715,
+      "sample_sd": 0.12150855171700926,
+      "minimum": 1.474,
+      "q1": 2.269,
+      "median": 2.338,
+      "q3": 2.4175,
+      "maximum": 2.666,
+      "iqr": 0.1485,
+      "iqr_review": {
+        "lower_fence": 2.04625,
+        "upper_fence": 2.64025,
+        "below": 12,
+        "above": 3
+      },
+      "empirical_variance": 0.014746814109356377,
+      "sample_variance": 0.014764328140365114,
+      "empirical_skewness": -0.9506212855781225
+    }
+  },
+  "animal_score_frequency": {
+    "total": 843,
+    "usable": 843,
+    "unavailable": 0,
+    "unavailable_percent": 0.0,
+    "levels": [
+      {
+        "value": 7,
+        "count": 1,
+        "percent_of_usable": 0.11862396204033215,
+        "cumulative_percent_of_usable": 0.11862396204033215,
+        "probability": 0.0011862396204033216
+      },
+      {
+        "value": 8,
+        "count": 1,
+        "percent_of_usable": 0.11862396204033215,
+        "cumulative_percent_of_usable": 0.2372479240806643,
+        "probability": 0.0011862396204033216
+      },
+      {
+        "value": 10,
+        "count": 4,
+        "percent_of_usable": 0.4744958481613286,
+        "cumulative_percent_of_usable": 0.7117437722419929,
+        "probability": 0.004744958481613286
+      },
+      {
+        "value": 11,
+        "count": 6,
+        "percent_of_usable": 0.7117437722419929,
+        "cumulative_percent_of_usable": 1.4234875444839858,
+        "probability": 0.0071174377224199285
+      },
+      {
+        "value": 12,
+        "count": 7,
+        "percent_of_usable": 0.830367734282325,
+        "cumulative_percent_of_usable": 2.2538552787663106,
+        "probability": 0.00830367734282325
+      },
+      {
+        "value": 13,
+        "count": 16,
+        "percent_of_usable": 1.8979833926453145,
+        "cumulative_percent_of_usable": 4.1518386714116255,
+        "probability": 0.018979833926453145
+      },
+      {
+        "value": 14,
+        "count": 18,
+        "percent_of_usable": 2.1352313167259784,
+        "cumulative_percent_of_usable": 6.2870699881376035,
+        "probability": 0.021352313167259787
+      },
+      {
+        "value": 15,
+        "count": 29,
+        "percent_of_usable": 3.4400948991696323,
+        "cumulative_percent_of_usable": 9.727164887307236,
+        "probability": 0.03440094899169632
+      },
+      {
+        "value": 16,
+        "count": 29,
+        "percent_of_usable": 3.4400948991696323,
+        "cumulative_percent_of_usable": 13.167259786476869,
+        "probability": 0.03440094899169632
+      },
+      {
+        "value": 17,
+        "count": 46,
+        "percent_of_usable": 5.456702253855279,
+        "cumulative_percent_of_usable": 18.62396204033215,
+        "probability": 0.054567022538552785
+      },
+      {
+        "value": 18,
+        "count": 55,
+        "percent_of_usable": 6.524317912218268,
+        "cumulative_percent_of_usable": 25.148279952550414,
+        "probability": 0.06524317912218268
+      },
+      {
+        "value": 19,
+        "count": 50,
+        "percent_of_usable": 5.931198102016608,
+        "cumulative_percent_of_usable": 31.079478054567023,
+        "probability": 0.05931198102016608
+      },
+      {
+        "value": 20,
+        "count": 52,
+        "percent_of_usable": 6.168446026097271,
+        "cumulative_percent_of_usable": 37.2479240806643,
+        "probability": 0.06168446026097272
+      },
+      {
+        "value": 21,
+        "count": 77,
+        "percent_of_usable": 9.134045077105576,
+        "cumulative_percent_of_usable": 46.381969157769866,
+        "probability": 0.09134045077105575
+      },
+      {
+        "value": 22,
+        "count": 71,
+        "percent_of_usable": 8.422301304863582,
+        "cumulative_percent_of_usable": 54.804270462633454,
+        "probability": 0.08422301304863583
+      },
+      {
+        "value": 23,
+        "count": 71,
+        "percent_of_usable": 8.422301304863582,
+        "cumulative_percent_of_usable": 63.226571767497035,
+        "probability": 0.08422301304863583
+      },
+      {
+        "value": 24,
+        "count": 46,
+        "percent_of_usable": 5.456702253855279,
+        "cumulative_percent_of_usable": 68.68327402135232,
+        "probability": 0.054567022538552785
+      },
+      {
+        "value": 25,
+        "count": 38,
+        "percent_of_usable": 4.507710557532621,
+        "cumulative_percent_of_usable": 73.19098457888494,
+        "probability": 0.045077105575326216
+      },
+      {
+        "value": 26,
+        "count": 31,
+        "percent_of_usable": 3.6773428232502967,
+        "cumulative_percent_of_usable": 76.86832740213524,
+        "probability": 0.036773428232502965
+      },
+      {
+        "value": 27,
+        "count": 34,
+        "percent_of_usable": 4.033214709371293,
+        "cumulative_percent_of_usable": 80.90154211150653,
+        "probability": 0.04033214709371293
+      },
+      {
+        "value": 28,
+        "count": 47,
+        "percent_of_usable": 5.575326215895611,
+        "cumulative_percent_of_usable": 86.47686832740213,
+        "probability": 0.05575326215895611
+      },
+      {
+        "value": 29,
+        "count": 39,
+        "percent_of_usable": 4.6263345195729535,
+        "cumulative_percent_of_usable": 91.1032028469751,
+        "probability": 0.046263345195729534
+      },
+      {
+        "value": 30,
+        "count": 16,
+        "percent_of_usable": 1.8979833926453145,
+        "cumulative_percent_of_usable": 93.00118623962041,
+        "probability": 0.018979833926453145
+      },
+      {
+        "value": 31,
+        "count": 20,
+        "percent_of_usable": 2.372479240806643,
+        "cumulative_percent_of_usable": 95.37366548042705,
+        "probability": 0.02372479240806643
+      },
+      {
+        "value": 32,
+        "count": 13,
+        "percent_of_usable": 1.5421115065243178,
+        "cumulative_percent_of_usable": 96.91577698695136,
+        "probability": 0.01542111506524318
+      },
+      {
+        "value": 33,
+        "count": 7,
+        "percent_of_usable": 0.830367734282325,
+        "cumulative_percent_of_usable": 97.74614472123369,
+        "probability": 0.00830367734282325
+      },
+      {
+        "value": 34,
+        "count": 2,
+        "percent_of_usable": 0.2372479240806643,
+        "cumulative_percent_of_usable": 97.98339264531435,
+        "probability": 0.002372479240806643
+      },
+      {
+        "value": 35,
+        "count": 2,
+        "percent_of_usable": 0.2372479240806643,
+        "cumulative_percent_of_usable": 98.22064056939502,
+        "probability": 0.002372479240806643
+      },
+      {
+        "value": 36,
+        "count": 6,
+        "percent_of_usable": 0.7117437722419929,
+        "cumulative_percent_of_usable": 98.932384341637,
+        "probability": 0.0071174377224199285
+      },
+      {
+        "value": 37,
+        "count": 4,
+        "percent_of_usable": 0.4744958481613286,
+        "cumulative_percent_of_usable": 99.40688018979834,
+        "probability": 0.004744958481613286
+      },
+      {
+        "value": 38,
+        "count": 1,
+        "percent_of_usable": 0.11862396204033215,
+        "cumulative_percent_of_usable": 99.52550415183867,
+        "probability": 0.0011862396204033216
+      },
+      {
+        "value": 41,
+        "count": 2,
+        "percent_of_usable": 0.2372479240806643,
+        "cumulative_percent_of_usable": 99.76275207591934,
+        "probability": 0.002372479240806643
+      },
+      {
+        "value": 42,
+        "count": 1,
+        "percent_of_usable": 0.11862396204033215,
+        "cumulative_percent_of_usable": 99.88137603795967,
+        "probability": 0.0011862396204033216
+      },
+      {
+        "value": 43,
+        "count": 1,
+        "percent_of_usable": 0.11862396204033215,
+        "cumulative_percent_of_usable": 100.0,
+        "probability": 0.0011862396204033216
+      }
+    ]
+  },
+  "thickness_normal_reference": {
+    "mean_mm": 2.3364460260972715,
+    "standard_deviation_mm": 0.12143646120237685,
+    "quantile_checks": [
+      {
+        "percentile": 1,
+        "empirical_mm": 2.0032599999999996,
+        "fitted_normal_mm": 2.053942572748079
+      },
+      {
+        "percentile": 5,
+        "empirical_mm": 2.1353999999999997,
+        "fitted_normal_mm": 2.13670082244439
+      },
+      {
+        "percentile": 50,
+        "empirical_mm": 2.338,
+        "fitted_normal_mm": 2.3364460260972715
+      },
+      {
+        "percentile": 95,
+        "empirical_mm": 2.5109,
+        "fitted_normal_mm": 2.5361912297501528
+      },
+      {
+        "percentile": 99,
+        "empirical_mm": 2.58954,
+        "fitted_normal_mm": 2.618949479446464
+      }
+    ]
+  }
+}

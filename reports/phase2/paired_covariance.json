@@ -1,0 +1,35 @@
+{
+  "participants_csv_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+  "sample": "paired_normal",
+  "sample_size": 843,
+  "scope": "Unadjusted, descriptive association in participants with normal cognition",
+  "variables": {
+    "x": {
+      "column": "LH_INFERIORPARIETAL_AVGTH",
+      "unit": "mm",
+      "mean": 2.3364460260972715
+    },
+    "y": {
+      "column": "ANIMALS",
+      "unit": "correct responses in 60 seconds",
+      "mean": 22.321470937129302
+    }
+  },
+  "covariance": {
+    "unit": "mm times correct responses",
+    "sample": {
+      "value": 0.010465708940189304,
+      "denominator": 842
+    },
+    "empirical": {
+      "value": 0.010453294101588842,
+      "denominator": 843
+    },
+    "direction": "positive"
+  },
+  "scatter": {
+    "file": "figures/phase2/04_thickness_and_animal_scores.pdf",
+    "observations": 843,
+    "distinct_coordinates": 808
+  }
+}

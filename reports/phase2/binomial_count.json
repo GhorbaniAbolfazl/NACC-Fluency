@@ -1,0 +1,142 @@
+{
+  "participants_csv_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+  "sample": "status_and_mri",
+  "reference_sample_size": 1237,
+  "scope": "Hypothetical draws from the fixed course participant set, with uniform selection.",
+  "success_event": {
+    "label": "Cognitively normal",
+    "uds_column": "NACCUDSD",
+    "code": 1
+  },
+  "single_draw_success_probability": {
+    "numerator": 847,
+    "denominator": 1237,
+    "probability": 0.6847210994341147
+  },
+  "random_variable": "Number of draws yielding a participant with normal cognition",
+  "number_of_draws": 20,
+  "tail_minimum": 15,
+  "with_replacement": {
+    "distribution": "binomial",
+    "draw_rule": "Return each selected participant before the next draw. Draws are independent with the same success probability.",
+    "expected_count": 13.694421988682295,
+    "variance": 4.317562308477037,
+    "probability_at_least_tail_minimum": 0.35945807767358057
+  },
+  "without_replacement": {
+    "distribution": "hypergeometric",
+    "draw_rule": "Select distinct participants. Each conditional success probability uses the counts remaining after earlier draws.",
+    "expected_count": 13.694421988682295,
+    "variance": 4.251192014091064,
+    "variance_multiplier_vs_with_replacement": 0.9846278317152104,
+    "probability_at_least_tail_minimum": 0.3579994259073171
+  },
+  "tail_difference_percentage_points_with_minus_without_replacement": 0.14586517662634477,
+  "probability_mass": [
+    {
+      "count": 0,
+      "with_replacement": 9.416687276328375e-11,
+      "without_replacement": 6.695167486391691e-11
+    },
+    {
+      "count": 1,
+      "with_replacement": 4.0902226272051965e-09,
+      "without_replacement": 3.0570387390694137e-09
+    },
+    {
+      "count": 2,
+      "with_replacement": 8.438968299950415e-08,
+      "without_replacement": 6.604682888683032e-08
+    },
+    {
+      "count": 3,
+      "with_replacement": 1.0996624846243079e-06,
+      "without_replacement": 8.977410789711252e-07
+    },
+    {
+      "count": 4,
+      "with_replacement": 1.0150025715452184e-05,
+      "without_replacement": 8.610153075586702e-06
+    },
+    {
+      "count": 5,
+      "with_replacement": 7.054007615169641e-05,
+      "without_replacement": 6.19379971645405e-05
+    },
+    {
+      "count": 6,
+      "with_replacement": 0.000382996439105685,
+      "without_replacement": 0.0003467539468919089
+    },
+    {
+      "count": 7,
+      "with_replacement": 0.0016635794047308472,
+      "without_replacement": 0.0015470560707485166
+    },
+    {
+      "count": 8,
+      "with_replacement": 0.005871048982529281,
+      "without_replacement": 0.0055865913665918655
+    },
+    {
+      "count": 9,
+      "with_replacement": 0.017000952096418123,
+      "without_replacement": 0.016489534411857784
+    },
+    {
+      "count": 10,
+      "with_replacement": 0.040614838636494274,
+      "without_replacement": 0.04000013900223817
+    },
+    {
+      "count": 11,
+      "with_replacement": 0.08018827115410408,
+      "without_replacement": 0.07988574646832104
+    },
+    {
+      "count": 12,
+      "with_replacement": 0.13061435705293492,
+      "without_replacement": 0.131121369203239
+    },
+    {
+      "count": 13,
+      "with_replacement": 0.17456467128021438,
+      "without_replacement": 0.17591700065829213
+    },
+    {
+      "count": 14,
+      "with_replacement": 0.18955932894146357,
+      "without_replacement": 0.1910348679023641
+    },
+    {
+      "count": 15,
+      "with_replacement": 0.16467359139837914,
+      "without_replacement": 0.16533199476640967
+    },
+    {
+      "count": 16,
+      "with_replacement": 0.11176164416220122,
+      "without_replacement": 0.11136351979084588
+    },
+    {
+      "count": 17,
+      "with_replacement": 0.05711138015407809,
+      "without_replacement": 0.05626574552132113
+    },
+    {
+      "count": 18,
+      "with_replacement": 0.020672367089959034,
+      "without_replacement": 0.02006038177950882
+    },
+    {
+      "count": 19,
+      "with_replacement": 0.004725909561456222,
+      "without_replacement": 0.004500082937413831
+    },
+    {
+      "count": 20,
+      "with_replacement": 0.0005131853075068487,
+      "without_replacement": 0.00047770111181777593
+    }
+  ]
+}
