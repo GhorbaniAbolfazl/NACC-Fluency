@@ -1,0 +1,134 @@
+{
+  "linkage": {
+    "uds_participants": 1237,
+    "mri_participants": 1237,
+    "matched_participants": 1237,
+    "uds_only": 0,
+    "mri_only": 0,
+    "matched_with_usable_left_thickness": 1237,
+    "matched_with_unusable_left_thickness": 0,
+    "cognitive_status_agreement": {
+      "equal": 1237,
+      "unavailable": 0,
+      "different": 0
+    }
+  },
+  "matched_normal_cognition_before_eligibility": 847,
+  "unusable_values_in_matched_table": {
+    "ANIMALS": 12,
+    "VEG": 15,
+    "NACCAGE": 0,
+    "SEX": 0,
+    "EDUC": 2,
+    "NACCUDSD": 0,
+    "LH_INFERIORPARIETAL_AVGTH": 0,
+    "RH_INFERIORPARIETAL_AVGTH": 0,
+    "MRI_NACCUDSD": 0
+  },
+  "samples": {
+    "status_and_mri": {
+      "required_values": [
+        "NACCUDSD",
+        "LH_INFERIORPARIETAL_AVGTH"
+      ],
+      "normal_cognition_only": false,
+      "included": 1237,
+      "excluded": 0,
+      "first_exclusion_reason": {},
+      "included_by_cognitive_status": {
+        "normal cognition": 847,
+        "impaired without MCI": 7,
+        "MCI": 252,
+        "dementia": 131,
+        "unavailable": 0
+      }
+    },
+    "paired_all": {
+      "required_values": [
+        "ANIMALS",
+        "LH_INFERIORPARIETAL_AVGTH"
+      ],
+      "normal_cognition_only": false,
+      "included": 1225,
+      "excluded": 12,
+      "first_exclusion_reason": {
+        "ANIMALS": 12
+      },
+      "included_by_cognitive_status": {
+        "normal cognition": 843,
+        "impaired without MCI": 7,
+        "MCI": 249,
+        "dementia": 126,
+        "unavailable": 0
+      }
+    },
+    "paired_normal": {
+      "required_values": [
+        "ANIMALS",
+        "LH_INFERIORPARIETAL_AVGTH"
+      ],
+      "normal_cognition_only": true,
+      "included": 843,
+      "excluded": 394,
+      "first_exclusion_reason": {
+        "outside_normal_cognition": 390,
+        "ANIMALS": 4
+      },
+      "included_by_cognitive_status": {
+        "normal cognition": 843,
+        "impaired without MCI": 0,
+        "MCI": 0,
+        "dementia": 0,
+        "unavailable": 0
+      }
+    },
+    "model_all": {
+      "required_values": [
+        "ANIMALS",
+        "LH_INFERIORPARIETAL_AVGTH",
+        "NACCAGE",
+        "SEX",
+        "EDUC"
+      ],
+      "normal_cognition_only": false,
+      "included": 1223,
+      "excluded": 14,
+      "first_exclusion_reason": {
+        "ANIMALS": 12,
+        "EDUC": 2
+      },
+      "included_by_cognitive_status": {
+        "normal cognition": 842,
+        "impaired without MCI": 7,
+        "MCI": 248,
+        "dementia": 126,
+        "unavailable": 0
+      }
+    },
+    "model_normal": {
+      "required_values": [
+        "ANIMALS",
+        "LH_INFERIORPARIETAL_AVGTH",
+        "NACCAGE",
+        "SEX",
+        "EDUC"
+      ],
+      "normal_cognition_only": true,
+      "included": 842,
+      "excluded": 395,
+      "first_exclusion_reason": {
+        "outside_normal_cognition": 390,
+        "ANIMALS": 4,
+        "EDUC": 1
+      },
+      "included_by_cognitive_status": {
+        "normal cognition": 842,
+        "impaired without MCI": 0,
+        "MCI": 0,
+        "dementia": 0,
+        "unavailable": 0
+      }
+    }
+  },
+  "participants_csv_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52"
+}

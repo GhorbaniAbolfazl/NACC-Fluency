@@ -1,0 +1,626 @@
+{
+  "uds": {
+    "groups": {
+      "identifier": [
+        "NACCID"
+      ],
+      "demographics": [
+        "SEX",
+        "HISPANIC",
+        "HISPOR",
+        "RACE",
+        "PRIMLANG",
+        "EDUC",
+        "MARISTAT",
+        "NACCLIVS",
+        "INDEPEND",
+        "RESIDENC",
+        "NACCNIHR",
+        "NACCAGE"
+      ],
+      "family_history": [
+        "NACCFAM",
+        "NACCMOM",
+        "NACCDAD",
+        "NACCAM",
+        "NACCAMS",
+        "NACCFM",
+        "NACCFMS",
+        "NACCOM",
+        "NACCOMS",
+        "NACCFADM",
+        "NACCFFTD"
+      ],
+      "medications": [
+        "ANYMEDS",
+        "NACCAAAS",
+        "NACCAANX",
+        "NACCAC",
+        "NACCACEI",
+        "NACCADEP",
+        "NACCAHTN",
+        "NACCAMD",
+        "NACCANGI",
+        "NACCAPSY",
+        "NACCBETA",
+        "NACCCCBS",
+        "NACCDBMD",
+        "NACCDIUR",
+        "NACCEMD",
+        "NACCEPMD",
+        "NACCHTNC",
+        "NACCLIPL",
+        "NACCNSD",
+        "NACCPDMD",
+        "NACCVASD"
+      ],
+      "tobacco": [
+        "TOBAC30",
+        "TOBAC100",
+        "SMOKYRS",
+        "PACKSPER",
+        "QUITSMOK"
+      ],
+      "cardiovascular_history": [
+        "CVHATT",
+        "CVAFIB",
+        "CVANGIO",
+        "CVBYPASS",
+        "CVPACDEF",
+        "CVCHF",
+        "CVOTHR"
+      ],
+      "neurological_history": [
+        "CBSTROKE",
+        "CBTIA",
+        "SEIZURES",
+        "NACCTBI",
+        "TBI",
+        "TBIBRIEF",
+        "TBIEXTEN",
+        "TBIWOLOS"
+      ],
+      "other_medical_history": [
+        "DIABETES",
+        "DIABTYPE",
+        "HYPERTEN",
+        "HYPERCHO",
+        "B12DEF",
+        "THYROID",
+        "ARTHRIT",
+        "ARTHTYPE",
+        "ARTHUPEX",
+        "ARTHLOEX",
+        "ARTHSPIN",
+        "ARTHUNK",
+        "INCONTU",
+        "INCONTF"
+      ],
+      "sleep": [
+        "APNEA",
+        "RBD",
+        "INSOMN",
+        "OTHSLEEP"
+      ],
+      "psychiatry_and_substance_use": [
+        "ALCOHOL",
+        "ABUSOTHR",
+        "PTSD",
+        "BIPOLAR",
+        "SCHIZ",
+        "DEP2YRS",
+        "DEPOTHR",
+        "ANXIETY",
+        "OCD",
+        "NPSYDEV",
+        "PSYCDIS"
+      ],
+      "physical_exam_and_senses": [
+        "HEIGHT",
+        "WEIGHT",
+        "BPSYS",
+        "BPDIAS",
+        "HRATE",
+        "VISION",
+        "VISCORR",
+        "VISWCORR",
+        "HEARING",
+        "HEARAID",
+        "HEARWAID",
+        "NACCBMI"
+      ],
+      "neurological_exam": [
+        "NACCNREX",
+        "NORMEXAM"
+      ],
+      "behavioral_symptoms": [
+        "NPIQINF",
+        "DEL",
+        "DELSEV",
+        "HALL",
+        "HALLSEV",
+        "AGIT",
+        "AGITSEV",
+        "DEPD",
+        "DEPDSEV",
+        "ANX",
+        "ANXSEV",
+        "ELAT",
+        "ELATSEV",
+        "APA",
+        "APASEV",
+        "DISN",
+        "DISNSEV",
+        "IRR",
+        "IRRSEV",
+        "MOT",
+        "MOTSEV",
+        "NITE",
+        "NITESEV",
+        "APP",
+        "APPSEV"
+      ],
+      "depression_scale": [
+        "NOGDS",
+        "SATIS",
+        "DROPACT",
+        "EMPTY",
+        "BORED",
+        "SPIRITS",
+        "AFRAID",
+        "HAPPY",
+        "HELPLESS",
+        "STAYHOME",
+        "MEMPROB",
+        "WONDRFUL",
+        "WRTHLESS",
+        "ENERGY",
+        "HOPELESS",
+        "BETTER",
+        "NACCGDS"
+      ],
+      "everyday_function": [
+        "BILLS",
+        "TAXES",
+        "SHOPPING",
+        "GAMES",
+        "STOVE",
+        "MEALPREP",
+        "EVENTS",
+        "PAYATTN",
+        "REMDATES",
+        "TRAVEL"
+      ],
+      "subjective_memory_decline": [
+        "DECSUB"
+      ],
+      "cognitive_tests": [
+        "ANIMALS",
+        "VEG",
+        "TRAILA",
+        "TRAILARR",
+        "TRAILALI",
+        "TRAILB",
+        "TRAILBRR",
+        "TRAILBLI",
+        "MOCATOTS"
+      ],
+      "genetics": [
+        "NACCAPOE"
+      ],
+      "clinical_diagnosis": [
+        "NACCUDSD"
+      ],
+      "clinical_dementia_rating": [
+        "MEMORY",
+        "ORIENT",
+        "JUDGMENT",
+        "COMMUN",
+        "HOMEHOBB",
+        "PERSCARE",
+        "CDRSUM",
+        "CDRGLOB"
+      ]
+    },
+    "rows": 1237,
+    "columns": 180,
+    "unique_nonblank_ids": 1237,
+    "blank_ids": 0,
+    "extra_rows_with_repeated_id": 0,
+    "selected_variables": {
+      "ANIMALS": {
+        "total": 1237,
+        "usable": 1225,
+        "unusable": 12,
+        "unusable_percent": 0.9700889248181084,
+        "missing_or_special_code": 11,
+        "missing_or_special_code_percent": 0.889248181083266,
+        "issues": {
+          "non_integer": 1,
+          "special_code_96": 2,
+          "special_code_97": 8,
+          "special_code_98": 1
+        },
+        "usable_minimum": 1,
+        "usable_maximum": 43
+      },
+      "VEG": {
+        "total": 1237,
+        "usable": 1222,
+        "unusable": 15,
+        "unusable_percent": 1.2126111560226354,
+        "missing_or_special_code": 14,
+        "missing_or_special_code_percent": 1.131770412287793,
+        "issues": {
+          "non_integer": 1,
+          "special_code_96": 4,
+          "special_code_97": 8,
+          "special_code_98": 2
+        },
+        "usable_minimum": 0,
+        "usable_maximum": 32
+      },
+      "NACCAGE": {
+        "total": 1237,
+        "usable": 1237,
+        "unusable": 0,
+        "unusable_percent": 0.0,
+        "missing_or_special_code": 0,
+        "missing_or_special_code_percent": 0.0,
+        "issues": {},
+        "usable_minimum": 41.0,
+        "usable_maximum": 91.0
+      },
+      "SEX": {
+        "total": 1237,
+        "usable": 1237,
+        "unusable": 0,
+        "unusable_percent": 0.0,
+        "missing_or_special_code": 0,
+        "missing_or_special_code_percent": 0.0,
+        "issues": {},
+        "usable_category_counts": {
+          "male": 497,
+          "female": 740
+        }
+      },
+      "EDUC": {
+        "total": 1237,
+        "usable": 1235,
+        "unusable": 2,
+        "unusable_percent": 0.16168148746968472,
+        "missing_or_special_code": 2,
+        "missing_or_special_code_percent": 0.16168148746968472,
+        "issues": {
+          "special_code_99": 2
+        },
+        "usable_minimum": 0,
+        "usable_maximum": 25
+      },
+      "NACCUDSD": {
+        "total": 1237,
+        "usable": 1237,
+        "unusable": 0,
+        "unusable_percent": 0.0,
+        "missing_or_special_code": 0,
+        "missing_or_special_code_percent": 0.0,
+        "issues": {},
+        "usable_category_counts": {
+          "normal cognition": 847,
+          "impaired without MCI": 7,
+          "MCI": 252,
+          "dementia": 131
+        }
+      }
+    }
+  },
+  "mri": {
+    "map": {
+      "participant_fields": [
+        "NACCID",
+        "NACCUDSD"
+      ],
+      "regions": {
+        "LH_CAUDALANTERIORCINGULATE": {
+          "volume_mm3": "LH_CAUDALANTERIORCINGULATE_GVOL",
+          "thickness_mm": "LH_CAUDALANTERIORCINGULATE_AVGTH"
+        },
+        "RH_CAUDALANTERIORCINGULATE": {
+          "volume_mm3": "RH_CAUDALANTERIORCINGULATE_GVOL",
+          "thickness_mm": "RH_CAUDALANTERIORCINGULATE_AVGTH"
+        },
+        "LH_CAUDALMIDDLEFRONTAL": {
+          "volume_mm3": "LH_CAUDALMIDDLEFRONTAL_GVOL",
+          "thickness_mm": "LH_CAUDALMIDDLEFRONTAL_AVGTH"
+        },
+        "RH_CAUDALMIDDLEFRONTAL": {
+          "volume_mm3": "RH_CAUDALMIDDLEFRONTAL_GVOL",
+          "thickness_mm": "RH_CAUDALMIDDLEFRONTAL_AVGTH"
+        },
+        "LH_CUNEUS": {
+          "volume_mm3": "LH_CUNEUS_GVOL",
+          "thickness_mm": "LH_CUNEUS_AVGTH"
+        },
+        "RH_CUNEUS": {
+          "volume_mm3": "RH_CUNEUS_GVOL",
+          "thickness_mm": "RH_CUNEUS_AVGTH"
+        },
+        "LH_ENTORHINAL": {
+          "volume_mm3": "LH_ENTORHINAL_GVOL",
+          "thickness_mm": "LH_ENTORHINAL_AVGTH"
+        },
+        "RH_ENTORHINAL": {
+          "volume_mm3": "RH_ENTORHINAL_GVOL",
+          "thickness_mm": "RH_ENTORHINAL_AVGTH"
+        },
+        "LH_FUSIFORM": {
+          "volume_mm3": "LH_FUSIFORM_GVOL",
+          "thickness_mm": "LH_FUSIFORM_AVGTH"
+        },
+        "RH_FUSIFORM": {
+          "volume_mm3": "RH_FUSIFORM_GVOL",
+          "thickness_mm": "RH_FUSIFORM_AVGTH"
+        },
+        "LH_INFERIORPARIETAL": {
+          "volume_mm3": "LH_INFERIORPARIETAL_GVOL",
+          "thickness_mm": "LH_INFERIORPARIETAL_AVGTH"
+        },
+        "RH_INFERIORPARIETAL": {
+          "volume_mm3": "RH_INFERIORPARIETAL_GVOL",
+          "thickness_mm": "RH_INFERIORPARIETAL_AVGTH"
+        },
+        "LH_INFERIORTEMPORAL": {
+          "volume_mm3": "LH_INFERIORTEMPORAL_GVOL",
+          "thickness_mm": "LH_INFERIORTEMPORAL_AVGTH"
+        },
+        "RH_INFERIORTEMPORAL": {
+          "volume_mm3": "RH_INFERIORTEMPORAL_GVOL",
+          "thickness_mm": "RH_INFERIORTEMPORAL_AVGTH"
+        },
+        "LH_ISTHMUSCINGULATE": {
+          "volume_mm3": "LH_ISTHMUSCINGULATE_GVOL",
+          "thickness_mm": "LH_ISTHMUSCINGULATE_AVGTH"
+        },
+        "RH_ISTHMUSCINGULATE": {
+          "volume_mm3": "RH_ISTHMUSCINGULATE_GVOL",
+          "thickness_mm": "RH_ISTHMUSCINGULATE_AVGTH"
+        },
+        "LH_LATERALOCCIPITAL": {
+          "volume_mm3": "LH_LATERALOCCIPITAL_GVOL",
+          "thickness_mm": "LH_LATERALOCCIPITAL_AVGTH"
+        },
+        "RH_LATERALOCCIPITAL": {
+          "volume_mm3": "RH_LATERALOCCIPITAL_GVOL",
+          "thickness_mm": "RH_LATERALOCCIPITAL_AVGTH"
+        },
+        "LH_LATERALORBITOFRONTAL": {
+          "volume_mm3": "LH_LATERALORBITOFRONTAL_GVOL",
+          "thickness_mm": "LH_LATERALORBITOFRONTAL_AVGTH"
+        },
+        "RH_LATERALORBITOFRONTAL": {
+          "volume_mm3": "RH_LATERALORBITOFRONTAL_GVOL",
+          "thickness_mm": "RH_LATERALORBITOFRONTAL_AVGTH"
+        },
+        "LH_LINGUAL": {
+          "volume_mm3": "LH_LINGUAL_GVOL",
+          "thickness_mm": "LH_LINGUAL_AVGTH"
+        },
+        "RH_LINGUAL": {
+          "volume_mm3": "RH_LINGUAL_GVOL",
+          "thickness_mm": "RH_LINGUAL_AVGTH"
+        },
+        "LH_MEDIALORBITOFRONTAL": {
+          "volume_mm3": "LH_MEDIALORBITOFRONTAL_GVOL",
+          "thickness_mm": "LH_MEDIALORBITOFRONTAL_AVGTH"
+        },
+        "RH_MEDIALORBITOFRONTAL": {
+          "volume_mm3": "RH_MEDIALORBITOFRONTAL_GVOL",
+          "thickness_mm": "RH_MEDIALORBITOFRONTAL_AVGTH"
+        },
+        "LH_MIDDLETEMPORAL": {
+          "volume_mm3": "LH_MIDDLETEMPORAL_GVOL",
+          "thickness_mm": "LH_MIDDLETEMPORAL_AVGTH"
+        },
+        "RH_MIDDLETEMPORAL": {
+          "volume_mm3": "RH_MIDDLETEMPORAL_GVOL",
+          "thickness_mm": "RH_MIDDLETEMPORAL_AVGTH"
+        },
+        "LH_PARAHIPPOCAMPAL": {
+          "volume_mm3": "LH_PARAHIPPOCAMPAL_GVOL",
+          "thickness_mm": "LH_PARAHIPPOCAMPAL_AVGTH"
+        },
+        "RH_PARAHIPPOCAMPAL": {
+          "volume_mm3": "RH_PARAHIPPOCAMPAL_GVOL",
+          "thickness_mm": "RH_PARAHIPPOCAMPAL_AVGTH"
+        },
+        "LH_PARACENTRAL": {
+          "volume_mm3": "LH_PARACENTRAL_GVOL",
+          "thickness_mm": "LH_PARACENTRAL_AVGTH"
+        },
+        "RH_PARACENTRAL": {
+          "volume_mm3": "RH_PARACENTRAL_GVOL",
+          "thickness_mm": "RH_PARACENTRAL_AVGTH"
+        },
+        "LH_PARSOPERCULARIS": {
+          "volume_mm3": "LH_PARSOPERCULARIS_GVOL",
+          "thickness_mm": "LH_PARSOPERCULARIS_AVGTH"
+        },
+        "RH_PARSOPERCULARIS": {
+          "volume_mm3": "RH_PARSOPERCULARIS_GVOL",
+          "thickness_mm": "RH_PARSOPERCULARIS_AVGTH"
+        },
+        "LH_PARSORBITALIS": {
+          "volume_mm3": "LH_PARSORBITALIS_GVOL",
+          "thickness_mm": "LH_PARSORBITALIS_AVGTH"
+        },
+        "RH_PARSORBITALIS": {
+          "volume_mm3": "RH_PARSORBITALIS_GVOL",
+          "thickness_mm": "RH_PARSORBITALIS_AVGTH"
+        },
+        "LH_PARSTRIANGULARIS": {
+          "volume_mm3": "LH_PARSTRIANGULARIS_GVOL",
+          "thickness_mm": "LH_PARSTRIANGULARIS_AVGTH"
+        },
+        "RH_PARSTRIANGULARIS": {
+          "volume_mm3": "RH_PARSTRIANGULARIS_GVOL",
+          "thickness_mm": "RH_PARSTRIANGULARIS_AVGTH"
+        },
+        "LH_PERICALCARINE": {
+          "volume_mm3": "LH_PERICALCARINE_GVOL",
+          "thickness_mm": "LH_PERICALCARINE_AVGTH"
+        },
+        "RH_PERICALCARINE": {
+          "volume_mm3": "RH_PERICALCARINE_GVOL",
+          "thickness_mm": "RH_PERICALCARINE_AVGTH"
+        },
+        "LH_POSTCENTRAL": {
+          "volume_mm3": "LH_POSTCENTRAL_GVOL",
+          "thickness_mm": "LH_POSTCENTRAL_AVGTH"
+        },
+        "RH_POSTCENTRAL": {
+          "volume_mm3": "RH_POSTCENTRAL_GVOL",
+          "thickness_mm": "RH_POSTCENTRAL_AVGTH"
+        },
+        "LH_POSTERIORCINGULATE": {
+          "volume_mm3": "LH_POSTERIORCINGULATE_GVOL",
+          "thickness_mm": "LH_POSTERIORCINGULATE_AVGTH"
+        },
+        "RH_POSTERIORCINGULATE": {
+          "volume_mm3": "RH_POSTERIORCINGULATE_GVOL",
+          "thickness_mm": "RH_POSTERIORCINGULATE_AVGTH"
+        },
+        "LH_PRECENTRAL": {
+          "volume_mm3": "LH_PRECENTRAL_GVOL",
+          "thickness_mm": "LH_PRECENTRAL_AVGTH"
+        },
+        "RH_PRECENTRAL": {
+          "volume_mm3": "RH_PRECENTRAL_GVOL",
+          "thickness_mm": "RH_PRECENTRAL_AVGTH"
+        },
+        "LH_PRECUNEUS": {
+          "volume_mm3": "LH_PRECUNEUS_GVOL",
+          "thickness_mm": "LH_PRECUNEUS_AVGTH"
+        },
+        "RH_PRECUNEUS": {
+          "volume_mm3": "RH_PRECUNEUS_GVOL",
+          "thickness_mm": "RH_PRECUNEUS_AVGTH"
+        },
+        "LH_ROSTRALANTERIORCINGULATE": {
+          "volume_mm3": "LH_ROSTRALANTERIORCINGULATE_GVOL",
+          "thickness_mm": "LH_ROSTRALANTERIORCINGULATE_AVGTH"
+        },
+        "RH_ROSTRALANTERIORCINGULATE": {
+          "volume_mm3": "RH_ROSTRALANTERIORCINGULATE_GVOL",
+          "thickness_mm": "RH_ROSTRALANTERIORCINGULATE_AVGTH"
+        },
+        "LH_ROSTRALMIDDLEFRONTAL": {
+          "volume_mm3": "LH_ROSTRALMIDDLEFRONTAL_GVOL",
+          "thickness_mm": "LH_ROSTRALMIDDLEFRONTAL_AVGTH"
+        },
+        "RH_ROSTRALMIDDLEFRONTAL": {
+          "volume_mm3": "RH_ROSTRALMIDDLEFRONTAL_GVOL",
+          "thickness_mm": "RH_ROSTRALMIDDLEFRONTAL_AVGTH"
+        },
+        "LH_SUPERIORFRONTAL": {
+          "volume_mm3": "LH_SUPERIORFRONTAL_GVOL",
+          "thickness_mm": "LH_SUPERIORFRONTAL_AVGTH"
+        },
+        "RH_SUPERIORFRONTAL": {
+          "volume_mm3": "RH_SUPERIORFRONTAL_GVOL",
+          "thickness_mm": "RH_SUPERIORFRONTAL_AVGTH"
+        },
+        "LH_SUPERIORPARIETAL": {
+          "volume_mm3": "LH_SUPERIORPARIETAL_GVOL",
+          "thickness_mm": "LH_SUPERIORPARIETAL_AVGTH"
+        },
+        "RH_SUPERIORPARIETAL": {
+          "volume_mm3": "RH_SUPERIORPARIETAL_GVOL",
+          "thickness_mm": "RH_SUPERIORPARIETAL_AVGTH"
+        },
+        "LH_SUPERIORTEMPORAL": {
+          "volume_mm3": "LH_SUPERIORTEMPORAL_GVOL",
+          "thickness_mm": "LH_SUPERIORTEMPORAL_AVGTH"
+        },
+        "RH_SUPERIORTEMPORAL": {
+          "volume_mm3": "RH_SUPERIORTEMPORAL_GVOL",
+          "thickness_mm": "RH_SUPERIORTEMPORAL_AVGTH"
+        },
+        "LH_SUPRAMARGINAL": {
+          "volume_mm3": "LH_SUPRAMARGINAL_GVOL",
+          "thickness_mm": "LH_SUPRAMARGINAL_AVGTH"
+        },
+        "RH_SUPRAMARGINAL": {
+          "volume_mm3": "RH_SUPRAMARGINAL_GVOL",
+          "thickness_mm": "RH_SUPRAMARGINAL_AVGTH"
+        },
+        "LH_TRANSVERSETEMPORAL": {
+          "volume_mm3": "LH_TRANSVERSETEMPORAL_GVOL",
+          "thickness_mm": "LH_TRANSVERSETEMPORAL_AVGTH"
+        },
+        "RH_TRANSVERSETEMPORAL": {
+          "volume_mm3": "RH_TRANSVERSETEMPORAL_GVOL",
+          "thickness_mm": "RH_TRANSVERSETEMPORAL_AVGTH"
+        },
+        "LH_INSULA": {
+          "volume_mm3": "LH_INSULA_GVOL",
+          "thickness_mm": "LH_INSULA_AVGTH"
+        },
+        "RH_INSULA": {
+          "volume_mm3": "RH_INSULA_GVOL",
+          "thickness_mm": "RH_INSULA_AVGTH"
+        }
+      }
+    },
+    "rows": 1237,
+    "columns": 126,
+    "unique_nonblank_ids": 1237,
+    "blank_ids": 0,
+    "extra_rows_with_repeated_id": 0,
+    "selected_variables": {
+      "LH_INFERIORPARIETAL_AVGTH": {
+        "total": 1237,
+        "usable": 1237,
+        "unusable": 0,
+        "unusable_percent": 0.0,
+        "missing_or_special_code": 0,
+        "missing_or_special_code_percent": 0.0,
+        "issues": {},
+        "usable_minimum": 1.349,
+        "usable_maximum": 2.77
+      },
+      "RH_INFERIORPARIETAL_AVGTH": {
+        "total": 1237,
+        "usable": 1237,
+        "unusable": 0,
+        "unusable_percent": 0.0,
+        "missing_or_special_code": 0,
+        "missing_or_special_code_percent": 0.0,
+        "issues": {},
+        "usable_minimum": 0.977,
+        "usable_maximum": 2.818
+      },
+      "NACCUDSD": {
+        "total": 1237,
+        "usable": 1237,
+        "unusable": 0,
+        "unusable_percent": 0.0,
+        "missing_or_special_code": 0,
+        "missing_or_special_code_percent": 0.0,
+        "issues": {},
+        "usable_category_counts": {
+          "normal cognition": 847,
+          "impaired without MCI": 7,
+          "MCI": 252,
+          "dementia": 131
+        }
+      }
+    }
+  },
+  "adjacency_matrix": {
+    "rows": 62,
+    "data_columns": 62,
+    "binary": true,
+    "symmetric": true,
+    "matches_mri_region_labels": true
+  }
+}

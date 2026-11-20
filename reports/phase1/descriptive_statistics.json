@@ -1,0 +1,2480 @@
+{
+  "participants_csv_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+  "methods": {
+    "quantitative_denominator": "Available values per variable within each stated sample or group",
+    "sample_sd_ddof": 1,
+    "quartiles": "Linear interpolation at ranks (n - 1) * p, zero-indexed",
+    "iqr_review": "Flag values beyond 1.5 IQR fences when n >= 4 and IQR > 0; only for review",
+    "group_denominator": "All matched participants in each UDS cognitive status before sample eligibility",
+    "units": {
+      "ANIMALS": "correct responses in 60 seconds",
+      "LH_INFERIORPARIETAL_AVGTH": "mm",
+      "NACCAGE": "years",
+      "EDUC": "years"
+    }
+  },
+  "samples": {
+    "matched_all": {
+      "participants": 1237,
+      "numeric": {
+        "ANIMALS": {
+          "total": 1237,
+          "usable": 1225,
+          "unavailable": 12,
+          "unavailable_percent": 0.9700889248181084,
+          "mean": 20.373061224489796,
+          "sample_sd": 6.340843780860292,
+          "minimum": 1,
+          "q1": 16.0,
+          "median": 20.0,
+          "q3": 24.0,
+          "maximum": 43,
+          "iqr": 8.0,
+          "iqr_review": {
+            "lower_fence": 4.0,
+            "upper_fence": 36.0,
+            "below": 6,
+            "above": 9
+          }
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 1237,
+          "usable": 1237,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 2.3009199676637024,
+          "sample_sd": 0.15670427768462208,
+          "minimum": 1.349,
+          "q1": 2.23,
+          "median": 2.319,
+          "q3": 2.401,
+          "maximum": 2.77,
+          "iqr": 0.171,
+          "iqr_review": {
+            "lower_fence": 1.9735,
+            "upper_fence": 2.6575,
+            "below": 43,
+            "above": 3
+          }
+        },
+        "NACCAGE": {
+          "total": 1237,
+          "usable": 1237,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 68.19240097008893,
+          "sample_sd": 8.03905357224809,
+          "minimum": 41.0,
+          "q1": 63.0,
+          "median": 68.0,
+          "q3": 74.0,
+          "maximum": 91.0,
+          "iqr": 11.0,
+          "iqr_review": {
+            "lower_fence": 46.5,
+            "upper_fence": 90.5,
+            "below": 12,
+            "above": 1
+          }
+        },
+        "EDUC": {
+          "total": 1237,
+          "usable": 1235,
+          "unavailable": 2,
+          "unavailable_percent": 0.16168148746968472,
+          "mean": 16.25748987854251,
+          "sample_sd": 2.7194774706978713,
+          "minimum": 0,
+          "q1": 14.0,
+          "median": 16.0,
+          "q3": 18.0,
+          "maximum": 25,
+          "iqr": 4.0,
+          "iqr_review": {
+            "lower_fence": 8.0,
+            "upper_fence": 24.0,
+            "below": 9,
+            "above": 3
+          }
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 1237,
+          "usable": 1237,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 497,
+              "percent_of_all": 40.177849636216656,
+              "percent_of_usable": 40.177849636216656
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 740,
+              "percent_of_all": 59.822150363783344,
+              "percent_of_usable": 59.822150363783344
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 1237,
+          "usable": 1237,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 847,
+              "percent_of_all": 68.47210994341148,
+              "percent_of_usable": 68.47210994341148
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 7,
+              "percent_of_all": 0.5658852061438965,
+              "percent_of_usable": 0.5658852061438965
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 252,
+              "percent_of_all": 20.371867421180276,
+              "percent_of_usable": 20.371867421180276
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 131,
+              "percent_of_all": 10.590137429264349,
+              "percent_of_usable": 10.590137429264349
+            }
+          ]
+        }
+      }
+    },
+    "matched_normal": {
+      "participants": 847,
+      "numeric": {
+        "ANIMALS": {
+          "total": 847,
+          "usable": 843,
+          "unavailable": 4,
+          "unavailable_percent": 0.4722550177095632,
+          "mean": 22.321470937129302,
+          "sample_sd": 5.43498404003954,
+          "minimum": 7,
+          "q1": 18.0,
+          "median": 22.0,
+          "q3": 26.0,
+          "maximum": 43,
+          "iqr": 8.0,
+          "iqr_review": {
+            "lower_fence": 6.0,
+            "upper_fence": 38.0,
+            "below": 0,
+            "above": 4
+          }
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 847,
+          "usable": 847,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 2.3364167650531287,
+          "sample_sd": 0.12132111563621321,
+          "minimum": 1.474,
+          "q1": 2.269,
+          "median": 2.338,
+          "q3": 2.417,
+          "maximum": 2.666,
+          "iqr": 0.148,
+          "iqr_review": {
+            "lower_fence": 2.047,
+            "upper_fence": 2.639,
+            "below": 12,
+            "above": 3
+          }
+        },
+        "NACCAGE": {
+          "total": 847,
+          "usable": 847,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 67.271546635183,
+          "sample_sd": 7.915596737995643,
+          "minimum": 41.0,
+          "q1": 63.0,
+          "median": 67.0,
+          "q3": 72.0,
+          "maximum": 90.0,
+          "iqr": 9.0,
+          "iqr_review": {
+            "lower_fence": 49.5,
+            "upper_fence": 85.5,
+            "below": 19,
+            "above": 8
+          }
+        },
+        "EDUC": {
+          "total": 847,
+          "usable": 846,
+          "unavailable": 1,
+          "unavailable_percent": 0.1180637544273908,
+          "mean": 16.38179669030733,
+          "sample_sd": 2.613048655681606,
+          "minimum": 1,
+          "q1": 15.0,
+          "median": 16.0,
+          "q3": 18.0,
+          "maximum": 25,
+          "iqr": 3.0,
+          "iqr_review": {
+            "lower_fence": 10.5,
+            "upper_fence": 22.5,
+            "below": 9,
+            "above": 4
+          }
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 847,
+          "usable": 847,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 302,
+              "percent_of_all": 35.65525383707202,
+              "percent_of_usable": 35.65525383707202
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 545,
+              "percent_of_all": 64.34474616292798,
+              "percent_of_usable": 64.34474616292798
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 847,
+          "usable": 847,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 847,
+              "percent_of_all": 100.0,
+              "percent_of_usable": 100.0
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "status_and_mri": {
+      "participants": 1237,
+      "numeric": {
+        "ANIMALS": {
+          "total": 1237,
+          "usable": 1225,
+          "unavailable": 12,
+          "unavailable_percent": 0.9700889248181084,
+          "mean": 20.373061224489796,
+          "sample_sd": 6.340843780860292,
+          "minimum": 1,
+          "q1": 16.0,
+          "median": 20.0,
+          "q3": 24.0,
+          "maximum": 43,
+          "iqr": 8.0,
+          "iqr_review": {
+            "lower_fence": 4.0,
+            "upper_fence": 36.0,
+            "below": 6,
+            "above": 9
+          }
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 1237,
+          "usable": 1237,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 2.3009199676637024,
+          "sample_sd": 0.15670427768462208,
+          "minimum": 1.349,
+          "q1": 2.23,
+          "median": 2.319,
+          "q3": 2.401,
+          "maximum": 2.77,
+          "iqr": 0.171,
+          "iqr_review": {
+            "lower_fence": 1.9735,
+            "upper_fence": 2.6575,
+            "below": 43,
+            "above": 3
+          }
+        },
+        "NACCAGE": {
+          "total": 1237,
+          "usable": 1237,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 68.19240097008893,
+          "sample_sd": 8.03905357224809,
+          "minimum": 41.0,
+          "q1": 63.0,
+          "median": 68.0,
+          "q3": 74.0,
+          "maximum": 91.0,
+          "iqr": 11.0,
+          "iqr_review": {
+            "lower_fence": 46.5,
+            "upper_fence": 90.5,
+            "below": 12,
+            "above": 1
+          }
+        },
+        "EDUC": {
+          "total": 1237,
+          "usable": 1235,
+          "unavailable": 2,
+          "unavailable_percent": 0.16168148746968472,
+          "mean": 16.25748987854251,
+          "sample_sd": 2.7194774706978713,
+          "minimum": 0,
+          "q1": 14.0,
+          "median": 16.0,
+          "q3": 18.0,
+          "maximum": 25,
+          "iqr": 4.0,
+          "iqr_review": {
+            "lower_fence": 8.0,
+            "upper_fence": 24.0,
+            "below": 9,
+            "above": 3
+          }
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 1237,
+          "usable": 1237,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 497,
+              "percent_of_all": 40.177849636216656,
+              "percent_of_usable": 40.177849636216656
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 740,
+              "percent_of_all": 59.822150363783344,
+              "percent_of_usable": 59.822150363783344
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 1237,
+          "usable": 1237,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 847,
+              "percent_of_all": 68.47210994341148,
+              "percent_of_usable": 68.47210994341148
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 7,
+              "percent_of_all": 0.5658852061438965,
+              "percent_of_usable": 0.5658852061438965
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 252,
+              "percent_of_all": 20.371867421180276,
+              "percent_of_usable": 20.371867421180276
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 131,
+              "percent_of_all": 10.590137429264349,
+              "percent_of_usable": 10.590137429264349
+            }
+          ]
+        }
+      }
+    },
+    "paired_all": {
+      "participants": 1225,
+      "numeric": {
+        "ANIMALS": {
+          "total": 1225,
+          "usable": 1225,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 20.373061224489796,
+          "sample_sd": 6.340843780860292,
+          "minimum": 1,
+          "q1": 16.0,
+          "median": 20.0,
+          "q3": 24.0,
+          "maximum": 43,
+          "iqr": 8.0,
+          "iqr_review": {
+            "lower_fence": 4.0,
+            "upper_fence": 36.0,
+            "below": 6,
+            "above": 9
+          }
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 1225,
+          "usable": 1225,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 2.3022497959183674,
+          "sample_sd": 0.15446599336609973,
+          "minimum": 1.349,
+          "q1": 2.233,
+          "median": 2.32,
+          "q3": 2.402,
+          "maximum": 2.77,
+          "iqr": 0.169,
+          "iqr_review": {
+            "lower_fence": 1.9795,
+            "upper_fence": 2.6555,
+            "below": 43,
+            "above": 4
+          }
+        },
+        "NACCAGE": {
+          "total": 1225,
+          "usable": 1225,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 68.18857142857142,
+          "sample_sd": 8.042850923670795,
+          "minimum": 41.0,
+          "q1": 63.0,
+          "median": 68.0,
+          "q3": 74.0,
+          "maximum": 91.0,
+          "iqr": 11.0,
+          "iqr_review": {
+            "lower_fence": 46.5,
+            "upper_fence": 90.5,
+            "below": 12,
+            "above": 1
+          }
+        },
+        "EDUC": {
+          "total": 1225,
+          "usable": 1223,
+          "unavailable": 2,
+          "unavailable_percent": 0.16326530612244897,
+          "mean": 16.28045789043336,
+          "sample_sd": 2.7006701816584915,
+          "minimum": 0,
+          "q1": 14.0,
+          "median": 16.0,
+          "q3": 18.0,
+          "maximum": 25,
+          "iqr": 4.0,
+          "iqr_review": {
+            "lower_fence": 8.0,
+            "upper_fence": 24.0,
+            "below": 8,
+            "above": 3
+          }
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 1225,
+          "usable": 1225,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 492,
+              "percent_of_all": 40.16326530612245,
+              "percent_of_usable": 40.16326530612245
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 733,
+              "percent_of_all": 59.83673469387755,
+              "percent_of_usable": 59.83673469387755
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 1225,
+          "usable": 1225,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 843,
+              "percent_of_all": 68.81632653061224,
+              "percent_of_usable": 68.81632653061224
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 7,
+              "percent_of_all": 0.5714285714285714,
+              "percent_of_usable": 0.5714285714285714
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 249,
+              "percent_of_all": 20.3265306122449,
+              "percent_of_usable": 20.3265306122449
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 126,
+              "percent_of_all": 10.285714285714286,
+              "percent_of_usable": 10.285714285714286
+            }
+          ]
+        }
+      }
+    },
+    "paired_normal": {
+      "participants": 843,
+      "numeric": {
+        "ANIMALS": {
+          "total": 843,
+          "usable": 843,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 22.321470937129302,
+          "sample_sd": 5.43498404003954,
+          "minimum": 7,
+          "q1": 18.0,
+          "median": 22.0,
+          "q3": 26.0,
+          "maximum": 43,
+          "iqr": 8.0,
+          "iqr_review": {
+            "lower_fence": 6.0,
+            "upper_fence": 38.0,
+            "below": 0,
+            "above": 4
+          }
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 843,
+          "usable": 843,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 2.3364460260972715,
+          "sample_sd": 0.12150855171700926,
+          "minimum": 1.474,
+          "q1": 2.269,
+          "median": 2.338,
+          "q3": 2.4175,
+          "maximum": 2.666,
+          "iqr": 0.1485,
+          "iqr_review": {
+            "lower_fence": 2.04625,
+            "upper_fence": 2.64025,
+            "below": 12,
+            "above": 3
+          }
+        },
+        "NACCAGE": {
+          "total": 843,
+          "usable": 843,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 67.25860023724792,
+          "sample_sd": 7.9292915239377715,
+          "minimum": 41.0,
+          "q1": 63.0,
+          "median": 67.0,
+          "q3": 72.0,
+          "maximum": 90.0,
+          "iqr": 9.0,
+          "iqr_review": {
+            "lower_fence": 49.5,
+            "upper_fence": 85.5,
+            "below": 19,
+            "above": 8
+          }
+        },
+        "EDUC": {
+          "total": 843,
+          "usable": 842,
+          "unavailable": 1,
+          "unavailable_percent": 0.11862396204033215,
+          "mean": 16.395486935866984,
+          "sample_sd": 2.583056207329123,
+          "minimum": 1,
+          "q1": 15.0,
+          "median": 16.0,
+          "q3": 18.0,
+          "maximum": 25,
+          "iqr": 3.0,
+          "iqr_review": {
+            "lower_fence": 10.5,
+            "upper_fence": 22.5,
+            "below": 7,
+            "above": 4
+          }
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 843,
+          "usable": 843,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 299,
+              "percent_of_all": 35.468564650059314,
+              "percent_of_usable": 35.468564650059314
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 544,
+              "percent_of_all": 64.5314353499407,
+              "percent_of_usable": 64.5314353499407
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 843,
+          "usable": 843,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 843,
+              "percent_of_all": 100.0,
+              "percent_of_usable": 100.0
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "model_all": {
+      "participants": 1223,
+      "numeric": {
+        "ANIMALS": {
+          "total": 1223,
+          "usable": 1223,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 20.377759607522485,
+          "sample_sd": 6.343384188541694,
+          "minimum": 1,
+          "q1": 16.0,
+          "median": 20.0,
+          "q3": 24.0,
+          "maximum": 43,
+          "iqr": 8.0,
+          "iqr_review": {
+            "lower_fence": 4.0,
+            "upper_fence": 36.0,
+            "below": 6,
+            "above": 9
+          }
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 1223,
+          "usable": 1223,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 2.3022420278004905,
+          "sample_sd": 0.15442441665124654,
+          "minimum": 1.349,
+          "q1": 2.2335,
+          "median": 2.32,
+          "q3": 2.4015,
+          "maximum": 2.77,
+          "iqr": 0.168,
+          "iqr_review": {
+            "lower_fence": 1.9815,
+            "upper_fence": 2.6535,
+            "below": 44,
+            "above": 4
+          }
+        },
+        "NACCAGE": {
+          "total": 1223,
+          "usable": 1223,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 68.19215044971382,
+          "sample_sd": 8.048535494373347,
+          "minimum": 41.0,
+          "q1": 63.0,
+          "median": 68.0,
+          "q3": 74.0,
+          "maximum": 91.0,
+          "iqr": 11.0,
+          "iqr_review": {
+            "lower_fence": 46.5,
+            "upper_fence": 90.5,
+            "below": 12,
+            "above": 1
+          }
+        },
+        "EDUC": {
+          "total": 1223,
+          "usable": 1223,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 16.28045789043336,
+          "sample_sd": 2.7006701816584915,
+          "minimum": 0,
+          "q1": 14.0,
+          "median": 16.0,
+          "q3": 18.0,
+          "maximum": 25,
+          "iqr": 4.0,
+          "iqr_review": {
+            "lower_fence": 8.0,
+            "upper_fence": 24.0,
+            "below": 8,
+            "above": 3
+          }
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 1223,
+          "usable": 1223,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 490,
+              "percent_of_all": 40.06541291905151,
+              "percent_of_usable": 40.06541291905151
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 733,
+              "percent_of_all": 59.93458708094849,
+              "percent_of_usable": 59.93458708094849
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 1223,
+          "usable": 1223,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 842,
+              "percent_of_all": 68.84709730171708,
+              "percent_of_usable": 68.84709730171708
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 7,
+              "percent_of_all": 0.5723630417007359,
+              "percent_of_usable": 0.5723630417007359
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 248,
+              "percent_of_all": 20.278004905968928,
+              "percent_of_usable": 20.278004905968928
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 126,
+              "percent_of_all": 10.302534750613246,
+              "percent_of_usable": 10.302534750613246
+            }
+          ]
+        }
+      }
+    },
+    "model_normal": {
+      "participants": 842,
+      "numeric": {
+        "ANIMALS": {
+          "total": 842,
+          "usable": 842,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 22.331353919239906,
+          "sample_sd": 5.430629679115574,
+          "minimum": 7,
+          "q1": 18.25,
+          "median": 22.0,
+          "q3": 26.0,
+          "maximum": 43,
+          "iqr": 7.75,
+          "iqr_review": {
+            "lower_fence": 6.625,
+            "upper_fence": 37.625,
+            "below": 0,
+            "above": 5
+          }
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 842,
+          "usable": 842,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 2.336269596199525,
+          "sample_sd": 0.12147268059278024,
+          "minimum": 1.474,
+          "q1": 2.269,
+          "median": 2.3375,
+          "q3": 2.417,
+          "maximum": 2.666,
+          "iqr": 0.148,
+          "iqr_review": {
+            "lower_fence": 2.047,
+            "upper_fence": 2.639,
+            "below": 12,
+            "above": 3
+          }
+        },
+        "NACCAGE": {
+          "total": 842,
+          "usable": 842,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 67.25771971496437,
+          "sample_sd": 7.933963089116824,
+          "minimum": 41.0,
+          "q1": 63.0,
+          "median": 67.0,
+          "q3": 72.0,
+          "maximum": 90.0,
+          "iqr": 9.0,
+          "iqr_review": {
+            "lower_fence": 49.5,
+            "upper_fence": 85.5,
+            "below": 19,
+            "above": 8
+          }
+        },
+        "EDUC": {
+          "total": 842,
+          "usable": 842,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 16.395486935866984,
+          "sample_sd": 2.583056207329123,
+          "minimum": 1,
+          "q1": 15.0,
+          "median": 16.0,
+          "q3": 18.0,
+          "maximum": 25,
+          "iqr": 3.0,
+          "iqr_review": {
+            "lower_fence": 10.5,
+            "upper_fence": 22.5,
+            "below": 7,
+            "above": 4
+          }
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 842,
+          "usable": 842,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 298,
+              "percent_of_all": 35.39192399049881,
+              "percent_of_usable": 35.39192399049881
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 544,
+              "percent_of_all": 64.60807600950119,
+              "percent_of_usable": 64.60807600950119
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 842,
+          "usable": 842,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 842,
+              "percent_of_all": 100.0,
+              "percent_of_usable": 100.0
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "by_cognitive_status": {
+    "normal cognition": {
+      "participants": 847,
+      "numeric": {
+        "ANIMALS": {
+          "total": 847,
+          "usable": 843,
+          "unavailable": 4,
+          "unavailable_percent": 0.4722550177095632,
+          "mean": 22.321470937129302,
+          "sample_sd": 5.43498404003954,
+          "minimum": 7,
+          "q1": 18.0,
+          "median": 22.0,
+          "q3": 26.0,
+          "maximum": 43,
+          "iqr": 8.0,
+          "iqr_review": {
+            "lower_fence": 6.0,
+            "upper_fence": 38.0,
+            "below": 0,
+            "above": 4
+          }
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 847,
+          "usable": 847,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 2.3364167650531287,
+          "sample_sd": 0.12132111563621321,
+          "minimum": 1.474,
+          "q1": 2.269,
+          "median": 2.338,
+          "q3": 2.417,
+          "maximum": 2.666,
+          "iqr": 0.148,
+          "iqr_review": {
+            "lower_fence": 2.047,
+            "upper_fence": 2.639,
+            "below": 12,
+            "above": 3
+          }
+        },
+        "NACCAGE": {
+          "total": 847,
+          "usable": 847,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 67.271546635183,
+          "sample_sd": 7.915596737995643,
+          "minimum": 41.0,
+          "q1": 63.0,
+          "median": 67.0,
+          "q3": 72.0,
+          "maximum": 90.0,
+          "iqr": 9.0,
+          "iqr_review": {
+            "lower_fence": 49.5,
+            "upper_fence": 85.5,
+            "below": 19,
+            "above": 8
+          }
+        },
+        "EDUC": {
+          "total": 847,
+          "usable": 846,
+          "unavailable": 1,
+          "unavailable_percent": 0.1180637544273908,
+          "mean": 16.38179669030733,
+          "sample_sd": 2.613048655681606,
+          "minimum": 1,
+          "q1": 15.0,
+          "median": 16.0,
+          "q3": 18.0,
+          "maximum": 25,
+          "iqr": 3.0,
+          "iqr_review": {
+            "lower_fence": 10.5,
+            "upper_fence": 22.5,
+            "below": 9,
+            "above": 4
+          }
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 847,
+          "usable": 847,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 302,
+              "percent_of_all": 35.65525383707202,
+              "percent_of_usable": 35.65525383707202
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 545,
+              "percent_of_all": 64.34474616292798,
+              "percent_of_usable": 64.34474616292798
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 847,
+          "usable": 847,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 847,
+              "percent_of_all": 100.0,
+              "percent_of_usable": 100.0
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "impaired without MCI": {
+      "participants": 7,
+      "numeric": {
+        "ANIMALS": {
+          "total": 7,
+          "usable": 7,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 22.0,
+          "sample_sd": 4.163331998932265,
+          "minimum": 14,
+          "q1": 21.0,
+          "median": 23.0,
+          "q3": 24.5,
+          "maximum": 26,
+          "iqr": 3.5,
+          "iqr_review": {
+            "lower_fence": 15.75,
+            "upper_fence": 29.75,
+            "below": 1,
+            "above": 0
+          }
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 7,
+          "usable": 7,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 2.314285714285714,
+          "sample_sd": 0.10507729581235938,
+          "minimum": 2.095,
+          "q1": 2.314,
+          "median": 2.319,
+          "q3": 2.367,
+          "maximum": 2.424,
+          "iqr": 0.053,
+          "iqr_review": {
+            "lower_fence": 2.2345,
+            "upper_fence": 2.4465,
+            "below": 1,
+            "above": 0
+          }
+        },
+        "NACCAGE": {
+          "total": 7,
+          "usable": 7,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 69.42857142857143,
+          "sample_sd": 4.07664661444276,
+          "minimum": 64.0,
+          "q1": 67.0,
+          "median": 69.0,
+          "q3": 71.5,
+          "maximum": 76.0,
+          "iqr": 4.5,
+          "iqr_review": {
+            "lower_fence": 60.25,
+            "upper_fence": 78.25,
+            "below": 0,
+            "above": 0
+          }
+        },
+        "EDUC": {
+          "total": 7,
+          "usable": 7,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 16.857142857142858,
+          "sample_sd": 1.0690449676496976,
+          "minimum": 16,
+          "q1": 16.0,
+          "median": 16.0,
+          "q3": 18.0,
+          "maximum": 18,
+          "iqr": 2.0,
+          "iqr_review": {
+            "lower_fence": 13.0,
+            "upper_fence": 21.0,
+            "below": 0,
+            "above": 0
+          }
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 7,
+          "usable": 7,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 4,
+              "percent_of_all": 57.142857142857146,
+              "percent_of_usable": 57.142857142857146
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 3,
+              "percent_of_all": 42.857142857142854,
+              "percent_of_usable": 42.857142857142854
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 7,
+          "usable": 7,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 7,
+              "percent_of_all": 100.0,
+              "percent_of_usable": 100.0
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "MCI": {
+      "participants": 252,
+      "numeric": {
+        "ANIMALS": {
+          "total": 252,
+          "usable": 249,
+          "unavailable": 3,
+          "unavailable_percent": 1.1904761904761905,
+          "mean": 17.83132530120482,
+          "sample_sd": 5.564473884156714,
+          "minimum": 5,
+          "q1": 14.0,
+          "median": 17.0,
+          "q3": 21.0,
+          "maximum": 35,
+          "iqr": 7.0,
+          "iqr_review": {
+            "lower_fence": 3.5,
+            "upper_fence": 31.5,
+            "below": 0,
+            "above": 5
+          }
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 252,
+          "usable": 252,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 2.2575833333333337,
+          "sample_sd": 0.1728206039665945,
+          "minimum": 1.349,
+          "q1": 2.16075,
+          "median": 2.2885,
+          "q3": 2.369,
+          "maximum": 2.77,
+          "iqr": 0.20825,
+          "iqr_review": {
+            "lower_fence": 1.848375,
+            "upper_fence": 2.681375,
+            "below": 6,
+            "above": 1
+          }
+        },
+        "NACCAGE": {
+          "total": 252,
+          "usable": 252,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 70.82539682539682,
+          "sample_sd": 7.442827896229916,
+          "minimum": 45.0,
+          "q1": 66.0,
+          "median": 71.0,
+          "q3": 76.0,
+          "maximum": 91.0,
+          "iqr": 10.0,
+          "iqr_review": {
+            "lower_fence": 51.0,
+            "upper_fence": 91.0,
+            "below": 1,
+            "above": 0
+          }
+        },
+        "EDUC": {
+          "total": 252,
+          "usable": 251,
+          "unavailable": 1,
+          "unavailable_percent": 0.3968253968253968,
+          "mean": 16.08764940239044,
+          "sample_sd": 2.9312602840057793,
+          "minimum": 0,
+          "q1": 14.0,
+          "median": 16.0,
+          "q3": 18.0,
+          "maximum": 20,
+          "iqr": 4.0,
+          "iqr_review": {
+            "lower_fence": 8.0,
+            "upper_fence": 24.0,
+            "below": 2,
+            "above": 0
+          }
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 252,
+          "usable": 252,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 141,
+              "percent_of_all": 55.95238095238095,
+              "percent_of_usable": 55.95238095238095
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 111,
+              "percent_of_all": 44.04761904761905,
+              "percent_of_usable": 44.04761904761905
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 252,
+          "usable": 252,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 252,
+              "percent_of_all": 100.0,
+              "percent_of_usable": 100.0
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            }
+          ]
+        }
+      }
+    },
+    "dementia": {
+      "participants": 131,
+      "numeric": {
+        "ANIMALS": {
+          "total": 131,
+          "usable": 126,
+          "unavailable": 5,
+          "unavailable_percent": 3.816793893129771,
+          "mean": 12.26984126984127,
+          "sample_sd": 5.258764415202793,
+          "minimum": 1,
+          "q1": 9.0,
+          "median": 12.0,
+          "q3": 15.75,
+          "maximum": 26,
+          "iqr": 6.75,
+          "iqr_review": {
+            "lower_fence": -1.125,
+            "upper_fence": 25.875,
+            "below": 0,
+            "above": 1
+          }
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 131,
+          "usable": 131,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 2.15406106870229,
+          "sample_sd": 0.2142863201680331,
+          "minimum": 1.555,
+          "q1": 2.0215,
+          "median": 2.198,
+          "q3": 2.306,
+          "maximum": 2.616,
+          "iqr": 0.2845,
+          "iqr_review": {
+            "lower_fence": 1.59475,
+            "upper_fence": 2.73275,
+            "below": 2,
+            "above": 0
+          }
+        },
+        "NACCAGE": {
+          "total": 131,
+          "usable": 131,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 69.01526717557252,
+          "sample_sd": 8.902017690755825,
+          "minimum": 45.0,
+          "q1": 62.0,
+          "median": 70.0,
+          "q3": 76.0,
+          "maximum": 85.0,
+          "iqr": 14.0,
+          "iqr_review": {
+            "lower_fence": 41.0,
+            "upper_fence": 97.0,
+            "below": 0,
+            "above": 0
+          }
+        },
+        "EDUC": {
+          "total": 131,
+          "usable": 131,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "mean": 15.748091603053435,
+          "sample_sd": 2.9673700125775238,
+          "minimum": 1,
+          "q1": 14.0,
+          "median": 16.0,
+          "q3": 18.0,
+          "maximum": 20,
+          "iqr": 4.0,
+          "iqr_review": {
+            "lower_fence": 8.0,
+            "upper_fence": 24.0,
+            "below": 1,
+            "above": 0
+          }
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 131,
+          "usable": 131,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 50,
+              "percent_of_all": 38.16793893129771,
+              "percent_of_usable": 38.16793893129771
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 81,
+              "percent_of_all": 61.83206106870229,
+              "percent_of_usable": 61.83206106870229
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 131,
+          "usable": 131,
+          "unavailable": 0,
+          "unavailable_percent": 0.0,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 0,
+              "percent_of_all": 0.0,
+              "percent_of_usable": 0.0
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 131,
+              "percent_of_all": 100.0,
+              "percent_of_usable": 100.0
+            }
+          ]
+        }
+      }
+    },
+    "unavailable": {
+      "participants": 0,
+      "numeric": {
+        "ANIMALS": {
+          "total": 0,
+          "usable": 0,
+          "unavailable": 0,
+          "unavailable_percent": null,
+          "mean": null,
+          "sample_sd": null,
+          "minimum": null,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "maximum": null,
+          "iqr": null,
+          "iqr_review": null
+        },
+        "LH_INFERIORPARIETAL_AVGTH": {
+          "total": 0,
+          "usable": 0,
+          "unavailable": 0,
+          "unavailable_percent": null,
+          "mean": null,
+          "sample_sd": null,
+          "minimum": null,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "maximum": null,
+          "iqr": null,
+          "iqr_review": null
+        },
+        "NACCAGE": {
+          "total": 0,
+          "usable": 0,
+          "unavailable": 0,
+          "unavailable_percent": null,
+          "mean": null,
+          "sample_sd": null,
+          "minimum": null,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "maximum": null,
+          "iqr": null,
+          "iqr_review": null
+        },
+        "EDUC": {
+          "total": 0,
+          "usable": 0,
+          "unavailable": 0,
+          "unavailable_percent": null,
+          "mean": null,
+          "sample_sd": null,
+          "minimum": null,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "maximum": null,
+          "iqr": null,
+          "iqr_review": null
+        }
+      },
+      "categorical": {
+        "SEX": {
+          "total": 0,
+          "usable": 0,
+          "unavailable": 0,
+          "unavailable_percent": null,
+          "levels": [
+            {
+              "code": 1,
+              "label": "male",
+              "count": 0,
+              "percent_of_all": null,
+              "percent_of_usable": null
+            },
+            {
+              "code": 2,
+              "label": "female",
+              "count": 0,
+              "percent_of_all": null,
+              "percent_of_usable": null
+            }
+          ]
+        },
+        "NACCUDSD": {
+          "total": 0,
+          "usable": 0,
+          "unavailable": 0,
+          "unavailable_percent": null,
+          "levels": [
+            {
+              "code": 1,
+              "label": "normal cognition",
+              "count": 0,
+              "percent_of_all": null,
+              "percent_of_usable": null
+            },
+            {
+              "code": 2,
+              "label": "impaired without MCI",
+              "count": 0,
+              "percent_of_all": null,
+              "percent_of_usable": null
+            },
+            {
+              "code": 3,
+              "label": "MCI",
+              "count": 0,
+              "percent_of_all": null,
+              "percent_of_usable": null
+            },
+            {
+              "code": 4,
+              "label": "dementia",
+              "count": 0,
+              "percent_of_all": null,
+              "percent_of_usable": null
+            }
+          ]
+        }
+      }
+    }
+  },
+  "discrete_frequencies": {
+    "matched_all": {
+      "ANIMALS": {
+        "total": 1237,
+        "usable": 1225,
+        "unavailable": 12,
+        "unavailable_percent": 0.9700889248181084,
+        "levels": [
+          {
+            "value": 1,
+            "count": 1,
+            "percent_of_usable": 0.08163265306122448,
+            "cumulative_percent_of_usable": 0.08163265306122448
+          },
+          {
+            "value": 2,
+            "count": 4,
+            "percent_of_usable": 0.32653061224489793,
+            "cumulative_percent_of_usable": 0.40816326530612246
+          },
+          {
+            "value": 3,
+            "count": 1,
+            "percent_of_usable": 0.08163265306122448,
+            "cumulative_percent_of_usable": 0.4897959183673469
+          },
+          {
+            "value": 4,
+            "count": 3,
+            "percent_of_usable": 0.24489795918367346,
+            "cumulative_percent_of_usable": 0.7346938775510204
+          },
+          {
+            "value": 5,
+            "count": 3,
+            "percent_of_usable": 0.24489795918367346,
+            "cumulative_percent_of_usable": 0.9795918367346939
+          },
+          {
+            "value": 6,
+            "count": 6,
+            "percent_of_usable": 0.4897959183673469,
+            "cumulative_percent_of_usable": 1.469387755102041
+          },
+          {
+            "value": 7,
+            "count": 11,
+            "percent_of_usable": 0.8979591836734694,
+            "cumulative_percent_of_usable": 2.36734693877551
+          },
+          {
+            "value": 8,
+            "count": 11,
+            "percent_of_usable": 0.8979591836734694,
+            "cumulative_percent_of_usable": 3.2653061224489797
+          },
+          {
+            "value": 9,
+            "count": 11,
+            "percent_of_usable": 0.8979591836734694,
+            "cumulative_percent_of_usable": 4.163265306122449
+          },
+          {
+            "value": 10,
+            "count": 17,
+            "percent_of_usable": 1.3877551020408163,
+            "cumulative_percent_of_usable": 5.551020408163265
+          },
+          {
+            "value": 11,
+            "count": 24,
+            "percent_of_usable": 1.9591836734693877,
+            "cumulative_percent_of_usable": 7.510204081632653
+          },
+          {
+            "value": 12,
+            "count": 30,
+            "percent_of_usable": 2.4489795918367347,
+            "cumulative_percent_of_usable": 9.959183673469388
+          },
+          {
+            "value": 13,
+            "count": 42,
+            "percent_of_usable": 3.4285714285714284,
+            "cumulative_percent_of_usable": 13.387755102040817
+          },
+          {
+            "value": 14,
+            "count": 50,
+            "percent_of_usable": 4.081632653061225,
+            "cumulative_percent_of_usable": 17.46938775510204
+          },
+          {
+            "value": 15,
+            "count": 53,
+            "percent_of_usable": 4.326530612244898,
+            "cumulative_percent_of_usable": 21.79591836734694
+          },
+          {
+            "value": 16,
+            "count": 59,
+            "percent_of_usable": 4.816326530612245,
+            "cumulative_percent_of_usable": 26.612244897959183
+          },
+          {
+            "value": 17,
+            "count": 74,
+            "percent_of_usable": 6.040816326530612,
+            "cumulative_percent_of_usable": 32.6530612244898
+          },
+          {
+            "value": 18,
+            "count": 76,
+            "percent_of_usable": 6.204081632653061,
+            "cumulative_percent_of_usable": 38.857142857142854
+          },
+          {
+            "value": 19,
+            "count": 70,
+            "percent_of_usable": 5.714285714285714,
+            "cumulative_percent_of_usable": 44.57142857142857
+          },
+          {
+            "value": 20,
+            "count": 67,
+            "percent_of_usable": 5.469387755102041,
+            "cumulative_percent_of_usable": 50.04081632653061
+          },
+          {
+            "value": 21,
+            "count": 92,
+            "percent_of_usable": 7.510204081632653,
+            "cumulative_percent_of_usable": 57.55102040816327
+          },
+          {
+            "value": 22,
+            "count": 86,
+            "percent_of_usable": 7.020408163265306,
+            "cumulative_percent_of_usable": 64.57142857142857
+          },
+          {
+            "value": 23,
+            "count": 79,
+            "percent_of_usable": 6.448979591836735,
+            "cumulative_percent_of_usable": 71.0204081632653
+          },
+          {
+            "value": 24,
+            "count": 54,
+            "percent_of_usable": 4.408163265306122,
+            "cumulative_percent_of_usable": 75.42857142857143
+          },
+          {
+            "value": 25,
+            "count": 47,
+            "percent_of_usable": 3.836734693877551,
+            "cumulative_percent_of_usable": 79.26530612244898
+          },
+          {
+            "value": 26,
+            "count": 37,
+            "percent_of_usable": 3.020408163265306,
+            "cumulative_percent_of_usable": 82.28571428571429
+          },
+          {
+            "value": 27,
+            "count": 40,
+            "percent_of_usable": 3.2653061224489797,
+            "cumulative_percent_of_usable": 85.55102040816327
+          },
+          {
+            "value": 28,
+            "count": 50,
+            "percent_of_usable": 4.081632653061225,
+            "cumulative_percent_of_usable": 89.63265306122449
+          },
+          {
+            "value": 29,
+            "count": 42,
+            "percent_of_usable": 3.4285714285714284,
+            "cumulative_percent_of_usable": 93.06122448979592
+          },
+          {
+            "value": 30,
+            "count": 21,
+            "percent_of_usable": 1.7142857142857142,
+            "cumulative_percent_of_usable": 94.77551020408163
+          },
+          {
+            "value": 31,
+            "count": 20,
+            "percent_of_usable": 1.6326530612244898,
+            "cumulative_percent_of_usable": 96.40816326530613
+          },
+          {
+            "value": 32,
+            "count": 15,
+            "percent_of_usable": 1.2244897959183674,
+            "cumulative_percent_of_usable": 97.63265306122449
+          },
+          {
+            "value": 33,
+            "count": 7,
+            "percent_of_usable": 0.5714285714285714,
+            "cumulative_percent_of_usable": 98.20408163265306
+          },
+          {
+            "value": 34,
+            "count": 4,
+            "percent_of_usable": 0.32653061224489793,
+            "cumulative_percent_of_usable": 98.53061224489795
+          },
+          {
+            "value": 35,
+            "count": 3,
+            "percent_of_usable": 0.24489795918367346,
+            "cumulative_percent_of_usable": 98.77551020408163
+          },
+          {
+            "value": 36,
+            "count": 6,
+            "percent_of_usable": 0.4897959183673469,
+            "cumulative_percent_of_usable": 99.26530612244898
+          },
+          {
+            "value": 37,
+            "count": 4,
+            "percent_of_usable": 0.32653061224489793,
+            "cumulative_percent_of_usable": 99.59183673469387
+          },
+          {
+            "value": 38,
+            "count": 1,
+            "percent_of_usable": 0.08163265306122448,
+            "cumulative_percent_of_usable": 99.6734693877551
+          },
+          {
+            "value": 41,
+            "count": 2,
+            "percent_of_usable": 0.16326530612244897,
+            "cumulative_percent_of_usable": 99.83673469387755
+          },
+          {
+            "value": 42,
+            "count": 1,
+            "percent_of_usable": 0.08163265306122448,
+            "cumulative_percent_of_usable": 99.91836734693878
+          },
+          {
+            "value": 43,
+            "count": 1,
+            "percent_of_usable": 0.08163265306122448,
+            "cumulative_percent_of_usable": 100.0
+          }
+        ]
+      },
+      "EDUC": {
+        "total": 1237,
+        "usable": 1235,
+        "unavailable": 2,
+        "unavailable_percent": 0.16168148746968472,
+        "levels": [
+          {
+            "value": 0,
+            "count": 1,
+            "percent_of_usable": 0.08097165991902834,
+            "cumulative_percent_of_usable": 0.08097165991902834
+          },
+          {
+            "value": 1,
+            "count": 2,
+            "percent_of_usable": 0.16194331983805668,
+            "cumulative_percent_of_usable": 0.242914979757085
+          },
+          {
+            "value": 2,
+            "count": 2,
+            "percent_of_usable": 0.16194331983805668,
+            "cumulative_percent_of_usable": 0.4048582995951417
+          },
+          {
+            "value": 6,
+            "count": 3,
+            "percent_of_usable": 0.242914979757085,
+            "cumulative_percent_of_usable": 0.6477732793522267
+          },
+          {
+            "value": 7,
+            "count": 1,
+            "percent_of_usable": 0.08097165991902834,
+            "cumulative_percent_of_usable": 0.728744939271255
+          },
+          {
+            "value": 8,
+            "count": 2,
+            "percent_of_usable": 0.16194331983805668,
+            "cumulative_percent_of_usable": 0.8906882591093117
+          },
+          {
+            "value": 9,
+            "count": 2,
+            "percent_of_usable": 0.16194331983805668,
+            "cumulative_percent_of_usable": 1.0526315789473684
+          },
+          {
+            "value": 10,
+            "count": 2,
+            "percent_of_usable": 0.16194331983805668,
+            "cumulative_percent_of_usable": 1.214574898785425
+          },
+          {
+            "value": 11,
+            "count": 2,
+            "percent_of_usable": 0.16194331983805668,
+            "cumulative_percent_of_usable": 1.3765182186234817
+          },
+          {
+            "value": 12,
+            "count": 118,
+            "percent_of_usable": 9.554655870445345,
+            "cumulative_percent_of_usable": 10.931174089068826
+          },
+          {
+            "value": 13,
+            "count": 55,
+            "percent_of_usable": 4.4534412955465585,
+            "cumulative_percent_of_usable": 15.384615384615385
+          },
+          {
+            "value": 14,
+            "count": 136,
+            "percent_of_usable": 11.012145748987853,
+            "cumulative_percent_of_usable": 26.39676113360324
+          },
+          {
+            "value": 15,
+            "count": 24,
+            "percent_of_usable": 1.94331983805668,
+            "cumulative_percent_of_usable": 28.34008097165992
+          },
+          {
+            "value": 16,
+            "count": 350,
+            "percent_of_usable": 28.34008097165992,
+            "cumulative_percent_of_usable": 56.68016194331984
+          },
+          {
+            "value": 17,
+            "count": 36,
+            "percent_of_usable": 2.91497975708502,
+            "cumulative_percent_of_usable": 59.59514170040486
+          },
+          {
+            "value": 18,
+            "count": 301,
+            "percent_of_usable": 24.37246963562753,
+            "cumulative_percent_of_usable": 83.96761133603239
+          },
+          {
+            "value": 19,
+            "count": 37,
+            "percent_of_usable": 2.9959514170040484,
+            "cumulative_percent_of_usable": 86.96356275303644
+          },
+          {
+            "value": 20,
+            "count": 154,
+            "percent_of_usable": 12.469635627530364,
+            "cumulative_percent_of_usable": 99.43319838056681
+          },
+          {
+            "value": 21,
+            "count": 2,
+            "percent_of_usable": 0.16194331983805668,
+            "cumulative_percent_of_usable": 99.59514170040485
+          },
+          {
+            "value": 22,
+            "count": 1,
+            "percent_of_usable": 0.08097165991902834,
+            "cumulative_percent_of_usable": 99.67611336032388
+          },
+          {
+            "value": 24,
+            "count": 1,
+            "percent_of_usable": 0.08097165991902834,
+            "cumulative_percent_of_usable": 99.75708502024291
+          },
+          {
+            "value": 25,
+            "count": 3,
+            "percent_of_usable": 0.242914979757085,
+            "cumulative_percent_of_usable": 100.0
+          }
+        ]
+      }
+    },
+    "matched_normal": {
+      "ANIMALS": {
+        "total": 847,
+        "usable": 843,
+        "unavailable": 4,
+        "unavailable_percent": 0.4722550177095632,
+        "levels": [
+          {
+            "value": 7,
+            "count": 1,
+            "percent_of_usable": 0.11862396204033215,
+            "cumulative_percent_of_usable": 0.11862396204033215
+          },
+          {
+            "value": 8,
+            "count": 1,
+            "percent_of_usable": 0.11862396204033215,
+            "cumulative_percent_of_usable": 0.2372479240806643
+          },
+          {
+            "value": 10,
+            "count": 4,
+            "percent_of_usable": 0.4744958481613286,
+            "cumulative_percent_of_usable": 0.7117437722419929
+          },
+          {
+            "value": 11,
+            "count": 6,
+            "percent_of_usable": 0.7117437722419929,
+            "cumulative_percent_of_usable": 1.4234875444839858
+          },
+          {
+            "value": 12,
+            "count": 7,
+            "percent_of_usable": 0.830367734282325,
+            "cumulative_percent_of_usable": 2.2538552787663106
+          },
+          {
+            "value": 13,
+            "count": 16,
+            "percent_of_usable": 1.8979833926453145,
+            "cumulative_percent_of_usable": 4.1518386714116255
+          },
+          {
+            "value": 14,
+            "count": 18,
+            "percent_of_usable": 2.1352313167259784,
+            "cumulative_percent_of_usable": 6.2870699881376035
+          },
+          {
+            "value": 15,
+            "count": 29,
+            "percent_of_usable": 3.4400948991696323,
+            "cumulative_percent_of_usable": 9.727164887307236
+          },
+          {
+            "value": 16,
+            "count": 29,
+            "percent_of_usable": 3.4400948991696323,
+            "cumulative_percent_of_usable": 13.167259786476869
+          },
+          {
+            "value": 17,
+            "count": 46,
+            "percent_of_usable": 5.456702253855279,
+            "cumulative_percent_of_usable": 18.62396204033215
+          },
+          {
+            "value": 18,
+            "count": 55,
+            "percent_of_usable": 6.524317912218268,
+            "cumulative_percent_of_usable": 25.148279952550414
+          },
+          {
+            "value": 19,
+            "count": 50,
+            "percent_of_usable": 5.931198102016608,
+            "cumulative_percent_of_usable": 31.079478054567023
+          },
+          {
+            "value": 20,
+            "count": 52,
+            "percent_of_usable": 6.168446026097271,
+            "cumulative_percent_of_usable": 37.2479240806643
+          },
+          {
+            "value": 21,
+            "count": 77,
+            "percent_of_usable": 9.134045077105576,
+            "cumulative_percent_of_usable": 46.381969157769866
+          },
+          {
+            "value": 22,
+            "count": 71,
+            "percent_of_usable": 8.422301304863582,
+            "cumulative_percent_of_usable": 54.804270462633454
+          },
+          {
+            "value": 23,
+            "count": 71,
+            "percent_of_usable": 8.422301304863582,
+            "cumulative_percent_of_usable": 63.226571767497035
+          },
+          {
+            "value": 24,
+            "count": 46,
+            "percent_of_usable": 5.456702253855279,
+            "cumulative_percent_of_usable": 68.68327402135232
+          },
+          {
+            "value": 25,
+            "count": 38,
+            "percent_of_usable": 4.507710557532621,
+            "cumulative_percent_of_usable": 73.19098457888494
+          },
+          {
+            "value": 26,
+            "count": 31,
+            "percent_of_usable": 3.6773428232502967,
+            "cumulative_percent_of_usable": 76.86832740213524
+          },
+          {
+            "value": 27,
+            "count": 34,
+            "percent_of_usable": 4.033214709371293,
+            "cumulative_percent_of_usable": 80.90154211150653
+          },
+          {
+            "value": 28,
+            "count": 47,
+            "percent_of_usable": 5.575326215895611,
+            "cumulative_percent_of_usable": 86.47686832740213
+          },
+          {
+            "value": 29,
+            "count": 39,
+            "percent_of_usable": 4.6263345195729535,
+            "cumulative_percent_of_usable": 91.1032028469751
+          },
+          {
+            "value": 30,
+            "count": 16,
+            "percent_of_usable": 1.8979833926453145,
+            "cumulative_percent_of_usable": 93.00118623962041
+          },
+          {
+            "value": 31,
+            "count": 20,
+            "percent_of_usable": 2.372479240806643,
+            "cumulative_percent_of_usable": 95.37366548042705
+          },
+          {
+            "value": 32,
+            "count": 13,
+            "percent_of_usable": 1.5421115065243178,
+            "cumulative_percent_of_usable": 96.91577698695136
+          },
+          {
+            "value": 33,
+            "count": 7,
+            "percent_of_usable": 0.830367734282325,
+            "cumulative_percent_of_usable": 97.74614472123369
+          },
+          {
+            "value": 34,
+            "count": 2,
+            "percent_of_usable": 0.2372479240806643,
+            "cumulative_percent_of_usable": 97.98339264531435
+          },
+          {
+            "value": 35,
+            "count": 2,
+            "percent_of_usable": 0.2372479240806643,
+            "cumulative_percent_of_usable": 98.22064056939502
+          },
+          {
+            "value": 36,
+            "count": 6,
+            "percent_of_usable": 0.7117437722419929,
+            "cumulative_percent_of_usable": 98.932384341637
+          },
+          {
+            "value": 37,
+            "count": 4,
+            "percent_of_usable": 0.4744958481613286,
+            "cumulative_percent_of_usable": 99.40688018979834
+          },
+          {
+            "value": 38,
+            "count": 1,
+            "percent_of_usable": 0.11862396204033215,
+            "cumulative_percent_of_usable": 99.52550415183867
+          },
+          {
+            "value": 41,
+            "count": 2,
+            "percent_of_usable": 0.2372479240806643,
+            "cumulative_percent_of_usable": 99.76275207591934
+          },
+          {
+            "value": 42,
+            "count": 1,
+            "percent_of_usable": 0.11862396204033215,
+            "cumulative_percent_of_usable": 99.88137603795967
+          },
+          {
+            "value": 43,
+            "count": 1,
+            "percent_of_usable": 0.11862396204033215,
+            "cumulative_percent_of_usable": 100.0
+          }
+        ]
+      },
+      "EDUC": {
+        "total": 847,
+        "usable": 846,
+        "unavailable": 1,
+        "unavailable_percent": 0.1180637544273908,
+        "levels": [
+          {
+            "value": 1,
+            "count": 1,
+            "percent_of_usable": 0.1182033096926714,
+            "cumulative_percent_of_usable": 0.1182033096926714
+          },
+          {
+            "value": 2,
+            "count": 1,
+            "percent_of_usable": 0.1182033096926714,
+            "cumulative_percent_of_usable": 0.2364066193853428
+          },
+          {
+            "value": 6,
+            "count": 3,
+            "percent_of_usable": 0.3546099290780142,
+            "cumulative_percent_of_usable": 0.5910165484633569
+          },
+          {
+            "value": 7,
+            "count": 1,
+            "percent_of_usable": 0.1182033096926714,
+            "cumulative_percent_of_usable": 0.7092198581560284
+          },
+          {
+            "value": 8,
+            "count": 2,
+            "percent_of_usable": 0.2364066193853428,
+            "cumulative_percent_of_usable": 0.9456264775413712
+          },
+          {
+            "value": 9,
+            "count": 1,
+            "percent_of_usable": 0.1182033096926714,
+            "cumulative_percent_of_usable": 1.0638297872340425
+          },
+          {
+            "value": 11,
+            "count": 1,
+            "percent_of_usable": 0.1182033096926714,
+            "cumulative_percent_of_usable": 1.1820330969267139
+          },
+          {
+            "value": 12,
+            "count": 70,
+            "percent_of_usable": 8.274231678486998,
+            "cumulative_percent_of_usable": 9.456264775413711
+          },
+          {
+            "value": 13,
+            "count": 33,
+            "percent_of_usable": 3.900709219858156,
+            "cumulative_percent_of_usable": 13.356973995271868
+          },
+          {
+            "value": 14,
+            "count": 88,
+            "percent_of_usable": 10.401891252955084,
+            "cumulative_percent_of_usable": 23.75886524822695
+          },
+          {
+            "value": 15,
+            "count": 19,
+            "percent_of_usable": 2.2458628841607564,
+            "cumulative_percent_of_usable": 26.004728132387708
+          },
+          {
+            "value": 16,
+            "count": 244,
+            "percent_of_usable": 28.84160756501182,
+            "cumulative_percent_of_usable": 54.846335697399525
+          },
+          {
+            "value": 17,
+            "count": 27,
+            "percent_of_usable": 3.1914893617021276,
+            "cumulative_percent_of_usable": 58.03782505910166
+          },
+          {
+            "value": 18,
+            "count": 226,
+            "percent_of_usable": 26.713947990543737,
+            "cumulative_percent_of_usable": 84.7517730496454
+          },
+          {
+            "value": 19,
+            "count": 25,
+            "percent_of_usable": 2.955082742316785,
+            "cumulative_percent_of_usable": 87.70685579196217
+          },
+          {
+            "value": 20,
+            "count": 97,
+            "percent_of_usable": 11.465721040189125,
+            "cumulative_percent_of_usable": 99.17257683215131
+          },
+          {
+            "value": 21,
+            "count": 2,
+            "percent_of_usable": 0.2364066193853428,
+            "cumulative_percent_of_usable": 99.40898345153664
+          },
+          {
+            "value": 22,
+            "count": 1,
+            "percent_of_usable": 0.1182033096926714,
+            "cumulative_percent_of_usable": 99.52718676122932
+          },
+          {
+            "value": 24,
+            "count": 1,
+            "percent_of_usable": 0.1182033096926714,
+            "cumulative_percent_of_usable": 99.64539007092199
+          },
+          {
+            "value": 25,
+            "count": 3,
+            "percent_of_usable": 0.3546099290780142,
+            "cumulative_percent_of_usable": 100.0
+          }
+        ]
+      }
+    }
+  }
+}
