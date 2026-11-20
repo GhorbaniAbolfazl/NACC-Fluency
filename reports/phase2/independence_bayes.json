@@ -1,0 +1,62 @@
+{
+  "participants_csv_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+  "sample": "status_and_mri",
+  "sample_size": 1237,
+  "events": {
+    "A": {
+      "definition": "Cognitively normal",
+      "source": "UDS",
+      "column": "NACCUDSD",
+      "code": 1
+    },
+    "B": {
+      "definition": "Left inferior parietal cortical thickness at or above the pooled sample median",
+      "source": "MRI",
+      "column": "LH_INFERIORPARIETAL_AVGTH",
+      "median_mm": 2.319,
+      "equal_to_median": 5
+    }
+  },
+  "independence": {
+    "observed_joint_A_and_B": {
+      "numerator": 488,
+      "denominator": 1237,
+      "probability": 0.3945028294260307
+    },
+    "joint_if_independent": {
+      "numerator": 526834,
+      "denominator": 1530169,
+      "probability": 0.34429791741957916
+    },
+    "observed_minus_expected_percentage_points": 5.020491200645157,
+    "observed_count": 488,
+    "expected_count_if_independent": 425.8965238480194,
+    "observed_minus_expected_count": 62.1034761519806,
+    "empirical_joint_equals_product": false
+  },
+  "bayes": {
+    "prior_A": {
+      "numerator": 847,
+      "denominator": 1237,
+      "probability": 0.6847210994341147
+    },
+    "likelihood_B_given_A": {
+      "numerator": 488,
+      "denominator": 847,
+      "probability": 0.5761511216056671
+    },
+    "evidence_B": {
+      "numerator": 622,
+      "denominator": 1237,
+      "probability": 0.5028294260307195
+    },
+    "posterior_A_given_B_via_bayes": 0.7845659163987139,
+    "posterior_A_given_B_direct": {
+      "numerator": 488,
+      "denominator": 622,
+      "probability": 0.7845659163987139
+    },
+    "matches_direct_exactly": true,
+    "posterior_minus_prior_percentage_points": 9.984481696459904
+  }
+}

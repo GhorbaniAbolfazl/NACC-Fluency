@@ -1,0 +1,94 @@
+{
+  "participants_csv_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+  "sample": "status_and_mri",
+  "sample_size": 1237,
+  "events": {
+    "A": {
+      "definition": "Cognitively normal",
+      "source": "UDS",
+      "column": "NACCUDSD",
+      "code": 1
+    },
+    "B": {
+      "definition": "Left inferior parietal cortical thickness at or above the pooled sample median",
+      "source": "MRI",
+      "column": "LH_INFERIORPARIETAL_AVGTH",
+      "median_mm": 2.319,
+      "equal_to_median": 5
+    }
+  },
+  "contingency_table": {
+    "A": {
+      "B": 488,
+      "not_B": 359,
+      "total": 847
+    },
+    "not_A": {
+      "B": 134,
+      "not_B": 256,
+      "total": 390
+    },
+    "total": {
+      "B": 622,
+      "not_B": 615,
+      "total": 1237
+    }
+  },
+  "marginal_probabilities": {
+    "A": {
+      "numerator": 847,
+      "denominator": 1237,
+      "probability": 0.6847210994341147
+    },
+    "not_A": {
+      "numerator": 390,
+      "denominator": 1237,
+      "probability": 0.3152789005658852
+    },
+    "B": {
+      "numerator": 622,
+      "denominator": 1237,
+      "probability": 0.5028294260307195
+    },
+    "not_B": {
+      "numerator": 615,
+      "denominator": 1237,
+      "probability": 0.4971705739692805
+    }
+  },
+  "joint_probabilities": {
+    "A_and_B": {
+      "numerator": 488,
+      "denominator": 1237,
+      "probability": 0.3945028294260307
+    },
+    "A_and_not_B": {
+      "numerator": 359,
+      "denominator": 1237,
+      "probability": 0.2902182700080841
+    },
+    "not_A_and_B": {
+      "numerator": 134,
+      "denominator": 1237,
+      "probability": 0.10832659660468877
+    },
+    "not_A_and_not_B": {
+      "numerator": 256,
+      "denominator": 1237,
+      "probability": 0.20695230396119643
+    }
+  },
+  "conditional_probabilities": {
+    "A_given_B": {
+      "numerator": 488,
+      "denominator": 622,
+      "probability": 0.7845659163987139
+    },
+    "A_given_not_B": {
+      "numerator": 359,
+      "denominator": 615,
+      "probability": 0.583739837398374
+    }
+  },
+  "conditional_difference_percentage_points": 20.082607900033988
+}

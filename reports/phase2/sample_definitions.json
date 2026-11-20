@@ -1,0 +1,88 @@
+{
+  "inputs": {
+    "participant_table": "data/processed/participants.csv",
+    "participant_table_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+    "phase_one_sample_flow": "reports/phase1/sample_flow.json",
+    "source_files": {
+      "uds": "udslong_imputed.csv",
+      "mri": "mriscanclean.csv"
+    }
+  },
+  "observation": {
+    "unit": "One participant with matched UDS and MRI records",
+    "join_key": "NACCID",
+    "index_record_rule": "Use the single record supplied per participant in each file. The phase-one build rejects blank identifiers and repeated participant rows before matching.",
+    "visit_and_scan_timing": "The supplied fields do not identify the clinical visit date or number, the MRI scan date, or the interval between the two measurements."
+  },
+  "linkage": {
+    "uds_participants": 1237,
+    "mri_participants": 1237,
+    "matched_participants": 1237,
+    "uds_only": 0,
+    "mri_only": 0,
+    "matched_with_usable_left_thickness": 1237,
+    "matched_with_unusable_left_thickness": 0,
+    "cognitive_status_agreement": {
+      "equal": 1237,
+      "unavailable": 0,
+      "different": 0
+    }
+  },
+  "normal_cognition": {
+    "uds_column": "NACCUDSD",
+    "code": 1
+  },
+  "samples": {
+    "status_and_mri": {
+      "use": "UDS cognitive-status and MRI thickness event probabilities in all cognitive groups",
+      "required_values": [
+        "NACCUDSD",
+        "LH_INFERIORPARIETAL_AVGTH"
+      ],
+      "normal_cognition_only": false,
+      "included": 1237,
+      "excluded": 0,
+      "first_exclusion_reason": {},
+      "included_by_cognitive_status": {
+        "normal cognition": 847,
+        "impaired without MCI": 7,
+        "MCI": 252,
+        "dementia": 131,
+        "unavailable": 0
+      }
+    },
+    "paired_normal": {
+      "use": "Score and thickness distributions and covariance among participants with normal cognition",
+      "normal_cognition_before_eligibility": 847,
+      "required_values": [
+        "ANIMALS",
+        "LH_INFERIORPARIETAL_AVGTH"
+      ],
+      "normal_cognition_only": true,
+      "included": 843,
+      "excluded": 394,
+      "first_exclusion_reason": {
+        "outside_normal_cognition": 390,
+        "ANIMALS": 4
+      },
+      "included_by_cognitive_status": {
+        "normal cognition": 843,
+        "impaired without MCI": 0,
+        "MCI": 0,
+        "dementia": 0,
+        "unavailable": 0
+      }
+    }
+  },
+  "planned_mri_grouping": {
+    "column": "LH_INFERIORPARIETAL_AVGTH",
+    "unit": "mm",
+    "reference_sample": "status_and_mri",
+    "cutoff_rule": "Pooled median of usable thickness values in the reference sample",
+    "groups": [
+      "below median",
+      "at or above median"
+    ],
+    "purpose": "Descriptive grouping for the probability exercise"
+  }
+}
