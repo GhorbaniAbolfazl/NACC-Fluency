@@ -1,3 +1,5 @@
 matplotlib==3.10.8
 ipykernel==7.1.0
 nbclient==0.10.4
+scipy==1.15.3; python_version < "3.11"
+scipy==1.16.3; python_version >= "3.11"
