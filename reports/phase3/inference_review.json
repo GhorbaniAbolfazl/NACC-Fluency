@@ -1,0 +1,215 @@
+{
+  "stage": "Phase 3, Step 7",
+  "review_status": "Numerical and structural consistency checks passed; interpretation remains conditional on the stated assumptions and limitations.",
+  "passed_checks": 11,
+  "checks": [
+    {
+      "check": "raw_data_and_linkage",
+      "status": "pass",
+      "detail": "The participant table and sample flow reproduce from the supplied CSVs with one matched row per ID."
+    },
+    {
+      "check": "registered_plan",
+      "status": "pass",
+      "detail": "The saved plan, input hashes, eligibility rules, fixed cutoff and group counts match the current data."
+    },
+    {
+      "check": "mean_estimates",
+      "status": "pass",
+      "detail": "Both means, sample SDs, SEs, t degrees of freedom and 95% interval endpoints reproduce on the same paired-normal rows."
+    },
+    {
+      "check": "whole_sample_bootstrap",
+      "status": "pass",
+      "detail": "All 10,000 paired mean draws and their summaries reproduce with seed 314159."
+    },
+    {
+      "check": "score_contrast",
+      "status": "pass",
+      "detail": "The higher-minus-lower contrast, fixed group sizes, Welch statistic, df, raw p-value and interval reproduce."
+    },
+    {
+      "check": "within_group_bootstrap",
+      "status": "pass",
+      "detail": "All 10,000 stratified score differences and their summaries reproduce with seed 271828 and fixed group sizes."
+    },
+    {
+      "check": "cognitive_group_comparison",
+      "status": "pass",
+      "detail": "All four group summaries, individual mean intervals, Welch ANOVA, diagnostics and descriptive eta-squared reproduce."
+    },
+    {
+      "check": "completed_test_family",
+      "status": "pass",
+      "detail": "Exactly the two registered tests appear with current raw p-values, Holm adjustment and familywise decisions."
+    },
+    {
+      "check": "numerical_relationships",
+      "status": "pass",
+      "detail": "Independent inclusive quantiles and SD checks agree with retained draws; contrast signs, CI/test decisions, Holm monotonicity and the SS decomposition agree."
+    },
+    {
+      "check": "figures",
+      "status": "pass",
+      "detail": "All five vector PDFs reproduce byte for byte with the shared grayscale palette."
+    },
+    {
+      "check": "stable_inputs",
+      "status": "pass",
+      "detail": "Tracked inputs, analysis code, prior results and figures remained unchanged throughout the review."
+    }
+  ],
+  "source_files_sha256": {
+    "data/mriscanclean.csv": "3a2b34f7902592705f75ce3ad4c4fab68880470f01e7b9eb9823a799dc092e72",
+    "data/processed/participants.csv": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+    "data/udslong_imputed.csv": "8bcd0180d1b593092f7b2f7777281f59c4a6e9c3b2b041b5d2a33ed13be55e63",
+    "docs/amarpr.pdf": "ede1706ab440f1ae737a71afaf0a37438112e7b010e6a5118b8f334b4c0d03e3",
+    "figures/phase3/01_mean_score_sampling.pdf": "a116789afe153947975d3a35a14f51b8f6bc614173d34bbbdfb3d8ac7d31d7d6",
+    "figures/phase3/02_mean_thickness_sampling.pdf": "2e911f634ec9abc59c6bd6a4cf445f1e3fd34ac0abe6f75a98b973331ae2745d",
+    "figures/phase3/03_score_difference_bootstrap.pdf": "30d7212f8fb416962fa2535fad7ebcbc190ec8aabc861fe69d4161c54a6e0d31",
+    "figures/phase3/04_thickness_group_means.pdf": "5780744e2391029b21630b8870437e62aecaa7d22cddde138304af506f8f0db0",
+    "figures/phase3/05_thickness_group_qq.pdf": "3f098312060e2ca5b7a31a3475f6826952893e4a5d25623a94ac64df7f275e0f",
+    "reports/phase1/sample_flow.json": "928fc5a0717c786c7ed47c154d43113e77c1f3f22c9a1f2ecd8fe5714d6180f3",
+    "reports/phase2/event_probabilities.json": "cdcbf7c766a3cb77e8552e2c0de32db355a4229b2cb53ad2d4d69a3f93cc0c09",
+    "reports/phase3/analysis_plan.json": "ae0db5237c6e68d593c16fda3df7b80bc0fa4861f449b01acc92e24120eda357",
+    "reports/phase3/hypothesis_tests.json": "65c4c08c9397656380626994e0dd2d543e7152224e2bc40aae7300e0c6797d73",
+    "reports/phase3/mean_intervals.json": "61a192a6b52ccef56bc3c05697923fbaf2acee2c71b944ef544187637e2b4075",
+    "reports/phase3/sampling_distributions.json": "b1fe2ec7dbb336bfda44c94fb5b7426380f6a79e5ae7add42736e0a1913d7e1b",
+    "reports/phase3/score_difference_bootstrap.json": "40e4bcd0089d9fd8cc68ab3b5a7fce9b0e3dc990c54b06b3dc44cd61a2bbfbe8",
+    "reports/phase3/score_difference_by_mri.json": "31a1c9ba5e57b4cbb0528d0d4befffbe7c3181731d1ed4087e6455210db7ecbf",
+    "reports/phase3/thickness_by_status.json": "2cd4c7b07c2742be078fb769675e35f378ea80d428babf4799702d21c7a3cbd3",
+    "requirements.txt": "6954b33c3de27271d0179044bf553ee3f675eeb24238faab136eae135f71d18e",
+    "src/build_dataset.py": "50dbe0550aba8f8b4c70acbdfaa6762c35df81ca7b38836929c8c5267b229554",
+    "src/data_audit.py": "24981d5fa7342d493ba36f441eaeada2efcfb34ffb76d57e1322a0eba1a18c48",
+    "src/descriptive_statistics.py": "f96ec1b3bd359c06c1bf57176e18801062d088ba9855b7ce6ff92387b25a5386",
+    "src/phase1_figures.py": "c0e0f2ca8ecfb0f79735ac5fffc0e948747675d5ed66ac1c949e4ea7982aa413",
+    "src/phase2_samples.py": "3fce089b82164dfac805fce8d39fadb84c4c4d6f4c44d7338539fe79c29242f1",
+    "src/phase3_contrast_bootstrap.py": "171eb0c4f20b1c45bf72385450394b11b74bd564298485ac6363448532d59de9",
+    "src/phase3_group_comparison.py": "1ab2fcf788c42e6cf0ab583a608821501d3c1dd113ef874c0d9d36f1b7e4aee4",
+    "src/phase3_mean_intervals.py": "1716545ddadf3c1f21aa0bb0762d041bf3b849de39933afd372ccb20d81c1bf1",
+    "src/phase3_mri_contrast.py": "b7ff746d57374fac4a066d0661f393002dedd791b5cfcb944eb76df4b2c5bd6a",
+    "src/phase3_plan.py": "b5fe590d1f2b73c23e2d572d474ff25fa37383a0db88935607a974dc1de9a6fc",
+    "src/phase3_review.py": "c46576c423329cb9aa3cf750d85e51910c388b90363618ff3085ed05cee9e26d",
+    "src/phase3_sampling.py": "cac78e33070f3ba0ce9e1ebf5aa721959867a5327e146fda59ba5d71a304ab56",
+    "src/phase3_tables.py": "7e75bb6f42341a51f3929d8099ebfe9a754c60d9bb07cd8661c22f7b5c11a10e"
+  },
+  "environment": {
+    "python": "3.14.0",
+    "scipy": "1.16.3",
+    "matplotlib": "3.10.8"
+  },
+  "samples": {
+    "paired_normal": 843,
+    "mri_groups": {
+      "at_or_above_cutoff": 486,
+      "below_cutoff": 357
+    },
+    "status_and_mri": 1237,
+    "cognitive_groups": {
+      "1": 847,
+      "2": 7,
+      "3": 252,
+      "4": 131
+    },
+    "planned_phase_four_model_normal": 842
+  },
+  "findings": {
+    "mean_estimates": {
+      "mean_score": {
+        "column": "ANIMALS",
+        "parameter": "Population mean ANIMALS score under the paired_normal eligibility rules",
+        "unit": "Correct responses in 60 seconds",
+        "participants": 843,
+        "mean": 22.321470937129302,
+        "sample_sd": 5.43498404003954,
+        "standard_error": 0.18719079372875824,
+        "degrees_of_freedom": 842,
+        "confidence_level": 0.95,
+        "t_critical": 1.9627853942480502,
+        "margin_of_error": 0.3674153558685062,
+        "lower": 21.954055581260796,
+        "upper": 22.688886292997807,
+        "interval_width": 0.7348307117370124
+      },
+      "mean_thickness": {
+        "column": "LH_INFERIORPARIETAL_AVGTH",
+        "parameter": "Population mean left inferior parietal cortical thickness under the paired_normal rules",
+        "unit": "mm",
+        "participants": 843,
+        "mean": 2.3364460260972715,
+        "sample_sd": 0.12150855171700926,
+        "standard_error": 0.004184976822962917,
+        "degrees_of_freedom": 842,
+        "confidence_level": 0.95,
+        "t_critical": 1.9627853942480502,
+        "margin_of_error": 0.008214211383378222,
+        "lower": 2.3282318147138934,
+        "upper": 2.3446602374806496,
+        "interval_width": 0.016428422766756445
+      }
+    },
+    "within_normal_cognition": {
+      "mean_difference": 0.32439395511291025,
+      "unit": "Correct animal names in 60 seconds, higher MRI group minus lower MRI group",
+      "welch_interval": {
+        "confidence_level": 0.95,
+        "lower": -0.41399883137781934,
+        "upper": 1.0627867416036398,
+        "interval_width": 1.4767855729814592
+      },
+      "bootstrap_interval": {
+        "confidence_level": 0.95,
+        "lower": -0.4118745028875764,
+        "upper": 1.0488834422657938,
+        "interval_width": 1.46075794515337
+      },
+      "p_value_holm": 0.3887375094427604,
+      "interpretation": "The registered grouped comparison gives insufficient evidence of a score difference at familywise alpha 0.05. Its intervals leave uncertainty about the size and direction of the contrast; practical equivalence has not been assessed."
+    },
+    "across_cognitive_groups": {
+      "welch_anova": {
+        "f_statistic": 40.42821932319392,
+        "df_numerator": 3,
+        "df_denominator": 28.765075362388902,
+        "p_value_raw": 1.9139939295868037e-10,
+        "inverse_variance_weighted_mean": 2.3191514060927467,
+        "precision_weights": [
+          57545.400861510294,
+          633.9868717276368,
+          8437.416806115858,
+          2852.872756151248
+        ],
+        "welch_correction": 1.0463525061740913
+      },
+      "p_value_holm": 3.8279878591736075e-10,
+      "descriptive_eta_squared": 0.1438844488709307,
+      "interpretation": "The model-based omnibus test supports a difference in at least one mean thickness across the four cognitive groups. It does not identify a specific pair. Eta-squared describes this sample's SS partition and is sensitive to group composition."
+    },
+    "bootstrap_comparisons": {
+      "score_mean_se_ratio": 0.9929336151029581,
+      "thickness_mean_se_ratio": 1.0000393262193414,
+      "thickness_mean_interval_width_ratio": 0.9966741382819876,
+      "score_contrast_se_ratio": 0.9917590000586104,
+      "score_contrast_interval_width_ratio": 0.9891469498881066,
+      "interpretation": "Standard and percentile procedures give similar uncertainty estimates conditional on these observed data. Resampling the same extract provides an internal comparison of methods; it is not an independent replication of the study."
+    }
+  },
+  "interpretation_rules": {
+    "different_questions": "The score contrast compares MRI-defined groups within normal cognition; the omnibus test compares MRI means across UDS cognitive groups. They address different parameters in different eligibility samples.",
+    "confidence_intervals": "Interpret the 95% intervals through repeated-sampling coverage under the model assumptions. Each interval concerns its stated population parameter in its original units; it is an individual interval.",
+    "p_values": "Interpret raw and adjusted p-values under the null and method assumptions, alongside effect sizes and uncertainty. They do not measure the probability that a hypothesis is true or establish practical importance.",
+    "continuous_question": "The primary Phase 4 parameter is the adjusted score difference per 0.1 mm of thickness. A binary MRI-group contrast is a different parameter and leaves that continuous association to be estimated.",
+    "observational_scope": "All Phase 3 comparisons are exploratory and unadjusted. The supplied single-record participant data support association descriptions under the stated eligibility rules."
+  },
+  "material_limitations": {
+    "sampling_frame": "The sampling frame and selection probabilities are undocumented. Confidence intervals depend on the sampling assumptions and the stated eligibility rules.",
+    "independence": "Unique participant IDs establish one supplied record per person. Independence across people remains a modeling assumption; the review cannot validate the sampling design.",
+    "source_preparation": "Preparation and imputation details and value-level masks are unavailable. Estimates and resampling condition on the supplied values; additional source-preparation uncertainty cannot be quantified from these files.",
+    "measurement_timing_and_qc": "Clinical and MRI timing and scan-level QC details are unavailable. Numerical usability checks do not establish measurement quality or temporal alignment.",
+    "small_group": "The impairment-without-MCI group has seven participants. Its mean interval and Welch approximation are sensitive to departures from normality and individual extreme values.",
+    "normality": "The empirical skewness and Q-Q plots describe tail asymmetry. Welch does not remove sensitivity to non-normal observations in small groups; the test is a model-based exploratory comparison.",
+    "cutoff": "The pooled Phase 2 median is held fixed. Inference is conditional on that cutoff and, for the stratified bootstrap, the observed group sizes.",
+    "covariates": "Age, sex and education will be incorporated in Phase 4 on the common eligible modeling sample."
+  },
+  "next_step": "Assemble the numeric tables, LaTeX report and notebook, then check the Phase 3 deliverables against the course guide."
+}
