@@ -1,0 +1,143 @@
+{
+  "stage": "Phase 3, Step 4",
+  "participants_csv_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+  "analysis_plan_sha256": "ae0db5237c6e68d593c16fda3df7b80bc0fa4861f449b01acc92e24120eda357",
+  "sample": "paired_normal",
+  "sample_size": 843,
+  "estimand": {
+    "sample": "paired_normal",
+    "parameter": "Mean score at or above the cutoff minus mean score below the cutoff",
+    "estimator": "Difference between the two independent-group sample means",
+    "unit": "Correct responses",
+    "standard_interval": "Welch t interval using Satterthwaite degrees of freedom"
+  },
+  "score_column": "ANIMALS",
+  "mri_grouping": {
+    "column": "LH_INFERIORPARIETAL_AVGTH",
+    "cutoff_mm": 2.319,
+    "source": "Pooled median in the Phase 2 status_and_mri sample",
+    "comparison_order": "At or above cutoff minus below cutoff",
+    "ties": "Include values equal to the cutoff in the at-or-above group",
+    "bootstrap_rule": "Keep the cutoff fixed across bootstrap draws",
+    "participants_equal_to_cutoff": 3
+  },
+  "group_order": [
+    "at_or_above_cutoff",
+    "below_cutoff"
+  ],
+  "groups": {
+    "at_or_above_cutoff": {
+      "participants": 486,
+      "score_summary": {
+        "total": 486,
+        "usable": 486,
+        "unavailable": 0,
+        "unavailable_percent": 0.0,
+        "mean": 22.458847736625515,
+        "sample_sd": 5.543209267096987,
+        "minimum": 7,
+        "q1": 18.25,
+        "median": 22.0,
+        "q3": 26.0,
+        "maximum": 43,
+        "iqr": 7.75,
+        "iqr_review": {
+          "lower_fence": 6.625,
+          "upper_fence": 37.625,
+          "below": 0,
+          "above": 4
+        }
+      }
+    },
+    "below_cutoff": {
+      "participants": 357,
+      "score_summary": {
+        "total": 357,
+        "usable": 357,
+        "unavailable": 0,
+        "unavailable_percent": 0.0,
+        "mean": 22.134453781512605,
+        "sample_sd": 5.286070899784533,
+        "minimum": 8,
+        "q1": 18.0,
+        "median": 22.0,
+        "q3": 26.0,
+        "maximum": 41,
+        "iqr": 8.0,
+        "iqr_review": {
+          "lower_fence": 6.0,
+          "upper_fence": 38.0,
+          "below": 0,
+          "above": 1
+        }
+      }
+    }
+  },
+  "method": {
+    "name": "Two-sided independent-samples Welch t test",
+    "scipy_call": "scipy.stats.ttest_ind(higher, lower, equal_var=False, alternative='two-sided', nan_policy='raise')",
+    "scipy_version": "1.16.3",
+    "confidence_interval": "Welch t interval using Satterthwaite degrees of freedom",
+    "standard_error": "sqrt(s_higher^2 / n_higher + s_lower^2 / n_lower), using sample variances with n - 1 denominators",
+    "degrees_of_freedom": "Welch-Satterthwaite approximation",
+    "interval_scope": "The 95% intervals are individual intervals.",
+    "assumptions": {
+      "independence": "Each participant contributes to one MRI group. The sampling model treats different participants as independent.",
+      "large_sample": "Group means use the large-sample Welch approximation. Individual score distributions need not be exactly normal.",
+      "variances": "The method allows unequal population variances and unequal group sizes.",
+      "value_rules": "Reuse the Phase 1 usability rules and sample flags. Retain measurements outside IQR review fences.",
+      "cutoff": "Inference is conditional on the fixed Phase 2 cutoff; uncertainty in selecting that cutoff is not propagated."
+    },
+    "scope": "Unadjusted exploratory comparison among eligible participants with normal cognition"
+  },
+  "hypothesis_test": {
+    "role": "Main Phase 3 cross-modal contrast in the normal-cognition sample",
+    "sample": "paired_normal",
+    "null": "The mean score difference between the MRI groups is zero",
+    "alternative": "The mean score difference between the MRI groups is nonzero",
+    "method": "Two-sided independent-samples Welch t test",
+    "effect": "Raw difference in mean score with its confidence interval",
+    "null_mean_difference": 0,
+    "unadjusted_reference_alpha": 0.05,
+    "reject_unadjusted": false
+  },
+  "estimate": {
+    "mean_difference": 0.32439395511291025,
+    "standard_error": 0.37615829548726903,
+    "t_statistic": 0.8623868169454986,
+    "degrees_of_freedom": 786.656531890191,
+    "p_value_raw": 0.3887375094427604,
+    "confidence_interval": {
+      "confidence_level": 0.95,
+      "lower": -0.41399883137781934,
+      "upper": 1.0627867416036398,
+      "interval_width": 1.4767855729814592
+    }
+  },
+  "multiplicity": {
+    "family": [
+      "score_difference_by_mri",
+      "thickness_by_status"
+    ],
+    "familywise_alpha": 0.05,
+    "adjustment": "Holm adjustment across the two planned tests",
+    "reporting": "Report the test statistic, degrees of freedom, raw p-value and Holm-adjusted p-value",
+    "interval_scope": "The 95% intervals are individual intervals.",
+    "holm_adjusted_p_value": null,
+    "reject_holm": null,
+    "status": "Pending the supplementary thickness-by-status test in Step 6. Calculate Holm adjustment once both planned raw p-values are available."
+  },
+  "diagnostics": {
+    "group_distributions": "Group summaries include the score range, quartiles, sample SD and IQR review counts; all flagged values are retained.",
+    "group_sizes": "Both group counts are checked against the saved plan before testing.",
+    "pairing": "Linked UDS and MRI records belong to the same person. The two MRI groups contain different people, so the contrast uses independent groups."
+  },
+  "interpretation": {
+    "confidence_interval": "Under repeated sampling with the stated assumptions, a nominal 95% procedure covers the target population parameter in about 95% of repeated samples.",
+    "p_value": "Under the null hypothesis and test assumptions, the probability of a test statistic at least as incompatible with the null as the observed statistic.",
+    "effect_units": "The mean difference and its interval are in correct animal names in 60 seconds, higher MRI group minus lower MRI group.",
+    "generalization": "The sampling frame and selection probabilities are undocumented. Confidence intervals depend on the sampling assumptions and the stated eligibility rules.",
+    "scope": "The contrast describes an unadjusted association. Age, sex and education are addressed in Phase 4.",
+    "practical_importance": "Interpret the effect and its interval in score units. A practical equivalence margin has not been specified."
+  }
+}
