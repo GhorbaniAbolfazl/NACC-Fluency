@@ -1,0 +1,51 @@
+{
+  "participants_csv_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+  "analysis_plan_sha256": "ae0db5237c6e68d593c16fda3df7b80bc0fa4861f449b01acc92e24120eda357",
+  "sample": "paired_normal",
+  "sample_size": 843,
+  "method": {
+    "estimator": "Arithmetic mean",
+    "standard_error": "Sample standard deviation divided by sqrt(n)",
+    "interval": "Mean plus or minus t(1 - alpha / 2, n - 1) times the standard error",
+    "interval_scope": "The 95% intervals are individual intervals.",
+    "assumptions": "Independent participants under the sampling model. The Student t interval is exact for normal observations and is used here as a large-sample approximation for the means.",
+    "value_rules": "Reuse the Phase 1 usability rules and sample flags. Retain measurements outside IQR review fences.",
+    "coverage_interpretation": "Under repeated sampling with the stated assumptions, a nominal 95% procedure covers the target population parameter in about 95% of repeated samples.",
+    "generalization": "The sampling frame and selection probabilities are undocumented. Confidence intervals depend on the sampling assumptions and the stated eligibility rules.",
+    "t_quantile": "scipy.stats.t.ppf"
+  },
+  "estimates": {
+    "mean_score": {
+      "column": "ANIMALS",
+      "parameter": "Population mean ANIMALS score under the paired_normal eligibility rules",
+      "unit": "Correct responses in 60 seconds",
+      "participants": 843,
+      "mean": 22.321470937129302,
+      "sample_sd": 5.43498404003954,
+      "standard_error": 0.18719079372875824,
+      "degrees_of_freedom": 842,
+      "confidence_level": 0.95,
+      "t_critical": 1.9627853942480502,
+      "margin_of_error": 0.3674153558685062,
+      "lower": 21.954055581260796,
+      "upper": 22.688886292997807,
+      "interval_width": 0.7348307117370124
+    },
+    "mean_thickness": {
+      "column": "LH_INFERIORPARIETAL_AVGTH",
+      "parameter": "Population mean left inferior parietal cortical thickness under the paired_normal rules",
+      "unit": "mm",
+      "participants": 843,
+      "mean": 2.3364460260972715,
+      "sample_sd": 0.12150855171700926,
+      "standard_error": 0.004184976822962917,
+      "degrees_of_freedom": 842,
+      "confidence_level": 0.95,
+      "t_critical": 1.9627853942480502,
+      "margin_of_error": 0.008214211383378222,
+      "lower": 2.3282318147138934,
+      "upper": 2.3446602374806496,
+      "interval_width": 0.016428422766756445
+    }
+  }
+}
