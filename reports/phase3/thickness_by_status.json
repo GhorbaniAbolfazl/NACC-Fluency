@@ -1,0 +1,230 @@
+{
+  "stage": "Phase 3, Step 6",
+  "participants_csv_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+  "analysis_plan_sha256": "ae0db5237c6e68d593c16fda3df7b80bc0fa4861f449b01acc92e24120eda357",
+  "analysis_status": "Specified before computing Phase 3 tests and confidence intervals. Exploratory analyses informed by Phase 1 and Phase 2 descriptions of the same extract.",
+  "sample": "status_and_mri",
+  "sample_size": 1237,
+  "outcome": {
+    "column": "LH_INFERIORPARIETAL_AVGTH",
+    "unit": "mm"
+  },
+  "grouping_column": "NACCUDSD",
+  "group_order": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "groups": {
+    "1": {
+      "label": "normal cognition",
+      "summary": {
+        "total": 847,
+        "usable": 847,
+        "unavailable": 0,
+        "unavailable_percent": 0.0,
+        "mean": 2.3364167650531287,
+        "sample_sd": 0.12132111563621321,
+        "minimum": 1.474,
+        "q1": 2.269,
+        "median": 2.338,
+        "q3": 2.417,
+        "maximum": 2.666,
+        "iqr": 0.148,
+        "iqr_review": {
+          "lower_fence": 2.047,
+          "upper_fence": 2.639,
+          "below": 12,
+          "above": 3
+        }
+      },
+      "mean_interval": {
+        "participants": 847,
+        "mean": 2.3364167650531287,
+        "sample_sd": 0.12132111563621321,
+        "standard_error": 0.0041686428669393495,
+        "degrees_of_freedom": 846,
+        "confidence_level": 0.95,
+        "t_critical": 1.9627720354747376,
+        "margin_of_error": 0.008182095645109792,
+        "lower": 2.328234669408019,
+        "upper": 2.3445988606982384,
+        "interval_width": 0.016364191290219585
+      },
+      "empirical_skewness": -0.9502603375284692
+    },
+    "2": {
+      "label": "impaired without MCI",
+      "summary": {
+        "total": 7,
+        "usable": 7,
+        "unavailable": 0,
+        "unavailable_percent": 0.0,
+        "mean": 2.314285714285714,
+        "sample_sd": 0.10507729581235938,
+        "minimum": 2.095,
+        "q1": 2.314,
+        "median": 2.319,
+        "q3": 2.367,
+        "maximum": 2.424,
+        "iqr": 0.053,
+        "iqr_review": {
+          "lower_fence": 2.2345,
+          "upper_fence": 2.4465,
+          "below": 1,
+          "above": 0
+        }
+      },
+      "mean_interval": {
+        "participants": 7,
+        "mean": 2.314285714285714,
+        "sample_sd": 0.10507729581235938,
+        "standard_error": 0.03971548473695309,
+        "degrees_of_freedom": 6,
+        "confidence_level": 0.95,
+        "t_critical": 2.4469118511449692,
+        "margin_of_error": 0.09718029027681765,
+        "lower": 2.2171054240088965,
+        "upper": 2.4114660045625316,
+        "interval_width": 0.1943605805536353
+      },
+      "empirical_skewness": -1.373208797614934
+    },
+    "3": {
+      "label": "MCI",
+      "summary": {
+        "total": 252,
+        "usable": 252,
+        "unavailable": 0,
+        "unavailable_percent": 0.0,
+        "mean": 2.2575833333333337,
+        "sample_sd": 0.1728206039665945,
+        "minimum": 1.349,
+        "q1": 2.16075,
+        "median": 2.2885,
+        "q3": 2.369,
+        "maximum": 2.77,
+        "iqr": 0.20825,
+        "iqr_review": {
+          "lower_fence": 1.848375,
+          "upper_fence": 2.681375,
+          "below": 6,
+          "above": 1
+        }
+      },
+      "mean_interval": {
+        "participants": 252,
+        "mean": 2.2575833333333337,
+        "sample_sd": 0.1728206039665945,
+        "standard_error": 0.010886674750561707,
+        "degrees_of_freedom": 251,
+        "confidence_level": 0.95,
+        "t_critical": 1.969460227223805,
+        "margin_of_error": 0.021440872927952923,
+        "lower": 2.236142460405381,
+        "upper": 2.2790242062612864,
+        "interval_width": 0.042881745855905845
+      },
+      "empirical_skewness": -1.4257025790464408
+    },
+    "4": {
+      "label": "dementia",
+      "summary": {
+        "total": 131,
+        "usable": 131,
+        "unavailable": 0,
+        "unavailable_percent": 0.0,
+        "mean": 2.15406106870229,
+        "sample_sd": 0.2142863201680331,
+        "minimum": 1.555,
+        "q1": 2.0215,
+        "median": 2.198,
+        "q3": 2.306,
+        "maximum": 2.616,
+        "iqr": 0.2845,
+        "iqr_review": {
+          "lower_fence": 1.59475,
+          "upper_fence": 2.73275,
+          "below": 2,
+          "above": 0
+        }
+      },
+      "mean_interval": {
+        "participants": 131,
+        "mean": 2.15406106870229,
+        "sample_sd": 0.2142863201680331,
+        "standard_error": 0.018722282721777648,
+        "degrees_of_freedom": 130,
+        "confidence_level": 0.95,
+        "t_critical": 1.9783804054271528,
+        "margin_of_error": 0.03703979728163224,
+        "lower": 2.1170212714206578,
+        "upper": 2.1911008659839224,
+        "interval_width": 0.07407959456326448
+      },
+      "empirical_skewness": -0.5561573713943204
+    }
+  },
+  "hypothesis_test": {
+    "role": "Supplementary omnibus cross-modal comparison across cognitive groups",
+    "sample": "status_and_mri",
+    "null": "All four mean thicknesses are equal",
+    "alternative": "At least one mean thickness differs",
+    "method": "Welch one-way ANOVA",
+    "effect": "Group means and descriptive sample eta-squared, computed from sums of squares",
+    "diagnostics": "Review each group's size, distribution, spread and extreme values. Keep the seven-person impairment-without-MCI group with an explicit precision limitation."
+  },
+  "method": {
+    "name": "Welch one-way ANOVA",
+    "formula": "w_i=n_i/s_i^2; C=sum((1-w_i/sum(w))^2/(n_i-1)); F=[sum(w_i*(mean_i-weighted_mean)^2)/(k-1)]/[1+2*(k-2)*C/(k^2-1)]; df2=(k^2-1)/(3*C)",
+    "p_value": "Upper-tail F probability, scipy.stats.f.sf(F, k - 1, df2)",
+    "scipy_version": "1.16.3",
+    "mean_intervals": "Separate Student t intervals for the group means",
+    "interval_scope": "The 95% intervals are individual intervals.",
+    "assumptions": "Independent participants and approximate normal-theory calibration within groups. Unequal population variances and unequal group sizes are allowed. The seven-person group has limited precision and weak protection from a large-sample approximation."
+  },
+  "welch_anova": {
+    "f_statistic": 40.42821932319392,
+    "df_numerator": 3,
+    "df_denominator": 28.765075362388902,
+    "p_value_raw": 1.9139939295868037e-10,
+    "inverse_variance_weighted_mean": 2.3191514060927467,
+    "precision_weights": [
+      57545.400861510294,
+      633.9868717276368,
+      8437.416806115858,
+      2852.872756151248
+    ],
+    "welch_correction": 1.0463525061740913
+  },
+  "descriptive_effect": {
+    "grand_mean_mm": 2.3009199676637024,
+    "sum_of_squares_unit": "mm^2",
+    "between_group_sum_of_squares": 4.367109004840642,
+    "within_group_sum_of_squares": 25.98439207195806,
+    "total_sum_of_squares": 30.35150107679871,
+    "eta_squared": 0.1438844488709307,
+    "definition": "Between-group sum of squares divided by total sum of squares in the observed sample",
+    "interpretation": "A descriptive share of observed squared thickness variation associated with differences among group means. It depends on sample composition and is separate from Welch's precision-weighted F statistic."
+  },
+  "diagnostics": {
+    "largest_to_smallest_group_size_ratio": 121.0,
+    "largest_to_smallest_sample_variance_ratio": 4.158829527547351,
+    "review": "Review group counts, ranges, quartiles, SDs, skewness, IQR flags and the group-specific normal Q-Q plots. Keep all measurements outside review fences.",
+    "small_group": "The impairment-without-MCI group has seven participants. Its mean interval and Welch approximation are sensitive to departures from normality and individual extreme values.",
+    "normality": "The empirical skewness and Q-Q plots describe tail asymmetry. Welch does not remove sensitivity to non-normal observations in small groups; the test is a model-based exploratory comparison."
+  },
+  "interpretation": {
+    "omnibus": "Rejection supports a difference in at least one population mean under the model assumptions. It does not identify a particular pair of groups.",
+    "effect": "Report group means and intervals in millimeters alongside descriptive sample eta-squared.",
+    "confidence_interval": "Under repeated sampling with the stated assumptions, a nominal 95% procedure covers the target population parameter in about 95% of repeated samples.",
+    "generalization": "The sampling frame and selection probabilities are undocumented. Confidence intervals depend on the sampling assumptions and the stated eligibility rules.",
+    "scope": "An unadjusted exploratory comparison; age, sex and education are addressed in Phase 4."
+  },
+  "completed_test_family": "reports/phase3/hypothesis_tests.json",
+  "figures": [
+    "figures/phase3/04_thickness_group_means.pdf",
+    "figures/phase3/05_thickness_group_qq.pdf"
+  ]
+}

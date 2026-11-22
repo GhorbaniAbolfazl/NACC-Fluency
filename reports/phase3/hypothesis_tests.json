@@ -1,0 +1,60 @@
+{
+  "stage": "Phase 3, Step 6, completed planned test family",
+  "participants_csv_sha256": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+  "analysis_plan_sha256": "ae0db5237c6e68d593c16fda3df7b80bc0fa4861f449b01acc92e24120eda357",
+  "inputs": {
+    "score_contrast": "reports/phase3/score_difference_by_mri.json",
+    "score_contrast_sha256": "31a1c9ba5e57b4cbb0528d0d4befffbe7c3181731d1ed4087e6455210db7ecbf",
+    "thickness_comparison": "reports/phase3/thickness_by_status.json",
+    "thickness_comparison_sha256": "2cd4c7b07c2742be078fb769675e35f378ea80d428babf4799702d21c7a3cbd3"
+  },
+  "policy": {
+    "family": [
+      "score_difference_by_mri",
+      "thickness_by_status"
+    ],
+    "familywise_alpha": 0.05,
+    "adjustment": "Holm adjustment across the two planned tests",
+    "reporting": "Report the test statistic, degrees of freedom, raw p-value and Holm-adjusted p-value",
+    "interval_scope": "The 95% intervals are individual intervals."
+  },
+  "status": "Complete. This is the final multiplicity table for both planned tests; earlier step outputs retain their stage-specific pending status.",
+  "adjustment": "Sort raw p-values ascending; multiply by the number of remaining tests; take cumulative maxima and cap at one.",
+  "tests": {
+    "score_difference_by_mri": {
+      "method": "Two-sided independent-samples Welch t test",
+      "sample": "paired_normal",
+      "participants": 843,
+      "null": "The mean score difference between the MRI groups is zero",
+      "alternative": "The mean score difference between the MRI groups is nonzero",
+      "statistic": 0.8623868169454986,
+      "degrees_of_freedom": [
+        786.656531890191
+      ],
+      "p_value_raw": 0.3887375094427604,
+      "p_value_holm": 0.3887375094427604,
+      "reject_holm": false
+    },
+    "thickness_by_status": {
+      "method": "Welch one-way ANOVA",
+      "sample": "status_and_mri",
+      "participants": 1237,
+      "null": "All four mean thicknesses are equal",
+      "alternative": "At least one mean thickness differs",
+      "statistic": 40.42821932319392,
+      "degrees_of_freedom": [
+        3,
+        28.765075362388902
+      ],
+      "p_value_raw": 1.9139939295868037e-10,
+      "p_value_holm": 3.8279878591736075e-10,
+      "reject_holm": true
+    }
+  },
+  "interpretation": {
+    "familywise_error": "Holm controls the familywise error rate under valid raw p-values, including dependent tests.",
+    "confidence_intervals": "Reported 95% intervals are individual intervals; the Holm adjustment applies to the two test p-values.",
+    "p_value": "Under the null hypothesis and test assumptions, the probability of a test statistic at least as incompatible with the null as the observed statistic.",
+    "omnibus": "Rejection supports a difference in at least one population mean under the model assumptions. It does not identify a particular pair of groups."
+  }
+}
