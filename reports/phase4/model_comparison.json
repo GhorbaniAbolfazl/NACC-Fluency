@@ -1,0 +1,614 @@
+{
+  "stage": "Phase 4, Step 5",
+  "status": "Three-model comparison and collinearity review completed; residual/influence diagnostics remain pending.",
+  "sample": "model_normal",
+  "participants": 842,
+  "source_files_sha256": {
+    "data/udslong_imputed.csv": "8bcd0180d1b593092f7b2f7777281f59c4a6e9c3b2b041b5d2a33ed13be55e63",
+    "data/mriscanclean.csv": "3a2b34f7902592705f75ce3ad4c4fab68880470f01e7b9eb9823a799dc092e72",
+    "data/processed/participants.csv": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+    "reports/phase1/sample_flow.json": "928fc5a0717c786c7ed47c154d43113e77c1f3f22c9a1f2ecd8fe5714d6180f3",
+    "docs/amarpr.pdf": "ede1706ab440f1ae737a71afaf0a37438112e7b010e6a5118b8f334b4c0d03e3",
+    "reports/phase3/inference_review.json": "01529f09a097f728615ac68fe5e159eb7554283cc9cfbc569d952c8aa3317fcd",
+    "src/build_dataset.py": "50dbe0550aba8f8b4c70acbdfaa6762c35df81ca7b38836929c8c5267b229554",
+    "src/data_audit.py": "24981d5fa7342d493ba36f441eaeada2efcfb34ffb76d57e1322a0eba1a18c48",
+    "src/descriptive_statistics.py": "f96ec1b3bd359c06c1bf57176e18801062d088ba9855b7ce6ff92387b25a5386",
+    "src/phase4_plan.py": "191b7dcd592b780a7ef7b33ebb121eefa5dc17e364ea1065a4b3afbf5d309a00",
+    "reports/phase4/analysis_plan.json": "cb102d2556004d8b5e50f960792ec83c2ab34d90201db60947fff175022dacd0",
+    "reports/phase4/design_matrices.json": "85e3eea99a5c5c0ce9becd28e499a098f431de0d48ed514659126d9a9824d73d",
+    "src/phase4_design.py": "3806004577ee515e775c66430e5c13772dd722e2da15fbf72d1b14c51de59296",
+    "src/phase4_regression.py": "3252a80f17c8b2441ab573f9c3b08823df7a0f707319c441b8a93da1248b76f0",
+    "src/phase4_simple.py": "ad9e2e7a1c5975641c681eea4fa20c53d5a813f675e6a8de648b2ba4a663c7b6",
+    "requirements.txt": "6954b33c3de27271d0179044bf553ee3f675eeb24238faab136eae135f71d18e",
+    "src/phase1_figures.py": "c0e0f2ca8ecfb0f79735ac5fffc0e948747675d5ed66ac1c949e4ea7982aa413",
+    "reports/phase4/simple_regression.json": "3369c707e4dde296d58978142212fd98a227b4a51eb997bfa2be674acf3c3933",
+    "src/phase4_multiple.py": "32e0103d0371ba5f8542e8657a7e9c886093f1e7fa5b6922a78b59c8a43665df",
+    "reports/phase4/multiple_regression.json": "7f9b1c7e8d49793de59f2117d060052c5a4ab42c3b3865111a46e38795e9a588",
+    "src/phase4_comparison.py": "8936ffc4964d69f762cf2bfd18c11c87778f666d7cd17768f874758858312afc"
+  },
+  "environment": {
+    "python": "3.14.0",
+    "scipy": "1.16.3",
+    "numpy_runtime": "2.5.4",
+    "matplotlib": "3.10.8"
+  },
+  "common_sample": {
+    "membership_sha256": "01493a1533ccc79d5a8cf6e7fca3eb0ca1acab860c59884f7d5f9466f22c34d4",
+    "response_sha256": "b6861f8e75d16a7d3fa633905a085608cb4e2e91069dccd1571f277fb0a2d4c8",
+    "identical_participants_and_response_order": true,
+    "identical_shared_predictor_values": true,
+    "no_exclusions_or_new_predictors": true
+  },
+  "model_order": [
+    "uds_only",
+    "mri_only",
+    "integrated"
+  ],
+  "fit_comparison": {
+    "uds_only": {
+      "participants": 842,
+      "parameters_including_intercept": 4,
+      "residual_df": 838,
+      "SSE": 21686.35393342215,
+      "R_squared": 0.125640228105526,
+      "adjusted_R_squared": 0.12251006185769375,
+      "residual_SD": 5.087111555473374,
+      "in_sample_RMSE": 5.075013770083252
+    },
+    "mri_only": {
+      "participants": 842,
+      "parameters_including_intercept": 2,
+      "residual_df": 840,
+      "SSE": 24794.41346147199,
+      "R_squared": 0.00032814344975051757,
+      "adjusted_R_squared": -0.0008619420937616695,
+      "residual_SD": 5.432969619159006,
+      "in_sample_RMSE": 5.426513324995737
+    },
+    "integrated": {
+      "participants": 842,
+      "parameters_including_intercept": 5,
+      "residual_df": 837,
+      "SSE": 21668.359407397456,
+      "R_squared": 0.1263657391673948,
+      "adjusted_R_squared": 0.12219066504155207,
+      "residual_SD": 5.08803729794483,
+      "in_sample_RMSE": 5.072907804749059
+    }
+  },
+  "metric_definitions": {
+    "SSE": "Sum of squared residuals in squared score units",
+    "R_squared": "1-SSE/SST",
+    "adjusted_R_squared": "1-(SSE/(n-p))/(SST/(n-1))",
+    "residual_SD": "sqrt(SSE/(n-p)), in correct responses",
+    "in_sample_RMSE": "sqrt(SSE/n), in correct responses",
+    "p": "Number of parameters including the intercept"
+  },
+  "nested_model_changes": {
+    "uds_only_to_integrated": {
+      "added_terms": [
+        "thickness_0_1mm"
+      ],
+      "SSE_reduction": 17.994526024693187,
+      "R_squared_increase": 0.0007255110618687999,
+      "adjusted_R_squared_change": -0.0003193968161416816,
+      "residual_SD_change": 0.0009257424714554929,
+      "in_sample_RMSE_change": -0.0021059653341923834,
+      "interpretation": "Descriptive nested-model change only. SSE and unadjusted R-squared cannot worsen when columns are added; adjusted R-squared and residual SD can worsen because residual degrees of freedom decrease. No extra hypothesis test or model-selection rule is introduced."
+    },
+    "mri_only_to_integrated": {
+      "added_terms": [
+        "age_c",
+        "female",
+        "education_c"
+      ],
+      "SSE_reduction": 3126.054054074535,
+      "R_squared_increase": 0.12603759571764428,
+      "adjusted_R_squared_change": 0.12305260713531374,
+      "residual_SD_change": -0.34493232121417616,
+      "in_sample_RMSE_change": -0.3536055202466777,
+      "interpretation": "Descriptive nested-model change only. SSE and unadjusted R-squared cannot worsen when columns are added; adjusted R-squared and residual SD can worsen because residual degrees of freedom decrease. No extra hypothesis test or model-selection rule is introduced."
+    }
+  },
+  "coefficient_comparisons": {
+    "thickness_0_1mm": {
+      "from_model": "mri_only",
+      "to_model": "integrated",
+      "before_estimate": 0.08098478678747445,
+      "after_estimate": -0.12570420635042928,
+      "change_integrated_minus_baseline": -0.20668899313790373,
+      "uncertainty": {
+        "model_based": {
+          "before_SE": 0.15422708962770262,
+          "after_SE": 0.1507751921985112,
+          "SE_ratio_after_over_before": 0.977618086177181,
+          "before_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.22173092964211594,
+            "upper": 0.38370050321706484
+          },
+          "after_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.42164609623782456,
+            "upper": 0.170237683536966
+          },
+          "before_interval_width": 0.6054314328591808,
+          "after_interval_width": 0.5918837797747906,
+          "interval_width_ratio_after_over_before": 0.9776231421939712
+        },
+        "hc3": {
+          "before_SE": 0.15425068554321542,
+          "after_SE": 0.1452318800011004,
+          "SE_ratio_after_over_before": 0.9415315043148494,
+          "before_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.22177724351918193,
+            "upper": 0.38374681709413083
+          },
+          "after_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.41076567045943974,
+            "upper": 0.15935725775858117
+          },
+          "before_interval_width": 0.6055240606133128,
+          "after_interval_width": 0.5701229282180209,
+          "interval_width_ratio_after_over_before": 0.9415363737001047
+        }
+      },
+      "scope": "Descriptive change between models on the same participants. The estimates are dependent and target different conditional associations; this is not an independent-samples difference test. No percent change is reported for a near-zero baseline coefficient."
+    },
+    "age_c": {
+      "from_model": "uds_only",
+      "to_model": "integrated",
+      "before_estimate": -0.13790291725262036,
+      "after_estimate": -0.14228708055265055,
+      "change_integrated_minus_baseline": -0.004384163300030192,
+      "uncertainty": {
+        "model_based": {
+          "before_SE": 0.022157818491973447,
+          "after_SE": 0.02277718325454884,
+          "SE_ratio_after_over_before": 1.0279524251360646,
+          "before_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.18139425858814104,
+            "upper": -0.09441157591709967
+          },
+          "after_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.18699418760636172,
+            "upper": -0.09757997349893939
+          },
+          "before_interval_width": 0.08698268267104137,
+          "after_interval_width": 0.08941421410742233,
+          "interval_width_ratio_after_over_before": 1.0279542014768241
+        },
+        "hc3": {
+          "before_SE": 0.023768100177438484,
+          "after_SE": 0.02480105818006597,
+          "SE_ratio_after_over_before": 1.043459847228682,
+          "before_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.18455491767803595,
+            "upper": -0.09125091682720476
+          },
+          "after_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.19096665390946993,
+            "upper": -0.09360750719583116
+          },
+          "before_interval_width": 0.09330400085083118,
+          "after_interval_width": 0.09735914671363877,
+          "interval_width_ratio_after_over_before": 1.0434616503668552
+        }
+      },
+      "scope": "Descriptive change between models on the same participants. The estimates are dependent and target different conditional associations; this is not an independent-samples difference test. No percent change is reported for a near-zero baseline coefficient."
+    },
+    "female": {
+      "from_model": "uds_only",
+      "to_model": "integrated",
+      "before_estimate": -0.19393203709697274,
+      "after_estimate": -0.14241267906471977,
+      "change_integrated_minus_baseline": 0.051519358032252965,
+      "uncertainty": {
+        "model_based": {
+          "before_SE": 0.3692965514034389,
+          "after_SE": 0.37449720459200275,
+          "SE_ratio_after_over_before": 1.0140825934301303,
+          "before_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.9187868948500365,
+            "upper": 0.5309228206560911
+          },
+          "after_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.877476643291576,
+            "upper": 0.5926512851621365
+          },
+          "before_interval_width": 1.4497097155061276,
+          "after_interval_width": 1.4701279284537125,
+          "interval_width_ratio_after_over_before": 1.014084345803295
+        },
+        "hc3": {
+          "before_SE": 0.3671099892436258,
+          "after_SE": 0.36897692868114884,
+          "SE_ratio_after_over_before": 1.005085504323567,
+          "before_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.9144951130901031,
+            "upper": 0.5266310388961577
+          },
+          "after_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.8666414331887956,
+            "upper": 0.5818160750593561
+          },
+          "before_interval_width": 1.4411261519862608,
+          "after_interval_width": 1.4484575082481517,
+          "interval_width_ratio_after_over_before": 1.0050872411494207
+        }
+      },
+      "scope": "Descriptive change between models on the same participants. The estimates are dependent and target different conditional associations; this is not an independent-samples difference test. No percent change is reported for a near-zero baseline coefficient."
+    },
+    "education_c": {
+      "from_model": "uds_only",
+      "to_model": "integrated",
+      "before_estimate": 0.6027127747697139,
+      "after_estimate": 0.6032432142871926,
+      "change_integrated_minus_baseline": 0.0005304395174787757,
+      "uncertainty": {
+        "model_based": {
+          "before_SE": 0.06828701366831921,
+          "after_SE": 0.06830240370172055,
+          "SE_ratio_after_over_before": 1.0002253727696468,
+          "before_interval": {
+            "confidence_level": 0.95,
+            "lower": 0.4686791007729679,
+            "upper": 0.7367464487664598
+          },
+          "after_interval": {
+            "confidence_level": 0.95,
+            "lower": 0.46917910108264255,
+            "upper": 0.7373073274917428
+          },
+          "before_interval_width": 0.26806734799349186,
+          "after_interval_width": 0.2681282264091002,
+          "interval_width_ratio_after_over_before": 1.000227101197009
+        },
+        "hc3": {
+          "before_SE": 0.06374706968538153,
+          "after_SE": 0.06386034473069785,
+          "SE_ratio_after_over_before": 1.0017769451345038,
+          "before_interval": {
+            "confidence_level": 0.95,
+            "lower": 0.4775900977412666,
+            "upper": 0.7278354517981611
+          },
+          "after_interval": {
+            "confidence_level": 0.95,
+            "lower": 0.477897984525649,
+            "upper": 0.7285884440487362
+          },
+          "before_interval_width": 0.2502453540568945,
+          "after_interval_width": 0.2506904595230872,
+          "interval_width_ratio_after_over_before": 1.0017786762430423
+        }
+      },
+      "scope": "Descriptive change between models on the same participants. The estimates are dependent and target different conditional associations; this is not an independent-samples difference test. No percent change is reported for a near-zero baseline coefficient."
+    }
+  },
+  "thickness_change_identity": {
+    "marginal_slope": 0.08098478678747445,
+    "adjusted_slope": -0.12570420635042928,
+    "components": {
+      "age_c": {
+        "predictor_on_thickness_slope": -1.5536643019951104,
+        "integrated_score_coefficient": -0.14228708055265055,
+        "contribution_to_marginal_minus_adjusted": 0.22106635768975585
+      },
+      "female": {
+        "predictor_on_thickness_slope": 0.06874056509904619,
+        "integrated_score_coefficient": -0.14241267906471977,
+        "contribution_to_marginal_minus_adjusted": -0.009789528036177941
+      },
+      "education_c": {
+        "predictor_on_thickness_slope": -0.007605284911651507,
+        "integrated_score_coefficient": 0.6032432142871926,
+        "contribution_to_marginal_minus_adjusted": -0.004587836515674543
+      }
+    },
+    "reconstructed_marginal_slope": 0.08098478678747409,
+    "absolute_identity_error": 3.608224830031759e-16,
+    "identity": "MRI-only thickness slope = integrated thickness slope + sum(integrated covariate coefficient * slope of that covariate regressed on thickness alone with an intercept).",
+    "interpretation": "An algebraic description of the observed coefficient change, not a causal decomposition or proof of confounding. Covariate correlations and score coefficients jointly affect the marginal slope; sign change alone does not establish a protective/harmful effect or severe multicollinearity. Both thickness intervals still need their stated uncertainty and assumptions."
+  },
+  "collinearity": {
+    "uds_only": {
+      "predictor_order": [
+        "age_c",
+        "female",
+        "education_c"
+      ],
+      "correlation_matrix": [
+        [
+          1.0,
+          -0.061455144158602135,
+          -0.017279644411738418
+        ],
+        [
+          -0.061455144158602135,
+          1.0,
+          -0.10212115391988698
+        ],
+        [
+          -0.017279644411738418,
+          -0.10212115391988698,
+          1.0
+        ]
+      ],
+      "correlation_scope": "Pearson correlations among explanatory columns on the common sample; includes the recorded-sex indicator. No response or intercept is included.",
+      "vif": {
+        "age_c": {
+          "VIF": 1.0043563398871183,
+          "tolerance": 0.9956625554953854,
+          "auxiliary_R_squared": 0.004337444504614596,
+          "auxiliary_SSE": 52709.4545226873,
+          "predictor_SST": 52939.07482185273,
+          "model_based_SE_inflation_factor": 1.0021758028844632,
+          "review_flag": false,
+          "inverse_gram_check": 1.0043563398871183
+        },
+        "female": {
+          "VIF": 1.014637837164176,
+          "tolerance": 0.9855733379655075,
+          "auxiliary_R_squared": 0.014426662034492499,
+          "auxiliary_SSE": 189.75447145399565,
+          "predictor_SST": 192.53206650831353,
+          "model_based_SE_inflation_factor": 1.0072923295469771,
+          "review_flag": false,
+          "inverse_gram_check": 1.014637837164176
+        },
+        "education_c": {
+          "VIF": 1.0111077219149178,
+          "tolerance": 0.9890143041397398,
+          "auxiliary_R_squared": 0.010985695860260214,
+          "auxiliary_SSE": 5549.658783862469,
+          "predictor_SST": 5611.302850356295,
+          "model_based_SE_inflation_factor": 1.0055385233370813,
+          "review_flag": false,
+          "inverse_gram_check": 1.0111077219149178
+        }
+      },
+      "review_threshold_gt": 5,
+      "flagged_terms": [],
+      "full_column_rank": true,
+      "rank": 4,
+      "rank_tolerance": 4.3213499966112307e-11,
+      "raw_design_condition_number": 20.562802514799557,
+      "standardized_design_condition_number": 1.128871406297929,
+      "standardization": "For conditioning diagnostics only: retain intercept=1; center each other column at its mean and divide by its sample SD (n-1). The model matrix and its registered coefficient units are unchanged.",
+      "interpretation": "0 explanatory terms exceed the registered VIF review threshold. Review rank, VIF and conditioning together. VIF describes classical coefficient-variance inflation from predictor dependence, holding residual variance and predictor spread fixed; its square root is the corresponding SE factor. It is not the observed HC3-to-model-based SE ratio. A low VIF does not establish model validity, causality or a precisely estimated thickness association.",
+      "action": "Retain all registered covariates. VIF is a review heuristic, not an automatic selection or deletion rule."
+    },
+    "integrated": {
+      "predictor_order": [
+        "thickness_0_1mm",
+        "age_c",
+        "female",
+        "education_c"
+      ],
+      "correlation_matrix": [
+        [
+          1.0,
+          -0.23787326130057068,
+          0.17451717538161235,
+          -0.003576516617287929
+        ],
+        [
+          -0.23787326130057068,
+          1.0,
+          -0.061455144158602135,
+          -0.017279644411738418
+        ],
+        [
+          0.17451717538161235,
+          -0.061455144158602135,
+          1.0,
+          -0.10212115391988698
+        ],
+        [
+          -0.003576516617287929,
+          -0.017279644411738418,
+          -0.10212115391988698,
+          1.0
+        ]
+      ],
+      "correlation_scope": "Pearson correlations among explanatory columns on the common sample; includes the recorded-sex indicator. No response or intercept is included.",
+      "vif": {
+        "thickness_0_1mm": {
+          "VIF": 1.0897137617275383,
+          "tolerance": 0.9176721769712132,
+          "auxiliary_R_squared": 0.08232782302878683,
+          "auxiliary_SSE": 1138.7825167950348,
+          "predictor_SST": 1240.9469801662708,
+          "model_based_SE_inflation_factor": 1.043893558619622,
+          "review_flag": false,
+          "inverse_gram_check": 1.0897137617275379
+        },
+        "age_c": {
+          "VIF": 1.0609033152383132,
+          "tolerance": 0.942592963596657,
+          "auxiliary_R_squared": 0.05740703640334299,
+          "auxiliary_SSE": 49899.99942639533,
+          "predictor_SST": 52939.07482185273,
+          "model_based_SE_inflation_factor": 1.0300016093377298,
+          "review_flag": false,
+          "inverse_gram_check": 1.0609033152383132
+        },
+        "female": {
+          "VIF": 1.043036869745798,
+          "tolerance": 0.9587388797135363,
+          "auxiliary_R_squared": 0.04126112028646367,
+          "auxiliary_SSE": 184.58797775311257,
+          "predictor_SST": 192.53206650831353,
+          "model_based_SE_inflation_factor": 1.0212917652393942,
+          "review_flag": false,
+          "inverse_gram_check": 1.0430368697457972
+        },
+        "education_c": {
+          "VIF": 1.0111954613915834,
+          "tolerance": 0.9889284892792374,
+          "auxiliary_R_squared": 0.011071510720762623,
+          "auxiliary_SSE": 5549.177250691129,
+          "predictor_SST": 5611.302850356295,
+          "model_based_SE_inflation_factor": 1.0055821504937243,
+          "review_flag": false,
+          "inverse_gram_check": 1.0111954613915832
+        }
+      },
+      "review_threshold_gt": 5,
+      "flagged_terms": [],
+      "full_column_rank": true,
+      "rank": 5,
+      "rank_tolerance": 4.32408117362987e-11,
+      "raw_design_condition_number": 20.95923973156126,
+      "standardized_design_condition_number": 1.3507705002830852,
+      "standardization": "For conditioning diagnostics only: retain intercept=1; center each other column at its mean and divide by its sample SD (n-1). The model matrix and its registered coefficient units are unchanged.",
+      "interpretation": "0 explanatory terms exceed the registered VIF review threshold. Review rank, VIF and conditioning together. VIF describes classical coefficient-variance inflation from predictor dependence, holding residual variance and predictor spread fixed; its square root is the corresponding SE factor. It is not the observed HC3-to-model-based SE ratio. A low VIF does not establish model validity, causality or a precisely estimated thickness association.",
+      "action": "Retain all registered covariates. VIF is a review heuristic, not an automatic selection or deletion rule."
+    }
+  },
+  "collinearity_methods": {
+    "VIF": "SST_j/SSE_j = 1/(1-R_j^2), regressing explanatory column j on an intercept and every other explanatory column on the same sample.",
+    "numerics": "Auxiliary OLS uses SVD-based scipy.linalg.lstsq(lapack_driver='gelsd'); VIF is cross-checked with predictor SST times the matching diagonal of the earlier pivoted-QR unscaled covariance.",
+    "intercept": "Excluded from correlations and VIF; retained in all main and auxiliary models.",
+    "single_MRI_predictor": "MRI-only has one explanatory term; dependence among MRI predictors is inapplicable, so no multi-predictor VIF table is reported for it.",
+    "conditioning": "Full rank and raw/standardized-design condition numbers are checked again against the validated designs. Center/scale transformations are diagnostics only; original coefficient units remain unchanged.",
+    "review_threshold": "VIF > 5 is the frozen review heuristic; no automatic covariate removal."
+  },
+  "testing_policy": {
+    "multiplicity": "One primary Phase 4 coefficient test at alpha 0.05. Secondary and companion p-values are explicitly nominal; no familywise guarantee across coefficients, methods or phases is claimed. The separate completed Phase 3 Holm family remains unchanged.",
+    "other_coefficients": "Report estimates, SEs, t statistics, nominal p-values and individual intervals as supporting model descriptions. Do not make a collection of unadjusted significance claims.",
+    "scope": "The integrated thickness test is primary. All other coefficient p-values and HC3 companions are nominal supporting summaries; no familywise guarantee across them is claimed."
+  },
+  "primary_test": {
+    "model": "integrated",
+    "term": "thickness_0_1mm",
+    "null": "beta_thickness = 0",
+    "alternative": "beta_thickness != 0",
+    "alpha": 0.05,
+    "method": "Two-sided model-based OLS t test with n-p residual degrees of freedom.",
+    "parameter": "Adjusted linear-model mean score difference per 0.1 mm greater left thickness at the same age, recorded sex and education.",
+    "estimate": -0.12570420635042928,
+    "model_based": {
+      "standard_error": 0.1507751921985112,
+      "t_statistic": -0.8337194237161153,
+      "degrees_of_freedom": 837,
+      "p_value_two_sided_nominal": 0.4046769678262576,
+      "p_value_underflow": false,
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower": -0.42164609623782456,
+        "upper": 0.170237683536966
+      }
+    },
+    "hc3_companion": {
+      "standard_error": 0.1452318800011004,
+      "t_statistic": -0.8655414110832748,
+      "degrees_of_freedom": 837,
+      "p_value_two_sided_nominal": 0.38698971192060294,
+      "p_value_underflow": false,
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower": -0.41076567045943974,
+        "upper": 0.15935725775858117
+      }
+    },
+    "reject_primary_null_at_alpha": false,
+    "companion_nominal_reject_at_alpha": false,
+    "intervals_include_zero": {
+      "model_based": true,
+      "hc3": true
+    },
+    "decision_rule": "Use the registered model-based test for the primary decision; report HC3 alongside it without selecting a covariance method by p-value.",
+    "interpretation": "The registered primary test does not reject a zero adjusted thickness coefficient at alpha=0.05. Interpret the estimate and both intervals in correct responses per 0.1 mm. Non-rejection does not establish no association or practical equivalence; no equivalence margin has been supplied. The result remains conditional on the model and sampling assumptions, with residual and influence review pending."
+  },
+  "interpretation": {
+    "comparison": "All three models use the same 842 people; the fit/estimate changes therefore reflect added explanatory terms rather than sample replacement. These are in-sample association summaries, not out-of-sample predictive accuracy.",
+    "uncertainty": "Compare each coefficient with both of its individual 95% intervals. Intervals across models are dependent; overlap or a change in sign is not a test of the difference between coefficients. HC3 remains a companion and is not selected by its p-value.",
+    "thickness": "Read the unadjusted and adjusted thickness coefficients as different conditional summaries. Low VIF does not establish absence of an association, equivalence or causality. The primary test and uncertainty remain those in Step 4, pending residual and influence diagnostics.",
+    "selection": "No best-model search, automatic term removal, new contrast test, information criterion or cross-validation is performed. The registered integrated model remains the primary specification."
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Frozen plan, common-sample designs and both prior regression outputs reproduce.",
+      "Participant membership, response order, common predictor columns and SST agree across all three models.",
+      "Nested design relationships and expected SSE/R-squared monotonicity hold.",
+      "Each coefficient comparison preserves units and both individual uncertainty methods.",
+      "The marginal thickness slope reconstructs from the integrated coefficients and same-sample covariate-on-thickness slopes.",
+      "VIF from auxiliary SVD regressions agrees with the earlier QR inverse-Gram identity.",
+      "Both multiple designs retain full rank with recorded numerical conditioning.",
+      "Inputs and source fingerprints remain unchanged during comparison."
+    ],
+    "limit": "These checks establish numerical consistency; residual assumptions, participant independence and sampling design remain separate questions."
+  },
+  "privacy": "Only aggregate metrics, coefficient intervals, small predictor-correlation matrices, VIFs and source hashes are saved. No participant IDs, design rows, responses or individual fitted/residual/influence arrays are exported.",
+  "figure": {
+    "path": "figures/phase4/02_coefficient_comparison.pdf",
+    "purpose": "Compare the four common non-intercept coefficients in their own units, with model-based and HC3 individual 95% intervals.",
+    "scale": "Separate x-axis ranges by term; do not compare magnitudes across panels as standardized effects."
+  },
+  "limitations": {
+    "sampling_and_preparation": {
+      "unit": "One participant with the single supplied UDS record and the single supplied MRI record, joined one-to-one on NACCID.",
+      "linkage": {
+        "uds_participants": 1237,
+        "mri_participants": 1237,
+        "matched_participants": 1237,
+        "uds_only": 0,
+        "mri_only": 0,
+        "matched_with_usable_left_thickness": 1237,
+        "matched_with_unusable_left_thickness": 0,
+        "cognitive_status_agreement": {
+          "equal": 1237,
+          "unavailable": 0,
+          "different": 0
+        }
+      },
+      "target": "The source population represented by this teaching extract, conditional on model_normal eligibility and the sampling/model assumptions; no claim of representativeness for all NACC participants.",
+      "independence": "One supplied row per ID is verified; independence across people remains a modeling assumption.",
+      "selection": "Random selection is reported, but its sampling frame, selection probabilities and source selection eligibility are undocumented.",
+      "source_preparation": "The source preparation and imputation methods and value-level masks are unknown. Treat the supplied values as fixed inputs; this analysis cannot propagate additional imputation/preparation uncertainty.",
+      "visit_and_scan_timing": {
+        "record_rule": "Use the single supplied record per participant; no within-person visit selection is possible or performed.",
+        "clinical_visit_date": "Unavailable",
+        "clinical_visit_number": "Unavailable",
+        "mri_scan_date": "Unavailable",
+        "source_visit_count": "Unavailable",
+        "temporal_proximity": "Unverifiable from the supplied files; do not assert baseline, first visit, nearest scan or contemporaneous measurements.",
+        "track_c5_status": "Participant-level input structure is documented. Temporal proximity remains unverified and would require authoritative metadata or course-team clarification."
+      },
+      "scan_quality": "Finite positive thickness establishes numerical usability, not scan-level quality control."
+    },
+    "response_scale": "A task score is not a diagnosis or a calibrated clinical change. The count is analyzed with OLS as a conditional-mean approximation; inspect residuals and predictions against its scale.",
+    "causality": "An observational association under the stated functional form and assumptions; neither a within-person change nor a causal effect.",
+    "functional_form": "If the additive linear mean is inadequate, qualify this constant-slope summary and report any diagnostic extension separately.",
+    "uncertainty": "Classical t calibration requires its error assumptions. HC3 t calibration is approximate and does not correct dependence, nonlinearity, selection or source-imputation uncertainty.",
+    "fit": "All fit metrics are in-sample summaries, not externally validated predictive accuracy or a basis for choosing a causal model.",
+    "no_automatic_exclusions": true,
+    "no_equivalence_margin": true
+  },
+  "progress": {
+    "completed_through_step": 5,
+    "remaining": [
+      "Step 6 residual and influence diagnostics",
+      "Step 7 justified model retention/extension and profile intervals",
+      "Step 8 final numerical review, LaTeX report and executed notebook"
+    ],
+    "historical_records": "Earlier outputs and the frozen plan preserve their original stage status."
+  },
+  "sources": {
+    "vif": "https://www.statsmodels.org/stable/generated/statsmodels.stats.outliers_influence.variance_inflation_factor.html",
+    "auxiliary_ols": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lstsq.html"
+  }
+}
