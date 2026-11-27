@@ -1,0 +1,807 @@
+{
+  "stage": "Phase 4, Step 4",
+  "status": "UDS-only and integrated models estimated; diagnostics and final Phase 4 deliverables remain pending.",
+  "sample": "model_normal",
+  "participants": 842,
+  "source_files_sha256": {
+    "data/udslong_imputed.csv": "8bcd0180d1b593092f7b2f7777281f59c4a6e9c3b2b041b5d2a33ed13be55e63",
+    "data/mriscanclean.csv": "3a2b34f7902592705f75ce3ad4c4fab68880470f01e7b9eb9823a799dc092e72",
+    "data/processed/participants.csv": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+    "reports/phase1/sample_flow.json": "928fc5a0717c786c7ed47c154d43113e77c1f3f22c9a1f2ecd8fe5714d6180f3",
+    "docs/amarpr.pdf": "ede1706ab440f1ae737a71afaf0a37438112e7b010e6a5118b8f334b4c0d03e3",
+    "reports/phase3/inference_review.json": "01529f09a097f728615ac68fe5e159eb7554283cc9cfbc569d952c8aa3317fcd",
+    "src/build_dataset.py": "50dbe0550aba8f8b4c70acbdfaa6762c35df81ca7b38836929c8c5267b229554",
+    "src/data_audit.py": "24981d5fa7342d493ba36f441eaeada2efcfb34ffb76d57e1322a0eba1a18c48",
+    "src/descriptive_statistics.py": "f96ec1b3bd359c06c1bf57176e18801062d088ba9855b7ce6ff92387b25a5386",
+    "src/phase4_plan.py": "191b7dcd592b780a7ef7b33ebb121eefa5dc17e364ea1065a4b3afbf5d309a00",
+    "reports/phase4/analysis_plan.json": "cb102d2556004d8b5e50f960792ec83c2ab34d90201db60947fff175022dacd0",
+    "reports/phase4/design_matrices.json": "85e3eea99a5c5c0ce9becd28e499a098f431de0d48ed514659126d9a9824d73d",
+    "src/phase4_design.py": "3806004577ee515e775c66430e5c13772dd722e2da15fbf72d1b14c51de59296",
+    "src/phase4_regression.py": "3252a80f17c8b2441ab573f9c3b08823df7a0f707319c441b8a93da1248b76f0",
+    "src/phase4_simple.py": "ad9e2e7a1c5975641c681eea4fa20c53d5a813f675e6a8de648b2ba4a663c7b6",
+    "requirements.txt": "6954b33c3de27271d0179044bf553ee3f675eeb24238faab136eae135f71d18e",
+    "src/phase1_figures.py": "c0e0f2ca8ecfb0f79735ac5fffc0e948747675d5ed66ac1c949e4ea7982aa413",
+    "reports/phase4/simple_regression.json": "3369c707e4dde296d58978142212fd98a227b4a51eb997bfa2be674acf3c3933",
+    "src/phase4_multiple.py": "32e0103d0371ba5f8542e8657a7e9c886093f1e7fa5b6922a78b59c8a43665df"
+  },
+  "environment": {
+    "python": "3.14.0",
+    "scipy": "1.16.3",
+    "numpy_runtime": "2.5.4"
+  },
+  "coding": {
+    "explanatory_variables": {
+      "age_c": {
+        "source": "UDS",
+        "column": "NACCAGE",
+        "expression": "NACCAGE - 68",
+        "reference_years": 68.0,
+        "unit": "One year",
+        "rationale": "Prespecified demographic adjustment related to cognitive performance and the thickness association."
+      },
+      "female": {
+        "source": "UDS",
+        "column": "SEX",
+        "code_map": {
+          "1": 0,
+          "2": 1
+        },
+        "reference": "Recorded male, SEX=1",
+        "unit": "Recorded female minus recorded male, holding other included predictors fixed",
+        "rationale": "Prespecified demographic adjustment; use the recorded binary codes without interpreting them as a broader gender measure."
+      },
+      "education_c": {
+        "source": "UDS",
+        "column": "EDUC",
+        "expression": "EDUC - 16",
+        "reference_years": 16,
+        "unit": "One year",
+        "rationale": "Prespecified adjustment for years of education in a cognitive-task analysis."
+      },
+      "thickness_0_1mm": {
+        "source": "MRI",
+        "column": "LH_INFERIORPARIETAL_AVGTH",
+        "expression": "(LH_INFERIORPARIETAL_AVGTH - 2.344) / 0.1",
+        "reference_mm": 2.344,
+        "unit": "0.1 mm greater thickness",
+        "rationale": "The single anatomical measure selected by the research question before Phase 4 fitting.",
+        "continuous": true,
+        "phase_three_cutoff_used": false
+      }
+    },
+    "reference_profile": {
+      "SEX": 1,
+      "NACCAGE": 68.0,
+      "EDUC": 16,
+      "LH_INFERIORPARIETAL_AVGTH": 2.344
+    },
+    "male_indicator": 0,
+    "female_indicator": 1,
+    "response_unit": "Correct animal names in 60 seconds",
+    "common_sample": "Identical 842 participants and response order in both multiple regressions and the completed MRI-only model; all eligible observations retained."
+  },
+  "models": {
+    "uds_only": {
+      "role": "UDS baseline",
+      "formula": "ANIMALS ~ 1 + age_c + female + education_c",
+      "column_order": [
+        "intercept",
+        "age_c",
+        "female",
+        "education_c"
+      ],
+      "matrix_sha256": "6883f055ff9c6a50c97a83cdaddca88a0a5911bcfc14010c922dffdb8bcb817e",
+      "response_sha256": "b6861f8e75d16a7d3fa633905a085608cb4e2e91069dccd1571f277fb0a2d4c8",
+      "membership_sha256": "01493a1533ccc79d5a8cf6e7fca3eb0ca1acab860c59884f7d5f9466f22c34d4",
+      "reference_row": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "coefficients": {
+        "intercept": {
+          "estimate": 22.115922031947214,
+          "model_based": {
+            "standard_error": 0.29912366783796157,
+            "t_statistic": 73.93571425423829,
+            "degrees_of_freedom": 838,
+            "p_value_two_sided_nominal": 0.0,
+            "p_value_underflow": true,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 21.528802431514244,
+              "upper": 22.703041632380184
+            }
+          },
+          "hc3": {
+            "standard_error": 0.29057293620382807,
+            "t_statistic": 76.11143116382169,
+            "degrees_of_freedom": 838,
+            "p_value_two_sided_nominal": 0.0,
+            "p_value_underflow": true,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 21.545585797995166,
+              "upper": 22.686258265899262
+            }
+          }
+        },
+        "age_c": {
+          "estimate": -0.13790291725262036,
+          "model_based": {
+            "standard_error": 0.022157818491973447,
+            "t_statistic": -6.223668512429369,
+            "degrees_of_freedom": 838,
+            "p_value_two_sided_nominal": 7.6671887948023e-10,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.18139425858814104,
+              "upper": -0.09441157591709967
+            }
+          },
+          "hc3": {
+            "standard_error": 0.023768100177438484,
+            "t_statistic": -5.802016830252283,
+            "degrees_of_freedom": 838,
+            "p_value_two_sided_nominal": 9.286271127227889e-09,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.18455491767803595,
+              "upper": -0.09125091682720476
+            }
+          }
+        },
+        "female": {
+          "estimate": -0.19393203709697274,
+          "model_based": {
+            "standard_error": 0.3692965514034389,
+            "t_statistic": -0.5251390416725317,
+            "degrees_of_freedom": 838,
+            "p_value_two_sided_nominal": 0.5996254423962892,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.9187868948500365,
+              "upper": 0.5309228206560911
+            }
+          },
+          "hc3": {
+            "standard_error": 0.3671099892436258,
+            "t_statistic": -0.5282668485718413,
+            "degrees_of_freedom": 838,
+            "p_value_two_sided_nominal": 0.597454000154733,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.9144951130901031,
+              "upper": 0.5266310388961577
+            }
+          }
+        },
+        "education_c": {
+          "estimate": 0.6027127747697139,
+          "model_based": {
+            "standard_error": 0.06828701366831921,
+            "t_statistic": 8.826169756041534,
+            "degrees_of_freedom": 838,
+            "p_value_two_sided_nominal": 6.2316124244836445e-18,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 0.4686791007729679,
+              "upper": 0.7367464487664598
+            }
+          },
+          "hc3": {
+            "standard_error": 0.06374706968538153,
+            "t_statistic": 9.454752630110743,
+            "degrees_of_freedom": 838,
+            "p_value_two_sided_nominal": 3.157078278263129e-20,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 0.4775900977412666,
+              "upper": 0.7278354517981611
+            }
+          }
+        }
+      },
+      "coefficient_interpretations": {
+        "intercept": "Fitted mean animal-naming score for recorded males aged 68 with 16 years of education; thickness is not included in this model.",
+        "age_c": "Mean-score difference per one year older age at the same recorded sex and years of education; not within-person aging.",
+        "female": "Mean-score difference for recorded female (SEX=2) minus recorded male (SEX=1), at the same age and years of education.",
+        "education_c": "Mean-score difference per one additional year of education at the same age and recorded sex."
+      },
+      "coefficient_test_roles": {
+        "intercept": "Supporting coefficient description; p-values are nominal.",
+        "age_c": "Supporting coefficient description; p-values are nominal.",
+        "female": "Supporting coefficient description; p-values are nominal.",
+        "education_c": "Supporting coefficient description; p-values are nominal."
+      },
+      "covariance": {
+        "column_order": [
+          "intercept",
+          "age_c",
+          "female",
+          "education_c"
+        ],
+        "unscaled": [
+          [
+            0.003457474869587165,
+            5.489390748074604e-07,
+            -0.003429753786779543,
+            -0.0001353294091968981
+          ],
+          [
+            5.489390748074604e-07,
+            1.8971928452979495e-05,
+            2.009804850129853e-05,
+            1.387117709963678e-06
+          ],
+          [
+            -0.003429753786779543,
+            2.009804850129853e-05,
+            0.005269968039949147,
+            0.00010075481996801993
+          ],
+          [
+            -0.0001353294091968981,
+            1.387117709963678e-06,
+            0.00010075481996801993,
+            0.0001801912584081461
+          ]
+        ],
+        "model_based": [
+          [
+            0.08947496866083515,
+            1.4205831818806545e-05,
+            -0.08875758296491176,
+            -0.0035021497201012494
+          ],
+          [
+            1.4205831818806545e-05,
+            0.0004909689203232404,
+            0.0005201114476971892,
+            3.589680859855648e-05
+          ],
+          [
+            -0.08875758296491176,
+            0.0005201114476971892,
+            0.1363799428784728,
+            0.0026074041602920164
+          ],
+          [
+            -0.0035021497201012494,
+            3.589680859855648e-05,
+            0.0026074041602920164,
+            0.0046631162357372155
+          ]
+        ],
+        "hc3": [
+          [
+            0.08443263125411395,
+            -0.00026461849414681786,
+            -0.0848872399272127,
+            -0.0025610473942709413
+          ],
+          [
+            -0.00026461849414681786,
+            0.0005649225860447514,
+            0.0008142460872721915,
+            6.617993575073034e-05
+          ],
+          [
+            -0.0848872399272127,
+            0.0008142460872721915,
+            0.13476974420245508,
+            0.0027122805552417906
+          ],
+          [
+            -0.0025610473942709413,
+            6.617993575073034e-05,
+            0.0027122805552417906,
+            0.00406368889347289
+          ]
+        ]
+      },
+      "fit": {
+        "participants": 842,
+        "parameters_including_intercept": 4,
+        "residual_df": 838,
+        "SSE": 21686.35393342215,
+        "SST": 24802.552256532068,
+        "explained_sum_of_squares": 3116.1983231099125,
+        "R_squared": 0.125640228105526,
+        "adjusted_R_squared": 0.12251006185769375,
+        "residual_SD": 5.087111555473374,
+        "in_sample_RMSE": 5.075013770083252
+      },
+      "numerical_verification": {
+        "svd_rank": 4,
+        "qr_svd_coefficient_agreement": true,
+        "maximum_absolute_coefficient_difference": 1.4210854715202004e-14,
+        "absolute_sse_difference": 0.0,
+        "solver": "scipy.linalg.lstsq, LAPACK gelsd; separate from the estimation QR solver."
+      }
+    },
+    "integrated": {
+      "role": "Primary adjusted association",
+      "formula": "ANIMALS ~ 1 + thickness_0_1mm + age_c + female + education_c",
+      "column_order": [
+        "intercept",
+        "thickness_0_1mm",
+        "age_c",
+        "female",
+        "education_c"
+      ],
+      "matrix_sha256": "3c272a19bc0b9128af4435279eec6cbd8c4571cfed89283f27d055c864b759bf",
+      "response_sha256": "b6861f8e75d16a7d3fa633905a085608cb4e2e91069dccd1571f277fb0a2d4c8",
+      "membership_sha256": "01493a1533ccc79d5a8cf6e7fca3eb0ca1acab860c59884f7d5f9466f22c34d4",
+      "reference_row": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "coefficients": {
+        "intercept": {
+          "estimate": 22.06945486332163,
+          "model_based": {
+            "standard_error": 0.30432532309236277,
+            "t_statistic": 72.51928508303448,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.0,
+            "p_value_underflow": true,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 21.472124427569515,
+              "upper": 22.666785299073748
+            }
+          },
+          "hc3": {
+            "standard_error": 0.2953198061883004,
+            "t_statistic": 74.73069669174106,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.0,
+            "p_value_underflow": true,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 21.489800476614054,
+              "upper": 22.64910925002921
+            }
+          }
+        },
+        "thickness_0_1mm": {
+          "estimate": -0.12570420635042928,
+          "model_based": {
+            "standard_error": 0.1507751921985112,
+            "t_statistic": -0.8337194237161153,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.4046769678262576,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.42164609623782456,
+              "upper": 0.170237683536966
+            }
+          },
+          "hc3": {
+            "standard_error": 0.1452318800011004,
+            "t_statistic": -0.8655414110832748,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.38698971192060294,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.41076567045943974,
+              "upper": 0.15935725775858117
+            }
+          }
+        },
+        "age_c": {
+          "estimate": -0.14228708055265055,
+          "model_based": {
+            "standard_error": 0.02277718325454884,
+            "t_statistic": -6.246912928719329,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 6.656444641760755e-10,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.18699418760636172,
+              "upper": -0.09757997349893939
+            }
+          },
+          "hc3": {
+            "standard_error": 0.02480105818006597,
+            "t_statistic": -5.737137485005169,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 1.3452642392539415e-08,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.19096665390946993,
+              "upper": -0.09360750719583116
+            }
+          }
+        },
+        "female": {
+          "estimate": -0.14241267906471977,
+          "model_based": {
+            "standard_error": 0.37449720459200275,
+            "t_statistic": -0.3802770149375928,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.7038362757189169,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.877476643291576,
+              "upper": 0.5926512851621365
+            }
+          },
+          "hc3": {
+            "standard_error": 0.36897692868114884,
+            "t_statistic": -0.38596635180891103,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.699619671336595,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.8666414331887956,
+              "upper": 0.5818160750593561
+            }
+          }
+        },
+        "education_c": {
+          "estimate": 0.6032432142871926,
+          "model_based": {
+            "standard_error": 0.06830240370172055,
+            "t_statistic": 8.831947070583062,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 5.955770702975554e-18,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 0.46917910108264255,
+              "upper": 0.7373073274917428
+            }
+          },
+          "hc3": {
+            "standard_error": 0.06386034473069785,
+            "t_statistic": 9.446288096800892,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 3.405060017098206e-20,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 0.477897984525649,
+              "upper": 0.7285884440487362
+            }
+          }
+        }
+      },
+      "coefficient_interpretations": {
+        "intercept": "Fitted mean animal-naming score for recorded males aged 68 with 16 years of education and left thickness 2.344 mm.",
+        "age_c": "Mean-score difference per one year older age at the same left thickness, recorded sex and years of education; not within-person aging.",
+        "female": "Mean-score difference for recorded female (SEX=2) minus recorded male (SEX=1), at the same left thickness, age and years of education.",
+        "education_c": "Mean-score difference per one additional year of education at the same left thickness, age and recorded sex.",
+        "thickness_0_1mm": "Mean-score difference per 0.1 mm greater left inferior parietal thickness at the same age, recorded sex and years of education; the primary adjusted association."
+      },
+      "coefficient_test_roles": {
+        "intercept": "Supporting coefficient description; p-values are nominal.",
+        "thickness_0_1mm": "Primary registered model-based t test; HC3 is a nominal companion.",
+        "age_c": "Supporting coefficient description; p-values are nominal.",
+        "female": "Supporting coefficient description; p-values are nominal.",
+        "education_c": "Supporting coefficient description; p-values are nominal."
+      },
+      "covariance": {
+        "column_order": [
+          "intercept",
+          "thickness_0_1mm",
+          "age_c",
+          "female",
+          "education_c"
+        ],
+        "unscaled": [
+          [
+            0.0035774667914146583,
+            0.00032460530193540447,
+            1.1870140592703518e-05,
+            -0.0035627919503789128,
+            -0.00013669916033513303
+          ],
+          [
+            0.00032460530193540447,
+            0.0008781307978053424,
+            3.062641202023081e-05,
+            -0.0003598983382080509,
+            -3.705486794705622e-06
+          ],
+          [
+            1.1870140592703518e-05,
+            3.062641202023081e-05,
+            2.004008039068304e-05,
+            7.545938019689499e-06,
+            1.2578821045233418e-06
+          ],
+          [
+            -0.0035627919503789128,
+            -0.0003598983382080509,
+            7.545938019689499e-06,
+            0.005417470911011901,
+            0.00010227349866941535
+          ],
+          [
+            -0.00013669916033513303,
+            -3.705486794705622e-06,
+            1.2578821045233418e-06,
+            0.00010227349866941535,
+            0.0001802068946122515
+          ]
+        ],
+        "model_based": [
+          [
+            0.09261390227527097,
+            0.00840342215995593,
+            0.00030729566616372484,
+            -0.09223399817753028,
+            -0.003538884751291652
+          ],
+          [
+            0.00840342215995593,
+            0.022733158582497998,
+            0.0007928603381283139,
+            -0.009317092643270169,
+            -9.592809993673431e-05
+          ],
+          [
+            0.00030729566616372484,
+            0.0007928603381283139,
+            0.0005188000770113,
+            0.0001953501757187301,
+            3.2564207327294224e-05
+          ],
+          [
+            -0.09223399817753028,
+            -0.009317092643270169,
+            0.0001953501757187301,
+            0.14024815624722436,
+            0.0026476689689616216
+          ],
+          [
+            -0.003538884751291652,
+            -9.592809993673431e-05,
+            3.2564207327294224e-05,
+            0.0026476689689616216,
+            0.0046652183514328096
+          ]
+        ],
+        "hc3": [
+          [
+            0.0872137879270953,
+            0.007886462408031572,
+            0.0001474815364376778,
+            -0.08697726383896444,
+            -0.002406692007891624
+          ],
+          [
+            0.007886462408031572,
+            0.021092298968654024,
+            0.0010587977895568142,
+            -0.006044872685021652,
+            0.0003685374282683463
+          ],
+          [
+            0.0001474815364376778,
+            0.0010587977895568142,
+            0.0006150924868510172,
+            0.00046183827707295226,
+            8.181515828169712e-05
+          ],
+          [
+            -0.08697726383896444,
+            -0.006044872685021652,
+            0.00046183827707295226,
+            0.1361439738989736,
+            0.00253580776634143
+          ],
+          [
+            -0.002406692007891624,
+            0.0003685374282683463,
+            8.181515828169712e-05,
+            0.00253580776634143,
+            0.0040781436291235686
+          ]
+        ]
+      },
+      "fit": {
+        "participants": 842,
+        "parameters_including_intercept": 5,
+        "residual_df": 837,
+        "SSE": 21668.359407397456,
+        "SST": 24802.552256532068,
+        "explained_sum_of_squares": 3134.1928491346102,
+        "R_squared": 0.1263657391673948,
+        "adjusted_R_squared": 0.12219066504155207,
+        "residual_SD": 5.08803729794483,
+        "in_sample_RMSE": 5.072907804749059
+      },
+      "numerical_verification": {
+        "svd_rank": 5,
+        "qr_svd_coefficient_agreement": true,
+        "maximum_absolute_coefficient_difference": 1.4210854715202004e-14,
+        "absolute_sse_difference": 0.0,
+        "solver": "scipy.linalg.lstsq, LAPACK gelsd; separate from the estimation QR solver."
+      }
+    }
+  },
+  "primary_test": {
+    "model": "integrated",
+    "term": "thickness_0_1mm",
+    "null": "beta_thickness = 0",
+    "alternative": "beta_thickness != 0",
+    "alpha": 0.05,
+    "method": "Two-sided model-based OLS t test with n-p residual degrees of freedom.",
+    "parameter": "Adjusted linear-model mean score difference per 0.1 mm greater left thickness at the same age, recorded sex and education.",
+    "estimate": -0.12570420635042928,
+    "model_based": {
+      "standard_error": 0.1507751921985112,
+      "t_statistic": -0.8337194237161153,
+      "degrees_of_freedom": 837,
+      "p_value_two_sided_nominal": 0.4046769678262576,
+      "p_value_underflow": false,
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower": -0.42164609623782456,
+        "upper": 0.170237683536966
+      }
+    },
+    "hc3_companion": {
+      "standard_error": 0.1452318800011004,
+      "t_statistic": -0.8655414110832748,
+      "degrees_of_freedom": 837,
+      "p_value_two_sided_nominal": 0.38698971192060294,
+      "p_value_underflow": false,
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower": -0.41076567045943974,
+        "upper": 0.15935725775858117
+      }
+    },
+    "reject_primary_null_at_alpha": false,
+    "companion_nominal_reject_at_alpha": false,
+    "intervals_include_zero": {
+      "model_based": true,
+      "hc3": true
+    },
+    "decision_rule": "Use the registered model-based test for the primary decision; report HC3 alongside it without selecting a covariance method by p-value.",
+    "interpretation": "The registered primary test does not reject a zero adjusted thickness coefficient at alpha=0.05. Interpret the estimate and both intervals in correct responses per 0.1 mm. Non-rejection does not establish no association or practical equivalence; no equivalence margin has been supplied. The result remains conditional on the model and sampling assumptions, with residual and influence review pending."
+  },
+  "methods": {
+    "estimator": "Ordinary least squares with an intercept, equal participant weights and no regularization.",
+    "numerics": "Use a numerically stable QR/SVD least-squares solution; check full column rank before interpretation, rather than solving through an explicitly inverted normal equation.",
+    "model_based_covariance": "s^2 (X'X)^(-1), with s^2 = SSE/(n-p) and p including the intercept.",
+    "coefficient_intervals": "Individual two-sided 95% Student t intervals, estimate +/- t(0.975,n-p) SE. Exact t calibration requires the classical independent, homoskedastic normal-error linear model; otherwise qualifications are required.",
+    "hc3_companion": {
+      "planned": true,
+      "models": [
+        "uds_only",
+        "mri_only",
+        "integrated"
+      ],
+      "role": "Prespecified companion coefficient uncertainty, reported alongside the model-based results regardless of diagnostic significance; never choose whichever gives a smaller p-value.",
+      "covariance": "(X'X)^(-1) X' diag(e_i^2/(1-h_ii)^2) X (X'X)^(-1)",
+      "reference_distribution": "Use t with n-p degrees of freedom as an explicit finite-sample convention; HC3 interval/test calibration is approximate, not exact normal-theory t inference.",
+      "limit": "HC3 addresses coefficient covariance under heteroskedasticity; it does not correct nonlinearity, dependence, selection bias or source imputation uncertainty and does not supply a heteroskedastic individual prediction interval."
+    },
+    "assumptions": [
+      "Independent participant observations under the sampling model.",
+      "An adequate additive linear conditional-mean specification over the observed predictor support.",
+      "A full-rank design matrix and finite error variance.",
+      "Constant conditional error variance for model-based SEs and classical individual prediction intervals; normal errors for exact t-based calibration."
+    ],
+    "interval_scope": "Individual coefficient intervals; not simultaneous intervals or new-observation prediction intervals.",
+    "p_value": "Under the relevant zero-coefficient null and test assumptions, the p-value is the tail probability of a t statistic at least as far from zero as observed. It is not the probability that the null is true.",
+    "numeric_tail": "A computed coefficient p-value of zero is flagged as numerical underflow, not interpreted as a literal zero probability.",
+    "metrics": {
+      "residual_SD": "sqrt(SSE/(n-p))",
+      "in_sample_RMSE": "sqrt(SSE/n)",
+      "R_squared": "1-SSE/SST",
+      "adjusted_R_squared": "1-(SSE/(n-p))/(SST/(n-1))"
+    }
+  },
+  "testing_policy": {
+    "multiplicity": "One primary Phase 4 coefficient test at alpha 0.05. Secondary and companion p-values are explicitly nominal; no familywise guarantee across coefficients, methods or phases is claimed. The separate completed Phase 3 Holm family remains unchanged.",
+    "other_coefficients": "Report estimates, SEs, t statistics, nominal p-values and individual intervals as supporting model descriptions. Do not make a collection of unadjusted significance claims.",
+    "scope": "The integrated thickness test is primary. All other coefficient p-values and HC3 companions are nominal supporting summaries; no familywise guarantee across them is claimed."
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Frozen plan, validated common-sample designs and saved MRI-only results reproduce before fitting.",
+      "All models retain the same participant membership and response order with unchanged predictor coding.",
+      "UDS-only and integrated parameter counts and residual degrees of freedom match the registered specifications.",
+      "Full-rank pivoted-QR estimates match an independent LAPACK gelsd solution and its residual sum of squares.",
+      "OLS residual orthogonality, sum-of-squares decomposition and leverage trace checks pass in the shared engine.",
+      "Both covariance methods use the same OLS estimates and the registered residual degrees of freedom.",
+      "Input and analysis source fingerprints remain unchanged during estimation."
+    ],
+    "limit": "Computational agreement does not validate the conditional mean, residual distribution, participant independence or sampling frame."
+  },
+  "limitations": {
+    "sampling_and_preparation": {
+      "unit": "One participant with the single supplied UDS record and the single supplied MRI record, joined one-to-one on NACCID.",
+      "linkage": {
+        "uds_participants": 1237,
+        "mri_participants": 1237,
+        "matched_participants": 1237,
+        "uds_only": 0,
+        "mri_only": 0,
+        "matched_with_usable_left_thickness": 1237,
+        "matched_with_unusable_left_thickness": 0,
+        "cognitive_status_agreement": {
+          "equal": 1237,
+          "unavailable": 0,
+          "different": 0
+        }
+      },
+      "target": "The source population represented by this teaching extract, conditional on model_normal eligibility and the sampling/model assumptions; no claim of representativeness for all NACC participants.",
+      "independence": "One supplied row per ID is verified; independence across people remains a modeling assumption.",
+      "selection": "Random selection is reported, but its sampling frame, selection probabilities and source selection eligibility are undocumented.",
+      "source_preparation": "The source preparation and imputation methods and value-level masks are unknown. Treat the supplied values as fixed inputs; this analysis cannot propagate additional imputation/preparation uncertainty.",
+      "visit_and_scan_timing": {
+        "record_rule": "Use the single supplied record per participant; no within-person visit selection is possible or performed.",
+        "clinical_visit_date": "Unavailable",
+        "clinical_visit_number": "Unavailable",
+        "mri_scan_date": "Unavailable",
+        "source_visit_count": "Unavailable",
+        "temporal_proximity": "Unverifiable from the supplied files; do not assert baseline, first visit, nearest scan or contemporaneous measurements.",
+        "track_c5_status": "Participant-level input structure is documented. Temporal proximity remains unverified and would require authoritative metadata or course-team clarification."
+      },
+      "scan_quality": "Finite positive thickness establishes numerical usability, not scan-level quality control."
+    },
+    "response_scale": "A task score is not a diagnosis or a calibrated clinical change. The count is analyzed with OLS as a conditional-mean approximation; inspect residuals and predictions against its scale.",
+    "causality": "An observational association under the stated functional form and assumptions; neither a within-person change nor a causal effect.",
+    "functional_form": "If the additive linear mean is inadequate, qualify this constant-slope summary and report any diagnostic extension separately.",
+    "uncertainty": "Classical t calibration requires its error assumptions. HC3 t calibration is approximate and does not correct dependence, nonlinearity, selection or source-imputation uncertainty.",
+    "fit": "All fit metrics are in-sample summaries, not externally validated predictive accuracy or a basis for choosing a causal model.",
+    "no_automatic_exclusions": true,
+    "no_equivalence_margin": true
+  },
+  "privacy": {
+    "persisted": "Aggregate coefficients, small covariance matrices, fit metrics, numerical checks and source hashes only.",
+    "not_exported": [
+      "Participant IDs",
+      "Individual design rows",
+      "Response vector",
+      "Fitted-value vector",
+      "Residual vector",
+      "Leverage vector"
+    ],
+    "in_memory_api": "analyze() returns the aggregate report and private OLSFit objects for these two models."
+  },
+  "progress": {
+    "completed": [
+      "Step 1 frozen specification",
+      "Step 2 common-sample designs",
+      "Step 3 MRI-only OLS and Pearson correlation",
+      "Step 4 UDS-only and integrated OLS with both covariance methods and conditional coefficient interpretations"
+    ],
+    "remaining": [
+      "Step 5 common-sample model/coefficient comparisons and collinearity review",
+      "Step 6 residual and influence diagnostics",
+      "Step 7 documented model retention/extension and profile intervals",
+      "Step 8 final numerical review, LaTeX report and executed notebook"
+    ],
+    "historical_records": "The frozen plan and earlier step results retain their original stage status; this report records Step 4 progress."
+  },
+  "sources": {
+    "qr": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.qr.html",
+    "independent_svd_solver": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lstsq.html",
+    "hc3": "https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLSResults.HC3_se.html"
+  }
+}
