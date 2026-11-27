@@ -1,0 +1,188 @@
+{
+  "stage": "Phase 4, Step 8",
+  "sample": "model_normal",
+  "participants": 842,
+  "analysis_validation": [
+    "Steps 1-7 regenerate and match saved aggregate artifacts.",
+    "An independent SVD checks all three QR fits, model-based and HC3 covariances, and influence coordinates.",
+    "The same SVD independently reproduces both fixed-profile intervals.",
+    "All five vector PDFs reproduce byte for byte.",
+    "The primary test agrees across regression, comparison and prediction."
+  ],
+  "delivery_validation": [
+    "Shared LaTeX numeric tables reproduce from the validated analysis.",
+    "The public notebook is valid, executed without recorded errors and contains five figure outputs.",
+    "The public LaTeX source includes all five figures and the named evidence sections.",
+    "The compiled public PDF has the expected PDF header and end marker."
+  ],
+  "coverage": {
+    "general_1": {
+      "status": "addressed",
+      "sections": [
+        "design"
+      ],
+      "scope": "Question, response and prespecified explanatory variables"
+    },
+    "general_2": {
+      "status": "addressed",
+      "sections": [
+        "simple"
+      ],
+      "scope": "Step 3: continuous-thickness scatterplot, least-squares line, slope and centered intercept"
+    },
+    "general_3": {
+      "status": "addressed",
+      "sections": [
+        "simple"
+      ],
+      "scope": "Step 3: simple-regression coefficient interval/test and association-versus-causation interpretation"
+    },
+    "general_4": {
+      "status": "addressed",
+      "sections": [
+        "multiple"
+      ],
+      "scope": "Step 4: uds_only and integrated OLS, conditional coefficient interpretations"
+    },
+    "general_5": {
+      "status": "addressed",
+      "sections": [
+        "compare"
+      ],
+      "scope": "Step 5: common-sample coefficient and fit comparisons"
+    },
+    "general_6": {
+      "status": "addressed",
+      "sections": [
+        "design",
+        "multiple"
+      ],
+      "scope": "Recorded sex indicator: male=0, female=1; reference and conditional interpretation fixed"
+    },
+    "general_7": {
+      "status": "addressed",
+      "sections": [
+        "diagnostics"
+      ],
+      "scope": "Step 6: prespecified residual and influence diagnostics"
+    },
+    "general_8": {
+      "status": "addressed",
+      "sections": [
+        "profile"
+      ],
+      "scope": "Step 7: justified extension only if diagnostic evidence requires it; otherwise document retention"
+    },
+    "general_9": {
+      "status": "addressed",
+      "sections": [
+        "profile"
+      ],
+      "scope": "Step 7: prespecified predictor profile with mean and new-observation intervals"
+    },
+    "general_10": {
+      "status": "addressed",
+      "sections": [
+        "simple"
+      ],
+      "scope": "Step 3: same-sample Pearson correlation and simple-regression identity"
+    },
+    "general_11": {
+      "status": "addressed",
+      "sections": [
+        "compare"
+      ],
+      "scope": "Step 5: VIF, rank and predictor dependence review"
+    },
+    "track_c1": {
+      "status": "addressed",
+      "sections": [
+        "design"
+      ],
+      "scope": "ANIMALS response scale, direction, usability and limitations"
+    },
+    "track_c2": {
+      "status": "addressed",
+      "sections": [
+        "design",
+        "multiple"
+      ],
+      "scope": "uds_only model fixed before fitting"
+    },
+    "track_c3": {
+      "status": "addressed",
+      "sections": [
+        "simple",
+        "diagnostics"
+      ],
+      "scope": "mri_only model with one prespecified continuous MRI measure"
+    },
+    "track_c4": {
+      "status": "addressed",
+      "sections": [
+        "multiple",
+        "compare"
+      ],
+      "scope": "integrated model and three-model common-sample comparisons"
+    },
+    "track_c5": {
+      "status": "partially_verifiable",
+      "sections": [
+        "design"
+      ],
+      "scope": "One supplied matched record per ID verified; visit selection documented as not performed; temporal proximity remains unverified",
+      "limitation": "Participant-level input structure is documented. Temporal proximity remains unverified and would require authoritative metadata or course-team clarification."
+    },
+    "track_c6": {
+      "status": "addressed",
+      "sections": [
+        "diagnostics"
+      ],
+      "scope": "Integrated residual, variance, outlier and influence review without automatic deletion"
+    }
+  },
+  "source_files_sha256": {
+    "data/udslong_imputed.csv": "8bcd0180d1b593092f7b2f7777281f59c4a6e9c3b2b041b5d2a33ed13be55e63",
+    "data/mriscanclean.csv": "3a2b34f7902592705f75ce3ad4c4fab68880470f01e7b9eb9823a799dc092e72",
+    "data/processed/participants.csv": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+    "reports/phase1/sample_flow.json": "928fc5a0717c786c7ed47c154d43113e77c1f3f22c9a1f2ecd8fe5714d6180f3",
+    "docs/amarpr.pdf": "ede1706ab440f1ae737a71afaf0a37438112e7b010e6a5118b8f334b4c0d03e3",
+    "reports/phase3/inference_review.json": "01529f09a097f728615ac68fe5e159eb7554283cc9cfbc569d952c8aa3317fcd",
+    "src/build_dataset.py": "50dbe0550aba8f8b4c70acbdfaa6762c35df81ca7b38836929c8c5267b229554",
+    "src/data_audit.py": "24981d5fa7342d493ba36f441eaeada2efcfb34ffb76d57e1322a0eba1a18c48",
+    "src/descriptive_statistics.py": "f96ec1b3bd359c06c1bf57176e18801062d088ba9855b7ce6ff92387b25a5386",
+    "src/phase4_plan.py": "191b7dcd592b780a7ef7b33ebb121eefa5dc17e364ea1065a4b3afbf5d309a00",
+    "reports/phase4/analysis_plan.json": "cb102d2556004d8b5e50f960792ec83c2ab34d90201db60947fff175022dacd0",
+    "reports/phase4/design_matrices.json": "85e3eea99a5c5c0ce9becd28e499a098f431de0d48ed514659126d9a9824d73d",
+    "src/phase4_design.py": "3806004577ee515e775c66430e5c13772dd722e2da15fbf72d1b14c51de59296",
+    "src/phase4_regression.py": "3252a80f17c8b2441ab573f9c3b08823df7a0f707319c441b8a93da1248b76f0",
+    "src/phase4_simple.py": "ad9e2e7a1c5975641c681eea4fa20c53d5a813f675e6a8de648b2ba4a663c7b6",
+    "requirements.txt": "6954b33c3de27271d0179044bf553ee3f675eeb24238faab136eae135f71d18e",
+    "src/phase1_figures.py": "c0e0f2ca8ecfb0f79735ac5fffc0e948747675d5ed66ac1c949e4ea7982aa413",
+    "reports/phase4/simple_regression.json": "3369c707e4dde296d58978142212fd98a227b4a51eb997bfa2be674acf3c3933",
+    "src/phase4_multiple.py": "32e0103d0371ba5f8542e8657a7e9c886093f1e7fa5b6922a78b59c8a43665df",
+    "reports/phase4/multiple_regression.json": "7f9b1c7e8d49793de59f2117d060052c5a4ab42c3b3865111a46e38795e9a588",
+    "src/phase4_comparison.py": "8936ffc4964d69f762cf2bfd18c11c87778f666d7cd17768f874758858312afc",
+    "reports/phase4/model_comparison.json": "9f41dc16ae974bb151ab976387c979fc25f3176ee31c75c99a4cd0b7c638bdaf",
+    "src/phase4_diagnostics.py": "4d001a835c571d94005f9bfebf1a22b46607cecc6e60c67b771c8276b454e2b0",
+    "src/phase4_diagnostic_figures.py": "ef300fc71b9906e3ca4a3de6cc420b7cad1dc63fc425a61bfde8794dfc16124c",
+    "reports/phase4/residual_diagnostics.json": "518122a9e32560e77f4b89a588c4a5da472a1a0930c2fbd51e6aac26b39a6fdd",
+    "src/phase4_prediction.py": "40d556c15123fb4a7a460388139358410a6c55721fb901d86094dd0a72734d36",
+    "figures/phase4/03_residual_diagnostics.pdf": "c407f4a55919cef4d9edb64ac6ea047529922f994910125951e5649e04d29ee8",
+    "figures/phase4/04_integrated_predictor_residuals.pdf": "013aa4f27b506280261cf58f8f36a87349d13fd1759fcc09733aa88c5f8e897d",
+    "figures/phase4/05_integrated_influence.pdf": "f9c2346a0748fb225dcd5016d4654ee29c39479ab6e26b96330949ed9b8c4735",
+    "reports/phase4/profile_prediction.json": "ebade873cceab26586e9a1853233ce5a95116e9b33896c58e4d7630b7eb8a383",
+    "reports/phase4/tables.tex": "281bd5c7e8688c156028151b4571aaafd5f14bdb8713cfc56949975bfade8806",
+    "notebooks/phase4.ipynb": "421b25f284bba45e97d0323fb891ee182c60e9eca3d71ca55922f25b3545bd32",
+    "reports/phase4.pdf": "f93d0fede9f3853bef33e8199c841975748fc514f14b983c0f393d540d9202b5",
+    "reports/phase4/phase4.tex": "6593701b8240306c8bf5e1821d495366d35cb71dde28663f2e7e0581255d0128",
+    "reports/template.tex": "84cb8d8c549044dc58a2a148f0cb93f39b24a46fd43f579dd0e019589fecd8ab",
+    "src/phase4_tables.py": "d701189f1e89c1f9dc6f0fd32e6c41edff5bfd7d1b2475bd88865653311a42f6",
+    "src/phase4_review.py": "10197ff1eba4a4ab03d86d8d01af4973ac28a0631c696bc0b454b5d89682949a"
+  },
+  "delivery": {
+    "report": "reports/phase4.pdf",
+    "notebook": "notebooks/phase4.ipynb",
+    "manual": "Repository publication, phase-4 tagging and course packaging are manual."
+  }
+}

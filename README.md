@@ -121,6 +121,99 @@ The report gets its numbers from `reports/phase3/tables.tex`, which `src.phase3_
 
 Use `reports/phase3/hypothesis_tests.json` for the final adjustment and decisions for both tests. The Step 4 and 5 JSON files keep the pending fields recorded at those earlier stages. Section 10 of the report shows where all nine general and five Track C requirements are addressed. The local Phase 3 deliverables are ready for review. The student handles Git publication, the `phase-3` tag and CW packaging manually.
 
+## Phase 4
+
+Step 1 records the [pre-fit regression plan](reports/phase4/analysis_plan.json), implemented in [src.phase4_plan](src/phase4_plan.py). The plan fixes the common 842-person sample, predictor coding, UDS-only/MRI-only/combined models, primary coefficient test, diagnostic rules and an observed-support prediction profile. It documents that clinical/MRI temporal proximity is unverifiable from the supplied files. The MRI-only model is estimated in Step 3 below; Step 4 adds UDS-only and the integrated primary model, and Step 5 compares all three models and reviews collinearity; Step 6 now adds residual and influence review.
+
+After reproducing Phases 1-3, run this command from the project root:
+
+```shell
+python3 -m src.phase4_plan
+```
+
+The command reconstructs the participant data in memory, checks the current Phase 3 review and records input hashes. It creates a new plan, leaves an identical existing plan untouched and refuses to overwrite a different one. Later steps must validate the saved plan before fitting. The [project card](PROJECT_CARD.md) explains the model specification and remaining work. The completed report, executed notebook and final checks are in Step 8 below.
+
+### Prepare the Phase 4 model matrices
+
+Step 2 adds the [design preparation report](reports/phase4/design_matrices.json) and [preparation code](src/phase4_design.py). With the Step 1 plan in place, run:
+
+```shell
+python3 -m src.phase4_design
+```
+
+The command prepares UDS-only (842 × 4), MRI-only (842 × 2) and combined (842 × 5) matrices in memory. It checks their common participant/response order, registered coding, finite values, intercepts, full rank and numerical conditioning. The report stores aggregate summaries and fingerprints; participant-level matrices, IDs and responses are not exported. Later fitting code must load the validated designs with `load_prepared_designs()`. No regression or association test has been run at this step. The frozen plan, previous-phase results and requirements remain unchanged.
+
+### Estimate the MRI-only simple regression
+
+Step 3 adds the [simple-regression and Pearson results](reports/phase4/simple_regression.json) and a [grayscale scatterplot with the least-squares line](figures/phase4/01_score_thickness_simple_regression.pdf). After the preceding preparation commands, run:
+
+```shell
+python3 -m src.phase4_simple
+```
+
+The calculation uses [the OLS engine](src/phase4_regression.py) and [Step 3 analysis](src/phase4_simple.py) on the same 842-person sample. It reports model-based and HC3 coefficient uncertainty, the simple-slope nominal test, Pearson correlation and fit summaries. It checks their numerical identities and records source hashes without exporting participant-level fit arrays. The observed unadjusted slope is 0.08098 correct responses per 0.1 mm, with a model-based 95% interval from -0.22173 to 0.38370 and nominal p = 0.59965. This result does not establish practical equivalence or answer the adjusted primary question. UDS-only and combined-model fitting are now completed in Step 4 below; residual diagnostics and profile prediction intervals remain later work.
+
+### Estimate the UDS-only and integrated models
+
+Step 4 adds the [multiple-regression code](src/phase4_multiple.py) and [aggregate model results](reports/phase4/multiple_regression.json). After the preceding preparation and simple-regression commands, run:
+
+```shell
+python3 -m src.phase4_multiple
+```
+
+Both models use the same 842 participants and registered coding. The result includes all coefficients, model-based and HC3 uncertainty, t statistics, individual 95% intervals and fit summaries. The integrated thickness coefficient is **-0.12570 correct responses per 0.1 mm**, with a model-based 95% interval from **-0.42165 to 0.17024** and **p = 0.40468**. The registered primary zero-slope null is not rejected; this does not establish no association or practical equivalence. HC3 gives an interval from **-0.41077 to 0.15936** and nominal **p = 0.38699**. The [project card](PROJECT_CARD.md) explains the conditional coefficients and test roles.
+
+The code validates earlier outputs, checks both multiple-model QR solutions against an independent SVD solve and fingerprints inputs without exporting individual fit arrays. `load_multiple_results()` checks saved results before reuse. Step 5 below now compares all three models and examines collinearity; residual/influence review, profile intervals and the final notebook/LaTeX report remain pending. No dependency, frozen plan or earlier analytical artifact changes are required.
+
+### Compare models and review collinearity
+
+Step 5 adds the [comparison code](src/phase4_comparison.py), [aggregate three-model comparison](reports/phase4/model_comparison.json) and [grayscale coefficient intervals](figures/phase4/02_coefficient_comparison.pdf). After the preceding commands, run:
+
+```shell
+python3 -m src.phase4_comparison
+```
+
+The comparison keeps the same 842 participants and reports fit changes, coefficient changes and both uncertainty methods. Adding thickness to UDS-only raises R-squared by **0.00072551**; adjusted R-squared decreases slightly because its parameter penalty exceeds that fit gain. The observed thickness sign change is checked through the exact marginal/conditional slope identity, without a causal interpretation or a new difference test. The largest integrated VIF is **1.08971**, below the registered review threshold of 5. Predictor correlations, VIFs, rank and conditioning are saved for both multiple models; all registered covariates remain included. The [project card](PROJECT_CARD.md) explains the metrics and their limits.
+
+`load_comparison_results()` checks the saved comparison against the current inputs and source code. Only aggregates are saved. The primary test from Step 4 remains unchanged. Residual/influence review is now completed in Step 6 below; profile intervals and final notebook/LaTeX assembly remain later work.
+
+### Review residuals and influential observations
+
+Step 6 adds [diagnostic calculations](src/phase4_diagnostics.py), [figure code](src/phase4_diagnostic_figures.py) and the [aggregate diagnostic report](reports/phase4/residual_diagnostics.json). After the preceding commands, run:
+
+```shell
+python3 -m src.phase4_diagnostics
+```
+
+The figures show [all-model residual/Q-Q/scale-location panels](figures/phase4/03_residual_diagnostics.pdf), [integrated predictor residuals](figures/phase4/04_integrated_predictor_residuals.pdf) and [integrated influence with diagnostic single-omission fits](figures/phase4/05_integrated_influence.pdf). The full-sample fits exactly reproduce Steps 3-4. In the integrated model, 5 residual, 45 leverage and 37 Cook flags overlap in a 70-observation union. These are review flags, not data-error labels or deletion rules.
+
+The 70 flagged single-omission thickness coefficients range from **-0.15084 to -0.08599**; the joint diagnostic omission gives **-0.05327** on 772 participants. Every original participant remains in the primary model. Usual-formula sensitivity intervals after outcome-dependent flagging do not have justified post-selection coverage and do not replace the primary result. The [project card](PROJECT_CARD.md) records the visual evidence, uncertainty and limits. `load_diagnostic_results()` checks the saved result before reuse. Step 7 will record the justified model-retention/extension decision and profile intervals; no transformation or quadratic extension is fitted here.
+
+### Record the model decision and calculate profile intervals
+
+Step 7 keeps the registered additive linear models based on the residual review and uses the full integrated fit for the fixed profile. Run this command after Step 6:
+
+```shell
+python3 -m src.phase4_prediction
+```
+
+At the profile of a recorded male aged 68 with 16 years of education and 2.344 mm of left thickness, the fitted score is **22.07**. The nominal 95% mean confidence interval is **21.47 to 22.67**, and the prediction interval for one new independent eligible participant is **12.06 to 32.07**. The model-based limits reflect the qualifications from the residual review. The completed report and notebook are linked below. [Results and rationale](reports/phase4/profile_prediction.json) · [Calculation code](src/phase4_prediction.py)
+
+### Build and check the final Phase 4 deliverables
+
+The [compiled report](reports/phase4.pdf), [LaTeX source](reports/phase4/phase4.tex) and [executed notebook](notebooks/phase4.ipynb) bring the fits, uncertainty, five figures and fixed-profile intervals together. The report maps all 11 general requirements and six Track C requirements to their evidence. Track C5 is partly verifiable. The supplied files establish one matched record pair per participant, while the dates needed to assess the UDS-to-MRI interval are unavailable.
+
+After completing Steps 1–7, run the following from the project root in the project Python environment with the Jupyter kernel set to that environment.
+
+```shell
+python3 -m src.phase4_tables
+tectonic -Z search-path="$PWD" --outdir reports reports/phase4/phase4.tex
+python3 -m jupyter execute --inplace --timeout=180 notebooks/phase4.ipynb
+python3 -m src.phase4_review
+```
+
+The [final review](reports/phase4/regression_review.json) records the independent SVD checks, five reproduced figure PDFs, the shared numeric tables and the deliverable fingerprints. The student handles Git publication, the `phase-4` tag and CW packaging.
+
 ## Project layout
 
 | Path | Purpose |

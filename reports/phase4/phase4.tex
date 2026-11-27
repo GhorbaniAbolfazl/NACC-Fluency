@@ -1,0 +1,181 @@
+\documentclass[11pt]{article}
+\PassOptionsToPackage{gray}{xcolor}
+\usepackage{amsmath}
+\input{reports/template.tex}
+\input{reports/phase4/tables.tex}
+\graphicspath{{figures/phase4/}}
+\definecolor{ReportInk}{gray}{0}
+\definecolor{ReportAccent}{gray}{0}
+\definecolor{ReportTint}{gray}{0.95}
+\hypersetup{pdftitle={Phase 4 - Regression and model diagnostics},allcolors=black,linkbordercolor=black,urlbordercolor=black}
+\newcommand{\MeanTarget}{Conditional mean}
+\newcommand{\IndividualTarget}{New individual score}
+\newcommand{\coefftable}[1]{\begin{center}\small
+\begin{tabular}{@{}lrrrrc@{}}\toprule
+Term & Estimate & SE & $t$ & Two-sided $p$ & 95\% interval\\\midrule
+#1
+\bottomrule\end{tabular}\end{center}}
+\newcommand{\panel}[3]{\begin{center}
+\includegraphics[width=#1\linewidth]{#2}\par
+\smallskip\small #3
+\end{center}}
+
+\begin{document}
+\reportlabel{Statistics course project, Track C (NACC)}\par
+\vspace{3mm}
+\reporttitle{Semantic verbal fluency and\\left inferior parietal thickness}
+\textbf{Phase 4 --- Regression, correlation and model diagnostics}
+
+\section{Question, sample and model specification}\label{sec:design}
+Among participants with normal cognition, how does the mean animal-naming score vary with left inferior parietal cortical thickness after accounting for age, recorded sex and education? In the combined model, the estimated difference per 0.1 mm was \(\PrimarySlope\) correct responses (95\% model-based interval \PrimaryInterval{}, \(p=\PrimaryProbability\)). The interval includes associations in either direction.
+
+\textbf{Common sample.} The two files contribute one supplied record per person, matched one-to-one by ID for \MatchedN{} participants. Of \NormalN{} with normal cognition, four had unusable scores. One of the remaining \PairedN{} had unknown education, leaving \ModelN{} for all three models. Valid extreme values were kept. Random selection was reported, but the frame and selection probabilities are undocumented. Dates, visit numbers and source visit counts are unavailable. We use the supplied records, so the UDS-to-MRI interval is unknown. A unique row per person verifies the analysis unit. Independence across people remains an assumption.
+
+\textbf{Outcome and predictors.} \texttt{ANIMALS} counts correct animal names in 60 seconds. Higher scores indicate better performance on this task. Usable scores are integers from 0 to 77. This count describes performance on a single task. The imaging term is the prespecified left inferior parietal thickness in mm. Age and years of education address the demographic component of the research question. Recorded sex enters as a binary indicator with male as the reference.
+
+\[
+ T=(\text{thickness}-\ThicknessReference)/0.1,\quad A=\text{age}-\AgeReference,\quad
+ E=\text{education}-\EducationReference,\quad
+ F=\mathrm{I}\{\text{recorded female}\}.
+\]
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}\toprule
+Model & Terms in addition to the intercept\\\midrule
+UDS-only & \(A,F,E\)\\
+MRI-only & \(T\)\\
+UDS + MRI & \(T,A,F,E\)\\\bottomrule
+\end{tabular}
+\end{center}
+The analysis plan fixed these terms before Phase 4 fitting. Equal-weight OLS uses pivoted QR. Model-based $t$ inference is primary for the combined thickness term. HC3 uses the same estimates and provides a prespecified companion analysis with an approximate $t_{n-p}$ reference. The simple slope and other terms use nominal inference.
+
+\clearpage
+\section{MRI-only regression and Pearson correlation}\label{sec:simple}
+With \(T\) in units of 0.1 mm, the fitted line is
+\(\widehat{\mathrm{ANIMALS}}=\SimpleIntercept+\SimpleSlope T\).
+The intercept estimates the mean at \ThicknessReference{} mm in this model. The slope gives the unadjusted difference in mean score per 0.1 mm greater thickness.
+
+\panel{0.86}{01_score_thickness_simple_regression.pdf}{\textbf{Figure 1.} Score and thickness on the common sample. Repeated coordinates can overlap. The fitted line spans observed thickness.}
+
+\textbf{Model-based uncertainty} (\(df=840\))
+\coefftable{\SimpleClassical}
+\textbf{HC3 companion} (\(df=840\))
+\coefftable{\SimpleRobust}
+
+Pearson's \(r=\PearsonR\) and \(R^2=\SimpleRtwo\) on the same \ModelN{} people. In a one-predictor model with an intercept, \(R^2=r^2\) and the classical zero-slope and Pearson tests give the same numerical \(p=\SimpleProbability\). The two calculations use the same data, so they supply one piece of evidence about the unadjusted linear association. The interval includes zero. Observational comparisons support an association interpretation.
+
+\clearpage
+\section{Multiple regression and the primary coefficient}\label{sec:multiple}
+At fixed values of the other terms, age and education coefficients describe a one-year difference, while the sex coefficient compares recorded female with recorded male. The combined model also holds thickness fixed in those comparisons. The thickness coefficient compares people 0.1 mm apart at the same age, recorded sex and education. Intercepts use the centered reference values of the terms in each model.
+
+{\setlength{\parskip}{2pt}\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.05}
+\textbf{UDS-only (838 residual degrees of freedom). Model-based}\par
+\coefftable{\UdsClassical}
+\textbf{UDS-only. HC3 companion}\par
+\coefftable{\UdsRobust}
+\textbf{Combined (837 residual degrees of freedom). Model-based}\par
+\coefftable{\IntegratedClassical}
+\textbf{Combined. HC3 companion}\par
+\coefftable{\IntegratedRobust}
+}
+{\small A dash in the \(p\) column marks numerical underflow. Intervals are individual. Both methods use the same point estimates.\par}
+
+The registered two-sided test of a zero adjusted thickness coefficient gives \(p=\PrimaryProbability\) at \(\alpha=0.05\), so the primary null is not rejected. The HC3 companion gives \(p=\PrimaryRobustProbability\) with interval \PrimaryRobustInterval{}. The data provide limited evidence for a directional linear association. The interval width matters because no practical equivalence margin was set.
+
+\clearpage
+\section{Comparison on the same participants}\label{sec:compare}
+\begin{center}\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrrrr@{}}\toprule
+Model & \(p\) & \(df\) & SSE & \(R^2\) & Adj.\ \(R^2\) & Residual SD & RMSE\\\midrule
+\FitRows
+\bottomrule\end{tabular}\end{center}
+Residual SD uses \(\sqrt{\mathrm{SSE}/(n-p)}\) and in-sample RMSE uses \(\sqrt{\mathrm{SSE}/n}\). Here \(p\) includes the intercept. Adding thickness to UDS-only raises \(R^2\) by \(\DeltaRtwo\) and changes adjusted \(R^2\) by \(\DeltaAdjustedRtwo\). These measures summarize fit on the modeling sample.
+
+The thickness estimate moves from \(\SimpleSlope\) to \(\PrimarySlope\). The marginal slope equals the adjusted slope plus the sum of the demographic coefficients weighted by their slopes on thickness in this sample. Age accounts for the largest term in that identity. The difference describes adjustment within these models. Both intervals include zero.
+
+\panel{0.80}{02_coefficient_comparison.pdf}{\textbf{Figure 2.} Common coefficients and their individual intervals. Each panel has its own units and horizontal scale.}
+
+\textbf{Collinearity.} The designs have full rank. Pearson correlations among the integrated predictors are modest (maximum absolute pairwise \(r\) about 0.238). VIF uses \(1/(1-R_j^2)\) from each auxiliary regression on the other predictors.
+\begin{center}\small
+\begin{tabular}{@{}lrr@{}}\toprule
+Term & UDS-only VIF & Combined VIF\\\midrule
+\VifRows
+\bottomrule\end{tabular}\end{center}
+The maximum combined VIF of \MaxVif{} is below the review threshold of 5. Standardized condition numbers are about 1.13 and 1.35 for UDS-only and combined, respectively.
+
+\clearpage
+\section{Residual and influence diagnostics}\label{sec:diagnostics}
+\panel{1.00}{03_residual_diagnostics.pdf}{\textbf{Figure 3.} Residuals versus fitted values, normal Q-Q and scale-location across the three models. Lines in the first and third columns connect descriptive bin means. The Q-Q line uses the 25th and 75th percentiles.}
+
+Central Q-Q points stay close to their reference line, with departures in the tails and a longer positive tail. Spread varies across fitted scores. For the combined model, residual SDs across fitted-value bins range from about 4.82 to 5.60 correct responses. The score's integer scale accounts for the residual bands. The plots qualify the normal-error and constant-variance assumptions behind classical inference.
+
+The strict review thresholds are \(|r_i|>3\) for internally studentized residuals, \(h_{ii}>2p/n\) for leverage and \(D_i>4/n\) for Cook's distance. Each count below describes a review flag. The union accounts for overlap.
+\begin{center}\small
+\begin{tabular}{@{}lrrrr@{}}\toprule
+Model & Residual & Leverage & Cook & Union\\\midrule
+\FlagRows
+\bottomrule\end{tabular}\end{center}
+
+\clearpage
+\textbf{Combined-model detail}
+\panel{0.89}{04_integrated_predictor_residuals.pdf}{\textbf{Figure 4.} Residuals against thickness, age and education, with residual boxplots for the recorded sex categories. Sparse predictor tails give limited evidence about curvature.}
+
+\panel{1.00}{05_integrated_influence.pdf}{\textbf{Figure 5.} Influence review and the histogram of thickness coefficients when flagged observations are omitted one at a time.}
+
+In the \FlaggedN{} single-omission refits the thickness coefficient ranges from \(\LooLow\) to \(\LooHigh\). Both interval methods include zero in every refit. Omitting the flagged union in one diagnostic fit leaves \JointN{} participants and gives \(\JointSlope\). Flagging depends on the original fit, so interval coverage after such selection is unverified. The main analysis uses the full eligible sample.
+
+\clearpage
+\section{Model decision and fixed-profile intervals}\label{sec:profile}
+We retained the registered additive linear specifications. Residual bin means are small relative to the residual SD. The central predictor plots show no clear sustained curvature that would justify a quadratic thickness term. Spread and tail departures qualify classical error assumptions and give insufficient direction for a specific score transformation. The original score units and planned HC3 coefficient summary help interpret the results.
+
+The prespecified profile is a recorded male aged \AgeReference{} with \EducationReference{} years of education and left thickness of \ThicknessReference{} mm. These predictor values occur together on the common sample. The rule selects the observed male profile closest to the predictor medians using variance-scaled squared distance. It uses predictors alone. In combined-model column order \(x_0=(1,0,0,0,0)^\top\), so the fitted mean is the intercept, \(\PredictedMean\) correct responses.
+
+\[
+ g=x_0^\top(X^\top X)^{-1}x_0,\quad s^2=\frac{\mathrm{SSE}}{n-p},\quad
+ \widehat y_0\pm t_{.975,\,n-p}s\sqrt{g}
+ \quad\text{and}\quad
+ \widehat y_0\pm t_{.975,\,n-p}s\sqrt{1+g}.
+\]
+\begin{center}\small
+\begin{tabular}{@{}lccc@{}}\toprule
+Nominal 95\% target & SE or prediction SD & Limits & Width\\\midrule
+\PredictionRows
+\bottomrule\end{tabular}\end{center}
+Here \(g=\ProfileVarianceFactor\), \(s^2=\ResidualVariance\), and \(t_{.975,\PredictionDF}=\PredictionCritical\). The new observation interval adds individual residual variance and is about \WidthRatio{} times as wide as the mean interval. Both limits lie within the usable score range. The underlying numerical results keep continuous, unclipped bounds.
+
+Exact classical coverage assumes an adequate linear mean with independent normal errors of constant conditional variance. The individual interval also assumes a new independent eligible participant from the same conditional distribution. Departures in residual tails and spread make the displayed limits approximate. Predictive coverage on new data remains unverified.
+
+\textbf{Interpretation.} The adjusted thickness pattern is small in these score units and imprecisely estimated. The covariates and outcome describe observational differences. Unknown preparation and imputation, unknown scan-level quality control, unverified visit timing and the undocumented sampling frame limit generalization. Phase 5 can examine sensitivity to the eligible sample and alternative definitions under a documented plan.
+
+\clearpage
+\section{Reproduction and requirement coverage}\label{sec:audit}
+The executed notebook rebuilds the analysis in memory and shows aggregate tables and all five figures. The LaTeX numeric tables are generated from the validated results. The review verifies fits, uncertainty, diagnostics, prediction and the public deliverables. Reproduction uses the supplied raw files and the locally rebuilt participant table.
+
+\begin{center}\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.13}
+\begin{tabular}{@{}lp{0.80\linewidth}@{}}\toprule
+Requirement & Evidence\\\midrule
+General 1 & Question, response and coding, Section~\ref{sec:design}.\\
+General 2 & Least-squares line and coefficient units, Section~\ref{sec:simple}.\\
+General 3 & Simple slope interval, test and interpretation, Section~\ref{sec:simple}.\\
+General 4 & Two multiple fits and conditional coefficients, Section~\ref{sec:multiple}.\\
+General 5 & Common-sample fit and coefficient comparison, Section~\ref{sec:compare}.\\
+General 6 & Binary indicator and reference, Sections~\ref{sec:design} and \ref{sec:multiple}.\\
+General 7 & Residual, Q-Q, spread and influence plots, Section~\ref{sec:diagnostics}.\\
+General 8 & Evidence and decision on extending the model, Section~\ref{sec:profile}.\\
+General 9 & Mean and individual prediction intervals, Section~\ref{sec:profile}.\\
+General 10 & Same-sample Pearson correlation and slope identity, Section~\ref{sec:simple}.\\
+General 11 & Correlation, VIF and rank checks, Section~\ref{sec:compare}.\\
+Track C1 & UDS score, usable range and direction, Section~\ref{sec:design}.\\
+Track C2 & UDS-only baseline, Sections~\ref{sec:design} and \ref{sec:multiple}.\\
+Track C3 & MRI-only model and diagnostics, Sections~\ref{sec:simple} and \ref{sec:diagnostics}.\\
+Track C4 & Combined fit and comparison, Sections~\ref{sec:multiple} and \ref{sec:compare}.\\
+Track C5 & One supplied pair per participant, Section~\ref{sec:design}. Timing remains unverified because visit and scan dates are unavailable.\\
+Track C6 & Integrated residuals and omission sensitivity, Section~\ref{sec:diagnostics}.\\
+\bottomrule\end{tabular}\end{center}
+
+\textbf{Reproduction.} Follow the Phase 4 sequence in the README. After Step 7, generate the tables with \texttt{python3 -m src.phase4\_tables}, build the LaTeX source and execute the notebook. Run \texttt{python3 -m src.phase4\_review} to record the final checks.
+
+\textbf{Sources.} Statistics course guide, printed pp.\ 13--15 (Section 8 in \texttt{docs/amarpr.pdf}). 
+\href{https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm}{NIST on model diagnostics};
+\href{https://www.itl.nist.gov/div898/handbook/pmd/section5/pmd512.htm}{NIST on prediction intervals};
+\href{https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLSResults.HC3_se.html}{HC3 covariance}.
+\end{document}
