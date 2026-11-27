@@ -1,0 +1,413 @@
+{
+  "stage": "Phase 4, Step 2",
+  "status": "Common-sample model matrices prepared and validated; no regression fitted.",
+  "sample": "model_normal",
+  "participants": 842,
+  "source_files_sha256": {
+    "data/udslong_imputed.csv": "8bcd0180d1b593092f7b2f7777281f59c4a6e9c3b2b041b5d2a33ed13be55e63",
+    "data/mriscanclean.csv": "3a2b34f7902592705f75ce3ad4c4fab68880470f01e7b9eb9823a799dc092e72",
+    "data/processed/participants.csv": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+    "reports/phase1/sample_flow.json": "928fc5a0717c786c7ed47c154d43113e77c1f3f22c9a1f2ecd8fe5714d6180f3",
+    "docs/amarpr.pdf": "ede1706ab440f1ae737a71afaf0a37438112e7b010e6a5118b8f334b4c0d03e3",
+    "reports/phase3/inference_review.json": "01529f09a097f728615ac68fe5e159eb7554283cc9cfbc569d952c8aa3317fcd",
+    "src/build_dataset.py": "50dbe0550aba8f8b4c70acbdfaa6762c35df81ca7b38836929c8c5267b229554",
+    "src/data_audit.py": "24981d5fa7342d493ba36f441eaeada2efcfb34ffb76d57e1322a0eba1a18c48",
+    "src/descriptive_statistics.py": "f96ec1b3bd359c06c1bf57176e18801062d088ba9855b7ce6ff92387b25a5386",
+    "src/phase4_plan.py": "191b7dcd592b780a7ef7b33ebb121eefa5dc17e364ea1065a4b3afbf5d309a00",
+    "reports/phase4/analysis_plan.json": "cb102d2556004d8b5e50f960792ec83c2ab34d90201db60947fff175022dacd0",
+    "src/phase4_design.py": "3806004577ee515e775c66430e5c13772dd722e2da15fbf72d1b14c51de59296",
+    "requirements.txt": "6954b33c3de27271d0179044bf553ee3f675eeb24238faab136eae135f71d18e"
+  },
+  "environment": {
+    "python": "3.14.0",
+    "scipy": "1.16.3",
+    "numpy_runtime": "2.5.4",
+    "numeric_type": "IEEE-754 binary64 Python floats passed to scipy.linalg",
+    "machine_epsilon": 2.220446049250313e-16
+  },
+  "coding": {
+    "method": "Registered reference values with Decimal subtraction and 0.1-mm scaling before float conversion; no evaluation of expression strings.",
+    "reference_profile": {
+      "SEX": 1,
+      "NACCAGE": 68.0,
+      "EDUC": 16,
+      "LH_INFERIORPARIETAL_AVGTH": 2.344
+    },
+    "sex_indicator_counts": {
+      "male_0": 298,
+      "female_1": 544
+    },
+    "round_trip": "All age, education and thickness values recover within 8*epsilon*max(1,abs(source value)); sex recovers exactly.",
+    "intercepts": "Every model has a leading column of ones.",
+    "thickness": "Continuous centered thickness per 0.1 mm; the Phase 3 cutoff is not used."
+  },
+  "response": {
+    "column": "ANIMALS",
+    "unit": "Correct responses in 60 seconds",
+    "participants": 842,
+    "all_finite_usable_integers": true,
+    "minimum": 7.0,
+    "maximum": 43.0,
+    "same_values_and_order_for_every_model": true,
+    "response_sha256": "b6861f8e75d16a7d3fa633905a085608cb4e2e91069dccd1571f277fb0a2d4c8"
+  },
+  "models": {
+    "uds_only": {
+      "role": "UDS baseline",
+      "column_order": [
+        "intercept",
+        "age_c",
+        "female",
+        "education_c"
+      ],
+      "matrix_sha256": "6883f055ff9c6a50c97a83cdaddca88a0a5911bcfc14010c922dffdb8bcb817e",
+      "response_sha256": "b6861f8e75d16a7d3fa633905a085608cb4e2e91069dccd1571f277fb0a2d4c8",
+      "ordered_ids_sha256": "01493a1533ccc79d5a8cf6e7fca3eb0ca1acab860c59884f7d5f9466f22c34d4",
+      "reference_row": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rows_equal_to_reference": 5,
+      "rows": 842,
+      "columns": 4,
+      "full_column_rank": true,
+      "residual_df": 838,
+      "raw_design": {
+        "svd_rank": 4,
+        "pivoted_qr_rank": 4,
+        "singular_values": [
+          231.1357510032759,
+          75.90766718269005,
+          34.927672433500696,
+          11.240479056146253
+        ],
+        "rank_tolerance": 4.3213499966112307e-11,
+        "qr_absolute_diagonal": [
+          231.0908912094979,
+          75.74587808291413,
+          28.567313116962502,
+          13.775139616497384
+        ],
+        "qr_pivot_order": [
+          "age_c",
+          "education_c",
+          "intercept",
+          "female"
+        ],
+        "condition_number_2norm": 20.562802514799557
+      },
+      "standardized_design": {
+        "svd_rank": 4,
+        "pivoted_qr_rank": 4,
+        "singular_values": [
+          30.582473702877717,
+          29.219506105385523,
+          29.017236257093817,
+          27.091193498443936
+        ],
+        "rank_tolerance": 5.71774691100991e-12,
+        "qr_absolute_diagonal": [
+          29.017236257093817,
+          28.99999999999999,
+          28.99567017816026,
+          28.790053442621325
+        ],
+        "qr_pivot_order": [
+          "intercept",
+          "education_c",
+          "age_c",
+          "female"
+        ],
+        "condition_number_2norm": 1.128871406297929
+      },
+      "standardization": "For conditioning diagnostics only: retain intercept=1; center each other column at its mean and divide by its sample SD (n-1). The model matrix and its registered coefficient units are unchanged.",
+      "standardization_centers": {
+        "intercept": 0.0,
+        "age_c": -0.7422802850356295,
+        "female": 0.6460807600950119,
+        "education_c": 0.39548693586698336
+      },
+      "standardization_divisors": {
+        "intercept": 1.0,
+        "age_c": 7.933963089116824,
+        "female": 0.478468706004707,
+        "education_c": 2.583056207329123
+      },
+      "column_summaries": {
+        "intercept": {
+          "minimum": 1.0,
+          "maximum": 1.0,
+          "mean": 1.0,
+          "sample_sd": 0.0
+        },
+        "age_c": {
+          "minimum": -27.0,
+          "maximum": 22.0,
+          "mean": -0.7422802850356295,
+          "sample_sd": 7.933963089116824
+        },
+        "female": {
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "mean": 0.6460807600950119,
+          "sample_sd": 0.478468706004707
+        },
+        "education_c": {
+          "minimum": -15.0,
+          "maximum": 9.0,
+          "mean": 0.39548693586698336,
+          "sample_sd": 2.583056207329123
+        }
+      }
+    },
+    "mri_only": {
+      "role": "Unadjusted simple MRI regression",
+      "column_order": [
+        "intercept",
+        "thickness_0_1mm"
+      ],
+      "matrix_sha256": "7336d4e30a63d1c1d44efbf59b9e24d204e7c32caa571746139e876e3a8c64d7",
+      "response_sha256": "b6861f8e75d16a7d3fa633905a085608cb4e2e91069dccd1571f277fb0a2d4c8",
+      "ordered_ids_sha256": "01493a1533ccc79d5a8cf6e7fca3eb0ca1acab860c59884f7d5f9466f22c34d4",
+      "reference_row": [
+        1.0,
+        0.0
+      ],
+      "rows_equal_to_reference": 7,
+      "rows": 842,
+      "columns": 2,
+      "full_column_rank": true,
+      "residual_df": 840,
+      "raw_design": {
+        "svd_rank": 2,
+        "pivoted_qr_rank": 2,
+        "singular_values": [
+          35.443013075380534,
+          28.840449444112426
+        ],
+        "rank_tolerance": 6.626480921638847e-12,
+        "qr_absolute_diagonal": [
+          35.298423477543594,
+          28.95858585293006
+        ],
+        "qr_pivot_order": [
+          "thickness_0_1mm",
+          "intercept"
+        ],
+        "condition_number_2norm": 1.2289341448739446
+      },
+      "standardized_design": {
+        "svd_rank": 2,
+        "pivoted_qr_rank": 2,
+        "singular_values": [
+          29.017236257093817,
+          29.000000000000004
+        ],
+        "rank_tolerance": 5.425107680528506e-12,
+        "qr_absolute_diagonal": [
+          29.017236257093817,
+          29.000000000000004
+        ],
+        "qr_pivot_order": [
+          "intercept",
+          "thickness_0_1mm"
+        ],
+        "condition_number_2norm": 1.00059435369289
+      },
+      "standardization": "For conditioning diagnostics only: retain intercept=1; center each other column at its mean and divide by its sample SD (n-1). The model matrix and its registered coefficient units are unchanged.",
+      "standardization_centers": {
+        "intercept": 0.0,
+        "thickness_0_1mm": -0.0773040380047506
+      },
+      "standardization_divisors": {
+        "intercept": 1.0,
+        "thickness_0_1mm": 1.2147268059278025
+      },
+      "column_summaries": {
+        "intercept": {
+          "minimum": 1.0,
+          "maximum": 1.0,
+          "mean": 1.0,
+          "sample_sd": 0.0
+        },
+        "thickness_0_1mm": {
+          "minimum": -8.7,
+          "maximum": 3.22,
+          "mean": -0.0773040380047506,
+          "sample_sd": 1.2147268059278025
+        }
+      }
+    },
+    "integrated": {
+      "role": "Primary adjusted association",
+      "column_order": [
+        "intercept",
+        "thickness_0_1mm",
+        "age_c",
+        "female",
+        "education_c"
+      ],
+      "matrix_sha256": "3c272a19bc0b9128af4435279eec6cbd8c4571cfed89283f27d055c864b759bf",
+      "response_sha256": "b6861f8e75d16a7d3fa633905a085608cb4e2e91069dccd1571f277fb0a2d4c8",
+      "ordered_ids_sha256": "01493a1533ccc79d5a8cf6e7fca3eb0ca1acab860c59884f7d5f9466f22c34d4",
+      "reference_row": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rows_equal_to_reference": 1,
+      "rows": 842,
+      "columns": 5,
+      "full_column_rank": true,
+      "residual_df": 837,
+      "raw_design": {
+        "svd_rank": 5,
+        "pivoted_qr_rank": 5,
+        "singular_values": [
+          231.28183328122634,
+          75.91321636740489,
+          35.44425641593835,
+          33.849858095107585,
+          11.03483887027414
+        ],
+        "rank_tolerance": 4.32408117362987e-11,
+        "qr_absolute_diagonal": [
+          231.0908912094979,
+          75.74587808291413,
+          34.34095475993049,
+          28.46241380328353,
+          13.586315827078094
+        ],
+        "qr_pivot_order": [
+          "age_c",
+          "education_c",
+          "thickness_0_1mm",
+          "intercept",
+          "female"
+        ],
+        "condition_number_2norm": 20.95923973156126
+      },
+      "standardized_design": {
+        "svd_rank": 5,
+        "pivoted_qr_rank": 5,
+        "singular_values": [
+          33.463226266896406,
+          29.92867885038303,
+          29.01723625709382,
+          27.106522256321618,
+          24.773435798222877
+        ],
+        "rank_tolerance": 6.256336896709852e-12,
+        "qr_absolute_diagonal": [
+          29.017236257093817,
+          28.99999999999999,
+          28.999814523075717,
+          28.4028609317868,
+          28.155295814194325
+        ],
+        "qr_pivot_order": [
+          "intercept",
+          "education_c",
+          "thickness_0_1mm",
+          "female",
+          "age_c"
+        ],
+        "condition_number_2norm": 1.3507705002830852
+      },
+      "standardization": "For conditioning diagnostics only: retain intercept=1; center each other column at its mean and divide by its sample SD (n-1). The model matrix and its registered coefficient units are unchanged.",
+      "standardization_centers": {
+        "intercept": 0.0,
+        "thickness_0_1mm": -0.0773040380047506,
+        "age_c": -0.7422802850356295,
+        "female": 0.6460807600950119,
+        "education_c": 0.39548693586698336
+      },
+      "standardization_divisors": {
+        "intercept": 1.0,
+        "thickness_0_1mm": 1.2147268059278025,
+        "age_c": 7.933963089116824,
+        "female": 0.478468706004707,
+        "education_c": 2.583056207329123
+      },
+      "column_summaries": {
+        "intercept": {
+          "minimum": 1.0,
+          "maximum": 1.0,
+          "mean": 1.0,
+          "sample_sd": 0.0
+        },
+        "thickness_0_1mm": {
+          "minimum": -8.7,
+          "maximum": 3.22,
+          "mean": -0.0773040380047506,
+          "sample_sd": 1.2147268059278025
+        },
+        "age_c": {
+          "minimum": -27.0,
+          "maximum": 22.0,
+          "mean": -0.7422802850356295,
+          "sample_sd": 7.933963089116824
+        },
+        "female": {
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "mean": 0.6460807600950119,
+          "sample_sd": 0.478468706004707
+        },
+        "education_c": {
+          "minimum": -15.0,
+          "maximum": 9.0,
+          "mean": 0.39548693586698336,
+          "sample_sd": 2.583056207329123
+        }
+      }
+    }
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Frozen plan and completed Phase 3 input fingerprints are current.",
+      "Participant table and eligibility reproduce from the raw CSVs in memory.",
+      "The same 842 unique sorted participant IDs and response order enter all three models.",
+      "Registered centering, sex coding and 0.1-mm thickness units are preserved and invertible within floating-point tolerance.",
+      "Each model has exactly the registered columns, order and intercept.",
+      "All design values are finite, each explanatory column varies, and usable response values are integer counts.",
+      "Raw and standardized matrices have full column rank by SVD and pivoted QR with a recorded tolerance.",
+      "Residual degrees of freedom agree with n minus the registered parameter count.",
+      "Common columns are exactly identical across the three model matrices.",
+      "The frozen prediction profile maps to the registered row and is jointly observed in the integrated sample.",
+      "Inputs and plan remained unchanged during preparation."
+    ],
+    "rank_method": "SVD with scipy.linalg.svd(compute_uv=False, lapack_driver='gesvd') cross-checked by economic pivoted scipy.linalg.qr; tolerance=max(n,p)*epsilon*largest singular value.",
+    "conditioning_limit": "Condition numbers describe the predictor matrix, not validity of regression assumptions or predictive performance. VIF, residual checks and influence analyses belong to later steps."
+  },
+  "privacy": {
+    "persisted": "Aggregate summaries, model column names, reference rows, singular values and fingerprints only.",
+    "not_exported": [
+      "Participant IDs",
+      "Participant-level design rows",
+      "Participant-level response values"
+    ],
+    "in_memory_api": "prepare_designs() returns immutable ModelDesign objects; later steps load them with load_prepared_designs()."
+  },
+  "hash_encoding": "Matrix and response hashes use compact UTF-8 JSON, ensure_ascii=True, allow_nan=False, separators=(',',':'), Python float values and retained order. IDs use the registered sorted newline encoding, not compact JSON.",
+  "scope": {
+    "not_performed": [
+      "Regression fitting",
+      "Score-thickness correlation",
+      "Coefficient estimates or tests",
+      "Residual or VIF diagnostics",
+      "Predictions or intervals"
+    ],
+    "limitations": "Numerical readiness does not verify participant independence, sampling design, source imputation, scan quality or clinical/MRI temporal proximity. The Step 1 limitations remain in force.",
+    "next_step": "Fit the prespecified MRI-only simple regression and calculate Pearson correlation on these same 842 participants in Step 3."
+  },
+  "sources": {
+    "svd": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.svd.html",
+    "pivoted_qr": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.qr.html"
+  }
+}
