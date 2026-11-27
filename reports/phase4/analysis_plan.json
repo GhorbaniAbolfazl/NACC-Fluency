@@ -1,0 +1,461 @@
+{
+  "plan_version": 1,
+  "stage": "Phase 4, Step 1",
+  "status": "Specification recorded before Phase 4 regression fitting; no fitted coefficients, association tests or predictions are produced by this step.",
+  "analysis_character": "Exploratory secondary observational analysis informed by the Phase 1-3 descriptions and unadjusted comparisons; this is a pre-fit project plan, not an external preregistration or independent confirmation.",
+  "inputs": {
+    "source_files_sha256": {
+      "data/udslong_imputed.csv": "8bcd0180d1b593092f7b2f7777281f59c4a6e9c3b2b041b5d2a33ed13be55e63",
+      "data/mriscanclean.csv": "3a2b34f7902592705f75ce3ad4c4fab68880470f01e7b9eb9823a799dc092e72",
+      "data/processed/participants.csv": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+      "reports/phase1/sample_flow.json": "928fc5a0717c786c7ed47c154d43113e77c1f3f22c9a1f2ecd8fe5714d6180f3",
+      "docs/amarpr.pdf": "ede1706ab440f1ae737a71afaf0a37438112e7b010e6a5118b8f334b4c0d03e3",
+      "reports/phase3/inference_review.json": "01529f09a097f728615ac68fe5e159eb7554283cc9cfbc569d952c8aa3317fcd",
+      "src/build_dataset.py": "50dbe0550aba8f8b4c70acbdfaa6762c35df81ca7b38836929c8c5267b229554",
+      "src/data_audit.py": "24981d5fa7342d493ba36f441eaeada2efcfb34ffb76d57e1322a0eba1a18c48",
+      "src/descriptive_statistics.py": "f96ec1b3bd359c06c1bf57176e18801062d088ba9855b7ce6ff92387b25a5386",
+      "src/phase4_plan.py": "191b7dcd592b780a7ef7b33ebb121eefa5dc17e364ea1065a4b3afbf5d309a00"
+    },
+    "course_guide_pages": [
+      4,
+      13,
+      14,
+      15,
+      18,
+      19
+    ]
+  },
+  "question": "Among participants with normal cognition, how does the mean number of correct animal names in 60 seconds differ per 0.1 mm greater left inferior parietal cortical thickness, after accounting for age, recorded sex and years of education?",
+  "sampling_model": {
+    "unit": "One participant with the single supplied UDS record and the single supplied MRI record, joined one-to-one on NACCID.",
+    "linkage": {
+      "uds_participants": 1237,
+      "mri_participants": 1237,
+      "matched_participants": 1237,
+      "uds_only": 0,
+      "mri_only": 0,
+      "matched_with_usable_left_thickness": 1237,
+      "matched_with_unusable_left_thickness": 0,
+      "cognitive_status_agreement": {
+        "equal": 1237,
+        "unavailable": 0,
+        "different": 0
+      }
+    },
+    "target": "The source population represented by this teaching extract, conditional on model_normal eligibility and the sampling/model assumptions; no claim of representativeness for all NACC participants.",
+    "independence": "One supplied row per ID is verified; independence across people remains a modeling assumption.",
+    "selection": "Random selection is reported, but its sampling frame, selection probabilities and source selection eligibility are undocumented.",
+    "source_preparation": "The source preparation and imputation methods and value-level masks are unknown. Treat the supplied values as fixed inputs; this analysis cannot propagate additional imputation/preparation uncertainty.",
+    "visit_and_scan_timing": {
+      "record_rule": "Use the single supplied record per participant; no within-person visit selection is possible or performed.",
+      "clinical_visit_date": "Unavailable",
+      "clinical_visit_number": "Unavailable",
+      "mri_scan_date": "Unavailable",
+      "source_visit_count": "Unavailable",
+      "temporal_proximity": "Unverifiable from the supplied files; do not assert baseline, first visit, nearest scan or contemporaneous measurements.",
+      "track_c5_status": "Participant-level input structure is documented. Temporal proximity remains unverified and would require authoritative metadata or course-team clarification."
+    },
+    "scan_quality": "Finite positive thickness establishes numerical usability, not scan-level quality control."
+  },
+  "sample": {
+    "name": "model_normal",
+    "eligibility_flag": "eligible_model_normal",
+    "common_to_all_models": true,
+    "required_columns": [
+      "ANIMALS",
+      "LH_INFERIORPARIETAL_AVGTH",
+      "NACCAGE",
+      "SEX",
+      "EDUC"
+    ],
+    "uds_cognitive_status": {
+      "column": "NACCUDSD",
+      "code": 1
+    },
+    "counts": {
+      "matched": 1237,
+      "normal_before_filters": 847,
+      "paired_normal": 843,
+      "model_normal": 842
+    },
+    "exclusions_within_normal_cognition": {
+      "unusable_score": 4,
+      "additional_unknown_education": 1
+    },
+    "phase_one_definition": {
+      "required_values": [
+        "ANIMALS",
+        "LH_INFERIORPARIETAL_AVGTH",
+        "NACCAGE",
+        "SEX",
+        "EDUC"
+      ],
+      "normal_cognition_only": true,
+      "included": 842,
+      "excluded": 395,
+      "first_exclusion_reason": {
+        "outside_normal_cognition": 390,
+        "ANIMALS": 4,
+        "EDUC": 1
+      },
+      "included_by_cognitive_status": {
+        "normal cognition": 842,
+        "impaired without MCI": 0,
+        "MCI": 0,
+        "dementia": 0,
+        "unavailable": 0
+      }
+    },
+    "sex_counts": {
+      "male_code_1": 298,
+      "female_code_2": 544
+    },
+    "membership_sha256": "01493a1533ccc79d5a8cf6e7fca3eb0ca1acab860c59884f7d5f9466f22c34d4",
+    "membership_hash_rule": "Sorted eligible NACCID values, UTF-8, one per line with a final newline; IDs themselves are not exported.",
+    "rules": [
+      "Reuse Phase 1 usability rules and special-code handling; no additional imputation or rounding.",
+      "Use exactly the common 842-person sample even for models needing fewer predictors.",
+      "Retain IQR-flagged measurements and all valid model-eligible participants.",
+      "Do not use cognitive status as a predictor within the normal-cognition-only primary sample."
+    ]
+  },
+  "variables": {
+    "response": {
+      "column": "ANIMALS",
+      "source": "UDS",
+      "unit": "Correct animal names in 60 seconds",
+      "usable_range": [
+        0,
+        77
+      ],
+      "scale": "Discrete nonnegative count; larger scores indicate better performance on this task.",
+      "special_codes_excluded": [
+        -4,
+        95,
+        96,
+        97,
+        98
+      ],
+      "limitations": "A task score is not a diagnosis or a calibrated clinical change. The count is analyzed with OLS as a conditional-mean approximation; inspect residuals and predictions against its scale."
+    },
+    "explanatory": {
+      "age_c": {
+        "source": "UDS",
+        "column": "NACCAGE",
+        "expression": "NACCAGE - 68",
+        "reference_years": 68.0,
+        "unit": "One year",
+        "rationale": "Prespecified demographic adjustment related to cognitive performance and the thickness association."
+      },
+      "female": {
+        "source": "UDS",
+        "column": "SEX",
+        "code_map": {
+          "1": 0,
+          "2": 1
+        },
+        "reference": "Recorded male, SEX=1",
+        "unit": "Recorded female minus recorded male, holding other included predictors fixed",
+        "rationale": "Prespecified demographic adjustment; use the recorded binary codes without interpreting them as a broader gender measure."
+      },
+      "education_c": {
+        "source": "UDS",
+        "column": "EDUC",
+        "expression": "EDUC - 16",
+        "reference_years": 16,
+        "unit": "One year",
+        "rationale": "Prespecified adjustment for years of education in a cognitive-task analysis."
+      },
+      "thickness_0_1mm": {
+        "source": "MRI",
+        "column": "LH_INFERIORPARIETAL_AVGTH",
+        "expression": "(LH_INFERIORPARIETAL_AVGTH - 2.344) / 0.1",
+        "reference_mm": 2.344,
+        "unit": "0.1 mm greater thickness",
+        "rationale": "The single anatomical measure selected by the research question before Phase 4 fitting.",
+        "continuous": true,
+        "phase_three_cutoff_used": false
+      }
+    },
+    "centering": "Center continuous predictors at the pre-fit observed reference profile to make intercepts interpretable. Centering changes the intercept but not slopes, residuals or R-squared for these intercept-containing additive models.",
+    "not_selected": "No new MRI regions, adjacency-derived predictors, cognitive scores, interactions or covariates are selected by correlation, p-values or model fit. VEG, bilateral thickness and full-sample analyses remain candidates for a separately specified Phase 5 plan."
+  },
+  "models": {
+    "uds_only": {
+      "role": "UDS baseline",
+      "columns": [
+        "intercept",
+        "age_c",
+        "female",
+        "education_c"
+      ],
+      "response": "ANIMALS",
+      "sample": "model_normal",
+      "participants": 842,
+      "formula": "ANIMALS ~ 1 + age_c + female + education_c",
+      "parameters_including_intercept": 4,
+      "residual_df_if_full_rank": 838
+    },
+    "mri_only": {
+      "role": "Unadjusted simple MRI regression",
+      "columns": [
+        "intercept",
+        "thickness_0_1mm"
+      ],
+      "response": "ANIMALS",
+      "sample": "model_normal",
+      "participants": 842,
+      "formula": "ANIMALS ~ 1 + thickness_0_1mm",
+      "parameters_including_intercept": 2,
+      "residual_df_if_full_rank": 840
+    },
+    "integrated": {
+      "role": "Primary adjusted association",
+      "columns": [
+        "intercept",
+        "thickness_0_1mm",
+        "age_c",
+        "female",
+        "education_c"
+      ],
+      "response": "ANIMALS",
+      "sample": "model_normal",
+      "participants": 842,
+      "formula": "ANIMALS ~ 1 + thickness_0_1mm + age_c + female + education_c",
+      "parameters_including_intercept": 5,
+      "residual_df_if_full_rank": 837
+    }
+  },
+  "primary_estimand": {
+    "model": "integrated",
+    "term": "thickness_0_1mm",
+    "parameter": "Adjusted linear-model mean score difference per 0.1 mm greater left thickness at the same age, recorded sex and education.",
+    "interpretation_limit": "An observational association under the stated functional form and assumptions; neither a within-person change nor a causal effect.",
+    "nonlinear_limit": "If the additive linear mean is inadequate, qualify this constant-slope summary and report any diagnostic extension separately."
+  },
+  "estimation": {
+    "method": "Ordinary least squares with an intercept, equal participant weights and no regularization.",
+    "numerics": "Use a numerically stable QR/SVD least-squares solution; check full column rank before interpretation, rather than solving through an explicitly inverted normal equation.",
+    "model_based_covariance": "s^2 (X'X)^(-1), with s^2 = SSE/(n-p) and p including the intercept.",
+    "coefficient_intervals": "Individual two-sided 95% Student t intervals, estimate +/- t(0.975,n-p) SE. Exact t calibration requires the classical independent, homoskedastic normal-error linear model; otherwise qualifications are required.",
+    "hc3_companion": {
+      "planned": true,
+      "models": [
+        "uds_only",
+        "mri_only",
+        "integrated"
+      ],
+      "role": "Prespecified companion coefficient uncertainty, reported alongside the model-based results regardless of diagnostic significance; never choose whichever gives a smaller p-value.",
+      "covariance": "(X'X)^(-1) X' diag(e_i^2/(1-h_ii)^2) X (X'X)^(-1)",
+      "reference_distribution": "Use t with n-p degrees of freedom as an explicit finite-sample convention; HC3 interval/test calibration is approximate, not exact normal-theory t inference.",
+      "limit": "HC3 addresses coefficient covariance under heteroskedasticity; it does not correct nonlinearity, dependence, selection bias or source imputation uncertainty and does not supply a heteroskedastic individual prediction interval."
+    },
+    "assumptions": [
+      "Independent participant observations under the sampling model.",
+      "An adequate additive linear conditional-mean specification over the observed predictor support.",
+      "A full-rank design matrix and finite error variance.",
+      "Constant conditional error variance for model-based SEs and classical individual prediction intervals; normal errors for exact t-based calibration."
+    ],
+    "confidence_level": 0.95
+  },
+  "testing_policy": {
+    "primary": {
+      "model": "integrated",
+      "term": "thickness_0_1mm",
+      "null": "beta_thickness = 0",
+      "alternative": "beta_thickness != 0",
+      "alpha": 0.05,
+      "method": "Two-sided model-based OLS t test with n-p residual degrees of freedom."
+    },
+    "secondary_simple_slope": {
+      "model": "mri_only",
+      "term": "thickness_0_1mm",
+      "null": "Unadjusted beta_thickness = 0",
+      "alternative": "Unadjusted beta_thickness != 0",
+      "reporting": "Report the two-sided nominal t-test p-value and 95% interval for the course simple-regression exercise; this is secondary to the adjusted estimand."
+    },
+    "other_coefficients": "Report estimates, SEs, t statistics, nominal p-values and individual intervals as supporting model descriptions. Do not make a collection of unadjusted significance claims.",
+    "multiplicity": "One primary Phase 4 coefficient test at alpha 0.05. Secondary and companion p-values are explicitly nominal; no familywise guarantee across coefficients, methods or phases is claimed. The separate completed Phase 3 Holm family remains unchanged.",
+    "interpretation": "Report effect size and interval width in correct responses; p-values are conditional on the null and assumptions, not probabilities that hypotheses are true. Non-rejection does not establish equivalence. No practical-equivalence margin has been supplied."
+  },
+  "model_comparison": {
+    "common_sample_required": true,
+    "metrics": [
+      "participants",
+      "parameters_including_intercept",
+      "residual_df",
+      "SSE",
+      "R_squared",
+      "adjusted_R_squared",
+      "residual_SD",
+      "in_sample_RMSE"
+    ],
+    "residual_SD": "sqrt(SSE/(n-p))",
+    "in_sample_RMSE": "sqrt(SSE/n); label its different denominator explicitly.",
+    "coefficient_comparisons": "Compare the same thickness slope in mri_only versus integrated and the same demographic coefficients in uds_only versus integrated, including their uncertainty.",
+    "scope": "Training-sample association/fit comparison, not validated predictive accuracy. No train/test optimization, best-model search, automatic selection or claim of external prediction performance.",
+    "correlation": "Report Pearson r between score and continuous thickness on these same 842 participants. With an intercept, verify R_squared = r^2 and the corresponding simple-slope scaling identity; do not reuse a coefficient from the 843-person Phase 2 sample as if its sample were identical."
+  },
+  "diagnostics": {
+    "all_models": [
+      "Residuals versus fitted values",
+      "Normal Q-Q plot",
+      "Scale-location plot",
+      "Residual spread and fitted-value range"
+    ],
+    "integrated_detail": [
+      "Residuals versus each continuous predictor",
+      "Internally studentized residuals",
+      "Hat-matrix leverage",
+      "Cook's distance",
+      "Joint review of flagged observations and their influence on the thickness association"
+    ],
+    "review_thresholds": {
+      "internally_studentized_residual_abs_gt": 3,
+      "leverage_gt": "2*p/n",
+      "cooks_distance_gt": "4/n",
+      "meaning": "Heuristic review flags, not tests, proof of error or automatic exclusion rules; p includes the intercept."
+    },
+    "collinearity": {
+      "models": [
+        "uds_only",
+        "integrated"
+      ],
+      "checks": [
+        "Predictor correlation matrix including the sex indicator",
+        "VIF for each non-intercept predictor",
+        "Full-rank check and standardized-design condition diagnostics"
+      ],
+      "vif_review_gt": 5,
+      "response": "Describe uncertainty and coefficient stability; no automatic covariate removal. The MRI-only model has only one explanatory variable, so between-MRI-predictor collinearity is inapplicable."
+    },
+    "influence_followup": "Retain all eligible participants in the primary fit. If flags require follow-up, document their combined and individual effect on the thickness slope and uncertainty using clearly labeled leave-one-out diagnostic fits; report aggregate influence summaries without exporting participant IDs. Do not replace the primary sample with a cleaned sample.",
+    "limits": "Graphs and diagnostics cannot prove independence or validate the unknown sampling design. Do not declare the model valid from R-squared or one normality-test p-value alone."
+  },
+  "conditional_model_extension": {
+    "required_only_if_justified": true,
+    "trigger": "A clearly documented pattern of curvature or variance misspecification in the prespecified diagnostic review. Record the graphical evidence and intended action before fitting an extension; a smaller scientific p-value is not a trigger.",
+    "curvature_option": "One exploratory integrated extension adding thickness_0_1mm squared, with the same sample, main effects and reference profile. Compare its mean curve, residuals, interval widths and fit with the retained linear reference; interpret thickness effects as depending on thickness in that extension.",
+    "variance_option": "Use the prespecified HC3 companion to assess coefficient uncertainty. Any response transformation requires a separately recorded substantive and diagnostic rationale, zero/bound handling and back-transformation interpretation before fitting; no automatic log transform or transform search is planned.",
+    "audit_rule": "Always retain and report the original three model specifications. Label extensions as diagnostic/data-informed and do not silently redefine the primary test or use them to manufacture significance. If no change is justified, record why the original form was retained."
+  },
+  "prediction": {
+    "model": "integrated",
+    "profile": {
+      "selection_rule": "Among participants with recorded SEX=1, minimize the sum of squared deviations from the common sample's predictor medians, divided by the sample variance of each predictor (denominator n-1). Use age, education and left thickness only. Break distance ties by ascending age, education, then thickness; identical predictor tuples define the same profile. Decimal arithmetic uses 50-digit precision.",
+      "response_used_for_selection": false,
+      "jointly_observed_predictor_profile": true,
+      "values": {
+        "SEX": 1,
+        "NACCAGE": 68.0,
+        "EDUC": 16,
+        "LH_INFERIORPARIETAL_AVGTH": 2.344
+      },
+      "sample_predictor_medians": {
+        "NACCAGE": 67.0,
+        "EDUC": 16.0,
+        "LH_INFERIORPARIETAL_AVGTH": 2.3375
+      },
+      "sample_predictor_variances": {
+        "NACCAGE": 62.94777029946817,
+        "EDUC": 6.6721793702215155,
+        "LH_INFERIORPARIETAL_AVGTH": 0.01475561213039561
+      },
+      "standardized_squared_distance": 0.018749503537246755,
+      "privacy": "Record predictor values only; omit participant ID, row index and observed score."
+    },
+    "design_row": {
+      "intercept": 1,
+      "thickness_0_1mm": 0,
+      "age_c": 0,
+      "female": 0,
+      "education_c": 0
+    },
+    "target": "The conditional mean at this prespecified profile and a new independent eligible participant with the same predictor values; the profile-selection participant's response is not used as a validation observation.",
+    "mean_interval": "yhat0 +/- t(0.975,n-p) * s * sqrt(x0' (X'X)^(-1) x0)",
+    "individual_prediction_interval": "yhat0 +/- t(0.975,n-p) * s * sqrt(1 + x0' (X'X)^(-1) x0)",
+    "coverage": "Individual nominal 95% classical model intervals, conditional on an adequate mean form, independent errors and constant conditional residual variance; normal errors give exact calibration. A new individual's interval includes residual variation and is wider than the mean interval.",
+    "scope": "An educational model-based prediction illustration, not external validation or a clinical prediction tool. HC3 mean uncertainty does not by itself validate the individual interval under heteroskedasticity.",
+    "scale_rule": "Report the raw OLS limits without rounding scores to integers or clipping limits to 0-77. Note any limits or fitted values outside the usable score scale and qualify their interpretation."
+  },
+  "requirement_map": {
+    "general_1": "Question, response and prespecified explanatory variables",
+    "general_2": "Step 3: continuous-thickness scatterplot, least-squares line, slope and centered intercept",
+    "general_3": "Step 3: simple-regression coefficient interval/test and association-versus-causation interpretation",
+    "general_4": "Step 4: uds_only and integrated OLS, conditional coefficient interpretations",
+    "general_5": "Step 5: common-sample coefficient and fit comparisons",
+    "general_6": "Recorded sex indicator: male=0, female=1; reference and conditional interpretation fixed",
+    "general_7": "Step 6: prespecified residual and influence diagnostics",
+    "general_8": "Step 7: justified extension only if diagnostic evidence requires it; otherwise document retention",
+    "general_9": "Step 7: prespecified predictor profile with mean and new-observation intervals",
+    "general_10": "Step 3: same-sample Pearson correlation and simple-regression identity",
+    "general_11": "Step 5: VIF, rank and predictor dependence review",
+    "track_c1": "ANIMALS response scale, direction, usability and limitations",
+    "track_c2": "uds_only model fixed before fitting",
+    "track_c3": "mri_only model with one prespecified continuous MRI measure",
+    "track_c4": "integrated model and three-model common-sample comparisons",
+    "track_c5": "One supplied matched record per ID verified; visit selection documented as not performed; temporal proximity remains unverified",
+    "track_c6": "Integrated residual, variance, outlier and influence review without automatic deletion",
+    "status": "Coverage specified, not yet implemented or passed; the temporal-proximity limitation is unresolved by the available data."
+  },
+  "work_sequence": [
+    {
+      "step": 1,
+      "task": "Register the pre-fit specification",
+      "status": "Specified here; no regression fitted"
+    },
+    {
+      "step": 2,
+      "task": "Prepare and verify common-sample model matrices and transformations",
+      "status": "Not started"
+    },
+    {
+      "step": 3,
+      "task": "Estimate Pearson correlation and MRI-only simple regression",
+      "status": "Not started"
+    },
+    {
+      "step": 4,
+      "task": "Fit UDS-only and integrated regression",
+      "status": "Not started"
+    },
+    {
+      "step": 5,
+      "task": "Compare models and assess collinearity",
+      "status": "Not started"
+    },
+    {
+      "step": 6,
+      "task": "Review residuals and influential observations",
+      "status": "Not started"
+    },
+    {
+      "step": 7,
+      "task": "Document justified model checks and profile intervals",
+      "status": "Not started"
+    },
+    {
+      "step": 8,
+      "task": "Validate calculations, interpretations and course deliverables",
+      "status": "Not started"
+    }
+  ],
+  "delivery": {
+    "report": "reports/phase4.pdf",
+    "source_directory": "reports/phase4",
+    "code_directory": "src",
+    "notebook": "notebooks/phase4.ipynb",
+    "figures": "figures/phase4",
+    "tag": "phase-4",
+    "status": "Only the analysis plan exists at Step 1; the report, notebook, figures and tag are later deliverables.",
+    "rules": "Use LaTeX, grayscale figures, reproducible result tables and an English public report/notebook/documentation. Git publication, tagging and CW packaging are manual. Do not commit raw or derived participant-level CSVs."
+  },
+  "sources": {
+    "course_guide": "docs/amarpr.pdf",
+    "model_diagnostics": "https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm",
+    "hc3_definition": "https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLSResults.HC3_se.html",
+    "prediction_mean_and_new_observation": "https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLSResults.get_prediction.html",
+    "vif_definition": "https://www.statsmodels.org/stable/generated/statsmodels.stats.outliers_influence.variance_inflation_factor.html",
+    "implementation_note": "Method references do not add a statsmodels dependency at the planning stage; numerical implementation and dependency choices are checked during model-matrix preparation."
+  }
+}
