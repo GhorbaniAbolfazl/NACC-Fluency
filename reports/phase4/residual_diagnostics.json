@@ -1,0 +1,1251 @@
+{
+  "stage": "Phase 4, Step 6",
+  "status": "Residual/influence calculations, figures and graphical review completed; final model retention/extension and profile intervals remain Step 7.",
+  "sample": "model_normal",
+  "participants": 842,
+  "source_files_sha256": {
+    "data/udslong_imputed.csv": "8bcd0180d1b593092f7b2f7777281f59c4a6e9c3b2b041b5d2a33ed13be55e63",
+    "data/mriscanclean.csv": "3a2b34f7902592705f75ce3ad4c4fab68880470f01e7b9eb9823a799dc092e72",
+    "data/processed/participants.csv": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+    "reports/phase1/sample_flow.json": "928fc5a0717c786c7ed47c154d43113e77c1f3f22c9a1f2ecd8fe5714d6180f3",
+    "docs/amarpr.pdf": "ede1706ab440f1ae737a71afaf0a37438112e7b010e6a5118b8f334b4c0d03e3",
+    "reports/phase3/inference_review.json": "01529f09a097f728615ac68fe5e159eb7554283cc9cfbc569d952c8aa3317fcd",
+    "src/build_dataset.py": "50dbe0550aba8f8b4c70acbdfaa6762c35df81ca7b38836929c8c5267b229554",
+    "src/data_audit.py": "24981d5fa7342d493ba36f441eaeada2efcfb34ffb76d57e1322a0eba1a18c48",
+    "src/descriptive_statistics.py": "f96ec1b3bd359c06c1bf57176e18801062d088ba9855b7ce6ff92387b25a5386",
+    "src/phase4_plan.py": "191b7dcd592b780a7ef7b33ebb121eefa5dc17e364ea1065a4b3afbf5d309a00",
+    "reports/phase4/analysis_plan.json": "cb102d2556004d8b5e50f960792ec83c2ab34d90201db60947fff175022dacd0",
+    "reports/phase4/design_matrices.json": "85e3eea99a5c5c0ce9becd28e499a098f431de0d48ed514659126d9a9824d73d",
+    "src/phase4_design.py": "3806004577ee515e775c66430e5c13772dd722e2da15fbf72d1b14c51de59296",
+    "src/phase4_regression.py": "3252a80f17c8b2441ab573f9c3b08823df7a0f707319c441b8a93da1248b76f0",
+    "src/phase4_simple.py": "ad9e2e7a1c5975641c681eea4fa20c53d5a813f675e6a8de648b2ba4a663c7b6",
+    "requirements.txt": "6954b33c3de27271d0179044bf553ee3f675eeb24238faab136eae135f71d18e",
+    "src/phase1_figures.py": "c0e0f2ca8ecfb0f79735ac5fffc0e948747675d5ed66ac1c949e4ea7982aa413",
+    "reports/phase4/simple_regression.json": "3369c707e4dde296d58978142212fd98a227b4a51eb997bfa2be674acf3c3933",
+    "src/phase4_multiple.py": "32e0103d0371ba5f8542e8657a7e9c886093f1e7fa5b6922a78b59c8a43665df",
+    "reports/phase4/multiple_regression.json": "7f9b1c7e8d49793de59f2117d060052c5a4ab42c3b3865111a46e38795e9a588",
+    "src/phase4_comparison.py": "8936ffc4964d69f762cf2bfd18c11c87778f666d7cd17768f874758858312afc",
+    "reports/phase4/model_comparison.json": "9f41dc16ae974bb151ab976387c979fc25f3176ee31c75c99a4cd0b7c638bdaf",
+    "src/phase4_diagnostics.py": "4d001a835c571d94005f9bfebf1a22b46607cecc6e60c67b771c8276b454e2b0",
+    "src/phase4_diagnostic_figures.py": "ef300fc71b9906e3ca4a3de6cc420b7cad1dc63fc425a61bfde8794dfc16124c"
+  },
+  "environment": {
+    "python": "3.14.0",
+    "scipy": "1.16.3",
+    "numpy_runtime": "2.5.4",
+    "matplotlib": "3.10.8"
+  },
+  "models": {
+    "uds_only": {
+      "participants": 842,
+      "parameters": 4,
+      "residual_df": 838,
+      "fitted_values": {
+        "n": 842,
+        "minimum": 13.295007125062394,
+        "q1": 21.135355300596224,
+        "median": 22.437900958126566,
+        "q3": 23.576825001881687,
+        "maximum": 27.9540457566325,
+        "mean": 22.33135391923991
+      },
+      "residuals": {
+        "n": 842,
+        "minimum": -14.130273197068675,
+        "q1": -3.6656387159737855,
+        "median": -0.23351058929019608,
+        "q3": 3.1953292266665576,
+        "maximum": 21.731823885678704,
+        "mean": -4.219374915440025e-15
+      },
+      "internally_studentized": {
+        "n": 842,
+        "minimum": -2.781545034369287,
+        "q1": -0.7223002041536579,
+        "median": -0.04598141249552247,
+        "q3": 0.6298527300889618,
+        "maximum": 4.27811889272026,
+        "mean": 2.850388059166356e-05
+      },
+      "leverage": {
+        "n": 842,
+        "minimum": 0.001845613289277994,
+        "q1": 0.0027616767067473137,
+        "median": 0.003973959231649053,
+        "q3": 0.0055396067098805865,
+        "maximum": 0.04361991217919336,
+        "mean": 0.004750593824228029
+      },
+      "cooks_distance": {
+        "n": 842,
+        "minimum": 1.5444540502340824e-09,
+        "q1": 8.959504834591916e-05,
+        "median": 0.0004948780005366628,
+        "q3": 0.0014620004608248741,
+        "maximum": 0.03191338141408397,
+        "mean": 0.001190039141260022
+      },
+      "review_flags": {
+        "thresholds_strict_gt": {
+          "studentized": 3.0,
+          "leverage": 0.009501187648456057,
+          "cooks_distance": 0.004750593824228029
+        },
+        "counts": {
+          "studentized": 5,
+          "leverage": 39,
+          "cooks_distance": 34
+        },
+        "union_count": 65,
+        "mutually_exclusive_combinations": {
+          "none": 777,
+          "studentized": 0,
+          "leverage": 31,
+          "studentized + leverage": 0,
+          "cooks_distance": 21,
+          "studentized + cooks_distance": 5,
+          "leverage + cooks_distance": 8,
+          "studentized + leverage + cooks_distance": 0
+        },
+        "meaning": "Review heuristics on the full fitted model, not tests, proof of data error or automatic exclusion rules."
+      },
+      "fitted_outside_usable_score_range": 0,
+      "residual_skewness_bias_corrected": 0.37678780151782093,
+      "residual_excess_kurtosis_bias_corrected": 0.41937955476463795,
+      "fitted_value_bins": [
+        {
+          "n": 105,
+          "x_minimum": 13.295007125062394,
+          "x_maximum": 20.11877968462622,
+          "x_mean": 18.989561456288037,
+          "residual_mean": -0.4181328848594655,
+          "residual_SD": 4.643375624967486,
+          "mean_sqrt_abs_studentized": 0.8040055686823531
+        },
+        {
+          "n": 106,
+          "x_minimum": 20.129252070566178,
+          "x_maximum": 21.130273197068675,
+          "x_mean": 20.678619415336588,
+          "residual_mean": 0.3025126601351108,
+          "residual_SD": 4.981283318255443,
+          "mean_sqrt_abs_studentized": 0.7571898078874926
+        },
+        {
+          "n": 105,
+          "x_minimum": 21.15060161117887,
+          "x_maximum": 21.840116197441972,
+          "x_mean": 21.519692116329594,
+          "residual_mean": 0.4707840741465977,
+          "residual_SD": 4.795290047490165,
+          "mean_sqrt_abs_studentized": 0.7423644329614159
+        },
+        {
+          "n": 102,
+          "x_minimum": 21.87088888909101,
+          "x_maximum": 22.40220025239241,
+          "x_mean": 22.15908581350845,
+          "residual_mean": 0.19385536296214453,
+          "residual_SD": 5.453654075588485,
+          "mean_sqrt_abs_studentized": 0.85031890999279
+        },
+        {
+          "n": 108,
+          "x_minimum": 22.437900958126566,
+          "x_maximum": 22.958739935488012,
+          "x_mean": 22.70932283916242,
+          "residual_mean": -0.10747098731056484,
+          "residual_SD": 5.400047176337206,
+          "mean_sqrt_abs_studentized": 0.8793462585537677
+        },
+        {
+          "n": 103,
+          "x_minimum": 22.98951262713705,
+          "x_maximum": 23.54605231023265,
+          "x_mean": 23.25191919762159,
+          "residual_mean": -0.45580269276721513,
+          "residual_SD": 4.953224484244586,
+          "mean_sqrt_abs_studentized": 0.8425314104770246
+        },
+        {
+          "n": 107,
+          "x_minimum": 23.576825001881687,
+          "x_maximum": 24.47074401118172,
+          "x_mean": 23.965130179145174,
+          "residual_mean": -0.3389619548461013,
+          "residual_SD": 4.8384278948369825,
+          "mean_sqrt_abs_studentized": 0.7881181172089967
+        },
+        {
+          "n": 106,
+          "x_minimum": 24.506444716915873,
+          "x_maximum": 27.9540457566325,
+          "x_mean": 25.33532538413694,
+          "residual_mean": 0.35335386114607603,
+          "residual_SD": 5.551207410666048,
+          "mean_sqrt_abs_studentized": 0.8965889113853903
+        }
+      ],
+      "normal_QQ_reference": {
+        "positions": "Normal quantiles at (i-0.5)/n, i=1,...,n; sorted internally studentized residuals.",
+        "line": "Reference through the observed 25th/75th percentiles and the corresponding normal quantiles; not a confidence band or a normality test.",
+        "slope": 1.0023524700334836,
+        "intercept": -0.046223737032348056
+      }
+    },
+    "mri_only": {
+      "participants": 842,
+      "parameters": 2,
+      "residual_df": 840,
+      "fitted_values": {
+        "n": 842,
+        "minimum": 21.6330467252245,
+        "q1": 22.276875780184923,
+        "median": 22.33235035913434,
+        "q3": 22.396733264630384,
+        "maximum": 22.598385383731195,
+        "mean": 22.331353919239902
+      },
+      "residuals": {
+        "n": 842,
+        "minimum": -15.424268092138124,
+        "q1": -3.848506787285511,
+        "median": -0.3363995984737169,
+        "q3": 3.698626321811867,
+        "maximum": 20.583830386540622,
+        "mean": 2.6877418211352957e-15
+      },
+      "internally_studentized": {
+        "n": 842,
+        "minimum": -2.8422093708913465,
+        "q1": -0.7141969896902555,
+        "median": -0.06195508036908224,
+        "q3": 0.6812167555477795,
+        "maximum": 3.7926189518060096,
+        "mean": 4.9858451532066195e-05
+      },
+      "leverage": {
+        "n": 842,
+        "minimum": 0.0011876543130446109,
+        "q1": 0.0012768437278107717,
+        "median": 0.001637678420385845,
+        "q3": 0.0025107171494068315,
+        "maximum": 0.06110228368329857,
+        "mean": 0.002375296912114013
+      },
+      "cooks_distance": {
+        "n": 842,
+        "minimum": 2.8319185995042836e-07,
+        "q1": 7.1095258855579e-05,
+        "median": 0.0004413981763799589,
+        "q3": 0.0012542384150026104,
+        "maximum": 0.03977433283339301,
+        "mean": 0.0011892357381243792
+      },
+      "review_flags": {
+        "thresholds_strict_gt": {
+          "studentized": 3.0,
+          "leverage": 0.004750593824228029,
+          "cooks_distance": 0.004750593824228029
+        },
+        "counts": {
+          "studentized": 4,
+          "leverage": 57,
+          "cooks_distance": 43
+        },
+        "union_count": 81,
+        "mutually_exclusive_combinations": {
+          "none": 761,
+          "studentized": 0,
+          "leverage": 38,
+          "studentized + leverage": 0,
+          "cooks_distance": 20,
+          "studentized + cooks_distance": 4,
+          "leverage + cooks_distance": 19,
+          "studentized + leverage + cooks_distance": 0
+        },
+        "meaning": "Review heuristics on the full fitted model, not tests, proof of data error or automatic exclusion rules."
+      },
+      "fitted_outside_usable_score_range": 0,
+      "residual_skewness_bias_corrected": 0.3604635769466782,
+      "residual_excess_kurtosis_bias_corrected": 0.29797375593211584,
+      "fitted_value_bins": [
+        {
+          "n": 106,
+          "x_minimum": 21.6330467252245,
+          "x_maximum": 22.232334147451812,
+          "x_mean": 22.16135785789939,
+          "residual_mean": -0.20852766922014707,
+          "residual_SD": 4.9937323099089825,
+          "mean_sqrt_abs_studentized": 0.8182970458859551
+        },
+        {
+          "n": 101,
+          "x_minimum": 22.233143995319686,
+          "x_maximum": 22.276065932317046,
+          "x_mean": 22.255017906048025,
+          "residual_mean": -1.0569981040678273,
+          "residual_SD": 5.235727202406565,
+          "mean_sqrt_abs_studentized": 0.8028611036752572
+        },
+        {
+          "n": 107,
+          "x_minimum": 22.276875780184923,
+          "x_maximum": 22.30603030342841,
+          "x_mean": 22.29295163879582,
+          "residual_mean": 0.5668614453163311,
+          "residual_SD": 5.551769146817547,
+          "mean_sqrt_abs_studentized": 0.8250692010784263
+        },
+        {
+          "n": 107,
+          "x_minimum": 22.30684015129629,
+          "x_maximum": 22.331945435200403,
+          "x_mean": 22.319933953272212,
+          "residual_mean": 0.1940847383165786,
+          "residual_SD": 5.188360281414074,
+          "mean_sqrt_abs_studentized": 0.7706807150231463
+        },
+        {
+          "n": 105,
+          "x_minimum": 22.33275528306828,
+          "x_maximum": 22.361099958443894,
+          "x_mean": 22.34635301441174,
+          "residual_mean": -0.022543490602214434,
+          "residual_SD": 5.549558643634059,
+          "mean_sqrt_abs_studentized": 0.8199802669969968
+        },
+        {
+          "n": 104,
+          "x_minimum": 22.362719654179646,
+          "x_maximum": 22.39592341676251,
+          "x_mean": 22.37985883838342,
+          "residual_mean": -0.2837049922295708,
+          "residual_SD": 5.617027284184922,
+          "mean_sqrt_abs_studentized": 0.8349297202708322
+        },
+        {
+          "n": 106,
+          "x_minimum": 22.396733264630384,
+          "x_maximum": 22.437225658024122,
+          "x_mean": 22.415993891752198,
+          "residual_mean": 0.43306271202138713,
+          "residual_SD": 5.799581431500485,
+          "mean_sqrt_abs_studentized": 0.836595452947735
+        },
+        {
+          "n": 106,
+          "x_minimum": 22.43884535375987,
+          "x_maximum": 22.598385383731195,
+          "x_mean": 22.477290207261245,
+          "residual_mean": 0.31516262292743336,
+          "residual_SD": 5.464209952169489,
+          "mean_sqrt_abs_studentized": 0.8137888861290181
+        }
+      ],
+      "normal_QQ_reference": {
+        "positions": "Normal quantiles at (i-0.5)/n, i=1,...,n; sorted internally studentized residuals.",
+        "line": "Reference through the observed 25th/75th percentiles and the corresponding normal quantiles; not a confidence band or a normality test.",
+        "slope": 1.0344217572115606,
+        "intercept": -0.016490117071238042
+      }
+    },
+    "integrated": {
+      "participants": 842,
+      "parameters": 5,
+      "residual_df": 837,
+      "fitted_values": {
+        "n": 842,
+        "minimum": 13.287656622717915,
+        "q1": 21.137868215425712,
+        "median": 22.436457236692405,
+        "q3": 23.584582940786024,
+        "maximum": 27.99338530499355,
+        "mean": 22.331353919239902
+      },
+      "residuals": {
+        "n": 842,
+        "minimum": -14.012913496545519,
+        "q1": -3.66507141399871,
+        "median": -0.2557207182324053,
+        "q3": 3.2493964907749433,
+        "maximum": 21.83222900226679,
+        "mean": 3.2003958733612587e-15
+      },
+      "internally_studentized": {
+        "n": 842,
+        "minimum": -2.7589999358509645,
+        "q1": -0.7222523941442243,
+        "median": -0.050334263462562034,
+        "q3": 0.6406306009172158,
+        "maximum": 4.298310320280692,
+        "mean": 4.8325676831354474e-05
+      },
+      "leverage": {
+        "n": 842,
+        "minimum": 0.0018535270924716256,
+        "q1": 0.003570537871445599,
+        "median": 0.0049311694121946005,
+        "q3": 0.006841151924623263,
+        "maximum": 0.0646980365011892,
+        "mean": 0.005938242280285035
+      },
+      "cooks_distance": {
+        "n": 842,
+        "minimum": 9.584901656493991e-10,
+        "q1": 9.411858457453343e-05,
+        "median": 0.0004859598650705667,
+        "q3": 0.0014275960021034114,
+        "maximum": 0.028965715127372997,
+        "mean": 0.0011742513757433376
+      },
+      "review_flags": {
+        "thresholds_strict_gt": {
+          "studentized": 3.0,
+          "leverage": 0.011876484560570071,
+          "cooks_distance": 0.004750593824228029
+        },
+        "counts": {
+          "studentized": 5,
+          "leverage": 45,
+          "cooks_distance": 37
+        },
+        "union_count": 70,
+        "mutually_exclusive_combinations": {
+          "none": 772,
+          "studentized": 0,
+          "leverage": 33,
+          "studentized + leverage": 0,
+          "cooks_distance": 20,
+          "studentized + cooks_distance": 5,
+          "leverage + cooks_distance": 12,
+          "studentized + leverage + cooks_distance": 0
+        },
+        "meaning": "Review heuristics on the full fitted model, not tests, proof of data error or automatic exclusion rules."
+      },
+      "fitted_outside_usable_score_range": 0,
+      "residual_skewness_bias_corrected": 0.38284742037351865,
+      "residual_excess_kurtosis_bias_corrected": 0.43382980385434333,
+      "fitted_value_bins": [
+        {
+          "n": 106,
+          "x_minimum": 13.287656622717915,
+          "x_maximum": 20.152973988259376,
+          "x_mean": 19.00624501505315,
+          "residual_mean": -0.3269997320342809,
+          "residual_SD": 4.823528449569546,
+          "mean_sqrt_abs_studentized": 0.8082357466062984
+        },
+        {
+          "n": 105,
+          "x_minimum": 20.156676929102606,
+          "x_maximum": 21.136654458869554,
+          "x_mean": 20.685666688408933,
+          "residual_mean": 0.33338093063868623,
+          "residual_SD": 4.941643163747081,
+          "mean_sqrt_abs_studentized": 0.7713145338323596
+        },
+        {
+          "n": 105,
+          "x_minimum": 21.14150948509419,
+          "x_maximum": 21.80793270094795,
+          "x_mean": 21.490356534327518,
+          "residual_mean": 0.10964346567248368,
+          "residual_SD": 4.825725607177394,
+          "mean_sqrt_abs_studentized": 0.7428116846891452
+        },
+        {
+          "n": 105,
+          "x_minimum": 21.816731995392484,
+          "x_maximum": 22.43483677273247,
+          "x_mean": 22.152645028341535,
+          "residual_mean": 0.5616406859441845,
+          "residual_SD": 5.3178215345549456,
+          "mean_sqrt_abs_studentized": 0.8458135993047818
+        },
+        {
+          "n": 105,
+          "x_minimum": 22.43807770065234,
+          "x_maximum": 22.957495180423383,
+          "x_mean": 22.719412169430058,
+          "residual_mean": -0.3575074075252913,
+          "residual_SD": 5.269261143739932,
+          "mean_sqrt_abs_studentized": 0.8474618911570343
+        },
+        {
+          "n": 105,
+          "x_minimum": 22.962020052094097,
+          "x_maximum": 23.580434342158032,
+          "x_mean": 23.268836270690734,
+          "residual_mean": -0.5164553183097825,
+          "residual_SD": 4.914249121049327,
+          "mean_sqrt_abs_studentized": 0.8566798499873981
+        },
+        {
+          "n": 105,
+          "x_minimum": 23.585965806995354,
+          "x_maximum": 24.462005534730384,
+          "x_mean": 23.972521465689645,
+          "residual_mean": 0.027478534310350054,
+          "residual_SD": 4.927782120344661,
+          "mean_sqrt_abs_studentized": 0.7952458120794406
+        },
+        {
+          "n": 106,
+          "x_minimum": 24.468406473912502,
+          "x_maximum": 27.99338530499355,
+          "x_mean": 25.357990772934713,
+          "residual_mean": 0.17031111385773853,
+          "residual_SD": 5.602898124636172,
+          "mean_sqrt_abs_studentized": 0.8974587642364367
+        }
+      ],
+      "normal_QQ_reference": {
+        "positions": "Normal quantiles at (i-0.5)/n, i=1,...,n; sorted internally studentized residuals.",
+        "line": "Reference through the observed 25th/75th percentiles and the corresponding normal quantiles; not a confidence band or a normality test.",
+        "slope": 1.0103066760208252,
+        "intercept": -0.04081089661350423
+      }
+    }
+  },
+  "integrated_predictor_bins": {
+    "thickness_0_1mm": [
+      {
+        "n": 106,
+        "x_minimum": 1.4739999999999998,
+        "x_maximum": 2.214,
+        "x_mean": 2.1263584905660378,
+        "residual_mean": 0.12482220287197363,
+        "residual_SD": 4.43739472486155,
+        "mean_sqrt_abs_studentized": 0.7807005026279913
+      },
+      {
+        "n": 101,
+        "x_minimum": 2.215,
+        "x_maximum": 2.268,
+        "x_mean": 2.2420099009900993,
+        "residual_mean": -0.9234627888242456,
+        "residual_SD": 4.71817714860269,
+        "mean_sqrt_abs_studentized": 0.8234123932000542
+      },
+      {
+        "n": 107,
+        "x_minimum": 2.2689999999999997,
+        "x_maximum": 2.3049999999999997,
+        "x_mean": 2.28885046728972,
+        "residual_mean": 0.2515694213134033,
+        "residual_SD": 5.293026892534885,
+        "mean_sqrt_abs_studentized": 0.8496155757029888
+      },
+      {
+        "n": 107,
+        "x_minimum": 2.306,
+        "x_maximum": 2.3369999999999997,
+        "x_mean": 2.322168224299065,
+        "residual_mean": -0.07647841957700773,
+        "residual_SD": 4.961238903320816,
+        "mean_sqrt_abs_studentized": 0.799244562037749
+      },
+      {
+        "n": 105,
+        "x_minimum": 2.338,
+        "x_maximum": 2.3729999999999998,
+        "x_mean": 2.354790476190476,
+        "residual_mean": 0.1705898196032301,
+        "residual_SD": 5.293646003941497,
+        "mean_sqrt_abs_studentized": 0.8399783851164996
+      },
+      {
+        "n": 104,
+        "x_minimum": 2.375,
+        "x_maximum": 2.416,
+        "x_mean": 2.3961634615384613,
+        "residual_mean": -0.20690873162197387,
+        "residual_SD": 5.405138543463944,
+        "mean_sqrt_abs_studentized": 0.843061254109105
+      },
+      {
+        "n": 106,
+        "x_minimum": 2.417,
+        "x_maximum": 2.4669999999999996,
+        "x_mean": 2.4407830188679247,
+        "residual_mean": 0.39945046769884573,
+        "residual_SD": 5.554079233806766,
+        "mean_sqrt_abs_studentized": 0.8296360344575106
+      },
+      {
+        "n": 106,
+        "x_minimum": 2.469,
+        "x_maximum": 2.666,
+        "x_mean": 2.516471698113208,
+        "residual_mean": 0.2129120607103439,
+        "residual_SD": 4.888250116506118,
+        "mean_sqrt_abs_studentized": 0.8006465270046197
+      }
+    ],
+    "age_c": [
+      {
+        "n": 97,
+        "x_minimum": 41.0,
+        "x_maximum": 57.0,
+        "x_mean": 53.07216494845361,
+        "residual_mean": 0.11383005901210204,
+        "residual_SD": 5.601983458626794,
+        "mean_sqrt_abs_studentized": 0.8797188221630641
+      },
+      {
+        "n": 111,
+        "x_minimum": 58.0,
+        "x_maximum": 62.0,
+        "x_mean": 60.351351351351354,
+        "residual_mean": 0.4785018932305376,
+        "residual_SD": 5.169454232156195,
+        "mean_sqrt_abs_studentized": 0.8486409859520602
+      },
+      {
+        "n": 72,
+        "x_minimum": 63.0,
+        "x_maximum": 64.0,
+        "x_mean": 63.583333333333336,
+        "residual_mean": -0.24621189754961323,
+        "residual_SD": 5.600022527309236,
+        "mean_sqrt_abs_studentized": 0.8343760452587363
+      },
+      {
+        "n": 93,
+        "x_minimum": 65.0,
+        "x_maximum": 66.0,
+        "x_mean": 65.48387096774194,
+        "residual_mean": -0.4981769958836768,
+        "residual_SD": 5.130446985630355,
+        "mean_sqrt_abs_studentized": 0.8066663926154917
+      },
+      {
+        "n": 141,
+        "x_minimum": 67.0,
+        "x_maximum": 69.0,
+        "x_mean": 67.98581560283688,
+        "residual_mean": -0.34915816152777035,
+        "residual_SD": 4.193401746146445,
+        "mean_sqrt_abs_studentized": 0.7622468475496296
+      },
+      {
+        "n": 92,
+        "x_minimum": 70.0,
+        "x_maximum": 71.0,
+        "x_mean": 70.45652173913044,
+        "residual_mean": 0.49492608243868935,
+        "residual_SD": 5.107896209058596,
+        "mean_sqrt_abs_studentized": 0.813877508556376
+      },
+      {
+        "n": 113,
+        "x_minimum": 72.0,
+        "x_maximum": 75.0,
+        "x_mean": 73.22123893805309,
+        "residual_mean": -0.2541103203301293,
+        "residual_SD": 4.902775791279185,
+        "mean_sqrt_abs_studentized": 0.8050289971551362
+      },
+      {
+        "n": 123,
+        "x_minimum": 76.0,
+        "x_maximum": 90.0,
+        "x_mean": 79.46341463414635,
+        "residual_mean": 0.26272405492970746,
+        "residual_SD": 5.302385381927308,
+        "mean_sqrt_abs_studentized": 0.8380833672928156
+      }
+    ],
+    "education_c": [
+      {
+        "n": 78,
+        "x_minimum": 1.0,
+        "x_maximum": 12.0,
+        "x_mean": 11.384615384615385,
+        "residual_mean": -0.1090567153858736,
+        "residual_SD": 4.807079852701809,
+        "mean_sqrt_abs_studentized": 0.7951185624520455
+      },
+      {
+        "n": 121,
+        "x_minimum": 13.0,
+        "x_maximum": 14.0,
+        "x_mean": 13.727272727272727,
+        "residual_mean": -0.32624580529991,
+        "residual_SD": 4.8453267788734875,
+        "mean_sqrt_abs_studentized": 0.7734624076981135
+      },
+      {
+        "n": 19,
+        "x_minimum": 15.0,
+        "x_maximum": 15.0,
+        "x_mean": 15.0,
+        "residual_mean": -0.3139476043333583,
+        "residual_SD": 5.140640288878318,
+        "mean_sqrt_abs_studentized": 0.7570740134960292
+      },
+      {
+        "n": 271,
+        "x_minimum": 16.0,
+        "x_maximum": 17.0,
+        "x_mean": 16.099630996309962,
+        "residual_mean": 0.01807547837987907,
+        "residual_SD": 4.971023976414178,
+        "mean_sqrt_abs_studentized": 0.8145377421033773
+      },
+      {
+        "n": 225,
+        "x_minimum": 18.0,
+        "x_maximum": 18.0,
+        "x_mean": 18.0,
+        "residual_mean": 0.41895411104762514,
+        "residual_SD": 5.427741981933802,
+        "mean_sqrt_abs_studentized": 0.8676188118506898
+      },
+      {
+        "n": 128,
+        "x_minimum": 19.0,
+        "x_maximum": 25.0,
+        "x_mean": 19.984375,
+        "residual_mean": -0.3532496789292121,
+        "residual_SD": 5.061634139099795,
+        "mean_sqrt_abs_studentized": 0.8209877021407843
+      }
+    ]
+  },
+  "integrated_sex_residual_summaries": {
+    "recorded_male": {
+      "residuals": {
+        "n": 298,
+        "minimum": -10.521547149032685,
+        "q1": -3.810393442779512,
+        "median": -0.11317742862798674,
+        "q3": 3.5141771229918968,
+        "maximum": 17.22812833830058,
+        "mean": 3.0579565725245923e-15
+      },
+      "residual_SD": 4.941168599877894
+    },
+    "recorded_female": {
+      "residuals": {
+        "n": 544,
+        "minimum": -14.012913496545519,
+        "q1": -3.4046836782961227,
+        "median": -0.3071405334706725,
+        "q3": 3.2015447320738337,
+        "maximum": 21.83222900226679,
+        "mean": 3.2784232844813448e-15
+      },
+      "residual_SD": 5.152742606640923
+    }
+  },
+  "integrated_influence_followup": {
+    "primary_full_sample": {
+      "participants": 842,
+      "residual_df": 837,
+      "thickness": {
+        "estimate": -0.12570420635042928,
+        "model_based": {
+          "SE": 0.1507751921985112,
+          "interval": {
+            "confidence_level": 0.95,
+            "lower": -0.42164609623782456,
+            "upper": 0.170237683536966
+          }
+        },
+        "hc3": {
+          "SE": 0.1452318800011004,
+          "interval": {
+            "confidence_level": 0.95,
+            "lower": -0.41076567045943974,
+            "upper": 0.15935725775858117
+          }
+        }
+      }
+    },
+    "flag_set": "Union of the three full-model heuristic flags, fixed before diagnostic omissions; not recalculated after deleting observations.",
+    "individual_leave_one_out": {
+      "participants_per_fit": 841,
+      "residual_df_per_fit": 836,
+      "omissions": 70,
+      "estimate": {
+        "n": 70,
+        "minimum": -0.15084180323393356,
+        "q1": -0.12927877109336225,
+        "median": -0.12580295114360762,
+        "q3": -0.12010091452027422,
+        "maximum": -0.08599400838930084,
+        "mean": -0.1251508187333244
+      },
+      "maximum_absolute_estimate_change": 0.03971019796112844,
+      "negative_estimates": 70,
+      "positive_estimates": 0,
+      "uncertainty": {
+        "model_based": {
+          "SE": {
+            "n": 70,
+            "minimum": 0.14923292162941293,
+            "q1": 0.15050785195250743,
+            "median": 0.1508652971185438,
+            "q3": 0.1511784961749553,
+            "maximum": 0.15568552008953065,
+            "mean": 0.15094943771622918
+          },
+          "lower_endpoint": {
+            "n": 70,
+            "minimum": -0.4491069549345228,
+            "q1": -0.42610031436193574,
+            "median": -0.42199533232294206,
+            "q3": -0.41630854061313083,
+            "maximum": -0.38276654043986325,
+            "mean": -0.42143523133439675
+          },
+          "upper_endpoint": {
+            "n": 70,
+            "minimum": 0.14538169547950386,
+            "q1": 0.16689459291750308,
+            "median": 0.1704416165461941,
+            "q3": 0.17545089628808153,
+            "maximum": 0.2107785236612616,
+            "mean": 0.17113359386774799
+          },
+          "intervals_including_zero": 70
+        },
+        "hc3": {
+          "SE": {
+            "n": 70,
+            "minimum": 0.1420598288769386,
+            "q1": 0.14511687042279076,
+            "median": 0.14525367968238523,
+            "q3": 0.1455199188726037,
+            "maximum": 0.15335035605268643,
+            "mean": 0.14548853625940475
+          },
+          "lower_endpoint": {
+            "n": 70,
+            "minimum": -0.4349723112575633,
+            "q1": -0.4154990292326676,
+            "median": -0.41105376376287617,
+            "q3": -0.4064724688842905,
+            "maximum": -0.36482984633483917,
+            "mean": -0.4107165429783049
+          },
+          "upper_endpoint": {
+            "n": 70,
+            "minimum": 0.1309522885239599,
+            "q1": 0.15640773699569993,
+            "median": 0.15954316695824294,
+            "q3": 0.1664308632299763,
+            "maximum": 0.1958865769045021,
+            "mean": 0.1604149055116561
+          },
+          "intervals_including_zero": 70
+        }
+      },
+      "by_original_flag": {
+        "studentized": {
+          "omissions": 5,
+          "estimate": {
+            "n": 5,
+            "minimum": -0.14444347440754732,
+            "q1": -0.1410702927541113,
+            "median": -0.12556922739869325,
+            "q3": -0.12336960298957263,
+            "maximum": -0.11326435459879712,
+            "mean": -0.12954339042974433
+          },
+          "maximum_absolute_estimate_change": 0.018739268057118036,
+          "negative_estimates": 5,
+          "positive_estimates": 0,
+          "uncertainty": {
+            "model_based": {
+              "SE": {
+                "n": 5,
+                "minimum": 0.14923292162941293,
+                "q1": 0.14936585836121868,
+                "median": 0.14982205814630764,
+                "q3": 0.14998510849438176,
+                "maximum": 0.15002133732088554,
+                "mean": 0.14968545679044132
+              },
+              "lower_endpoint": {
+                "n": 5,
+                "minimum": -0.43761962846784597,
+                "q1": -0.4339855178431459,
+                "median": -0.41964081298493044,
+                "q3": -0.41776122472390304,
+                "maximum": -0.40772708647929506,
+                "mean": -0.4233468540998241
+              },
+              "upper_endpoint": {
+                "n": 5,
+                "minimum": 0.1487326796527513,
+                "q1": 0.15184493233492333,
+                "median": 0.16850235818754394,
+                "q3": 0.1710220187447578,
+                "maximum": 0.1811983772817008,
+                "mean": 0.16426007324033542
+              },
+              "intervals_including_zero": 5
+            },
+            "hc3": {
+              "SE": {
+                "n": 5,
+                "minimum": 0.14376523833219987,
+                "q1": 0.14421689557456085,
+                "median": 0.14500150353049676,
+                "q3": 0.14519648716341765,
+                "maximum": 0.14540536392644782,
+                "mean": 0.14471709770542457
+              },
+              "lower_endpoint": {
+                "n": 5,
+                "minimum": -0.42662669970570566,
+                "q1": -0.4241400334495744,
+                "median": -0.41097170051675574,
+                "q3": -0.40836209161231857,
+                "maximum": -0.397874128240813,
+                "mean": -0.41359493070503345
+              },
+              "upper_endpoint": {
+                "n": 5,
+                "minimum": 0.137739750890611,
+                "q1": 0.14199944794135186,
+                "median": 0.15983324571936924,
+                "q3": 0.16162288563317334,
+                "maximum": 0.1713454190432187,
+                "mean": 0.1545081498455448
+              },
+              "intervals_including_zero": 5
+            }
+          }
+        },
+        "leverage": {
+          "omissions": 45,
+          "estimate": {
+            "n": 45,
+            "minimum": -0.15084180323393356,
+            "q1": -0.12781195293061937,
+            "median": -0.12567564399819722,
+            "q3": -0.11829870100394094,
+            "maximum": -0.08599400838930084,
+            "mean": -0.12325650813339727
+          },
+          "maximum_absolute_estimate_change": 0.03971019796112844,
+          "negative_estimates": 45,
+          "positive_estimates": 0,
+          "uncertainty": {
+            "model_based": {
+              "SE": {
+                "n": 45,
+                "minimum": 0.1504972976641788,
+                "q1": 0.1508658759674736,
+                "median": 0.15103002250827532,
+                "q3": 0.15143347264152213,
+                "maximum": 0.15568552008953065,
+                "mean": 0.15130111565956725
+              },
+              "lower_endpoint": {
+                "n": 45,
+                "minimum": -0.4491069549345228,
+                "q1": -0.42475172519137305,
+                "median": -0.4217954562039864,
+                "q3": -0.4160158848769723,
+                "maximum": -0.38276654043986325,
+                "mean": -0.42023119619652566
+              },
+              "upper_endpoint": {
+                "n": 45,
+                "minimum": 0.14538169547950386,
+                "q1": 0.1679382783098857,
+                "median": 0.17065053140064657,
+                "q3": 0.1784881417984786,
+                "maximum": 0.2107785236612616,
+                "mean": 0.17371817992973115
+              },
+              "intervals_including_zero": 45
+            },
+            "hc3": {
+              "SE": {
+                "n": 45,
+                "minimum": 0.1420598288769386,
+                "q1": 0.14523072938287787,
+                "median": 0.14540597966620236,
+                "q3": 0.14597779349014225,
+                "maximum": 0.15335035605268643,
+                "mean": 0.14578482393682476
+              },
+              "lower_endpoint": {
+                "n": 45,
+                "minimum": -0.4349723112575633,
+                "q1": -0.414097494998178,
+                "median": -0.4107436553780615,
+                "q3": -0.4063184723397053,
+                "maximum": -0.36482984633483917,
+                "mean": -0.4094037875122919
+              },
+              "upper_endpoint": {
+                "n": 45,
+                "minimum": 0.1309522885239599,
+                "q1": 0.15772032187089982,
+                "median": 0.15997682034938618,
+                "q3": 0.16904249511644598,
+                "maximum": 0.1958865769045021,
+                "mean": 0.16289077124549733
+              },
+              "intervals_including_zero": 45
+            }
+          }
+        },
+        "cooks_distance": {
+          "omissions": 37,
+          "estimate": {
+            "n": 37,
+            "minimum": -0.15084180323393356,
+            "q1": -0.13485690296575373,
+            "median": -0.12708560170865738,
+            "q3": -0.1182163424311776,
+            "maximum": -0.08599400838930084,
+            "mean": -0.12543044589429664
+          },
+          "maximum_absolute_estimate_change": 0.03971019796112844,
+          "negative_estimates": 37,
+          "positive_estimates": 0,
+          "uncertainty": {
+            "model_based": {
+              "SE": {
+                "n": 37,
+                "minimum": 0.14923292162941293,
+                "q1": 0.1503758097925753,
+                "median": 0.1505124106910957,
+                "q3": 0.15082497679824114,
+                "maximum": 0.15270093542134536,
+                "mean": 0.15058668020033586
+              },
+              "lower_endpoint": {
+                "n": 37,
+                "minimum": -0.4491069549345228,
+                "q1": -0.4302494746949007,
+                "median": -0.42247534695082045,
+                "q3": -0.41367224167406236,
+                "maximum": -0.38276654043986325,
+                "mean": -0.4210028359854533
+              },
+              "upper_endpoint": {
+                "n": 37,
+                "minimum": 0.14538169547950386,
+                "q1": 0.16053566876339329,
+                "median": 0.16850235818754394,
+                "q3": 0.17723955681170714,
+                "maximum": 0.2107785236612616,
+                "mean": 0.17014194419686005
+              },
+              "intervals_including_zero": 37
+            },
+            "hc3": {
+              "SE": {
+                "n": 37,
+                "minimum": 0.1420598288769386,
+                "q1": 0.14475732978211428,
+                "median": 0.14515076814162142,
+                "q3": 0.14524145193330423,
+                "maximum": 0.14741196126883868,
+                "mean": 0.14493900512258814
+              },
+              "lower_endpoint": {
+                "n": 37,
+                "minimum": -0.4349723112575633,
+                "q1": -0.41925088789006837,
+                "median": -0.41199306093349786,
+                "q3": -0.40333077015220586,
+                "maximum": -0.36482984633483917,
+                "mean": -0.40991754730675095
+              },
+              "upper_endpoint": {
+                "n": 37,
+                "minimum": 0.1309522885239599,
+                "q1": 0.14953708195856094,
+                "median": 0.15782185751618308,
+                "q3": 0.16689808528985065,
+                "maximum": 0.19284182955623752,
+                "mean": 0.1590566555181577
+              },
+              "intervals_including_zero": 37
+            }
+          }
+        }
+      },
+      "maximum_coefficient_identity_error": 1.4210854715202004e-14
+    },
+    "joint_union_omission": {
+      "omitted": 70,
+      "retained": 772,
+      "parameters": 5,
+      "residual_df": 767,
+      "thickness": {
+        "estimate": -0.05326533576875752,
+        "model_based": {
+          "SE": 0.1658496855029944,
+          "interval": {
+            "confidence_level": 0.95,
+            "lower": -0.378838503010485,
+            "upper": 0.27230783147296994
+          }
+        },
+        "hc3": {
+          "SE": 0.1637303910334586,
+          "interval": {
+            "confidence_level": 0.95,
+            "lower": -0.37467819718492956,
+            "upper": 0.2681475256474145
+          }
+        }
+      },
+      "estimate_change_from_primary": 0.07243887058167175
+    },
+    "interpretation": "Outcome-dependent diagnostic omissions do not define a cleaned or independently validated sample. Recomputed model-based and HC3 intervals describe sensitivity using usual formulas; their nominal coverage is not justified after flag-based selection. Endpoint ranges are not simultaneous confidence bands. No new confirmatory p-values are reported. All 842 participants remain in the primary analysis.",
+    "privacy": "Publish aggregate omission summaries only; no IDs, row indices, per-person omission results or ordered individual diagnostics."
+  },
+  "primary_test_unchanged": {
+    "model": "integrated",
+    "term": "thickness_0_1mm",
+    "null": "beta_thickness = 0",
+    "alternative": "beta_thickness != 0",
+    "alpha": 0.05,
+    "method": "Two-sided model-based OLS t test with n-p residual degrees of freedom.",
+    "parameter": "Adjusted linear-model mean score difference per 0.1 mm greater left thickness at the same age, recorded sex and education.",
+    "estimate": -0.12570420635042928,
+    "model_based": {
+      "standard_error": 0.1507751921985112,
+      "t_statistic": -0.8337194237161153,
+      "degrees_of_freedom": 837,
+      "p_value_two_sided_nominal": 0.4046769678262576,
+      "p_value_underflow": false,
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower": -0.42164609623782456,
+        "upper": 0.170237683536966
+      }
+    },
+    "hc3_companion": {
+      "standard_error": 0.1452318800011004,
+      "t_statistic": -0.8655414110832748,
+      "degrees_of_freedom": 837,
+      "p_value_two_sided_nominal": 0.38698971192060294,
+      "p_value_underflow": false,
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower": -0.41076567045943974,
+        "upper": 0.15935725775858117
+      }
+    },
+    "reject_primary_null_at_alpha": false,
+    "companion_nominal_reject_at_alpha": false,
+    "intervals_include_zero": {
+      "model_based": true,
+      "hc3": true
+    },
+    "decision_rule": "Use the registered model-based test for the primary decision; report HC3 alongside it without selecting a covariance method by p-value.",
+    "interpretation": "The registered primary test does not reject a zero adjusted thickness coefficient at alpha=0.05. Interpret the estimate and both intervals in correct responses per 0.1 mm. Non-rejection does not establish no association or practical equivalence; no equivalence margin has been supplied. The result remains conditional on the model and sampling assumptions, with residual and influence review pending."
+  },
+  "graphical_review": {
+    "review_date": "2026-11-26",
+    "scope": "Visual review of the three final grayscale figures for the frozen 842-person sample; descriptive evidence, not an automatic validity test.",
+    "mean_form": "Residual-versus-fitted bin means remain near zero relative to the residual spread in UDS-only and integrated models. Predictor plots do not show an obvious sustained broad curvature pattern in the observed central support; sparse thickness/age/education tails are less informative. This does not prove an adequate linear mean.",
+    "normal_reference": "Central Q-Q points are close to the quartile reference, while upper positive tails rise above it and lower tails flatten. Positive residual skewness and excess kurtosis support qualifying exact normal-error calibration rather than declaring normality.",
+    "variance": "Scale-location bin means and within-bin residual SDs vary, with somewhat greater spread at the upper fitted end; no dramatic funnel dominates the integrated plot. Constant conditional variance is not established. Retain both the classical and already planned HC3 summaries.",
+    "influence": "Residual, leverage and Cook flags overlap without identifying data errors. Individual flagged omissions and their joint omission change the thickness estimate; both uncertainty methods must be read alongside those changes. They do not authorize replacement of the primary sample.",
+    "action_for_step_7": "Use this evidence to record a justified retention/extension decision before profile intervals or any optional extension. No response transformation, quadratic term or alternative primary model is fitted here."
+  },
+  "methods": {
+    "residual": "e_i = y_i - fitted_i",
+    "internally_studentized": "r_i = e_i/(s*sqrt(1-h_ii)); s=sqrt(SSE/(n-p)) from the full model, not an externally studentized residual.",
+    "leverage": "h_ii is the sum of squared entries in row i of the full-rank economic Q matrix; trace(H)=p.",
+    "cooks_distance": "D_i = (r_i^2/p) * h_ii/(1-h_ii); a model-wide coefficient influence measure, not a thickness-specific test.",
+    "LOO_identity": "beta_(-i) = beta - (X'X)^(-1) x_i e_i/(1-h_ii); checked against direct QR refits for each flagged observation.",
+    "binning": "Eight requested empirical-quantile bins of the displayed x, using linear quantiles and unique edges; all tied x values stay together. Lines connect within-bin means, with no smoothing fit or confidence ribbon. Each point remains in the scatter.",
+    "scale_location": "sqrt(abs(internally studentized residual)) against fitted values; bin means are descriptive.",
+    "formal_tests": "No new normality, variance or coefficient-difference hypothesis test is introduced. Quantiles, skewness, excess kurtosis and bin summaries are descriptive diagnostics."
+  },
+  "interpretation_limits": {
+    "calibration": "Normal Q-Q departures and spread patterns qualify exact classical t and prediction-interval calibration. Internally studentized residuals are dependent; the normal reference is diagnostic, not an exact joint reference distribution.",
+    "HC3": "Retain the already planned HC3 coefficient companion regardless of the visual pattern. It does not correct nonlinearity, participant dependence, selection, source-imputation uncertainty or individual prediction variance.",
+    "sampling": {
+      "unit": "One participant with the single supplied UDS record and the single supplied MRI record, joined one-to-one on NACCID.",
+      "linkage": {
+        "uds_participants": 1237,
+        "mri_participants": 1237,
+        "matched_participants": 1237,
+        "uds_only": 0,
+        "mri_only": 0,
+        "matched_with_usable_left_thickness": 1237,
+        "matched_with_unusable_left_thickness": 0,
+        "cognitive_status_agreement": {
+          "equal": 1237,
+          "unavailable": 0,
+          "different": 0
+        }
+      },
+      "target": "The source population represented by this teaching extract, conditional on model_normal eligibility and the sampling/model assumptions; no claim of representativeness for all NACC participants.",
+      "independence": "One supplied row per ID is verified; independence across people remains a modeling assumption.",
+      "selection": "Random selection is reported, but its sampling frame, selection probabilities and source selection eligibility are undocumented.",
+      "source_preparation": "The source preparation and imputation methods and value-level masks are unknown. Treat the supplied values as fixed inputs; this analysis cannot propagate additional imputation/preparation uncertainty.",
+      "visit_and_scan_timing": {
+        "record_rule": "Use the single supplied record per participant; no within-person visit selection is possible or performed.",
+        "clinical_visit_date": "Unavailable",
+        "clinical_visit_number": "Unavailable",
+        "mri_scan_date": "Unavailable",
+        "source_visit_count": "Unavailable",
+        "temporal_proximity": "Unverifiable from the supplied files; do not assert baseline, first visit, nearest scan or contemporaneous measurements.",
+        "track_c5_status": "Participant-level input structure is documented. Temporal proximity remains unverified and would require authoritative metadata or course-team clarification."
+      },
+      "scan_quality": "Finite positive thickness establishes numerical usability, not scan-level quality control."
+    },
+    "no_automatic_deletion": "Retain all eligible participants in the primary fit. If flags require follow-up, document their combined and individual effect on the thickness slope and uncertainty using clearly labeled leave-one-out diagnostic fits; report aggregate influence summaries without exporting participant IDs. Do not replace the primary sample with a cleaned sample.",
+    "causality": "Neither graphical consistency nor stable diagnostic omissions proves a causal association, equivalence or independence.",
+    "next_step": "Record the graphical evidence and a justified retention/extension decision in Step 7 before any exploratory extension or profile prediction intervals. No quadratic term, transformation or model search is fitted in this step."
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Steps 1-5 reproduce from the frozen inputs.",
+      "All three full-sample refits exactly match their saved coefficients, uncertainty and fit metrics.",
+      "Finite residual, internally studentized, leverage and Cook diagnostics use the registered strict thresholds.",
+      "Mutually exclusive flag combinations partition each common sample.",
+      "Each bin partitions all observations without splitting ties or excluding points.",
+      "Direct flagged leave-one-out QR coefficients agree with the analytic deletion identity.",
+      "Primary sample, predictors, coefficient test and previous outputs remain unchanged.",
+      "Inputs and source fingerprints remain unchanged during diagnostics."
+    ],
+    "limit": "Computational checks do not validate sampling, independence, mean form or constant variance."
+  },
+  "figures": [
+    {
+      "path": "figures/phase4/03_residual_diagnostics.pdf",
+      "page": 1
+    },
+    {
+      "path": "figures/phase4/04_integrated_predictor_residuals.pdf",
+      "page": 1
+    },
+    {
+      "path": "figures/phase4/05_integrated_influence.pdf",
+      "page": 1
+    }
+  ],
+  "privacy": "JSON contains aggregate summaries and counts only. Diagnostic plots show unlabeled coordinates or histograms without IDs, source row indices or hover labels; no participant-level diagnostic arrays or omission tables are exported.",
+  "progress": {
+    "completed_through_step": 6,
+    "remaining": [
+      "Step 7 documented model retention/extension and profile intervals",
+      "Step 8 final numerical review, LaTeX report and executed notebook"
+    ],
+    "historical_records": "Earlier step status statements remain historical snapshots."
+  },
+  "sources": {
+    "graphical_diagnostics": "https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm",
+    "influence": "https://www.statsmodels.org/stable/generated/statsmodels.stats.outliers_influence.OLSInfluence.html",
+    "normal_quantiles": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html"
+  }
+}
