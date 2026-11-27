@@ -1,0 +1,266 @@
+{
+  "stage": "Phase 4, Step 3",
+  "status": "MRI-only simple regression and same-sample Pearson correlation estimated; adjusted primary model not yet fitted.",
+  "sample": "model_normal",
+  "participants": 842,
+  "model": "mri_only",
+  "source_files_sha256": {
+    "data/udslong_imputed.csv": "8bcd0180d1b593092f7b2f7777281f59c4a6e9c3b2b041b5d2a33ed13be55e63",
+    "data/mriscanclean.csv": "3a2b34f7902592705f75ce3ad4c4fab68880470f01e7b9eb9823a799dc092e72",
+    "data/processed/participants.csv": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+    "reports/phase1/sample_flow.json": "928fc5a0717c786c7ed47c154d43113e77c1f3f22c9a1f2ecd8fe5714d6180f3",
+    "docs/amarpr.pdf": "ede1706ab440f1ae737a71afaf0a37438112e7b010e6a5118b8f334b4c0d03e3",
+    "reports/phase3/inference_review.json": "01529f09a097f728615ac68fe5e159eb7554283cc9cfbc569d952c8aa3317fcd",
+    "src/build_dataset.py": "50dbe0550aba8f8b4c70acbdfaa6762c35df81ca7b38836929c8c5267b229554",
+    "src/data_audit.py": "24981d5fa7342d493ba36f441eaeada2efcfb34ffb76d57e1322a0eba1a18c48",
+    "src/descriptive_statistics.py": "f96ec1b3bd359c06c1bf57176e18801062d088ba9855b7ce6ff92387b25a5386",
+    "src/phase4_plan.py": "191b7dcd592b780a7ef7b33ebb121eefa5dc17e364ea1065a4b3afbf5d309a00",
+    "reports/phase4/analysis_plan.json": "cb102d2556004d8b5e50f960792ec83c2ab34d90201db60947fff175022dacd0",
+    "reports/phase4/design_matrices.json": "85e3eea99a5c5c0ce9becd28e499a098f431de0d48ed514659126d9a9824d73d",
+    "src/phase4_design.py": "3806004577ee515e775c66430e5c13772dd722e2da15fbf72d1b14c51de59296",
+    "src/phase4_regression.py": "3252a80f17c8b2441ab573f9c3b08823df7a0f707319c441b8a93da1248b76f0",
+    "src/phase4_simple.py": "ad9e2e7a1c5975641c681eea4fa20c53d5a813f675e6a8de648b2ba4a663c7b6",
+    "requirements.txt": "6954b33c3de27271d0179044bf553ee3f675eeb24238faab136eae135f71d18e",
+    "src/phase1_figures.py": "c0e0f2ca8ecfb0f79735ac5fffc0e948747675d5ed66ac1c949e4ea7982aa413"
+  },
+  "environment": {
+    "python": "3.14.0",
+    "scipy": "1.16.3",
+    "numpy_runtime": "2.5.4",
+    "matplotlib": "3.10.8"
+  },
+  "design": {
+    "columns": [
+      "intercept",
+      "thickness_0_1mm"
+    ],
+    "matrix_sha256": "7336d4e30a63d1c1d44efbf59b9e24d204e7c32caa571746139e876e3a8c64d7",
+    "response_sha256": "b6861f8e75d16a7d3fa633905a085608cb4e2e91069dccd1571f277fb0a2d4c8",
+    "membership_sha256": "01493a1533ccc79d5a8cf6e7fca3eb0ca1acab860c59884f7d5f9466f22c34d4",
+    "thickness_reference_mm": 2.344,
+    "expression": "(LH_INFERIORPARIETAL_AVGTH - 2.344) / 0.1",
+    "response_unit": "Correct animal names in 60 seconds",
+    "slope_unit": "Correct responses per 0.1 mm greater thickness"
+  },
+  "coefficients": {
+    "intercept": {
+      "estimate": 22.337614370275528,
+      "model_based": {
+        "standard_error": 0.18761170337360558,
+        "t_statistic": 119.06301136125246,
+        "degrees_of_freedom": 840,
+        "p_value_two_sided_nominal": 0.0,
+        "p_value_underflow": true,
+        "confidence_interval": {
+          "confidence_level": 0.95,
+          "lower": 21.96937159700909,
+          "upper": 22.705857143541966
+        }
+      },
+      "hc3": {
+        "standard_error": 0.1884394682609758,
+        "t_statistic": 118.53999895255201,
+        "degrees_of_freedom": 840,
+        "p_value_two_sided_nominal": 0.0,
+        "p_value_underflow": true,
+        "confidence_interval": {
+          "confidence_level": 0.95,
+          "lower": 21.967746866609776,
+          "upper": 22.70748187394128
+        }
+      }
+    },
+    "thickness_0_1mm": {
+      "estimate": 0.08098478678747445,
+      "model_based": {
+        "standard_error": 0.15422708962770262,
+        "t_statistic": 0.5251009208756267,
+        "degrees_of_freedom": 840,
+        "p_value_two_sided_nominal": 0.5996515987320105,
+        "p_value_underflow": false,
+        "confidence_interval": {
+          "confidence_level": 0.95,
+          "lower": -0.22173092964211594,
+          "upper": 0.38370050321706484
+        }
+      },
+      "hc3": {
+        "standard_error": 0.15425068554321542,
+        "t_statistic": 0.5250205955472753,
+        "degrees_of_freedom": 840,
+        "p_value_two_sided_nominal": 0.5997074119187455,
+        "p_value_underflow": false,
+        "confidence_interval": {
+          "confidence_level": 0.95,
+          "lower": -0.22177724351918193,
+          "upper": 0.38374681709413083
+        }
+      }
+    }
+  },
+  "covariance": {
+    "column_order": [
+      "intercept",
+      "thickness_0_1mm"
+    ],
+    "unscaled": [
+      [
+        0.0011924640641267725,
+        6.229439229901089e-05
+      ],
+      [
+        6.229439229901089e-05,
+        0.0008058362008874966
+      ]
+    ],
+    "model_based": [
+      [
+        0.03519815124274577,
+        0.0018387534749914438
+      ],
+      [
+        0.0018387534749914438,
+        0.02378599517503142
+      ]
+    ],
+    "hc3": [
+      [
+        0.0355094331984793,
+        0.00331570686170757
+      ],
+      [
+        0.00331570686170757,
+        0.023793273990551922
+      ]
+    ]
+  },
+  "fit": {
+    "participants": 842,
+    "parameters_including_intercept": 2,
+    "residual_df": 840,
+    "SSE": 24794.41346147199,
+    "SST": 24802.552256532068,
+    "explained_sum_of_squares": 8.138795060074916,
+    "R_squared": 0.00032814344975051757,
+    "adjusted_R_squared": -0.0008619420937616695,
+    "residual_SD": 5.432969619159006,
+    "in_sample_RMSE": 5.426513324995737
+  },
+  "correlation": {
+    "method": "scipy.stats.pearsonr, two-sided, analytic default",
+    "participants": 842,
+    "coefficient": 0.01811473018707358,
+    "squared_coefficient": 0.00032814344975047485,
+    "p_value_two_sided_nominal": 0.5996515987320099,
+    "null": "Population Pearson correlation is zero",
+    "alternative": "Population Pearson correlation is nonzero",
+    "calibration": "The analytic Pearson p-value has a bivariate-normal reference; non-normality and the undocumented sampling design limit its interpretation. The same-sample classical slope t test has the equivalent numeric p-value under its own linear-model assumptions.",
+    "scope": "Recomputed on the 842-person common modeling sample; no reuse of the earlier 843-person Phase 2 result."
+  },
+  "hypothesis_test": {
+    "model": "mri_only",
+    "term": "thickness_0_1mm",
+    "null": "Unadjusted beta_thickness = 0",
+    "alternative": "Unadjusted beta_thickness != 0",
+    "reporting": "Report the two-sided nominal t-test p-value and 95% interval for the course simple-regression exercise; this is secondary to the adjusted estimand.",
+    "nominal_alpha": 0.05,
+    "model_based_p": 0.5996515987320105,
+    "reject_at_nominal_alpha": false,
+    "multiplicity": "One primary Phase 4 coefficient test at alpha 0.05. Secondary and companion p-values are explicitly nominal; no familywise guarantee across coefficients, methods or phases is claimed. The separate completed Phase 3 Holm family remains unchanged.",
+    "relation_to_correlation": "The Pearson and classical slope p-values are algebraically linked for this one-predictor intercept model; they are not two independent confirmations."
+  },
+  "methods": {
+    "estimator": "Equal-weight OLS using economic pivoted QR and triangular solves, with coefficients returned to registered order; no explicit inversion of X'X.",
+    "model_based_covariance": "s^2 (X'X)^(-1), with s^2 = SSE/(n-p) and p including the intercept.",
+    "coefficient_intervals": "Individual two-sided 95% Student t intervals, estimate +/- t(0.975,n-p) SE. Exact t calibration requires the classical independent, homoskedastic normal-error linear model; otherwise qualifications are required.",
+    "hc3_companion": {
+      "planned": true,
+      "models": [
+        "uds_only",
+        "mri_only",
+        "integrated"
+      ],
+      "role": "Prespecified companion coefficient uncertainty, reported alongside the model-based results regardless of diagnostic significance; never choose whichever gives a smaller p-value.",
+      "covariance": "(X'X)^(-1) X' diag(e_i^2/(1-h_ii)^2) X (X'X)^(-1)",
+      "reference_distribution": "Use t with n-p degrees of freedom as an explicit finite-sample convention; HC3 interval/test calibration is approximate, not exact normal-theory t inference.",
+      "limit": "HC3 addresses coefficient covariance under heteroskedasticity; it does not correct nonlinearity, dependence, selection bias or source imputation uncertainty and does not supply a heteroskedastic individual prediction interval."
+    },
+    "interval_scope": "Individual 95% intervals, not simultaneous or prediction intervals.",
+    "numeric_tail_note": "A zero computed coefficient p-value is flagged as numerical underflow, not interpreted as a literal zero probability.",
+    "fit_metrics": {
+      "residual_SD": "sqrt(SSE/(n-p))",
+      "in_sample_RMSE": "sqrt(SSE/n)"
+    }
+  },
+  "numeric_checks": {
+    "passed": true,
+    "identities": [
+      "R_squared equals Pearson r squared",
+      "Slope equals r * sample_SD(score) / sample_SD(centered thickness per 0.1 mm)",
+      "Classical slope t equals r * sqrt((n-2)/(1-r^2))",
+      "Classical slope p matches Pearson p",
+      "SST equals SSE plus explained SS",
+      "Residuals sum to zero and are orthogonal to each model column",
+      "The hat-matrix trace equals the model rank"
+    ],
+    "limits": "These checks establish computational consistency, not distributional validity or independent scientific replication."
+  },
+  "interpretation": {
+    "slope": "The slope is an unadjusted between-person mean-score association per 0.1 mm greater left thickness within the eligible normal-cognition sample; it is not a within-person change or causal effect.",
+    "intercept": "The centered intercept is the fitted mean score at 2.344 mm, within the observed thickness range. This MRI-only model does not condition on age, recorded sex or education.",
+    "evidence": "The model-based slope interval includes zero; the HC3 companion interval includes zero. The nominal model-based test does not reject zero slope at the registered reference level. Read the effect and interval widths in score units. Non-rejection does not establish absence of an association or practical equivalence.",
+    "p_value": "Under the zero-slope null and the classical linear-model assumptions, the nominal p-value is the tail probability of a t statistic at least as far from zero as observed. It is not the probability that the null is true.",
+    "fit": "R-squared describes in-sample squared score variation accounted for by this linear thickness model; it is not external predictive accuracy or a causal fraction.",
+    "hc3": "The companion changes coefficient uncertainty, not the OLS line. Its t calibration is approximate; agreement does not remove sampling, functional-form or imputation limitations.",
+    "remaining_work": "Fit UDS-only and integrated models in Step 4 to answer the adjusted primary question. Residual/influence diagnostics and profile prediction intervals remain later work."
+  },
+  "limitations": {
+    "sampling_and_preparation": {
+      "unit": "One participant with the single supplied UDS record and the single supplied MRI record, joined one-to-one on NACCID.",
+      "linkage": {
+        "uds_participants": 1237,
+        "mri_participants": 1237,
+        "matched_participants": 1237,
+        "uds_only": 0,
+        "mri_only": 0,
+        "matched_with_usable_left_thickness": 1237,
+        "matched_with_unusable_left_thickness": 0,
+        "cognitive_status_agreement": {
+          "equal": 1237,
+          "unavailable": 0,
+          "different": 0
+        }
+      },
+      "target": "The source population represented by this teaching extract, conditional on model_normal eligibility and the sampling/model assumptions; no claim of representativeness for all NACC participants.",
+      "independence": "One supplied row per ID is verified; independence across people remains a modeling assumption.",
+      "selection": "Random selection is reported, but its sampling frame, selection probabilities and source selection eligibility are undocumented.",
+      "source_preparation": "The source preparation and imputation methods and value-level masks are unknown. Treat the supplied values as fixed inputs; this analysis cannot propagate additional imputation/preparation uncertainty.",
+      "visit_and_scan_timing": {
+        "record_rule": "Use the single supplied record per participant; no within-person visit selection is possible or performed.",
+        "clinical_visit_date": "Unavailable",
+        "clinical_visit_number": "Unavailable",
+        "mri_scan_date": "Unavailable",
+        "source_visit_count": "Unavailable",
+        "temporal_proximity": "Unverifiable from the supplied files; do not assert baseline, first visit, nearest scan or contemporaneous measurements.",
+        "track_c5_status": "Participant-level input structure is documented. Temporal proximity remains unverified and would require authoritative metadata or course-team clarification."
+      },
+      "scan_quality": "Finite positive thickness establishes numerical usability, not scan-level quality control."
+    },
+    "scope": "Exploratory unadjusted inference. Model-based t calibration depends on the stated mean, independence, variance and error-distribution assumptions; count-scale coverage is approximate. HC3 does not establish a correct mean form or participant independence.",
+    "scale": "The response is a count. No raw scores, fitted values or intervals are rounded or clipped to force the usable range.",
+    "no_equivalence_margin": true,
+    "no_automatic_exclusion": true
+  },
+  "figure": {
+    "path": "figures/phase4/01_score_thickness_simple_regression.pdf",
+    "purpose": "Observed score-thickness scatter and the MRI-only least-squares line over observed thickness support.",
+    "privacy": "No participant IDs or hover labels. All 842 observations are plotted without jitter or exclusions; overlapping observations may coincide.",
+    "intervals": "No prediction or mean-response ribbon is shown at this step."
+  },
+  "sources": {
+    "qr": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.qr.html",
+    "triangular_solve": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve_triangular.html",
+    "pearson": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html",
+    "hc3": "https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLSResults.HC3_se.html"
+  }
+}
