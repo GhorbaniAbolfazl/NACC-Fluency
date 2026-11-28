@@ -1,0 +1,399 @@
+{
+  "plan_version": 1,
+  "stage": "Phase 5, Step 1",
+  "status": "Reference reproduced and comparisons specified before Phase 5 sensitivity fits.",
+  "analysis_character": "Protocol for robustness work on the already examined teaching extract. The Phase 4 reference and diagnostics were known when the Phase 5 comparisons were specified.",
+  "source_files_sha256": {
+    "data/udslong_imputed.csv": "8bcd0180d1b593092f7b2f7777281f59c4a6e9c3b2b041b5d2a33ed13be55e63",
+    "data/mriscanclean.csv": "3a2b34f7902592705f75ce3ad4c4fab68880470f01e7b9eb9823a799dc092e72",
+    "data/processed/participants.csv": "59f7bd173f19f285ac92c491e6514f66e8d8530e3131b9fbde382da178abfb52",
+    "reports/phase1/sample_flow.json": "928fc5a0717c786c7ed47c154d43113e77c1f3f22c9a1f2ecd8fe5714d6180f3",
+    "docs/amarpr.pdf": "ede1706ab440f1ae737a71afaf0a37438112e7b010e6a5118b8f334b4c0d03e3",
+    "reports/phase3/inference_review.json": "01529f09a097f728615ac68fe5e159eb7554283cc9cfbc569d952c8aa3317fcd",
+    "src/build_dataset.py": "50dbe0550aba8f8b4c70acbdfaa6762c35df81ca7b38836929c8c5267b229554",
+    "src/data_audit.py": "24981d5fa7342d493ba36f441eaeada2efcfb34ffb76d57e1322a0eba1a18c48",
+    "src/descriptive_statistics.py": "f96ec1b3bd359c06c1bf57176e18801062d088ba9855b7ce6ff92387b25a5386",
+    "src/phase4_plan.py": "191b7dcd592b780a7ef7b33ebb121eefa5dc17e364ea1065a4b3afbf5d309a00",
+    "reports/phase4/analysis_plan.json": "cb102d2556004d8b5e50f960792ec83c2ab34d90201db60947fff175022dacd0",
+    "reports/phase4/design_matrices.json": "85e3eea99a5c5c0ce9becd28e499a098f431de0d48ed514659126d9a9824d73d",
+    "src/phase4_design.py": "3806004577ee515e775c66430e5c13772dd722e2da15fbf72d1b14c51de59296",
+    "src/phase4_regression.py": "3252a80f17c8b2441ab573f9c3b08823df7a0f707319c441b8a93da1248b76f0",
+    "src/phase4_simple.py": "ad9e2e7a1c5975641c681eea4fa20c53d5a813f675e6a8de648b2ba4a663c7b6",
+    "requirements.txt": "6954b33c3de27271d0179044bf553ee3f675eeb24238faab136eae135f71d18e",
+    "src/phase1_figures.py": "c0e0f2ca8ecfb0f79735ac5fffc0e948747675d5ed66ac1c949e4ea7982aa413",
+    "reports/phase4/simple_regression.json": "3369c707e4dde296d58978142212fd98a227b4a51eb997bfa2be674acf3c3933",
+    "src/phase4_multiple.py": "32e0103d0371ba5f8542e8657a7e9c886093f1e7fa5b6922a78b59c8a43665df",
+    "reports/phase4/multiple_regression.json": "7f9b1c7e8d49793de59f2117d060052c5a4ab42c3b3865111a46e38795e9a588",
+    "src/phase4_comparison.py": "8936ffc4964d69f762cf2bfd18c11c87778f666d7cd17768f874758858312afc",
+    "reports/phase4/model_comparison.json": "9f41dc16ae974bb151ab976387c979fc25f3176ee31c75c99a4cd0b7c638bdaf",
+    "src/phase4_diagnostics.py": "4d001a835c571d94005f9bfebf1a22b46607cecc6e60c67b771c8276b454e2b0",
+    "src/phase4_diagnostic_figures.py": "ef300fc71b9906e3ca4a3de6cc420b7cad1dc63fc425a61bfde8794dfc16124c",
+    "reports/phase4/residual_diagnostics.json": "518122a9e32560e77f4b89a588c4a5da472a1a0930c2fbd51e6aac26b39a6fdd",
+    "src/phase4_prediction.py": "40d556c15123fb4a7a460388139358410a6c55721fb901d86094dd0a72734d36",
+    "figures/phase4/03_residual_diagnostics.pdf": "c407f4a55919cef4d9edb64ac6ea047529922f994910125951e5649e04d29ee8",
+    "figures/phase4/04_integrated_predictor_residuals.pdf": "013aa4f27b506280261cf58f8f36a87349d13fd1759fcc09733aa88c5f8e897d",
+    "figures/phase4/05_integrated_influence.pdf": "f9c2346a0748fb225dcd5016d4654ee29c39479ab6e26b96330949ed9b8c4735",
+    "reports/phase4/profile_prediction.json": "ebade873cceab26586e9a1853233ce5a95116e9b33896c58e4d7630b7eb8a383",
+    "reports/phase4/tables.tex": "281bd5c7e8688c156028151b4571aaafd5f14bdb8713cfc56949975bfade8806",
+    "notebooks/phase4.ipynb": "421b25f284bba45e97d0323fb891ee182c60e9eca3d71ca55922f25b3545bd32",
+    "reports/phase4.pdf": "f93d0fede9f3853bef33e8199c841975748fc514f14b983c0f393d540d9202b5",
+    "reports/phase4/phase4.tex": "6593701b8240306c8bf5e1821d495366d35cb71dde28663f2e7e0581255d0128",
+    "reports/template.tex": "84cb8d8c549044dc58a2a148f0cb93f39b24a46fd43f579dd0e019589fecd8ab",
+    "src/phase4_tables.py": "d701189f1e89c1f9dc6f0fd32e6c41edff5bfd7d1b2475bd88865653311a42f6",
+    "src/phase4_review.py": "10197ff1eba4a4ab03d86d8d01af4973ac28a0631c696bc0b454b5d89682949a",
+    "reports/phase4/regression_review.json": "4bdde06c7e259578ee084d2d4336cd14f2e5be7f6956462ee648dbcfc6802b9f",
+    "src/phase5_plan.py": "2364c10a963661f792e9715ee52d565420c0e9912bffc75c8a2e9559ce0eace6"
+  },
+  "reference": {
+    "question": "Among participants with normal cognition, how does the mean number of correct animal names in 60 seconds differ per 0.1 mm greater left inferior parietal cortical thickness, after accounting for age, recorded sex and years of education?",
+    "sample": "model_normal",
+    "n": 842,
+    "membership_sha256": "01493a1533ccc79d5a8cf6e7fca3eb0ca1acab860c59884f7d5f9466f22c34d4",
+    "model": "ANIMALS ~ 1 + thickness_0_1mm + age_c + female + education_c",
+    "column_order": [
+      "intercept",
+      "thickness_0_1mm",
+      "age_c",
+      "female",
+      "education_c"
+    ],
+    "response": {
+      "column": "ANIMALS",
+      "source": "UDS",
+      "unit": "Correct animal names in 60 seconds",
+      "usable_range": [
+        0,
+        77
+      ],
+      "scale": "Discrete nonnegative count; larger scores indicate better performance on this task.",
+      "special_codes_excluded": [
+        -4,
+        95,
+        96,
+        97,
+        98
+      ],
+      "limitations": "A task score is not a diagnosis or a calibrated clinical change. The count is analyzed with OLS as a conditional-mean approximation; inspect residuals and predictions against its scale."
+    },
+    "coding": {
+      "age_c": {
+        "source": "UDS",
+        "column": "NACCAGE",
+        "expression": "NACCAGE - 68",
+        "reference_years": 68.0,
+        "unit": "One year",
+        "rationale": "Prespecified demographic adjustment related to cognitive performance and the thickness association."
+      },
+      "female": {
+        "source": "UDS",
+        "column": "SEX",
+        "code_map": {
+          "1": 0,
+          "2": 1
+        },
+        "reference": "Recorded male, SEX=1",
+        "unit": "Recorded female minus recorded male, holding other included predictors fixed",
+        "rationale": "Prespecified demographic adjustment; use the recorded binary codes without interpreting them as a broader gender measure."
+      },
+      "education_c": {
+        "source": "UDS",
+        "column": "EDUC",
+        "expression": "EDUC - 16",
+        "reference_years": 16,
+        "unit": "One year",
+        "rationale": "Prespecified adjustment for years of education in a cognitive-task analysis."
+      },
+      "thickness_0_1mm": {
+        "source": "MRI",
+        "column": "LH_INFERIORPARIETAL_AVGTH",
+        "expression": "(LH_INFERIORPARIETAL_AVGTH - 2.344) / 0.1",
+        "reference_mm": 2.344,
+        "unit": "0.1 mm greater thickness",
+        "rationale": "The single anatomical measure selected by the research question before Phase 4 fitting.",
+        "continuous": true,
+        "phase_three_cutoff_used": false
+      }
+    },
+    "estimand": "Adjusted linear-model mean score difference per 0.1 mm greater left thickness at the same age, recorded sex and education.",
+    "estimate": -0.12570420635042928,
+    "model_based": {
+      "standard_error": 0.1507751921985112,
+      "t_statistic": -0.8337194237161153,
+      "degrees_of_freedom": 837,
+      "p_value_two_sided_nominal": 0.4046769678262576,
+      "p_value_underflow": false,
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower": -0.42164609623782456,
+        "upper": 0.170237683536966
+      }
+    },
+    "hc3_companion": {
+      "standard_error": 0.1452318800011004,
+      "t_statistic": -0.8655414110832748,
+      "degrees_of_freedom": 837,
+      "p_value_two_sided_nominal": 0.38698971192060294,
+      "p_value_underflow": false,
+      "confidence_interval": {
+        "confidence_level": 0.95,
+        "lower": -0.41076567045943974,
+        "upper": 0.15935725775858117
+      }
+    },
+    "source_review": "reports/phase4/regression_review.json",
+    "verification": {
+      "file_checks": "Match the recorded Phase 4 artifact and input hashes and require identical sample and design hashes.",
+      "numerical_checks": "Refit only the three registered Phase 4 designs. Compare all coefficient estimates, both uncertainty summaries and fit metrics.",
+      "relative_tolerance": 2e-10,
+      "absolute_tolerance": 2e-11,
+      "runtime_policy": "The Phase 4 review preserves its original environment. The Phase 5 reference check compares numerical results at the declared tolerance rather than requiring identical environment metadata."
+    },
+    "retention": "Keep the Phase 4 integrated fit on all 842 eligible participants as the reference for the final report."
+  },
+  "input_support": {
+    "linked_rows": 1237,
+    "uds_only_rows": 0,
+    "mri_only_rows": 0,
+    "linked_rows_without_usable_left_thickness": 0,
+    "reference_n": 842,
+    "broader_n": 1223,
+    "broader_cognitive_status_counts": {
+      "1": {
+        "label": "normal cognition",
+        "n": 842
+      },
+      "2": {
+        "label": "impaired without MCI",
+        "n": 7
+      },
+      "3": {
+        "label": "MCI",
+        "n": 248
+      },
+      "4": {
+        "label": "dementia",
+        "n": 126
+      }
+    },
+    "bilateral_support_in_reference_n": 842,
+    "normal_cognition_vs_mci_n": {
+      "normal_cognition": 842,
+      "mci": 248
+    },
+    "basis": "Use the Phase 1 value rules on the source teaching extract. Usable supplied values do not establish clinical scan quality or whether a UDS value was imputed upstream."
+  },
+  "comparisons": {
+    "broader_sample": {
+      "baseline": "eligible_model_normal",
+      "alternative": "eligible_model_all",
+      "single_change": "Allow the other recorded cognitive-status categories under the same score, thickness and covariate eligibility rules.",
+      "fit": "Use the reference outcome, units, covariates, centering and integrated additive OLS formula in both samples.",
+      "report": "Counts by cognitive status, coefficients, individual 95% intervals and descriptive fit. For the broader fit, the common slope pools the recorded statuses without adjusting for status itself.",
+      "interpretation": "The broader fit describes a different population mix. Differences may reflect between-status structure as well as the altered inclusion rule."
+    },
+    "mri_completeness": {
+      "same_target": "Normal cognition with usable ANIMALS, NACCAGE, SEX and EDUC.",
+      "baseline_membership": "Derive UDS eligibility from the original UDS file before requiring a matching usable MRI value, using the Phase 1 rules.",
+      "alternative_membership": "Require a matched row with usable left thickness in addition to the same UDS eligibility.",
+      "comparable_model": "Compare UDS-only on both sets. Evaluate membership by ID internally and summarize n, membership differences and composition in aggregate. Use the integrated fit to describe the MRI-eligible set.",
+      "current_support": "The known supplied extract has a usable left value for every matched participant and no UDS-only participants. The audit should verify whether the two eligible sets are identical.",
+      "interpretation": "An identical eligible set makes the within-extract UDS-only comparison degenerate. Selection into the teaching extract and effects among people with missing MRI outside it remain unidentifiable."
+    },
+    "visit_rule": {
+      "availability": "Alternative visit selection is not evaluable on the supplied files.",
+      "evidence": {
+        "record_rule": "Use the single supplied record per participant; no within-person visit selection is possible or performed.",
+        "clinical_visit_date": "Unavailable",
+        "clinical_visit_number": "Unavailable",
+        "mri_scan_date": "Unavailable",
+        "source_visit_count": "Unavailable",
+        "temporal_proximity": "Unverifiable from the supplied files; do not assert baseline, first visit, nearest scan or contemporaneous measurements.",
+        "track_c5_status": "Participant-level input structure is documented. Temporal proximity remains unverified and would require authoritative metadata or course-team clarification."
+      },
+      "action": "Document the one supplied pair per participant and the missing visit/scan metadata. Apply a versioned plan if authoritative repeated records and timing become available."
+    },
+    "bilateral_thickness": {
+      "sample": "Intersect the reference sample with usable right thickness. For both fits use the exact same ordered participants.",
+      "baseline_column": "LH_INFERIORPARIETAL_AVGTH",
+      "alternative_components": [
+        "LH_INFERIORPARIETAL_AVGTH",
+        "RH_INFERIORPARIETAL_AVGTH"
+      ],
+      "alternative_definition": "Arithmetic mean of usable left and right inferior parietal thickness in mm, with each hemisphere weighted equally.",
+      "alternative_coding": "(bilateral_mean_mm - 2.344) / 0.1",
+      "single_change": "Replace left thickness with bilateral mean thickness. Hold ANIMALS, all UDS covariates and the OLS estimator fixed.",
+      "interpretation": "Compare slopes per 0.1 mm in their respective anatomical measures. Use 2.344 mm as a centering constant in both fits and avoid comparing their intercepts as if they represented the same anatomical quantity."
+    },
+    "influence": {
+      "baseline": "Full integrated Phase 4 fit on the reference sample.",
+      "screen": "Integrated model Cook distance strictly greater than 4/n, calculated once on the full design using p=5 including the intercept.",
+      "order": "Descending full-fit Cook distance. Use ascending participant ID only to break exact ties and keep IDs in memory.",
+      "maximum_joint_omissions": 5,
+      "comparison": "Temporarily omit the first min(5, number flagged) observations together and refit the same formula once. If no case passes the screen, report zero eligible omissions.",
+      "historical_context": "The Phase 4 diagnostic already includes all flagged individual omissions and a larger 70-observation union omission.",
+      "report": "Counts, anonymous diagnostic summaries, coefficient shifts and both usual-formula intervals. Discuss the limits of post-selection interval coverage. Keep these fits outside the primary inference."
+    },
+    "bootstrap": {
+      "target": "The same adjusted left-thickness slope on the same 842-person reference sample.",
+      "draws": 10000,
+      "seed": 731905,
+      "generator": "numpy.random.Generator with numpy.random.PCG64",
+      "resampling_unit": "Whole participant row, including ANIMALS, thickness and all UDS covariates.",
+      "draw_size": 842,
+      "replacement": true,
+      "row_order": "Use the registered ascending participant-ID order before drawing indices.",
+      "fit": "Equal-weight OLS using the same fixed coding and a full-rank least-squares solve. Repeated indices represent bootstrap multiplicity.",
+      "interval": {
+        "method": "percentile",
+        "confidence_level": 0.95,
+        "quantiles": [
+          0.025,
+          0.975
+        ],
+        "quantile_method": "linear"
+      },
+      "invalid_fit_policy": "Count non-finite or rank-deficient fits explicitly. If any occur, stop before publishing the interval and document the issue. Keep the planned draw sequence fixed for review.",
+      "comparison": "Compare the percentile interval and empirical bootstrap SE with the Phase 4 model-based interval and SE. Include HC3 as existing reference context. Report shifts in endpoints and width.",
+      "limits": "Row resampling assumes independent participants and represents variation within the modeled extract. It cannot add source-imputation, selection or visit-alignment uncertainty that is absent from the inputs."
+    },
+    "cognitive_subgroup": {
+      "groups": {
+        "normal_cognition": 1,
+        "mci": 3
+      },
+      "sample": "Participants in eligible_model_all with the two listed cognitive codes. Use one supplied row per participant.",
+      "rationale": "Evaluate whether the thickness slope differs across two clinically distinct cognitive groups with enough observations for this limited comparison.",
+      "within_group_fit": "Use the reference integrated formula separately in each group, with the same original units and coding.",
+      "direct_comparison": "Fit the pooled fully interacted specification: ANIMALS ~ G * (thickness_0_1mm + age_c + female + education_c), with normal cognition as the reference and G=1 for MCI. The G-by-thickness term equals the MCI slope minus the normal-cognition slope.",
+      "uncertainty": "Report model-based and HC3 individual 95% intervals for the two slopes. Report the interaction estimate and an HC3 individual 95% interval using the pooled residual degrees of freedom as an approximate t reference.",
+      "verification": "Require both subgroup designs and the pooled design to have full column rank. Confirm that group slopes from the fully interacted fit agree with their separate-model estimates.",
+      "scope": "Exploratory comparison of associations across the supplied groups. The difference and interval are the evidence for the comparison. Avoid conclusions from separate significance patterns."
+    }
+  },
+  "interpretation_policy": {
+    "comparison_scale": "Report effect estimates, absolute change when comparable, individual 95% intervals, sample sizes and model fit in original units.",
+    "selection": "Use the fixed set of comparisons regardless of sign, interval inclusion of zero or nominal p-value. Comparisons sharing records are dependent.",
+    "robustness": "Evaluate magnitude, direction and uncertainty together. A sign change near zero or non-rejection is insufficient for an equivalence claim. No practical-equivalence margin has been supplied.",
+    "exploratory_outcome_candidate": "VEG remains an optional candidate outside this locked comparison set. It requires an expressly versioned decision about score eligibility and sample comparability before fitting."
+  },
+  "literature": {
+    "minimum_studies": 3,
+    "step": 2,
+    "table_fields": [
+      "data and population",
+      "question",
+      "statistical method",
+      "key result",
+      "comparability with the project"
+    ]
+  },
+  "requirement_map": {
+    "general_1": {
+      "step": 2,
+      "planned_evidence": "Review at least three relevant studies in a structured comparison table."
+    },
+    "general_2": {
+      "step": 3,
+      "planned_evidence": "Repeat the reference specification on the broader eligible sample."
+    },
+    "general_3": {
+      "step": 4,
+      "planned_evidence": "Compare left-only and bilateral thickness on common support."
+    },
+    "general_4": {
+      "step": 5,
+      "planned_evidence": "Compare the complete reference fit with a temporary omission of the largest flagged Cook distances."
+    },
+    "general_5": {
+      "step": 5,
+      "planned_evidence": "Compare the standard and participant-bootstrap intervals for the primary coefficient."
+    },
+    "general_6": {
+      "step": 6,
+      "planned_evidence": "Compare normal cognition and MCI in one planned exploratory subgroup analysis."
+    },
+    "general_7": {
+      "step": 7,
+      "planned_evidence": "Integrate evidence from descriptive, probability, inferential and regression phases."
+    },
+    "general_8": {
+      "step": 7,
+      "planned_evidence": "Explain limitations and identify the claims supported by the data."
+    },
+    "track_c1": {
+      "step": 7,
+      "planned_evidence": "Present the final three-model comparison on the frozen common sample."
+    },
+    "track_c2": {
+      "step": 3,
+      "planned_evidence": "Audit normal-cognition UDS eligibility with and without the usable-MRI requirement."
+    },
+    "track_c3": {
+      "step": 3,
+      "planned_evidence": "Check availability of repeated visits and timing metadata for a visit-choice sensitivity analysis."
+    },
+    "track_c4": {
+      "step": 6,
+      "planned_evidence": "Compare normal cognition and MCI using one record per participant."
+    },
+    "track_c5": {
+      "step": 7,
+      "planned_evidence": "Summarize the incremental contribution and limits of integrating UDS and MRI."
+    }
+  },
+  "work_sequence": [
+    {
+      "step": 1,
+      "task": "Validate the reference and freeze the Phase 5 specification"
+    },
+    {
+      "step": 2,
+      "task": "Review at least three relevant studies"
+    },
+    {
+      "step": 3,
+      "task": "Assess sample definitions, MRI completeness and visit metadata"
+    },
+    {
+      "step": 4,
+      "task": "Assess the bilateral alternative on matched support"
+    },
+    {
+      "step": 5,
+      "task": "Assess Cook-distance sensitivity and participant bootstrap intervals"
+    },
+    {
+      "step": 6,
+      "task": "Compare the two specified cognitive groups"
+    },
+    {
+      "step": 7,
+      "task": "Synthesize evidence and verify the final reports, notebook and figures"
+    }
+  ],
+  "delivery": {
+    "report_directory": "reports/final",
+    "sensitivity_and_limitations": "Separate LaTeX source and compiled document inside the final report directory.",
+    "code_directory": "src",
+    "notebook": "notebooks/phase5.ipynb",
+    "figure_directory": "figures/phase5",
+    "tag": "phase-5-final",
+    "repository_and_course_submission": "Git publication, tagging and CW packaging are manual."
+  },
+  "privacy": "Save aggregate counts, statistics and checksums. Keep participant IDs, model rows and individual bootstrap indices local in memory.",
+  "course_guide": {
+    "path": "docs/amarpr.pdf",
+    "sections": [
+      9,
+      10,
+      11
+    ],
+    "pages": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ]
+  }
+}
