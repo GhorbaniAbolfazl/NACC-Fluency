@@ -1,0 +1,13 @@
+% Load after the report template.
+\definecolor{ReportInk}{gray}{0}
+\definecolor{ReportAccent}{gray}{0}
+\definecolor{ReportTint}{gray}{0.95}
+\hypersetup{allcolors=black,linkbordercolor=black,urlbordercolor=black}
+\linespread{1.00}
+\setlength{\parskip}{4pt}
+\input{reports/final/tables.tex}
+\newcommand{\finalfigure}[3]{%
+  \begin{center}
+  \includegraphics[width=#1\linewidth]{#2}\par
+  \smallskip\begin{minipage}{0.94\linewidth}\small #3\end{minipage}
+  \end{center}}

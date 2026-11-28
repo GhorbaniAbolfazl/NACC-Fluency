@@ -1,0 +1,143 @@
+\documentclass[11pt]{article}
+\PassOptionsToPackage{gray}{xcolor}
+\usepackage{amsmath}
+\input{reports/template.tex}
+\input{reports/final/layout.tex}
+\hypersetup{pdftitle={Semantic verbal fluency and cortical thickness - final report}}
+\newcommand{\NormalLabel}{Normal cognition}
+\newcommand{\ImpairedLabel}{Impaired without MCI}
+\newcommand{\MCILabel}{MCI}
+\newcommand{\DementiaLabel}{Dementia}
+\newcommand{\ScoreLabel}{Score (correct names)}
+\newcommand{\ThicknessLabel}{Left thickness (mm)}
+\newcommand{\UDSLabel}{UDS-only}
+\newcommand{\MRILabel}{MRI-only}
+\newcommand{\IntegratedLabel}{UDS + MRI}
+\newcommand{\ThicknessTermLabel}{Thickness, per 0.1 mm}
+\newcommand{\AgeLabel}{Age, per year}
+\newcommand{\SexLabel}{Recorded female vs male}
+\newcommand{\EducationLabel}{Education, per year}
+
+\begin{document}
+\reportlabel{Statistics course project, Track C (NACC)}\par
+\vspace{3mm}
+\reporttitle{Semantic verbal fluency and\\left inferior parietal thickness}
+
+\section{Abstract}
+We examined whether people with normal cognition and greater left inferior parietal thickness named more or fewer animals in 60 seconds, after accounting for age, recorded sex and education. The NACC teaching extract contained one linked UDS--MRI record pair for each of 1,237 participants. We described the score and thickness distributions, compared conditional probabilities and means, and fit three least-squares models on the same \FinalN{} eligible participants. The combined model estimated a difference of \(\FinalSlope\) correct names per 0.1 mm of greater thickness (95\% model-based CI \FinalCI{}, two-sided \(p=\FinalP\)). Adding thickness to the UDS-only model raised in-sample \(R^2\) by \MRIAddedR{} percentage points. Averaging left and right thickness or temporarily leaving out the most influential observations moved the estimate closer to zero. The bootstrap interval included zero. When we included other cognitive groups, the pooled slope was positive. The result depends on who enters the analysis, and the estimate for participants with normal cognition remains imprecise.
+
+\section{Question and study design}
+\textbf{Question.} Among people with normal cognition, how much does the expected number of correctly named animals differ for each 0.1 mm of greater left inferior parietal thickness, holding age, recorded sex and education fixed?
+
+\textbf{Source and target.} We analyzed the NACC teaching extract provided by the course staff as a cross-sectional study. Each participant contributes one supplied pair of UDS and MRI records. Participants were reportedly selected at random. We do not know the sampling frame, selection probabilities, entry criteria or how the extract was prepared. The results apply most directly to the people represented by this extract under the stated eligibility rules and model assumptions.
+
+\textbf{Outcome and predictors.} The UDS variable \texttt{ANIMALS} counts the animals a participant correctly names in 60 seconds. The MRI measure is mean cortical thickness in the left inferior parietal region, in mm. We use age and years of education as continuous predictors and use recorded male as the reference category for recorded sex. UDS cognitive status determines who enters the primary sample and the planned group comparisons.
+
+\clearpage
+\section{Data and descriptive statistics}
+Matching the UDS and MRI files by participant ID produced 1,237 linked pairs. We used the anatomical adjacency matrix to check the region labels. Of 847 participants with normal cognition, four lacked a usable animal-naming score. One of the 843 remaining participants had unknown education, leaving \FinalN{} for the regression models. Across all cognitive groups, 12 unusable scores and two unknown education values account for the 14 exclusions. Every left-thickness measurement was finite and positive. We accepted whole-number scores from 0 to 77, treated special codes and a fractional score as unavailable, and kept plausible extreme values.
+
+\begin{center}\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrcrc@{}}\toprule
+Cognitive status & Total & Score \(n\) & Score mean (SD) & MRI \(n\) & Left mm mean (SD)\\
+\midrule
+\FinalDescriptionRows
+\bottomrule
+\end{tabular}
+\end{center}
+The table reports mean \(\pm\) SD and gives the denominator for each measure. People with MCI or dementia had lower mean thickness than those with normal cognition, although the distributions overlapped. Only seven people were classified as impaired without MCI. Among participants with normal cognition, the middle half of the scores ranged from 18 to 26 and the middle half of the thickness measurements from 2.269 to 2.417 mm.
+
+\finalfigure{0.88}{figures/phase1/04_thickness_by_status.pdf}{\textbf{Figure 1.} Left inferior parietal thickness by recorded cognitive status. Lines inside boxes are medians. Box edges mark quartiles. Whiskers extend to the most extreme values within 1.5 IQR, and circles beyond them indicate retained observations.}
+
+\clearpage
+\section{Probability and distributions}
+Among the 1,237 participants with both cognitive status and thickness, let \(A\) denote normal cognition and \(B\) denote left thickness at or above the pooled median of \CutoffMM{} mm. The observed proportion with normal cognition was \(P(A\mid B)=\ConditionalHi\%\) (488/622) at or above the cutoff and \(P(A\mid B^c)=\ConditionalLo\%\) (359/615) below it. The joint proportion was \JointObserved\%. If the events were independent, the product of the two marginal proportions would give \JointIndep\%. Applying Bayes' rule to the overall normal-cognition proportion of \ConditionalPrior\% gives \ConditionalHi\% when we condition on \(B\).
+
+In 20 draws from these records, the chance of drawing at least 15 people with normal cognition is \BinTail\% with replacement (binomial) and \HypTail\% without replacement (hypergeometric). Among the 843 paired participants with normal cognition, the empirical probability mass function for the animal-naming score peaked at \ModeScore{}. Thickness is continuous. The fitted normal distribution misses part of its lower tail. The empirical first percentile is \TailObserved{} mm, compared with \TailFitted{} mm from the fitted distribution.
+
+\section{Statistical inference}
+For the 843 paired participants with normal cognition, the individual Student \(t\) intervals closely matched the percentile intervals from 10,000 participant bootstrap draws for both means.
+
+\begin{center}\small
+\begin{tabular}{@{}lccc@{}}\toprule
+Measure & Mean & 95\% \(t\) CI & 95\% bootstrap CI\\
+\midrule
+\FinalMeanRows
+\bottomrule
+\end{tabular}
+\end{center}
+
+Participants at or above the fixed \CutoffMM{} mm cutoff named an estimated \(\ScoreContrast\) more animals on average than those below it (95\% Welch CI \ScoreContrastCI{}, Holm-adjusted \(p=\ScoreContrastP\)). Resampling separately within the two groups gave a bootstrap CI of \ScoreContrastBoot{}. This is an unadjusted difference between two thickness groups within the normal-cognition sample.
+
+We also used Welch's one-way ANOVA to compare mean thickness across the four cognitive groups, using 1,237 participants with usable thickness and cognitive status. The test gave \(F=\StatusF\) and Holm-adjusted \(p=\StatusP\). Differences between group means accounted for \StatusEta\% of the observed squared variation in thickness. We adjusted the two exploratory tests together using Holm's method. The omnibus test compares MRI thickness across cognitive groups. The cutoff analysis compares task scores within normal cognition.
+
+\clearpage
+\section{Regression and correlation}
+We fit all three OLS models to the same \FinalN{} participants. The MRI-only model uses left thickness centered at 2.344 mm, with the slope expressed per 0.1 mm. The UDS-only model uses age centered at 68 years, recorded sex and education centered at 16 years. The combined model includes all four predictors. Pearson's \(r=\FinalR\) on these same records. The simple regression estimates the marginal thickness slope, and the combined model estimates the slope at fixed demographic covariates.
+
+\begin{center}\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrr@{}}\toprule
+Model & \(R^2\) & Adjusted \(R^2\) & Residual SD & In-sample RMSE\\
+\midrule
+\FinalModelRows
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lccc@{}}\toprule
+Coefficient & UDS-only & MRI-only & UDS + MRI\\
+\midrule
+\FinalCoefficientRows
+\bottomrule
+\end{tabular}
+\end{center}
+The coefficient table gives each estimate in correct responses for the listed predictor change, with its individual 95\% model-based interval. The HC3 interval for the main thickness estimate is \FinalHC{}. Both thickness coefficients are close to zero. The unadjusted estimate is positive and the adjusted estimate is negative. Age accounts for the largest term in the algebraic decomposition of this shift. These fits use the same people and condition on different predictors.
+
+\finalfigure{0.87}{figures/phase5/01_model_comparison.pdf}{\textbf{Figure 2.} In-sample variance explained by each model on identical records. The bars show \(R^2\) as a percentage.}
+
+\clearpage
+\subsection{Diagnostics and fixed-profile intervals}
+The integrated design had full rank, and its largest variance inflation factor was \FinalVIF{}. The central residual plots show little sustained curvature. The tails depart from the normal reference, and the spread varies across fitted scores. We report HC3 alongside the model-based intervals to allow for unequal error variance under the stated model and independence assumptions. We retained the registered additive model and all eligible observations in the primary fit.
+
+\finalfigure{0.98}{figures/phase4/03_residual_diagnostics.pdf}{\textbf{Figure 3.} Residuals versus fitted scores, normal Q--Q plots and scale--location plots for the three common-sample models. Connected points in the first and third columns summarize bins.}
+
+For the observed profile of a recorded male aged 68, with 16 years of education and left thickness of 2.344 mm, the fitted mean score is \ProfileMean{}. The model-based 95\% CI for that conditional mean is \ProfileMeanCI{}. For one new eligible person with the same profile, the 95\% prediction interval is \ProfileIndividualCI{}. It is wider because it includes variation in individual scores. Both intervals depend on the linear mean, error and sampling assumptions. Predictive accuracy on new data has yet to be measured.
+
+\clearpage
+\input{reports/final/sensitivity_results.tex}
+
+\section{Conclusion}
+Among eligible participants with normal cognition, the model estimated a difference of \(\FinalSlope\) correct names per 0.1 mm of greater left inferior parietal thickness, with age, recorded sex and education held fixed. The estimate moved toward zero with bilateral thickness and with temporary omissions, and the bootstrap interval included zero. Broadening eligibility across cognitive groups yielded a positive pooled slope. For the original question, the direction and size of the association remain uncertain, and this MRI measure added little fit beyond UDS on the observed data.
+
+\clearpage
+\section{References and appendix}
+\input{reports/final/literature_review.tex}
+
+\clearpage
+\textbf{Data sources.} \href{https://www.naccdata.org/the-nacc-researchers-guide/}{NACC Researcher's Guide}, \href{https://r2d2.kumc.edu/ADC/Protocols/UDS2_protocol/ResearchDataDict_2015Mar.pdf\#page=205}{UDS data dictionary}, \href{https://files.alz.washington.edu/documentation/SCAN-MRI-Imaging-RDD.pdf\#page=17}{MRI data dictionary} and the statistics course guide (Sections 9--11).
+
+\subsection{Reproduction and course requirements}
+Place the supplied files as described in the data guide and run the analysis from the project root. The executed Phase 5 notebook rebuilds the synthesis and displays the main results. Run \texttt{python3 -m src.phase5\_summary} to regenerate the shared tables and both final figures. The README lists the commands in order.
+
+\begin{center}\small
+\begin{tabular}{@{}lp{0.72\linewidth}@{}}\toprule
+Requirement & Evidence in the final deliverables\\
+\midrule
+General 1 & Three original studies in the related-studies table.\\
+General 2 & Broader eligible sample using the same integrated specification.\\
+General 3 & Mean bilateral thickness on the same participants.\\
+General 4 & Full fit and temporary omission of five largest flagged Cook distances.\\
+General 5 & Model-based and participant-bootstrap intervals.\\
+General 6 & Exploratory cognitive subgroup fits and the direct interaction.\\
+General 7 & Descriptive, probability, inference and regression sections.\\
+General 8 & Discussion of supported claims, uncertainty and scope.\\
+Track C1 & Final common-sample tables in the regression section.\\
+Track C2 & Identical UDS eligibility and UDS-only fit with the MRI criterion.\\
+Track C3 & One supplied pair per participant. Visit-rule sensitivity is infeasible without repeated records and timing metadata.\\
+Track C4 & Normal cognition and MCI, with one record per person.\\
+Track C5 & Incremental contribution of integrating UDS and MRI in the discussion.\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{document}

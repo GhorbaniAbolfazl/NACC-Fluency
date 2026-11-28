@@ -1,0 +1,40 @@
+\providecommand{\MCILabel}{MCI}
+\newcommand{\ReferenceLabel}{Normal cognition, left}
+\newcommand{\BroaderLabel}{Broader sample, left}
+\newcommand{\BilateralLabel}{Normal cognition, bilateral}
+\newcommand{\CookLabel}{Temporary Cook omission}
+
+\section{Sensitivity and robustness}
+We set the sensitivity plan after reviewing the teaching extract and before fitting the alternatives. The table gives the adjusted difference in correct animal names per 0.1 mm of thickness. Each interval belongs to a single estimate. The comparisons across overlapping fits are descriptive.
+
+\begin{center}\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrccc@{}}\toprule
+Comparison & \(n\) & Estimate & Model-based 95\% CI & HC3 95\% CI\\
+\midrule
+\FinalSensitivityRows
+\bottomrule
+\end{tabular}
+\end{center}
+
+\finalfigure{0.79}{figures/phase5/02_thickness_sensitivity.pdf}{\textbf{Thickness sensitivity.} Points show the slopes and lines show their individual 95\% HC3 intervals. The broader sample pools four cognitive groups. The bilateral row uses the mean thickness of the two sides.}
+
+\textbf{Sample and MRI availability.} The broader sample comprises 842 people with normal cognition, 7 with impairment without MCI, 248 with MCI and 126 with dementia. We fit a common slope without a cognitive-status term, so differences between the groups may help explain the positive pooled slope. Every one of the \FinalN{} eligible participants with normal cognition identified from UDS had usable left thickness. The UDS-only fit therefore used exactly the same people and measurements before and after the MRI requirement. This comparison is limited to the records supplied for the course.
+
+\textbf{Thickness definition and influence.} All \FinalN{} reference participants had usable measurements on both sides, so we could compare left thickness with the equal-weight bilateral mean on the same rows. Cook distance exceeded \(4/842\) for \FlaggedCook{} observations in the full model. Temporarily leaving out the \OmittedCook{} largest together moved the estimate toward zero. We report the usual intervals to describe that change. Their nominal coverage is uncertain because the omission rule uses the observed outcomes.
+
+\clearpage
+\subsection{Uncertainty, subgroup and visit checks}
+\textbf{Participant bootstrap.} For each resample, we drew 842 complete participant rows with replacement from the full reference sample. All \(\BootstrapN\) fits had full rank. The bootstrap SE was \(\BootstrapSE\), and the 95\% percentile CI was \BootstrapCI{}. The model-based and HC3 intervals were \FinalCI{} and \FinalHC{}. All three include zero. The bootstrap captures sampling variation under the assumption of independent participants, conditional on the supplied records.
+
+\textbf{Exploratory normal cognition and MCI comparison.} We fit one model to 1,090 distinct participants, allowing the intercept and each slope to vary by cognitive group. The thickness interaction estimates the MCI slope minus the normal-cognition slope. The difference was \(\InteractionSlope\) correct responses per 0.1 mm (95\% HC3 CI \InteractionCI{}, nominal two-sided \(p=\InteractionP\)). The interval includes zero and extends to a positive difference of about one correct response. The pooled model reproduced the separate group estimates.
+
+\textbf{Visit selection.} Each UDS and MRI file contains 1,237 participants, with one row per person. The files give no clinical visit date or number, scan date or identifier, or count of original visits. We therefore could not compare alternative index visits or measure the time between the clinical assessment and MRI.
+
+\section{Discussion and limitations}
+\textbf{What combining UDS and MRI adds.} Adding demographics to the MRI-only model raised in-sample \(R^2\) by \UDSAddedR{} percentage points on the same participants. It also moved the thickness slope from a small positive estimate to a small negative one. This comparison shows how the estimated association changes when we account for measured demographics.
+
+Adding left thickness to the UDS-only model raised \(R^2\) by \MRIAddedR{} percentage points, changed adjusted \(R^2\) by \MRIAddedAdjusted{} percentage points and changed in-sample RMSE by \(\MRIAddedRMSE\) correct responses. The combined model gives an estimate for thickness after demographic adjustment, with little improvement in fit on the observed sample. The model-based intervals for the marginal and adjusted thickness slopes are similar in width.
+
+\textbf{Measurement and selection.} The extract provides no record-level documentation of imputation or scan quality. Our usability checks establish numerical eligibility. The missing sampling frame limits generalization. One supplied pair per person defines the observation unit, and independence across people remains an assumption. We cannot assess MRI coverage and timing for people or measurements excluded before the extract was delivered.
+
+\textbf{Scope.} Animal naming captures performance on one timed task, and the MRI measures cover specific regions. Residual variation is substantial, and the reference intervals allow for associations in either direction. The wider-sample and MCI estimates describe different participant groups or contrasts. Causal effects, clinical equivalence and predictive validity require additional evidence.
