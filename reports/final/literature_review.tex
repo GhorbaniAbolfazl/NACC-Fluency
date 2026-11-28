@@ -1,0 +1,59 @@
+% Phase 5, Step 2. Include from the project root after loading booktabs and hyperref.
+% Search checked 2026-11-27. Terms included "animal fluency", "semantic fluency",
+% "cortical thickness", "inferior parietal", "normal aging", and "MCI".
+% Extraction anchors:
+% Eastman et al.: Methods 2.1–2.3, Results 3 and Figure 1 (PMC4207059).
+% Vonk et al.: Participants, Materials, and Procedure; Statistical Analysis;
+% Table 3, Category fluency (PMC6519688).
+% Grönholm-Nyman et al.: Methods, Word fluency measures, VBM, and Results
+% (publisher full text, DOI 10.1080/13825585.2024.2436996).
+
+\subsection{Related studies}\label{sec:related-studies}
+
+We reviewed three original studies that measured semantic fluency and structural MRI in adults. We looked for animal-naming tasks, cortical thickness and older samples with documented cognitive status, then checked each study's methods and results in the full text. The three papers show where differences in tasks, samples and imaging measures affect the comparison with our study.
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{.225\linewidth}p{.205\linewidth}p{.245\linewidth}p{.28\linewidth}@{}}
+\toprule
+Study and sample & Research question & Statistical approach & Main finding\\
+\midrule
+\raggedright \textbf{\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC4207059/}{Eastman et al. (2013)}}.
+ADNI, 59 participants (9 controls, 40 with MCI and 10 with probable Alzheimer’s disease).
+&
+\raggedright Where does cortical thickness covary with separate one-minute animal and vegetable fluency scores?
+&
+\raggedright Surface-point linear models of thickness on fluency in the pooled sample. Permutation correction was applied to the statistical maps.
+&
+\raggedright The animal score covaried positively with thickness in inferior parietal and other regions on the maps. The reported whole-hemisphere map-level adjusted \(p\) values were 0.01 on the left and 0.06 on the right.\tabularnewline
+\addlinespace[2pt]
+\multicolumn{4}{@{}p{\linewidth}@{}}{\raggedright \textit{Comparison with this project}. Closest match for the naming task and broad parietal anatomy. Testing and MRI fell within one month. Pooled maps may reflect differences between cognitive groups. The hemisphere-level tests give neither a parcel slope nor a test of a left--right difference.}\tabularnewline
+\addlinespace
+\raggedright \textbf{\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC6519688/}{Vonk et al. (2019)}}.
+WHICAP, 505 adults aged 62--96 without diagnosed dementia at MRI.
+&
+\raggedright Do letter fluency and the mean of three category trials (animals, clothing and food) relate to different thickness patterns?
+&
+\raggedright Vertex-wise FreeSurfer models of thickness on each fluency score, without demographic adjustment in the imaging models. Monte Carlo correction addressed spatial multiplicity.
+&
+\raggedright Higher category scores were associated with thicker cortex at several sites, including a cluster with its peak in the left angular gyrus. That cluster had a corrected \(p=0.0001\) in Table 3.\tabularnewline
+\addlinespace[2pt]
+\multicolumn{4}{@{}p{\linewidth}@{}}{\raggedright \textit{Comparison with this project}. Adults without dementia form a broader group than adults with normal cognition. The category composite and cluster peak differ from our animal-only score and atlas-defined regional mean.}\tabularnewline
+\addlinespace
+\raggedright \textbf{\href{https://doi.org/10.1080/13825585.2024.2436996}{Grönholm-Nyman et al. (2025)}}.
+46 cognitively healthy Finnish speakers aged 50--79.
+&
+\raggedright Are one-minute animal naming and letter fluency associated with regional gray matter volume?
+&
+\raggedright Whole-brain voxel-based models adjusted for age, sex and total intracranial volume, with cluster-level familywise error correction.
+&
+\raggedright The animal-naming analysis yielded no significant volume associations under that correction. The letter-task associations involved medial temporal and striatal regions.\tabularnewline
+\addlinespace[2pt]
+\multicolumn{4}{@{}p{\linewidth}@{}}{\raggedright \textit{Comparison with this project}. The timed animal category matches our task and participants were cognitively healthy. The imaging measure is gray matter volume, and the analysis applies whole-brain correction.}\tabularnewline
+\bottomrule
+\end{tabular}
+\end{center}
+
+Our model estimates the difference in animal-naming score per 0.1 mm of left inferior parietal thickness among people with normal cognition, holding age, recorded sex and education fixed. The studies above put that regional estimate in context. Eastman et al.'s maps show where associations appeared across the cortex. Their findings in both hemispheres provide context for our bilateral sensitivity analysis. In our analysis, we use the mean of the two regional measurements.
