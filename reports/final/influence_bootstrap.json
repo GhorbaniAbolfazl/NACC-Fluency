@@ -1,0 +1,317 @@
+{
+  "stage": "Phase 5, Step 5",
+  "course_requirements": [
+    "general_4",
+    "general_5"
+  ],
+  "source_files_sha256": {
+    "reports/final/analysis_plan.json": "f5258569b1dc30a9bd36ef9418cd4aa820db2aa3b3d85eb5f0701524dfbf7353",
+    "src/phase5_influence.py": "cc7fa0e530f742d9161d6064348b784ce7139f2f4d7aa50edcdff24a858e149c",
+    "src/phase4_diagnostics.py": "4d001a835c571d94005f9bfebf1a22b46607cecc6e60c67b771c8276b454e2b0"
+  },
+  "reference": {
+    "participants": 842,
+    "formula": "ANIMALS ~ 1 + thickness_0_1mm + age_c + female + education_c",
+    "membership_sha256": "01493a1533ccc79d5a8cf6e7fca3eb0ca1acab860c59884f7d5f9466f22c34d4",
+    "matrix_sha256": "3c272a19bc0b9128af4435279eec6cbd8c4571cfed89283f27d055c864b759bf",
+    "response_sha256": "b6861f8e75d16a7d3fa633905a085608cb4e2e91069dccd1571f277fb0a2d4c8",
+    "coefficients": {
+      "intercept": {
+        "estimate": 22.06945486332163,
+        "model_based": {
+          "standard_error": 0.30432532309236277,
+          "confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": 21.472124427569515,
+            "upper": 22.666785299073748
+          }
+        },
+        "hc3": {
+          "standard_error": 0.2953198061883004,
+          "confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": 21.489800476614054,
+            "upper": 22.64910925002921
+          }
+        }
+      },
+      "thickness_0_1mm": {
+        "estimate": -0.12570420635042928,
+        "model_based": {
+          "standard_error": 0.1507751921985112,
+          "confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.42164609623782456,
+            "upper": 0.170237683536966
+          }
+        },
+        "hc3": {
+          "standard_error": 0.1452318800011004,
+          "confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.41076567045943974,
+            "upper": 0.15935725775858117
+          }
+        }
+      },
+      "age_c": {
+        "estimate": -0.14228708055265055,
+        "model_based": {
+          "standard_error": 0.02277718325454884,
+          "confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.18699418760636172,
+            "upper": -0.09757997349893939
+          }
+        },
+        "hc3": {
+          "standard_error": 0.02480105818006597,
+          "confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.19096665390946993,
+            "upper": -0.09360750719583116
+          }
+        }
+      },
+      "female": {
+        "estimate": -0.14241267906471977,
+        "model_based": {
+          "standard_error": 0.37449720459200275,
+          "confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.877476643291576,
+            "upper": 0.5926512851621365
+          }
+        },
+        "hc3": {
+          "standard_error": 0.36897692868114884,
+          "confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": -0.8666414331887956,
+            "upper": 0.5818160750593561
+          }
+        }
+      },
+      "education_c": {
+        "estimate": 0.6032432142871926,
+        "model_based": {
+          "standard_error": 0.06830240370172055,
+          "confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": 0.46917910108264255,
+            "upper": 0.7373073274917428
+          }
+        },
+        "hc3": {
+          "standard_error": 0.06386034473069785,
+          "confidence_interval": {
+            "confidence_level": 0.95,
+            "lower": 0.477897984525649,
+            "upper": 0.7285884440487362
+          }
+        }
+      }
+    },
+    "fit": {
+      "participants": 842,
+      "parameters_including_intercept": 5,
+      "residual_df": 837,
+      "SSE": 21668.359407397456,
+      "SST": 24802.552256532068,
+      "explained_sum_of_squares": 3134.1928491346102,
+      "R_squared": 0.1263657391673948,
+      "adjusted_R_squared": 0.12219066504155207,
+      "residual_SD": 5.08803729794483,
+      "in_sample_RMSE": 5.072907804749059
+    }
+  },
+  "influence": {
+    "screen": "Integrated model Cook distance strictly greater than 4/n, calculated once on the full design using p=5 including the intercept.",
+    "ranking": "Descending full-fit Cook distance. Use ascending participant ID only to break exact ties and keep IDs in memory.",
+    "threshold_strict_gt": 0.004750593824228029,
+    "flagged_n": 37,
+    "maximum_joint_omissions": 5,
+    "omitted_n": 5,
+    "retained_n": 837,
+    "omitted_cook_distance_range": {
+      "minimum": 0.013020918664244199,
+      "maximum": 0.028965715127372997
+    },
+    "temporary_fit": {
+      "coefficients": {
+        "intercept": {
+          "estimate": 21.98879366522997,
+          "model_based": {
+            "standard_error": 0.2980829954627976,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 21.40371059265133,
+              "upper": 22.57387673780861
+            }
+          },
+          "hc3": {
+            "standard_error": 0.2889191678088817,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 21.421697530926725,
+              "upper": 22.555889799533215
+            }
+          }
+        },
+        "thickness_0_1mm": {
+          "estimate": -0.10941272591431458,
+          "model_based": {
+            "standard_error": 0.14824931384046228,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.4003993483306152,
+              "upper": 0.181573896501986
+            }
+          },
+          "hc3": {
+            "standard_error": 0.14055918277685442,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.385305010244531,
+              "upper": 0.16647955841590187
+            }
+          }
+        },
+        "age_c": {
+          "estimate": -0.14279565699046076,
+          "model_based": {
+            "standard_error": 0.022657451948039774,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.18726814218533164,
+              "upper": -0.09832317179558989
+            }
+          },
+          "hc3": {
+            "standard_error": 0.022879910194135628,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.187704787536215,
+              "upper": -0.09788652644470652
+            }
+          }
+        },
+        "female": {
+          "estimate": -0.09863398830819461,
+          "model_based": {
+            "standard_error": 0.36680646100574327,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.8186088091252463,
+              "upper": 0.6213408325088571
+            }
+          },
+          "hc3": {
+            "standard_error": 0.36095480281820874,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.8071230611820365,
+              "upper": 0.6098550845656473
+            }
+          }
+        },
+        "education_c": {
+          "estimate": 0.5854900565101356,
+          "model_based": {
+            "standard_error": 0.06696129282563246,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 0.4540571349862751,
+              "upper": 0.7169229780339962
+            }
+          },
+          "hc3": {
+            "standard_error": 0.06269675669135076,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 0.4624276490462748,
+              "upper": 0.7085524639739964
+            }
+          }
+        }
+      },
+      "fit": {
+        "participants": 837,
+        "parameters_including_intercept": 5,
+        "residual_df": 832,
+        "SSE": 20562.207169394187,
+        "SST": 23543.698924731183,
+        "explained_sum_of_squares": 2981.4917553369855,
+        "R_squared": 0.12663650537108784,
+        "adjusted_R_squared": 0.12243764241614119,
+        "residual_SD": 4.971336974031032,
+        "in_sample_RMSE": 4.95646605536022
+      }
+    },
+    "coefficient_changes_temporary_minus_full": {
+      "intercept": -0.08066119809166139,
+      "thickness_0_1mm": 0.016291480436114697,
+      "age_c": -0.0005085764378102153,
+      "female": 0.04377869075652516,
+      "education_c": -0.017753157777056994
+    },
+    "interpretation": "The full model supplies the ranking once. Diagnostics flag records for review. The usual model-based and HC3 intervals describe the reduced fit; nominal coverage is not guaranteed after outcome-dependent omission. The full fit remains the primary result."
+  },
+  "participant_bootstrap": {
+    "protocol": {
+      "target": "The same adjusted left-thickness slope on the same 842-person reference sample.",
+      "draws": 10000,
+      "seed": 731905,
+      "generator": "numpy.random.Generator with numpy.random.PCG64",
+      "resampling_unit": "Whole participant row, including ANIMALS, thickness and all UDS covariates.",
+      "draw_size": 842,
+      "replacement": true,
+      "row_order": "Use the registered ascending participant-ID order before drawing indices.",
+      "fit": "Equal-weight OLS using the same fixed coding and a full-rank least-squares solve. Repeated indices represent bootstrap multiplicity.",
+      "interval": {
+        "method": "percentile",
+        "confidence_level": 0.95,
+        "quantiles": [
+          0.025,
+          0.975
+        ],
+        "quantile_method": "linear"
+      },
+      "invalid_fit_policy": "Count non-finite or rank-deficient fits explicitly. If any occur, stop before publishing the interval and document the issue. Keep the planned draw sequence fixed for review.",
+      "comparison": "Compare the percentile interval and empirical bootstrap SE with the Phase 4 model-based interval and SE. Include HC3 as existing reference context. Report shifts in endpoints and width.",
+      "limits": "Row resampling assumes independent participants and represents variation within the modeled extract. It cannot add source-imputation, selection or visit-alignment uncertainty that is absent from the inputs."
+    },
+    "draws_attempted_n": 10000,
+    "valid_fits_n": 10000,
+    "invalid_fits_n": 0,
+    "invalid_fits_by_reason": {
+      "rank_deficient": 0,
+      "nonfinite": 0,
+      "solver_failure": 0
+    },
+    "thickness_mean_across_draws": -0.12250934926257305,
+    "empirical_standard_error": 0.14453570690918122,
+    "confidence_interval": {
+      "confidence_level": 0.95,
+      "lower": -0.40160835570041625,
+      "upper": 0.1622100322873965,
+      "width": 0.5638183879878127
+    },
+    "bootstrap_minus_full_fit": {
+      "model_based": {
+        "lower_endpoint_change": 0.02003774053740831,
+        "upper_endpoint_change": -0.0080276512495695,
+        "width_change": -0.028065391786977867,
+        "standard_error_change": -0.0062394852893299935
+      },
+      "hc3": {
+        "lower_endpoint_change": 0.009157314759023483,
+        "upper_endpoint_change": 0.0028527745288153272,
+        "width_change": -0.006304540230208211,
+        "standard_error_change": -0.0006961730919191889
+      }
+    },
+    "interpretation": "Row resampling assumes independent participants and represents variation within the modeled extract. It cannot add source-imputation, selection or visit-alignment uncertainty that is absent from the inputs."
+  },
+  "privacy": "Only aggregate summaries and hashes are persisted. Individual diagnostics, participant IDs, resample indices and bootstrap replicates stay in memory."
+}
