@@ -1,0 +1,53 @@
+{
+  "stage": "Phase 5, Step 7",
+  "participants_in_primary_analysis": 842,
+  "coverage": {
+    "general_1": "Related studies: three original articles with a structured comparison.",
+    "general_2": "Sample sensitivity: the integrated model on the broader sample.",
+    "general_3": "Definition sensitivity: left versus bilateral mean on identical membership.",
+    "general_4": "Influence: the full fit and the temporary omission of the five largest flagged Cook distances.",
+    "general_5": "Uncertainty: model-based, HC3 and participant-bootstrap intervals.",
+    "general_6": "Exploratory subgroups: group-specific slopes and the direct interaction.",
+    "general_7": "Final report: synthesis of descriptive, probability, inference and regression evidence.",
+    "general_8": "Discussion and conclusion: scope, limitations and the primary answer.",
+    "track_c1": "Common-sample model tables: coefficients, uncertainty and fit across the three models.",
+    "track_c2": "MRI completeness: raw-UDS denominator and unchanged UDS-only fit on identical membership.",
+    "track_c3": "Visit rule: applicability assessed; one supplied pair per person and missing timing fields.",
+    "track_c4": "Normal cognition and MCI: one row per participant and an exploratory direct contrast.",
+    "track_c5": "Discussion: incremental contribution and limits of combining UDS and MRI."
+  },
+  "visit_selection": "Applicability audited. Repeated records and timing fields are unavailable.",
+  "verification": [
+    "Phase 1 descriptions and Phase 2 event, distribution and count summaries recomputed.",
+    "Phase 3 and Phase 4 evidence checked by the frozen input fingerprints and reference refits.",
+    "Phase 5 sample, bilateral, influence, bootstrap and subgroup reports reproduced numerically.",
+    "Shared LaTeX tables regenerate from the validated synthesis.",
+    "Both new grayscale vector figures reproduce within the project environment.",
+    "The final notebook is valid, with every code cell executed, aggregate tables and two figure outputs.",
+    "The two compiled documents are present, with all required sections and resolved source/figure dependencies."
+  ],
+  "files_sha256": {
+    "figures/phase1/04_thickness_by_status.pdf": "440e4f9f72461b288038c177ca8bbb3dcf4e1055f578481a2f79dd0eaae352d7",
+    "figures/phase4/03_residual_diagnostics.pdf": "c407f4a55919cef4d9edb64ac6ea047529922f994910125951e5649e04d29ee8",
+    "figures/phase5/01_model_comparison.pdf": "c72e204b293c9c88f3bf2a836910ef92cef9d60000da9b7a9319899ceddd7848",
+    "figures/phase5/02_thickness_sensitivity.pdf": "dbb6c9aae42db6a9a0ae18b96fddc0883e3283e69bdfbb6d2c2e9b067037f6fb",
+    "notebooks/phase5.ipynb": "48b476fdda611cec1b7bc5f892dd59dd040a58d61ff28a437ecd0d73845229e7",
+    "reports/final/final_report.pdf": "dbbe9d5a1e0338e17bb86c3b837668c7bac51602a8ab8392b559236b16dc9692",
+    "reports/final/final_report.tex": "e886354fd1a794d2d22ac2cb802e70951aea67f563648f0c0e9bc78175f4bb95",
+    "reports/final/layout.tex": "b0197626e542bf747f8a436d7daf7e76ff464b390fe9c2849d8dd718e1071a33",
+    "reports/final/literature_review.tex": "26406f4e7b469deba205c536b6d75d525b2b907cc294259f8b44298e929cb6fd",
+    "reports/final/sensitivity_and_limitations.pdf": "afdcddc01a6cc480c49c80c53e0cc83b7123b3e565e5789f0763f4fceb2b0abd",
+    "reports/final/sensitivity_and_limitations.tex": "c78022fa1b3dfd670f6b0ad5b5908d76e6b04c32b5882a86a7f16574906ea579",
+    "reports/final/sensitivity_results.tex": "6848f7cd22d8f66e557990dc4aeef7fb71f294a996d7aeaa3e152013b9e8ced6",
+    "reports/final/synthesis.json": "2d8b94b010cd59391d66c344110b49242bfab9e4304f181d6ab94e3e777c1454",
+    "reports/final/tables.tex": "935d856a8da1d586a8134b31cc4c444e385f7c7bb67eef984b7f0298b22a5e01",
+    "reports/template.tex": "84cb8d8c549044dc58a2a148f0cb93f39b24a46fd43f579dd0e019589fecd8ab",
+    "src/phase5_review.py": "0caeefc622b876b10bb0d8636a13a47337a51339068e8afb21ccaddb6eff1522",
+    "src/phase5_summary.py": "45e68ba86ff102d8a05f74f026b8b3ec016bc5c14cdae617ca201d2ab0cd4b47"
+  },
+  "course_submission": {
+    "tag": "phase-5-final",
+    "manual_steps": "Publish the repository, apply the tag and package the course submission manually.",
+    "local_data": "Keep supplied CSVs and the participant-level derived table local."
+  }
+}

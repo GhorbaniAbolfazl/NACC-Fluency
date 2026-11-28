@@ -493,6 +493,93 @@ The final Phase 4 deliverables present the same 842-person analysis. The numeric
 
 Section 7 of the report maps the 11 general and six Track C requirements to the relevant sections. The one-record-pair part of C5 is documented. Its temporal-proximity part requires dates or authoritative visit and scan metadata beyond the supplied files. The first seven steps retain their original analytical records.
 
+## 11. Phase 5 sensitivity plan
+
+We set the [Phase 5 plan](reports/final/analysis_plan.json) before fitting any alternatives, after reviewing the teaching extract. These checks are exploratory. The reference is the adjusted left-thickness slope per 0.1 mm from the combined OLS model on 842 participants with normal cognition. The planning code reproduces the estimates, uncertainty and fit for the three Phase 4 designs within the stated tolerance and checks them against the saved reference. [Planning code](src/phase5_plan.py)
+
+| Question | Comparison fixed at Step 1 |
+|---|---|
+| Does the eligibility rule matter? | Repeat the reference formula on all 1,223 eligible participants across cognitive categories. Interpret it as a slope for a different population mix. |
+| Does usable MRI change membership? | Derive normal-cognition UDS eligibility directly from the UDS file. Compare membership and the UDS-only fit before and after requiring matched usable left thickness. The supplied extract contains one usable left measure per matched person. |
+| Does the MRI definition matter? | Compare left thickness with the mean of left and right thickness for the same region and people. Both values are usable in all 842 reference rows. |
+| Does a small set of influential observations change the estimate? | Temporarily omit up to five cases with the largest Cook distances among cases above 4/n. Use the full reference to determine the ranking. |
+| Does the interval change with the method? | Compare the model-based interval with a 95% percentile interval from 10,000 participant-row bootstrap draws using PCG64 and seed 731905. |
+| Do the associations differ between normal cognition and MCI? | Compare the 842 and 248 eligible participants with separate slopes and one fully interacted regression. Report the MCI-minus-normal slope contrast with its interval as exploratory. |
+
+The extract provides one pair of records per participant and lacks visit and scan metadata, so we could not compare alternative visit rules. The synthesis discusses what we can check in these files and what remains unknown about sampling, measurement and imputation upstream. The JSON shows the planned evidence for all 13 requirements.
+
+### Phase 5, Step 2 literature review
+
+The [literature review](reports/final/literature_review.tex) compares three original studies. Eastman et al. studied the closest task and parietal region in a sample spanning several cognitive groups. Vonk et al. mapped cortical thickness in older adults without diagnosed dementia using a score that combines naming categories. Grönholm-Nyman et al. used one-minute animal naming in adults with normal cognition and measured gray matter volume. These differences help place our adjusted regional estimate and bilateral comparison in context.
+
+### Phase 5, Step 3 sample sensitivity and visit information
+
+[The sample sensitivity results](reports/final/sample_sensitivity.json) address general requirement 2 and Track C requirements 2 and 3. [The analysis](src/phase5_samples.py) repeats the integrated OLS specification from Phase 4 with wider cognitive-status eligibility. It retains the reference outcome, left thickness per 0.1 mm, and the original coding for age, recorded sex and education.
+
+| Sample | Participants | Thickness estimate | Model-based 95% CI | HC3 95% CI | In-sample R² |
+|---|---:|---:|---:|---:|---:|
+| Normal cognition | 842 | −0.126 | [−0.422, +0.170] | [−0.411, +0.159] | 0.126 |
+| All recorded cognitive categories | 1,223 | +0.911 | [+0.695, +1.127] | [+0.652, +1.170] | 0.162 |
+
+The broader fit adds 381 people, including 7 with impairment without MCI, 248 with MCI and 126 with dementia. Of the 1,237 linked records, 14 fail the broader eligibility rules. The first reason was an unusable animal-naming score for 12 people and unavailable education for 2. The thickness estimate increased by +1.037 correct responses per 0.1 mm. The pooled model uses a common slope without adjusting for cognitive status, so differences between groups may contribute to the shift. The two samples overlap, and each interval describes a single slope.
+
+We checked coverage starting from the raw UDS file. Of 847 people with normal cognition, 842 had usable scores, age, recorded sex and education. Each of those 842 also had usable left thickness. The MRI criterion left the participants and UDS values identical, so the UDS-only fit and fit statistics were the same. The files cannot show how MRI availability affected selection into the extract.
+
+Each file has one row per person for the same 1,237 participants. The files give no clinical visit date or number, MRI scan date or identifier, or count of original visits. Without that information, we could not compare alternative visit rules or check the gap between the clinical assessment and MRI.
+
+### Phase 5, Step 4 sensitivity to the thickness definition
+
+[The bilateral comparison](reports/final/bilateral_sensitivity.json) addresses general requirement 3. [The analysis](src/phase5_bilateral.py) checks for usable right inferior parietal thickness among the reference participants. All 842 qualify, so both fits use the same participants, animal-naming scores and covariates in the same order. The alternative uses the arithmetic mean of left and right inferior parietal thickness in millimeters. Both fits use the same coding, with thickness centered at 2.344 mm and expressed in 0.1 mm units.
+
+| Thickness measure | Estimate per 0.1 mm | Model-based 95% CI | HC3 95% CI | In-sample R² | In-sample RMSE |
+|---|---:|---:|---:|---:|---:|
+| Left | −0.126 | [−0.422, +0.170] | [−0.411, +0.159] | 0.1264 | 5.0729 |
+| Mean of left and right | −0.058 | [−0.382, +0.266] | [−0.367, +0.250] | 0.1258 | 5.0746 |
+
+The left-thickness fit reproduced the Phase 4 reference. Using the average of both sides moved the estimate toward zero by +0.068 correct responses per 0.1 mm. All the individual intervals include zero under both methods. In-sample R² fell by about 0.06 percentage points. The shift compares two fitted slopes on the same sample. The intervals describe each slope separately, and neither a hemisphere-specific contrast nor an equivalence test is part of this comparison.
+
+### Phase 5, Step 5 influence and participant bootstrap
+
+[The results](reports/final/influence_bootstrap.json) and [reproduction code](src/phase5_influence.py) address general requirements 4 and 5. On the full integrated fit, 37 observations exceed the strict Cook-distance threshold of 4/842 (about 0.004751). The diagnostic refit temporarily omits the five largest of those distances together, leaving 837 participants. The full sample remains the primary analysis.
+
+| Fit | Participants | Thickness estimate per 0.1 mm | Model-based 95% CI | HC3 95% CI |
+|---|---:|---:|---:|---:|
+| Full reference | 842 | −0.126 | [−0.422, +0.170] | [−0.411, +0.159] |
+| Temporary joint omission | 837 | −0.109 | [−0.400, +0.182] | [−0.385, +0.166] |
+
+Leaving out the five cases moved the estimate toward zero by +0.016 correct responses per 0.1 mm. The usual interval formulas describe the refit. Since we selected the cases using diagnostics from these same outcomes, the intervals' nominal coverage is uncertain.
+
+For each of 10,000 bootstrap draws, we sampled 842 whole participant rows with replacement from the full reference, using PCG64 with seed 731905. We kept the model and coding fixed. Every fit was finite and full rank.
+
+| Full-reference uncertainty method | SE | 95% interval | Interval width |
+|---|---:|---:|---:|
+| Model-based | 0.151 | [−0.422, +0.170] | 0.592 |
+| HC3 | 0.145 | [−0.411, +0.159] | 0.570 |
+| Participant bootstrap, percentile | 0.145 | [−0.402, +0.162] | 0.564 |
+
+Compared with the model-based interval, the bootstrap lower endpoint is 0.020 higher and the upper endpoint is 0.008 lower. All three intervals span zero. The row bootstrap represents variation under independent participant sampling within the modeled extract. Uncertainty from upstream selection, imputation and visit alignment remains outside this comparison.
+
+### Phase 5, Step 6 normal cognition and MCI
+
+[The subgroup comparison](reports/final/cognitive_subgroups.json) and [reproduction code](src/phase5_subgroups.py) address general requirement 6 and Track C requirement 4. The analysis uses one supplied record per person and the same eligibility rules for the response, thickness and covariates in both groups. Each separate fit uses the Phase 4 specification, with left inferior parietal thickness measured per 0.1 mm and adjustment for age, recorded sex and education.
+
+| Cognitive group | Participants | Thickness estimate per 0.1 mm | Model-based 95% CI | HC3 95% CI | In-sample R² |
+|---|---:|---:|---:|---:|---:|
+| Normal cognition | 842 | −0.126 | [−0.422, +0.170] | [−0.411, +0.159] | 0.126 |
+| MCI | 248 | +0.402 | [−0.005, +0.809] | [−0.060, +0.864] | 0.109 |
+
+We fit one model to 1,090 distinct participants and allowed each group its own intercept and slopes. The thickness interaction estimates the MCI slope minus the normal-cognition slope directly. The difference was **+0.527 correct responses per 0.1 mm** (HC3 SE 0.276, 95% interval [−0.014, +1.069], nominal two-sided p = 0.0562, 1,080 residual degrees of freedom). All three designs had full rank. The interaction model reproduced the separate fits, and its HC3 variance for the difference matched the sum of the subgroup slope variances.
+
+The direct interval includes zero and extends to a positive difference of about 1.07 correct responses per 0.1 mm. The observed difference is positive, and this exploratory comparison still leaves its direction and size uncertain.
+
+### Phase 5, Step 7 final synthesis
+
+The [final report](reports/final/final_report.pdf) integrates the five phases. The [sensitivity and limitations document](reports/final/sensitivity_and_limitations.pdf) collects the robustness results and their scope. The [executed notebook](notebooks/phase5.ipynb) reproduces the synthesis and displays the [common-sample model figure](figures/phase5/01_model_comparison.pdf) and [thickness sensitivity figure](figures/phase5/02_thickness_sensitivity.pdf).
+
+In the 842-person reference sample, the adjusted slope was −0.126 correct responses per 0.1 mm (95% model-based CI [−0.422, +0.170]). Adding thickness to UDS-only raised in-sample R² by 0.073 percentage points. The bilateral definition and the temporary Cook omission moved the estimate closer to zero, and the bootstrap interval also included zero. The positive pooled estimate comes from the wider sample. We treat the MCI contrast as exploratory.
+
+The [final review](reports/final/final_review.json) reproduces the numerical results, table inputs and figures, and checks the compiled reports and executed notebook. It shows where the final work addresses the eight general and five Track C requirements. An alternative visit rule could not be evaluated from the supplied metadata. Repository publication, the tag and CW packaging are manual.
+
 ## References
 
 - [Official statistics course project guide, pp. 4–8 and 18–19](docs/amarpr.pdf)

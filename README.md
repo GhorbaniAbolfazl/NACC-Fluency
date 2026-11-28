@@ -214,6 +214,74 @@ python3 -m src.phase4_review
 
 The [final review](reports/phase4/regression_review.json) records the independent SVD checks, five reproduced figure PDFs, the shared numeric tables and the deliverable fingerprints. The student handles Git publication, the `phase-4` tag and CW packaging.
 
+## Phase 5
+
+The [sensitivity plan](reports/final/analysis_plan.json) starts with the three Phase 4 fits. It checks the saved files and designs, then reproduces the estimates within the stated numerical tolerance. Run this check from the project root after Phase 4.
+
+```shell
+python3 -m src.phase5_plan
+```
+
+The reference is the 842-person normal-cognition sample. We compare it with the broader sample, check MRI availability and visit timing, and examine bilateral thickness, the effect of temporarily leaving out high-Cook-distance observations, bootstrap uncertainty and the MCI subgroup. [Planning code](src/phase5_plan.py) · [Project card](PROJECT_CARD.md)
+
+In [Step 2](reports/final/literature_review.tex), we compare three studies of semantic fluency and structural MRI. The table gives each study’s sample, question, statistical method and main result. The text explains how their measures and participants compare with our one-minute animal-naming task and left inferior parietal thickness measure in adults with normal cognition.
+
+In [Step 3](reports/final/sample_sensitivity.json), we fit the same model on 1,223 eligible people across the recorded cognitive groups. The adjusted estimate per 0.1 mm was +0.911 correct responses in that sample and −0.126 in the 842-person normal-cognition sample. All 842 people who qualified on UDS also had usable left thickness. Each file has one row per person and lacks the dates and visit information needed to test another matching rule.
+
+Run from the project root to reproduce the results:
+
+```shell
+python3 -m src.phase5_samples
+```
+
+In [Step 4](reports/final/bilateral_sensitivity.json), we compare left thickness with the equal-weight mean of left and right thickness on the same 842 people. The adjusted estimates were −0.126 and −0.058 correct responses per 0.1 mm, respectively. Both individual 95% intervals included zero, and in-sample fit changed little.
+
+Run from the project root to reproduce the comparison:
+
+```shell
+python3 -m src.phase5_bilateral
+```
+
+[Step 5](reports/final/influence_bootstrap.json) asks how much the estimate changes when we temporarily leave out the five largest Cook distances above the planned threshold. The estimate moved from −0.126 to −0.109 correct responses per 0.1 mm. We then bootstrapped from the full pool of 842 participants. All 10,000 fits were valid and gave a 95% percentile interval of [−0.402, +0.162].
+
+Run from the project root to reproduce both checks:
+
+```shell
+python3 -m src.phase5_influence
+```
+
+In the [exploratory subgroup comparison](reports/final/cognitive_subgroups.json), the adjusted slopes were −0.126 for 842 people with normal cognition and +0.402 for 248 people with mild cognitive impairment (MCI). The interaction model estimated the difference directly as +0.527 correct responses per 0.1 mm (MCI minus normal cognition, 95% HC3 interval [−0.014, +1.069]).
+
+Run from the project root to reproduce the comparison:
+
+```shell
+python3 -m src.phase5_subgroups
+```
+
+### Final report and reproducibility
+
+- [Final report](reports/final/final_report.pdf) · [LaTeX source](reports/final/final_report.tex)
+- [Sensitivity analyses and limitations](reports/final/sensitivity_and_limitations.pdf) · [LaTeX source](reports/final/sensitivity_and_limitations.tex)
+- [Executed notebook](notebooks/phase5.ipynb) · [Final figures](figures/phase5/) · [Aggregate synthesis](reports/final/synthesis.json) · [Final review](reports/final/final_review.json)
+
+Place the course CSVs locally, rebuild the participant table and make sure the verified Phase 1–4 results are available. Then run the commands from the project root with the project’s Python environment and use its kernel in Jupyter.
+
+```shell
+python3 -m src.phase5_plan
+python3 -m src.phase5_samples
+python3 -m src.phase5_bilateral
+python3 -m src.phase5_influence
+python3 -m src.phase5_subgroups
+python3 -m src.phase5_summary
+tectonic -Z search-path="$PWD" --outdir reports/final reports/final/final_report.tex
+tectonic -Z search-path="$PWD" --outdir reports/final reports/final/sensitivity_and_limitations.tex
+python3 -m ipykernel install --sys-prefix --name nacc-fluency
+python3 -m jupyter execute --kernel_name=nacc-fluency --inplace --timeout=180 notebooks/phase5.ipynb
+python3 -m src.phase5_review
+```
+
+The synthesis checks the reference and sensitivity fits again before generating the shared tables and two figures. The final report shows where it covers the eight general and five Track C requirements. For visit selection, the available evidence is limited to a single supplied pair per person, with no visit or scan dates. Publish the repository, add the `phase-5-final` tag and prepare the CW package manually. Keep the supplied CSVs and participant-level table local.
+
 ## Project layout
 
 | Path | Purpose |
