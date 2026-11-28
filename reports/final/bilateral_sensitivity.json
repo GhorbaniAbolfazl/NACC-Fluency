@@ -1,0 +1,366 @@
+{
+  "stage": "Phase 5, Step 4",
+  "source_files_sha256": {
+    "reports/final/analysis_plan.json": "f5258569b1dc30a9bd36ef9418cd4aa820db2aa3b3d85eb5f0701524dfbf7353",
+    "data/mriscanclean.csv": "3a2b34f7902592705f75ce3ad4c4fab68880470f01e7b9eb9823a799dc092e72",
+    "src/phase5_bilateral.py": "45b77b022cb2b91b218260647b4808f504714b6a8b60892fc1efd387e2212bb8"
+  },
+  "course_requirement": "general_3",
+  "sample": {
+    "reference_n": 842,
+    "matched_n": 842,
+    "excluded_for_unusable_right_thickness_n": 0,
+    "right_thickness_exclusion_reasons": {},
+    "membership_sha256": "01493a1533ccc79d5a8cf6e7fca3eb0ca1acab860c59884f7d5f9466f22c34d4",
+    "response_sha256": "b6861f8e75d16a7d3fa633905a085608cb4e2e91069dccd1571f277fb0a2d4c8"
+  },
+  "specification": {
+    "formula": "ANIMALS ~ 1 + thickness_0_1mm + age_c + female + education_c",
+    "column_order": [
+      "intercept",
+      "thickness_0_1mm",
+      "age_c",
+      "female",
+      "education_c"
+    ],
+    "thickness_column": "thickness_0_1mm",
+    "left_coding": "(LH_INFERIORPARIETAL_AVGTH - 2.344) / 0.1",
+    "bilateral_coding": "(bilateral_mean_mm - 2.344) / 0.1",
+    "bilateral_definition": "Arithmetic mean of usable left and right inferior parietal thickness in mm, with each hemisphere weighted equally.",
+    "only_design_change": "Replace left thickness with bilateral mean thickness. Hold ANIMALS, all UDS covariates and the OLS estimator fixed."
+  },
+  "thickness_summary_mm": {
+    "left": {
+      "mean": 2.336269596199525,
+      "sample_sd": 0.12147268059278024
+    },
+    "right": {
+      "mean": 2.3665676959619955,
+      "sample_sd": 0.12525781565268115
+    },
+    "bilateral_mean": {
+      "mean": 2.3514186460807602,
+      "sample_sd": 0.1123226660327494
+    }
+  },
+  "models": {
+    "left_on_bilateral_support": {
+      "thickness_measure": "LH_INFERIORPARIETAL_AVGTH",
+      "coefficients": {
+        "intercept": {
+          "estimate": 22.06945486332163,
+          "model_based": {
+            "standard_error": 0.30432532309236277,
+            "t_statistic": 72.51928508303448,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.0,
+            "p_value_underflow": true,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 21.472124427569515,
+              "upper": 22.666785299073748
+            }
+          },
+          "hc3": {
+            "standard_error": 0.2953198061883004,
+            "t_statistic": 74.73069669174106,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.0,
+            "p_value_underflow": true,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 21.489800476614054,
+              "upper": 22.64910925002921
+            }
+          }
+        },
+        "thickness_0_1mm": {
+          "estimate": -0.12570420635042928,
+          "model_based": {
+            "standard_error": 0.1507751921985112,
+            "t_statistic": -0.8337194237161153,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.4046769678262576,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.42164609623782456,
+              "upper": 0.170237683536966
+            }
+          },
+          "hc3": {
+            "standard_error": 0.1452318800011004,
+            "t_statistic": -0.8655414110832748,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.38698971192060294,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.41076567045943974,
+              "upper": 0.15935725775858117
+            }
+          }
+        },
+        "age_c": {
+          "estimate": -0.14228708055265055,
+          "model_based": {
+            "standard_error": 0.02277718325454884,
+            "t_statistic": -6.246912928719329,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 6.656444641760755e-10,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.18699418760636172,
+              "upper": -0.09757997349893939
+            }
+          },
+          "hc3": {
+            "standard_error": 0.02480105818006597,
+            "t_statistic": -5.737137485005169,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 1.3452642392539415e-08,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.19096665390946993,
+              "upper": -0.09360750719583116
+            }
+          }
+        },
+        "female": {
+          "estimate": -0.14241267906471977,
+          "model_based": {
+            "standard_error": 0.37449720459200275,
+            "t_statistic": -0.3802770149375928,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.7038362757189169,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.877476643291576,
+              "upper": 0.5926512851621365
+            }
+          },
+          "hc3": {
+            "standard_error": 0.36897692868114884,
+            "t_statistic": -0.38596635180891103,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.699619671336595,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.8666414331887956,
+              "upper": 0.5818160750593561
+            }
+          }
+        },
+        "education_c": {
+          "estimate": 0.6032432142871926,
+          "model_based": {
+            "standard_error": 0.06830240370172055,
+            "t_statistic": 8.831947070583062,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 5.955770702975554e-18,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 0.46917910108264255,
+              "upper": 0.7373073274917428
+            }
+          },
+          "hc3": {
+            "standard_error": 0.06386034473069785,
+            "t_statistic": 9.446288096800892,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 3.405060017098206e-20,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 0.477897984525649,
+              "upper": 0.7285884440487362
+            }
+          }
+        }
+      },
+      "fit": {
+        "participants": 842,
+        "parameters_including_intercept": 5,
+        "residual_df": 837,
+        "SSE": 21668.359407397456,
+        "SST": 24802.552256532068,
+        "explained_sum_of_squares": 3134.1928491346102,
+        "R_squared": 0.1263657391673948,
+        "adjusted_R_squared": 0.12219066504155207,
+        "residual_SD": 5.08803729794483,
+        "in_sample_RMSE": 5.072907804749059
+      },
+      "matrix_sha256": "3c272a19bc0b9128af4435279eec6cbd8c4571cfed89283f27d055c864b759bf"
+    },
+    "bilateral_mean_on_same_support": {
+      "thickness_measure": "bilateral_mean_mm",
+      "coefficients": {
+        "intercept": {
+          "estimate": 22.10648514708978,
+          "model_based": {
+            "standard_error": 0.30048320037275994,
+            "t_statistic": 73.56978732809658,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.0,
+            "p_value_underflow": true,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 21.516696038543014,
+              "upper": 22.69627425563655
+            }
+          },
+          "hc3": {
+            "standard_error": 0.29221325383072627,
+            "t_statistic": 75.65189072462695,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.0,
+            "p_value_underflow": true,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 21.532928308409364,
+              "upper": 22.6800419857702
+            }
+          }
+        },
+        "thickness_0_1mm": {
+          "estimate": -0.058069149695888715,
+          "model_based": {
+            "standard_error": 0.16528489662617996,
+            "t_statistic": -0.35132762207076923,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.7254309923122444,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.38249072040755555,
+              "upper": 0.2663524210157781
+            }
+          },
+          "hc3": {
+            "standard_error": 0.15720502342678172,
+            "t_statistic": -0.36938482263535577,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.7119343379697963,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.3666315269300755,
+              "upper": 0.25049322753829806
+            }
+          }
+        },
+        "age_c": {
+          "estimate": -0.14027843813264296,
+          "model_based": {
+            "standard_error": 0.023177610828098157,
+            "t_statistic": -6.052325201810006,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 2.152632010488341e-09,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.18577150533769776,
+              "upper": -0.09478537092758815
+            }
+          },
+          "hc3": {
+            "standard_error": 0.02517694639990476,
+            "t_statistic": -5.571701822154795,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 3.4014383127266014e-08,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.18969580574157668,
+              "upper": -0.09086107052370922
+            }
+          }
+        },
+        "female": {
+          "estimate": -0.17561570710024307,
+          "model_based": {
+            "standard_error": 0.3731497917269118,
+            "t_statistic": -0.4706305912365797,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.6380271750889117,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.9080349662934716,
+              "upper": 0.5568035520929854
+            }
+          },
+          "hc3": {
+            "standard_error": 0.3686805901797954,
+            "t_statistic": -0.47633564602519524,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 0.6339595900404285,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": -0.8992628073404262,
+              "upper": 0.54803139313994
+            }
+          }
+        },
+        "education_c": {
+          "estimate": 0.6030862354828443,
+          "model_based": {
+            "standard_error": 0.06833102549269639,
+            "t_statistic": 8.825950307848164,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 6.255117825740313e-18,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 0.4689659433619232,
+              "upper": 0.7372065276037655
+            }
+          },
+          "hc3": {
+            "standard_error": 0.06380017473939747,
+            "t_statistic": 9.452736421902468,
+            "degrees_of_freedom": 837,
+            "p_value_two_sided_nominal": 3.2207066304665e-20,
+            "p_value_underflow": false,
+            "confidence_interval": {
+              "confidence_level": 0.95,
+              "lower": 0.4778591075169628,
+              "upper": 0.7283133634487259
+            }
+          }
+        }
+      },
+      "fit": {
+        "participants": 842,
+        "parameters_including_intercept": 5,
+        "residual_df": 837,
+        "SSE": 21683.156351824466,
+        "SST": 24802.552256532068,
+        "explained_sum_of_squares": 3119.3959047075973,
+        "R_squared": 0.12576914957959895,
+        "adjusted_R_squared": 0.12159122436850989,
+        "residual_SD": 5.089774267389492,
+        "in_sample_RMSE": 5.074639609241923
+      },
+      "matrix_sha256": "94136894a42ae66b7ef860152ec23489ce5d613a260a906d300e3c063767804e"
+    }
+  },
+  "bilateral_minus_left": {
+    "thickness_estimate": 0.06763505665454056,
+    "R_squared": -0.0005965895877958483,
+    "in_sample_RMSE": 0.0017318044928638088
+  },
+  "interpretation": {
+    "slope_unit": "Difference in correct animal responses per 0.1 mm of the specified thickness measure, holding age, recorded sex and education fixed.",
+    "anatomical_scope": "The bilateral measure averages both hemispheres. This comparison does not estimate a right-only slope or a difference between hemisphere-specific slopes.",
+    "interval_scope": "The individual nominal 95% intervals describe each slope. The observed shift between the slopes describes the two fits on this sample and has no interval here. The intervals cannot establish equivalence.",
+    "fit_scope": "Fit metrics summarize the observations used for estimation. The intercepts hold different anatomical measures at the same numeric center."
+  },
+  "privacy": "Only aggregate results and hashes are persisted."
+}
